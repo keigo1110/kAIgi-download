@@ -107,34 +107,34 @@
             <li>
               <span class="step-number">2</span>
               <div>
-                <h3>DMGを開く</h3>
-                <p><code>kAIgi.dmg</code> をダブルクリックし、Finderに表示された <code>kAIgi.app</code> を確認します。この時点ではまだ起動しません。</p>
+                <h3>DMG内のkAIgiを開く</h3>
+                <p><code>kAIgi.dmg</code> をダブルクリックし、Finderに表示された <code>kAIgi.app</code> を開きます。</p>
               </div>
             </li>
             <li>
               <span class="step-number">3</span>
               <div>
-                <h3>Applicationsへ移動</h3>
-                <p><code>kAIgi.app</code> を <code>Applications</code> フォルダへドラッグします。権限を安定させるため、DMG内のアプリは直接起動しないでください。</p>
+                <h3>Applicationsへ移動して開く</h3>
+                <p>確認画面で「移動して開く」を選ぶと、kAIgiがApplicationsへコピーされ、コピー先のアプリが自動で開き直されます。</p>
               </div>
             </li>
             <li>
               <span class="step-number">4</span>
               <div>
-                <h3>DMGをEject</h3>
-                <p>Finderのサイドバーで <code>kAIgi</code> の取り出しボタンを押すか、デスクトップ上のディスクアイコンを右クリックして「取り出す」を選びます。</p>
+                <h3>DMGを自動で取り出す</h3>
+                <p>コピー先のkAIgiが起動した後、元のDMGは自動で取り出されます。Finderで手動操作する必要はありません。</p>
               </div>
             </li>
             <li>
               <span class="step-number">5</span>
               <div>
-                <h3>Applicationsから起動して権限を許可</h3>
-                <p><code>Applications/kAIgi.app</code> を起動し、マイク、画面収録、音声認識を許可します。画面収録は変更後にアプリの再起動が必要になることがあります。</p>
+                <h3>権限を許可</h3>
+                <p>マイク、画面収録、音声認識を許可します。画面収録は変更後にアプリの再起動が必要になることがあります。</p>
               </div>
             </li>
           </ol>
           <p class="setup-note">
-            マイク権限はmacOSがアプリ単位で管理します。DMG内から起動した場合や、一度拒否した場合は、システム設定の「プライバシーとセキュリティ」から許可をオンにしてください。
+            マイク権限はmacOSがアプリ単位で管理します。移動確認で「このまま開く」を選んだ場合や、一度拒否した場合は、Applicationsへ入れ直してからシステム設定の「プライバシーとセキュリティ」で許可をオンにしてください。
           </p>
         </div>
       </section>
@@ -220,7 +220,7 @@
             </article>
             <article>
               <h3>マイク一覧にkAIgiが出ない</h3>
-              <p>DMG内や古い開発版から起動している可能性があります。Applicationsへ入れ直してから起動し、必要なら <code>tccutil reset Microphone ai.app.kaigi</code> 後に再度Micを押してください。</p>
+              <p>DMG内や古い開発版から起動している可能性があります。Applications内のkAIgiから起動し、必要なら <code>tccutil reset Microphone ai.app.kaigi</code> 後に再度Micを押してください。</p>
             </article>
             <article>
               <h3>内部音声が録音されない</h3>

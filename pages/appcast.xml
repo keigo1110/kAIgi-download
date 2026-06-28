@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>kAIgi Updates</title>
+    <description>Latest kAIgi macOS releases.</description>
+    <language>ja</language>
+    <link>https://keigo1110.github.io/kAIgi-download/</link>
+    <item>
+      <title>kAIgi 0.1.2</title>
+      <sparkle:version>3</sparkle:version>
+      <sparkle:shortVersionString>0.1.2</sparkle:shortVersionString>
+      <sparkle:releaseNotesLink>https://github.com/keigo1110/kAIgi-download/releases/tag/v0.1.2</sparkle:releaseNotesLink>
+      <pubDate>Sun, 28 Jun 2026 21:28:44 +0000</pubDate>
+      <enclosure url="https://github.com/keigo1110/kAIgi-download/releases/download/v0.1.2/kAIgi-0.1.2.dmg" length="4874487" type="application/octet-stream" sparkle:edSignature="F6iSQcmND94zD0ucHQecJeiV6EPgt3SFTrKmVsTq7PkYAg9KMQvomBpbd2f9lik7VFPGqda/LlVbDAPl6MZzCA==" />
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+    </item>
+  </channel>
+</rss>
