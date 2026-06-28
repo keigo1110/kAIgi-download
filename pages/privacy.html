@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacy Policy - kAIgi</title>
+    <meta
+      name="description"
+      content="kAIgiの録音、文字起こし、OpenAI連携、保存データに関するプライバシーポリシー。"
+    >
+    <meta name="theme-color" content="#0b1117">
+    <link rel="icon" href="./assets/app-icon.png">
+    <link rel="apple-touch-icon" href="./assets/app-icon.png">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="kAIgi home">
+        <img src="./assets/app-icon.png" alt="" width="36" height="36">
+        <span>kAIgi</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="./index.html#download">Download</a>
+        <a href="./index.html#setup">Setup</a>
+        <a href="https://github.com/keigo1110/kAIgi-download">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="policy-hero">
+        <div class="narrow">
+          <p class="eyebrow">Privacy Policy</p>
+          <h1>kAIgi Privacy Policy</h1>
+          <p class="lead">
+            kAIgiは会議音声を扱うアプリです。録音対象、保存場所、任意の外部送信について、ユーザーが判断できるように明確に説明します。
+          </p>
+          <p class="updated">Last updated: 2026-06-28</p>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="narrow policy-copy">
+          <h2>収集または保存するデータ</h2>
+          <p>
+            kAIgiは、ユーザーが録音を開始したセッションについて、Mac上で再生されている内部音声、マイク音声、文字起こし、セッションメタデータを保存します。
+            これらは標準では <code>~/Documents/KAIgiRecordings</code> に保存されます。
+          </p>
+
+          <h2>ローカル文字起こし</h2>
+          <p>
+            文字起こしにはApple Speechのオンデバイス認識を使用します。クラウドSTT APIへの自動フォールバックは行いません。
+          </p>
+
+          <h2>OpenAI連携</h2>
+          <p>
+            Research機能を有効にした場合、匿名化した直近の文字起こしと検索論点をOpenAI APIへ送信することがあります。
+            この機能は任意であり、ユーザーがOpenAI API keyを設定した場合のみ使用されます。API keyはmacOS Keychainに保存されます。
+          </p>
+
+          <h2>会議参加者への通知</h2>
+          <p>
+            会議、通話、対面の会話を録音する場合は、録音を開始する前に参加者へ通知し、必要な同意を得てください。
+            録音に関する法令や社内ルールは地域や組織により異なります。
+          </p>
+
+          <h2>データの削除</h2>
+          <p>
+            保存済みの録音と文字起こしは、Finderから該当セッションフォルダを削除することで削除できます。
+            OpenAI API keyはアプリ内の設定から削除できます。
+          </p>
+
+          <h2>問い合わせ</h2>
+          <p>
+            問題や質問はGitHub Issuesで受け付けます。
+            <a href="https://github.com/keigo1110/kAIgi-download/issues">https://github.com/keigo1110/kAIgi-download/issues</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 kAIgi</p>
+      <div>
+        <a href="./index.html">Home</a>
+        <a href="https://github.com/keigo1110/kAIgi-download">GitHub</a>
+      </div>
+    </footer>
+  </body>
+</html>

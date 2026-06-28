@@ -1,0 +1,6 @@
+.DS_Store
+*.dmg
+*.zip
+*.pkg
+old_updates/
+

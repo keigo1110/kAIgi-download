@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>kAIgi - Macの会議録音とローカル文字起こし</title>
+    <meta
+      name="description"
+      content="kAIgiはMacの内部音声とマイク音声を録音し、Apple Speechのオンデバイス認識で会議を文字起こしするmacOSアプリです。"
+    >
+    <meta name="theme-color" content="#0b1117">
+    <meta property="og:title" content="kAIgi">
+    <meta
+      property="og:description"
+      content="Macの内部音声とマイク音声を分けて録音し、ローカルで文字起こしする会議支援アプリ。"
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/app-icon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/">
+    <link rel="icon" href="./assets/app-icon.png">
+    <link rel="apple-touch-icon" href="./assets/app-icon.png">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="kAIgi home">
+        <img src="./assets/app-icon.png" alt="" width="36" height="36">
+        <span>kAIgi</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#download">Install</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#setup">Setup</a>
+        <a href="https://github.com/keigo1110/kAIgi-download">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-art" src="./assets/app-icon.png" alt="" width="1024" height="1024">
+        <div class="hero-inner">
+          <p class="eyebrow">macOS 14+ meeting audio workspace</p>
+          <h1 id="hero-title">kAIgi</h1>
+          <p class="lead">
+            Macの内部音声とマイク音声を分けて録音し、Apple Speechのオンデバイス認識で会議の文字起こしを作成します。
+          </p>
+          <div class="hero-actions" id="download">
+            <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">インストール</a>
+            <a class="button secondary" href="#setup">インストール手順</a>
+          </div>
+          <dl class="release-facts" aria-label="Release facts">
+            <div>
+              <dt>Platform</dt>
+              <dd>macOS 14+</dd>
+            </div>
+            <div>
+              <dt>Transcription</dt>
+              <dd>On-device</dd>
+            </div>
+            <div>
+              <dt>Storage</dt>
+              <dd>Local files</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="band summary-band" aria-labelledby="summary-title">
+        <div class="content-grid">
+          <div>
+            <p class="section-kicker">What it does</p>
+            <h2 id="summary-title">会議の音を扱いやすい記録にする</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature">
+              <h3>内部音声とマイクを分離</h3>
+              <p>Mac上で再生される音声と自分のマイク音声を別トラックとして保存します。</p>
+            </article>
+            <article class="feature">
+              <h3>ローカル文字起こし</h3>
+              <p>Apple Speechのオンデバイス認識を使い、クラウドSTTへフォールバックしません。</p>
+            </article>
+            <article class="feature">
+              <h3>会議後の再利用</h3>
+              <p>音声、Markdown、JSONをセッション単位で保存し、後続のAI処理へ渡しやすくします。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band" id="setup" aria-labelledby="setup-title">
+        <div class="content-grid">
+          <div>
+            <p class="section-kicker">Setup</p>
+            <h2 id="setup-title">インストールと初回設定</h2>
+          </div>
+          <ol class="steps">
+            <li>
+              <span class="step-number">1</span>
+              <div>
+                <h3>最新版DMGをダウンロード</h3>
+                <p>上のインストールボタンから <code>kAIgi.dmg</code> をダウンロードします。ブラウザのダウンロード一覧またはDownloadsフォルダから開けます。</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-number">2</span>
+              <div>
+                <h3>DMGを開く</h3>
+                <p><code>kAIgi.dmg</code> をダブルクリックし、Finderに表示された <code>kAIgi.app</code> を確認します。この時点ではまだ起動しません。</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-number">3</span>
+              <div>
+                <h3>Applicationsへ移動</h3>
+                <p><code>kAIgi.app</code> を <code>Applications</code> フォルダへドラッグします。権限を安定させるため、DMG内のアプリは直接起動しないでください。</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-number">4</span>
+              <div>
+                <h3>DMGをEject</h3>
+                <p>Finderのサイドバーで <code>kAIgi</code> の取り出しボタンを押すか、デスクトップ上のディスクアイコンを右クリックして「取り出す」を選びます。</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-number">5</span>
+              <div>
+                <h3>Applicationsから起動して権限を許可</h3>
+                <p><code>Applications/kAIgi.app</code> を起動し、マイク、画面収録、音声認識を許可します。画面収録は変更後にアプリの再起動が必要になることがあります。</p>
+              </div>
+            </li>
+          </ol>
+          <p class="setup-note">
+            マイク権限はmacOSがアプリ単位で管理します。DMG内から起動した場合や、一度拒否した場合は、システム設定の「プライバシーとセキュリティ」から許可をオンにしてください。
+          </p>
+        </div>
+      </section>
+
+      <section class="band contrast" aria-labelledby="permissions-title">
+        <div class="content-grid">
+          <div>
+            <p class="section-kicker">Permissions</p>
+            <h2 id="permissions-title">必要なmacOS権限</h2>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">権限</th>
+                  <th scope="col">用途</th>
+                  <th scope="col">補足</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">マイク</th>
+                  <td>自分の声を録音します。</td>
+                  <td>一度拒否した場合、アプリ内ボタンでは再確認を出せません。システム設定でkAIgiをオンにしてください。</td>
+                </tr>
+                <tr>
+                  <th scope="row">画面収録</th>
+                  <td>Mac上で再生される内部音声を取得します。</td>
+                  <td>macOSの設定では画面収録または画面とシステムオーディオ収録として表示されます。</td>
+                </tr>
+                <tr>
+                  <th scope="row">音声認識</th>
+                  <td>Apple Speechでローカル文字起こしを行います。</td>
+                  <td>オンデバイス認識を使い、クラウドSTTには切り替えません。</td>
+                </tr>
+                <tr>
+                  <th scope="row">Documents</th>
+                  <td>録音ファイルと文字起こしを保存します。</td>
+                  <td><code>~/Documents/KAIgiRecordings</code> にセッション単位で保存します。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="band" id="privacy" aria-labelledby="privacy-title">
+        <div class="content-grid">
+          <div>
+            <p class="section-kicker">Privacy</p>
+            <h2 id="privacy-title">ローカル優先の設計</h2>
+          </div>
+          <div class="privacy-list">
+            <article class="feature">
+              <h3>録音と文字起こしはMac内に保存</h3>
+              <p>録音ファイル、Markdown、JSON、セッション情報はローカルのDocumentsフォルダに保存されます。</p>
+            </article>
+            <article class="feature">
+              <h3>OpenAI連携は任意</h3>
+              <p>Research機能を使う場合のみ、ユーザーが設定したAPI keyでOpenAI APIへ送信します。API keyはKeychainに保存されます。</p>
+            </article>
+            <article class="feature">
+              <h3>会議参加者への説明が必要</h3>
+              <p>録音を始める前に、参加者へ録音と文字起こしを行うことを伝えてください。</p>
+            </article>
+          </div>
+          <p class="policy-link">
+            詳細は <a href="./privacy.html">Privacy Policy</a> を確認してください。
+          </p>
+        </div>
+      </section>
+
+      <section class="band contrast" aria-labelledby="trouble-title">
+        <div class="content-grid">
+          <div>
+            <p class="section-kicker">Troubleshooting</p>
+            <h2 id="trouble-title">よくある確認ポイント</h2>
+          </div>
+          <div class="trouble-list">
+            <article>
+              <h3>Micを許可できない</h3>
+              <p>kAIgiを終了し、<code>Applications/kAIgi.app</code> から起動し直してください。一度拒否している場合は、システム設定のマイクでkAIgiをオンにします。</p>
+            </article>
+            <article>
+              <h3>マイク一覧にkAIgiが出ない</h3>
+              <p>DMG内や古い開発版から起動している可能性があります。Applicationsへ入れ直してから起動し、必要なら <code>tccutil reset Microphone ai.app.kaigi</code> 後に再度Micを押してください。</p>
+            </article>
+            <article>
+              <h3>内部音声が録音されない</h3>
+              <p>システム設定の画面収録でkAIgiがオンになっているか確認し、変更後にアプリを再起動してください。</p>
+            </article>
+            <article>
+              <h3>文字起こしされない</h3>
+              <p>音声認識権限を許可し、macOSのオンデバイス認識が利用できる環境で実行してください。</p>
+            </article>
+            <article>
+              <h3>相手の声が二重に入る</h3>
+              <p>スピーカー再生音がマイクにも入る場合があります。会議ではヘッドホンまたはイヤホンの使用を推奨します。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 kAIgi</p>
+      <div>
+        <a href="./privacy.html">Privacy Policy</a>
+        <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
+      </div>
+    </footer>
+  </body>
+</html>
