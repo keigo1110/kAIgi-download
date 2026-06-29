@@ -137,43 +137,128 @@ nav a:focus-visible,
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: calc(100svh - 96px);
-  display: flex;
-  align-items: center;
+  min-height: calc(100svh - 64px);
   border-bottom: 1px solid rgba(244, 240, 232, 0.1);
-  background: var(--bg);
+  background:
+    linear-gradient(115deg, rgba(85, 215, 223, 0.08), transparent 38%),
+    linear-gradient(245deg, rgba(240, 189, 99, 0.09), transparent 42%),
+    linear-gradient(180deg, #08090b 0%, #0c0d10 58%, #101418 100%);
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(244, 240, 232, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 240, 232, 0.04) 1px, transparent 1px);
+  background-position: center;
+  background-size: 72px 72px;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 46%, #000 100%);
+  opacity: 0.42;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: min(72vw, 980px);
+  height: 46%;
+  background:
+    linear-gradient(100deg, transparent 0%, rgba(85, 215, 223, 0.14) 44%, rgba(123, 217, 154, 0.08) 100%);
+  clip-path: polygon(20% 30%, 100% 0, 100% 100%, 0 100%);
+  opacity: 0.52;
 }
 
 .hero-stage {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  z-index: 1;
+  min-height: clamp(500px, 63vh, 680px);
+  perspective: 1200px;
+  transform-style: preserve-3d;
   pointer-events: none;
+}
+
+.hero-stage::before {
+  content: "";
+  position: absolute;
+  right: -8%;
+  bottom: -9%;
+  z-index: 0;
+  width: 118%;
+  height: 55%;
+  background-image:
+    linear-gradient(rgba(85, 215, 223, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 240, 232, 0.14) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: linear-gradient(to top, transparent 0%, #000 28%, #000 74%, transparent 100%);
+  opacity: 0.34;
+  transform: rotateX(68deg) rotateZ(-6deg);
+  transform-origin: center bottom;
 }
 
 .hero-icon {
   position: absolute;
-  right: 7vw;
-  bottom: 8vh;
-  width: min(38vw, 440px);
+  right: 1%;
+  top: 4%;
+  z-index: 0;
+  width: min(34vw, 380px);
   height: auto;
-  opacity: 0.14;
-  filter: saturate(1.1);
+  opacity: 0.2;
+  filter: saturate(1.2) drop-shadow(0 34px 72px rgba(85, 215, 223, 0.16));
+  transform: translateZ(-150px) rotate(-10deg);
 }
 
 .meeting-canvas {
   position: absolute;
-  right: max(24px, 8vw);
-  bottom: max(24px, 8vh);
-  width: min(650px, 52vw);
-  min-height: 390px;
+  top: 50%;
+  right: 2%;
+  z-index: 2;
+  width: min(680px, 100%);
+  min-height: 450px;
   overflow: hidden;
   border: 1px solid rgba(244, 240, 232, 0.16);
   border-radius: 8px;
-  background: rgba(15, 18, 22, 0.82);
-  box-shadow: 0 26px 80px var(--shadow);
+  background:
+    linear-gradient(145deg, rgba(31, 39, 46, 0.96), rgba(10, 13, 16, 0.92)),
+    rgba(15, 18, 22, 0.9);
+  box-shadow:
+    0 38px 90px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(85, 215, 223, 0.09),
+    -38px 34px 90px rgba(85, 215, 223, 0.08);
+  transform: translateY(-50%) rotateX(8deg) rotateY(-14deg) rotateZ(1.5deg);
+  transform-origin: center;
+  transform-style: preserve-3d;
+}
+
+.meeting-canvas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.13), transparent 28%),
+    linear-gradient(180deg, rgba(85, 215, 223, 0.08), transparent 46%);
+  pointer-events: none;
+}
+
+.meeting-canvas::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  z-index: 0;
+  border: 1px solid rgba(244, 240, 232, 0.05);
+  border-radius: 6px;
+  pointer-events: none;
 }
 
 .canvas-topbar {
+  position: relative;
+  z-index: 1;
   display: flex;
   gap: 7px;
   padding: 14px 16px;
@@ -200,6 +285,8 @@ nav a:focus-visible,
 }
 
 .canvas-body {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 16px;
@@ -242,7 +329,8 @@ nav a:focus-visible,
   padding: 16px;
   border: 1px solid rgba(244, 240, 232, 0.12);
   border-radius: 8px;
-  background: var(--panel-2);
+  background: rgba(28, 34, 40, 0.9);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.18);
 }
 
 .research-card strong {
@@ -264,12 +352,82 @@ nav a:focus-visible,
   background: rgba(85, 215, 223, 0.09);
 }
 
+.hero-float {
+  position: absolute;
+  z-index: 3;
+  min-width: 150px;
+  padding: 12px 14px;
+  border: 1px solid rgba(244, 240, 232, 0.14);
+  border-radius: 8px;
+  background: rgba(12, 15, 18, 0.72);
+  box-shadow:
+    0 18px 46px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+}
+
+.hero-float span {
+  display: block;
+  color: var(--cyan);
+  font-size: 0.68rem;
+  font-weight: 820;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.hero-float strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.25;
+}
+
+.hero-float-source {
+  top: 12%;
+  left: 5%;
+  transform: translateZ(90px) rotate(-3deg);
+}
+
+.hero-float-counter {
+  right: 0;
+  bottom: 12%;
+  border-color: rgba(240, 189, 99, 0.26);
+  transform: translateZ(120px) rotate(3deg);
+}
+
+.hero-float-counter span {
+  color: var(--amber);
+}
+
+.hero-float-depth {
+  left: 2%;
+  bottom: 22%;
+  border-color: rgba(123, 217, 154, 0.24);
+  transform: translateZ(130px) rotate(2deg);
+}
+
+.hero-float-depth span {
+  color: var(--mint);
+}
+
 .hero-inner {
   position: relative;
   z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(300px, 0.82fr) minmax(460px, 1.08fr);
+  align-items: center;
+  gap: clamp(40px, 7vw, 92px);
   width: min(1120px, calc(100% - 48px));
+  min-height: calc(100svh - 64px);
   margin: 0 auto;
-  padding: 88px 0 96px;
+  padding: clamp(76px, 10vh, 124px) 0 clamp(70px, 8vh, 104px);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 4;
+  max-width: 620px;
 }
 
 h1,
@@ -280,15 +438,15 @@ p {
 }
 
 h1 {
-  max-width: 720px;
   margin: 0;
-  font-size: clamp(3.2rem, 8vw, 6.5rem);
+  font-size: clamp(4rem, 9vw, 7.6rem);
   line-height: 0.95;
   letter-spacing: 0;
+  text-shadow: 0 26px 70px rgba(0, 0, 0, 0.46);
 }
 
 .lead {
-  max-width: 710px;
+  max-width: 600px;
   margin: 24px 0 0;
   color: #ded8cd;
   font-size: clamp(1.05rem, 2vw, 1.36rem);
@@ -814,24 +972,43 @@ details p {
   }
 
   .hero {
-    min-height: calc(100svh - 108px);
+    min-height: auto;
   }
 
   .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 34px;
     width: min(100% - 40px, 760px);
-    padding: 70px 0 88px;
+    min-height: auto;
+    padding: 70px 0 82px;
+  }
+
+  .hero-copy {
+    max-width: 680px;
+  }
+
+  .hero-stage {
+    min-height: 520px;
   }
 
   .meeting-canvas {
-    right: -90px;
-    bottom: 20px;
-    width: 620px;
-    opacity: 0.36;
+    right: 50%;
+    width: min(660px, 100%);
+    transform: translate(50%, -50%) rotateX(6deg) rotateY(-8deg) rotateZ(1deg);
   }
 
   .hero-icon {
-    right: -80px;
+    right: 4%;
+    top: 2%;
     width: 420px;
+  }
+
+  .hero-float-source {
+    left: 2%;
+  }
+
+  .hero-float-counter {
+    right: 2%;
   }
 
   .content-grid {
@@ -874,25 +1051,81 @@ details p {
   }
 
   .hero {
-    min-height: calc(100svh - 72px);
+    min-height: auto;
   }
 
-  .meeting-canvas {
-    right: -230px;
-    bottom: 18px;
-    width: 560px;
-    opacity: 0.16;
+  .hero-inner {
+    padding: 58px 0 64px;
+  }
+
+  h1 {
+    font-size: clamp(4rem, 20vw, 5.3rem);
+  }
+
+  .lead {
+    font-size: 1.03rem;
+  }
+
+  .hero-stage {
+    min-height: 560px;
   }
 
   .canvas-body {
     grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .meeting-canvas {
+    left: 50%;
+    right: auto;
+    width: min(520px, 100%);
+    min-height: 0;
+    transform: translate(-50%, -50%) rotateX(5deg) rotateY(-4deg) rotateZ(1deg);
+  }
+
+  .canvas-topbar {
+    padding: 12px 14px;
+  }
+
+  .line {
+    margin-top: 9px;
+    padding: 10px;
+    font-size: 0.78rem;
+  }
+
+  .research-card {
+    margin-top: 9px;
+    padding: 12px;
+  }
+
+  .research-card p {
+    font-size: 0.78rem;
   }
 
   .hero-icon {
-    right: -170px;
-    bottom: 120px;
-    width: 360px;
-    opacity: 0.1;
+    right: -10%;
+    width: 310px;
+    opacity: 0.14;
+  }
+
+  .hero-float {
+    min-width: 126px;
+    padding: 10px 11px;
+  }
+
+  .hero-float-source {
+    top: 6%;
+    left: 0;
+  }
+
+  .hero-float-counter {
+    right: 0;
+    bottom: 7%;
+  }
+
+  .hero-float-depth {
+    display: none;
   }
 
   .demo-copy h2 {

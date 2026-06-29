@@ -56,53 +56,67 @@
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-stage" aria-hidden="true">
-          <img class="hero-icon" src="./assets/app-icon.png" alt="" width="1024" height="1024">
-          <div class="meeting-canvas">
-            <div class="canvas-topbar">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div class="canvas-body">
-              <div class="transcript-pane">
-                <p class="pane-label">Live discussion</p>
-                <div class="line speaker-a">A: Pricing risk came up again.</div>
-                <div class="line speaker-b">B: Are there strong examples?</div>
-                <div class="line speaker-a">A: We need a sharper angle.</div>
-              </div>
-              <div class="research-pane">
-                <p class="pane-label">AI Research</p>
-                <div class="research-card visual-card">
-                  <span class="card-type">Case study</span>
-                  <strong>Comparable rollout pattern</strong>
-                  <p>Evidence, caveats, and sources appear while the discussion is still alive.</p>
-                </div>
-                <div class="research-card deep-card">
-                  <span class="card-type">Deep Research</span>
-                  <strong>What to verify next</strong>
-                  <p>Primary sources and counterpoints for the selected card.</p>
-                </div>
-              </div>
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span data-copy="ja">AI research companion for meetings</span>
+              <span data-copy="en">AI research companion for meetings</span>
+            </p>
+            <h1 id="hero-title">kAIgi</h1>
+            <p class="lead">
+              <span data-copy="ja">議論の流れから、AIが参考情報を引き寄せる。論点、事例、反例、技術選択肢をResearch Cardとして提示し、会議をその場で前に進めます。</span>
+              <span data-copy="en">AI pulls useful context from the discussion itself. kAIgi surfaces research cards, examples, counterpoints, and technical options so the meeting can move while ideas are still fresh.</span>
+            </p>
+            <div class="hero-actions" id="download">
+              <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
+                <span data-copy="ja">最新版をインストール</span>
+                <span data-copy="en">Install latest version</span>
+              </a>
             </div>
           </div>
-        </div>
 
-        <div class="hero-inner">
-          <p class="eyebrow">
-            <span data-copy="ja">AI research companion for meetings</span>
-            <span data-copy="en">AI research companion for meetings</span>
-          </p>
-          <h1 id="hero-title">kAIgi</h1>
-          <p class="lead">
-            <span data-copy="ja">議論の流れから、AIが参考情報を引き寄せる。論点、事例、反例、技術選択肢をResearch Cardとして提示し、会議をその場で前に進めます。</span>
-            <span data-copy="en">AI pulls useful context from the discussion itself. kAIgi surfaces research cards, examples, counterpoints, and technical options so the meeting can move while ideas are still fresh.</span>
-          </p>
-          <div class="hero-actions" id="download">
-            <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
-              <span data-copy="ja">最新版をインストール</span>
-              <span data-copy="en">Install latest version</span>
-            </a>
+          <div class="hero-stage" aria-hidden="true">
+            <img class="hero-icon" src="./assets/app-icon.png" alt="" width="1024" height="1024">
+            <div class="hero-float hero-float-source">
+              <span>Source matched</span>
+              <strong>Official docs</strong>
+            </div>
+            <div class="hero-float hero-float-counter">
+              <span>Counterpoint</span>
+              <strong>Adoption risk</strong>
+            </div>
+            <div class="hero-float hero-float-depth">
+              <span>Deep Research</span>
+              <strong>Next checks</strong>
+            </div>
+            <div class="meeting-canvas">
+              <div class="canvas-topbar">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="canvas-body">
+                <div class="transcript-pane">
+                  <p class="pane-label">Live discussion</p>
+                  <div class="line speaker-a">A: Pricing risk came up again.</div>
+                  <div class="line speaker-b">B: Are there strong examples?</div>
+                  <div class="line speaker-a">A: We need a sharper angle.</div>
+                </div>
+                <div class="research-pane">
+                  <p class="pane-label">AI Research</p>
+                  <div class="research-card visual-card">
+                    <span class="card-type">Case study</span>
+                    <strong>Comparable rollout pattern</strong>
+                    <p>Evidence, caveats, and sources appear while the discussion is still alive.</p>
+                  </div>
+                  <div class="research-card deep-card">
+                    <span class="card-type">Deep Research</span>
+                    <strong>What to verify next</strong>
+                    <p>Primary sources and counterpoints for the selected card.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
