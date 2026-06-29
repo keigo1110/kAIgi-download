@@ -34,6 +34,10 @@
           <span data-copy="ja">AI Research</span>
           <span data-copy="en">AI Research</span>
         </a>
+        <a href="#demo">
+          <span data-copy="ja">デモ</span>
+          <span data-copy="en">Demo</span>
+        </a>
         <a href="#setup">
           <span data-copy="ja">インストール</span>
           <span data-copy="en">Install</span>
@@ -99,25 +103,90 @@
               <span data-copy="ja">最新版をインストール</span>
               <span data-copy="en">Install latest version</span>
             </a>
-            <a class="button secondary" href="#research">
-              <span data-copy="ja">AI Researchを見る</span>
-              <span data-copy="en">See AI Research</span>
-            </a>
           </div>
-          <dl class="release-facts" aria-label="Release facts">
-            <div>
-              <dt>Platform</dt>
-              <dd>macOS 14+</dd>
+        </div>
+      </section>
+
+      <section class="demo-section" id="demo" aria-labelledby="demo-title" data-scroll-demo data-frame="0">
+        <div class="demo-sticky">
+          <div class="demo-copy">
+            <p class="section-kicker">
+              <span data-copy="ja">Demo</span>
+              <span data-copy="en">Demo</span>
+            </p>
+            <h2 id="demo-title">
+              <span data-copy="ja">会話の流れから、カードが立ち上がる。</span>
+              <span data-copy="en">Cards rise from the flow of the conversation.</span>
+            </h2>
+            <div class="demo-steps">
+              <article data-demo-step="0">
+                <span>01</span>
+                <p>
+                  <span data-copy="ja">議論の中で、調べる価値がある問いを検知します。</span>
+                  <span data-copy="en">kAIgi detects questions worth researching as the discussion unfolds.</span>
+                </p>
+              </article>
+              <article data-demo-step="1">
+                <span>02</span>
+                <p>
+                  <span data-copy="ja">Research Cardが、事例・反例・技術選択肢を会話へ戻します。</span>
+                  <span data-copy="en">Research Cards bring examples, counterpoints, and technical options back into the room.</span>
+                </p>
+              </article>
+              <article data-demo-step="2">
+                <span>03</span>
+                <p>
+                  <span data-copy="ja">気になるカードはDeep Researchで深掘りし、次に検証すべき観点まで整理します。</span>
+                  <span data-copy="en">Deep Research expands a card into sources, caveats, and the next checks to run.</span>
+                </p>
+              </article>
             </div>
-            <div>
-              <dt>Focus</dt>
-              <dd>AI Research Cards</dd>
+          </div>
+
+          <div class="demo-device" aria-hidden="true">
+            <div class="demo-window-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>kAIgi</strong>
             </div>
-            <div>
-              <dt>Download</dt>
-              <dd>Signed DMG</dd>
+            <div class="demo-app">
+              <div class="demo-transcript">
+                <p class="pane-label">Live discussion</p>
+                <div class="demo-line active">A: We need a way to compare launch options.</div>
+                <div class="demo-line">B: What worked for similar products?</div>
+                <div class="demo-line">C: The risk is choosing the obvious path too early.</div>
+                <div class="demo-signal">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <em>Detecting research angle</em>
+                </div>
+              </div>
+              <div class="demo-research">
+                <p class="pane-label">AI Research</p>
+                <article class="demo-card demo-card-primary">
+                  <span class="card-type">Research Card</span>
+                  <h3>Launch pattern from adjacent tools</h3>
+                  <p>Finds a comparable rollout, the tradeoff it exposed, and why it matters now.</p>
+                  <ul>
+                    <li>Comparable market motion</li>
+                    <li>Counterpoint for the current plan</li>
+                  </ul>
+                </article>
+                <article class="demo-card demo-card-deep">
+                  <span class="card-type">Deep Research</span>
+                  <h3>What to verify before deciding</h3>
+                  <p>Turns the selected card into primary-source checks and a sharper decision lens.</p>
+                  <div class="demo-sources">
+                    <span>Official docs</span>
+                    <span>Case study</span>
+                    <span>Pricing note</span>
+                  </div>
+                </article>
+              </div>
             </div>
-          </dl>
+          </div>
         </div>
       </section>
 
@@ -129,8 +198,8 @@
               <span data-copy="en">Core value</span>
             </p>
             <h2 id="research-title">
-              <span data-copy="ja">議論を止めずに、次の材料を出す。</span>
-              <span data-copy="en">Bring the next piece of context without stopping the discussion.</span>
+              <span data-copy="ja">議論を支える</span>
+              <span data-copy="en">Support the discussion</span>
             </h2>
           </div>
           <div class="feature-grid">
@@ -179,8 +248,8 @@
               <span data-copy="en">Discussion loop</span>
             </p>
             <h2 id="cards-title">
-              <span data-copy="ja">記録よりも、会話を活性化することに寄せる。</span>
-              <span data-copy="en">Built less for archiving, more for activating the conversation.</span>
+              <span data-copy="ja">議論を活性化させる</span>
+              <span data-copy="en">Activate the discussion</span>
             </h2>
           </div>
           <div class="card-strip">
@@ -298,8 +367,8 @@
               <span data-copy="en">Help when needed</span>
             </p>
             <h2 id="help-title">
-              <span data-copy="ja">困った時だけ開いて確認。</span>
-              <span data-copy="en">Open these only when something needs attention.</span>
+              <span data-copy="ja">Q&amp;A</span>
+              <span data-copy="en">Q&amp;A</span>
             </h2>
           </div>
           <div class="accordion-list">
@@ -376,7 +445,43 @@
           button.addEventListener("click", () => setLanguage(button.dataset.languageOption));
         });
 
+        const demoSections = document.querySelectorAll("[data-scroll-demo]");
+        let scrollTicking = false;
+
+        function clamp(value, min, max) {
+          return Math.min(Math.max(value, min), max);
+        }
+
+        function updateScrollDemos() {
+          demoSections.forEach((section) => {
+            const rect = section.getBoundingClientRect();
+            const scrollable = Math.max(section.offsetHeight - window.innerHeight, 1);
+            const progress = clamp(-rect.top / scrollable, 0, 1);
+            const frame = progress < 0.34 ? 0 : progress < 0.68 ? 1 : 2;
+
+            section.dataset.frame = String(frame);
+            section.style.setProperty("--demo-lift", `${Math.round(progress * -28)}px`);
+            section.style.setProperty("--demo-scale", String(0.96 + progress * 0.04));
+          });
+        }
+
+        function requestDemoUpdate() {
+          if (scrollTicking) {
+            return;
+          }
+
+          scrollTicking = true;
+          window.requestAnimationFrame(() => {
+            updateScrollDemos();
+            scrollTicking = false;
+          });
+        }
+
+        window.addEventListener("scroll", requestDemoUpdate, { passive: true });
+        window.addEventListener("resize", requestDemoUpdate);
+
         setLanguage(initial === "en" ? "en" : "ja");
+        updateScrollDemos();
       })();
     </script>
   </body>
