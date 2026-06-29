@@ -6,72 +6,103 @@
     <title>Privacy Policy - kAIgi</title>
     <meta
       name="description"
-      content="kAIgiの録音、文字起こし、OpenAI連携、保存データに関するプライバシーポリシー。"
+      content="kAIgiの録音、AI Research、OpenAI連携、保存データに関するプライバシーポリシー。"
     >
-    <meta name="theme-color" content="#0b1117">
+    <meta name="theme-color" content="#0c0d10">
     <link rel="icon" href="./assets/app-icon.png">
     <link rel="apple-touch-icon" href="./assets/app-icon.png">
     <link rel="stylesheet" href="./styles.css">
   </head>
-  <body>
+  <body data-language="ja">
     <header class="site-header">
       <a class="brand" href="./index.html" aria-label="kAIgi home">
         <img src="./assets/app-icon.png" alt="" width="36" height="36">
         <span>kAIgi</span>
       </a>
       <nav aria-label="Primary">
-        <a href="./index.html#download">Download</a>
-        <a href="./index.html#setup">Setup</a>
+        <a href="./index.html#download">
+          <span data-copy="ja">インストール</span>
+          <span data-copy="en">Install</span>
+        </a>
+        <a href="./index.html#research">AI Research</a>
         <a href="https://github.com/keigo1110/kAIgi-download">GitHub</a>
       </nav>
+      <div class="language-switch" aria-label="Language">
+        <button type="button" data-language-option="ja" aria-pressed="true">日本語</button>
+        <button type="button" data-language-option="en" aria-pressed="false">English</button>
+      </div>
     </header>
 
     <main>
       <section class="policy-hero">
         <div class="narrow">
           <p class="eyebrow">Privacy Policy</p>
-          <h1>kAIgi Privacy Policy</h1>
+          <h1>
+            <span data-copy="ja">kAIgi Privacy Policy</span>
+            <span data-copy="en">kAIgi Privacy Policy</span>
+          </h1>
           <p class="lead">
-            kAIgiは会議音声を扱うアプリです。録音対象、保存場所、任意の外部送信について、ユーザーが判断できるように明確に説明します。
+            <span data-copy="ja">kAIgiは会議音声とAI Researchを扱うアプリです。録音対象、保存場所、任意の外部送信について、ユーザーが判断できるように説明します。</span>
+            <span data-copy="en">kAIgi handles meeting audio and AI Research. This policy explains what is recorded, where data is stored, and when external services may be used.</span>
           </p>
-          <p class="updated">Last updated: 2026-06-28</p>
+          <p class="updated">Last updated: 2026-06-29</p>
         </div>
       </section>
 
       <section class="band">
         <div class="narrow policy-copy">
-          <h2>収集または保存するデータ</h2>
+          <h2>
+            <span data-copy="ja">保存するデータ</span>
+            <span data-copy="en">Data stored by kAIgi</span>
+          </h2>
           <p>
-            kAIgiは、ユーザーが録音を開始したセッションについて、Mac上で再生されている内部音声、マイク音声、文字起こし、セッションメタデータを保存します。
-            これらは標準では <code>~/Documents/KAIgiRecordings</code> に保存されます。
+            <span data-copy="ja">kAIgiは、ユーザーが録音を開始したセッションについて、Mac上で再生されている内部音声、マイク音声、文字起こし、AI Researchのカード、セッションメタデータを保存します。これらは標準では <code>~/Documents/KAIgiRecordings</code> に保存されます。</span>
+            <span data-copy="en">For sessions started by the user, kAIgi stores system audio, microphone audio, transcripts, AI Research cards, and session metadata. By default, these files are stored in <code>~/Documents/KAIgiRecordings</code>.</span>
           </p>
 
-          <h2>ローカル文字起こし</h2>
+          <h2>
+            <span data-copy="ja">文字起こし</span>
+            <span data-copy="en">Transcription</span>
+          </h2>
           <p>
-            文字起こしにはApple Speechのオンデバイス認識を使用します。クラウドSTT APIへの自動フォールバックは行いません。
+            <span data-copy="ja">文字起こしにはApple Speechのオンデバイス認識を使用します。クラウドSTT APIへの自動フォールバックは行いません。</span>
+            <span data-copy="en">kAIgi uses Apple Speech on-device recognition for transcription and does not automatically fall back to a cloud speech-to-text API.</span>
           </p>
 
-          <h2>OpenAI連携</h2>
+          <h2>
+            <span data-copy="ja">AI ResearchとOpenAI連携</span>
+            <span data-copy="en">AI Research and OpenAI</span>
+          </h2>
           <p>
-            Research機能を有効にした場合、匿名化した直近の文字起こしと検索論点をOpenAI APIへ送信することがあります。
-            この機能は任意であり、ユーザーがOpenAI API keyを設定した場合のみ使用されます。API keyはmacOS Keychainに保存されます。
+            <span data-copy="ja">AI Research機能を有効にした場合、匿名化した直近の文字起こしと検索論点をOpenAI APIへ送信することがあります。この機能は任意であり、ユーザーが設定したOpenAI API keyを使用します。API keyはmacOS Keychainに保存されます。利用モデルはkAIgiの既定値を使用し、ユーザーがアプリ内でモデルを選択する必要はありません。</span>
+            <span data-copy="en">When AI Research is enabled, kAIgi may send sanitized transcript context and research prompts to the OpenAI API. This feature is optional and uses the OpenAI API key entered by the user. The API key is stored in macOS Keychain. kAIgi uses its default model configuration; users do not need to choose models in the app.</span>
           </p>
 
-          <h2>会議参加者への通知</h2>
+          <h2>
+            <span data-copy="ja">会議参加者への通知</span>
+            <span data-copy="en">Notifying meeting participants</span>
+          </h2>
           <p>
-            会議、通話、対面の会話を録音する場合は、録音を開始する前に参加者へ通知し、必要な同意を得てください。
-            録音に関する法令や社内ルールは地域や組織により異なります。
+            <span data-copy="ja">会議、通話、対面の会話を録音する場合は、録音を開始する前に参加者へ通知し、必要な同意を得てください。録音に関する法令や社内ルールは地域や組織により異なります。</span>
+            <span data-copy="en">Before recording a meeting, call, or in-person conversation, notify participants and obtain any required consent. Recording rules vary by location and organization.</span>
           </p>
 
-          <h2>データの削除</h2>
+          <h2>
+            <span data-copy="ja">データの削除</span>
+            <span data-copy="en">Deleting data</span>
+          </h2>
           <p>
-            保存済みの録音と文字起こしは、Finderから該当セッションフォルダを削除することで削除できます。
-            OpenAI API keyはアプリ内の設定から削除できます。
+            <span data-copy="ja">保存済みの録音、文字起こし、AI Researchの結果は、Finderから該当セッションフォルダを削除することで削除できます。OpenAI API keyはアプリ内の設定から削除できます。</span>
+            <span data-copy="en">Saved recordings, transcripts, and AI Research results can be deleted by removing the relevant session folder in Finder. The OpenAI API key can be removed from the app settings.</span>
           </p>
 
-          <h2>問い合わせ</h2>
+          <h2>
+            <span data-copy="ja">問い合わせ</span>
+            <span data-copy="en">Contact</span>
+          </h2>
           <p>
-            問題や質問はGitHub Issuesで受け付けます。
+            <span data-copy="ja">問題や質問はGitHub Issuesで受け付けます。</span>
+            <span data-copy="en">Questions and issues are handled through GitHub Issues.</span>
             <a href="https://github.com/keigo1110/kAIgi-download/issues">https://github.com/keigo1110/kAIgi-download/issues</a>
           </p>
         </div>
@@ -85,5 +116,29 @@
         <a href="https://github.com/keigo1110/kAIgi-download">GitHub</a>
       </div>
     </footer>
+
+    <script>
+      (() => {
+        const stored = window.localStorage.getItem("kaigi-language");
+        const prefersJapanese = (navigator.language || "").toLowerCase().startsWith("ja");
+        const initial = stored || (prefersJapanese ? "ja" : "en");
+        const buttons = document.querySelectorAll("[data-language-option]");
+
+        function setLanguage(language) {
+          document.documentElement.lang = language;
+          document.body.dataset.language = language;
+          window.localStorage.setItem("kaigi-language", language);
+          buttons.forEach((button) => {
+            button.setAttribute("aria-pressed", String(button.dataset.languageOption === language));
+          });
+        }
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => setLanguage(button.dataset.languageOption));
+        });
+
+        setLanguage(initial === "en" ? "en" : "ja");
+      })();
+    </script>
   </body>
 </html>

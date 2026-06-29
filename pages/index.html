@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>kAIgi - Macの会議録音とローカル文字起こし</title>
+    <title>kAIgi - AI Research for live discussions</title>
     <meta
       name="description"
-      content="kAIgiはMacの内部音声とマイク音声を録音し、Apple Speechのオンデバイス認識で会議を文字起こしするmacOSアプリです。"
+      content="kAIgiは、会議やアイディエーションの流れからAIが参考情報を引き寄せ、議論を前に進めるmacOSアプリです。"
     >
-    <meta name="theme-color" content="#0b1117">
+    <meta name="theme-color" content="#0c0d10">
     <meta property="og:title" content="kAIgi">
     <meta
       property="og:description"
-      content="Macの内部音声とマイク音声を分けて録音し、ローカルで文字起こしする会議支援アプリ。"
+      content="AI Research Cards and Deep Research for live discussions on macOS."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/">
@@ -23,32 +23,86 @@
     <link rel="apple-touch-icon" href="./assets/app-icon.png">
     <link rel="stylesheet" href="./styles.css">
   </head>
-  <body>
+  <body data-language="ja">
     <header class="site-header">
       <a class="brand" href="#top" aria-label="kAIgi home">
         <img src="./assets/app-icon.png" alt="" width="36" height="36">
         <span>kAIgi</span>
       </a>
       <nav aria-label="Primary">
-        <a href="#download">Install</a>
-        <a href="#privacy">Privacy</a>
-        <a href="#setup">Setup</a>
+        <a href="#research">
+          <span data-copy="ja">AI Research</span>
+          <span data-copy="en">AI Research</span>
+        </a>
+        <a href="#setup">
+          <span data-copy="ja">インストール</span>
+          <span data-copy="en">Install</span>
+        </a>
+        <a href="#help">
+          <span data-copy="ja">ヘルプ</span>
+          <span data-copy="en">Help</span>
+        </a>
         <a href="https://github.com/keigo1110/kAIgi-download">GitHub</a>
       </nav>
+      <div class="language-switch" aria-label="Language">
+        <button type="button" data-language-option="ja" aria-pressed="true">日本語</button>
+        <button type="button" data-language-option="en" aria-pressed="false">English</button>
+      </div>
     </header>
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <img class="hero-art" src="./assets/app-icon.png" alt="" width="1024" height="1024">
+        <div class="hero-stage" aria-hidden="true">
+          <img class="hero-icon" src="./assets/app-icon.png" alt="" width="1024" height="1024">
+          <div class="meeting-canvas">
+            <div class="canvas-topbar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="canvas-body">
+              <div class="transcript-pane">
+                <p class="pane-label">Live discussion</p>
+                <div class="line speaker-a">A: Pricing risk came up again.</div>
+                <div class="line speaker-b">B: Are there strong examples?</div>
+                <div class="line speaker-a">A: We need a sharper angle.</div>
+              </div>
+              <div class="research-pane">
+                <p class="pane-label">AI Research</p>
+                <div class="research-card visual-card">
+                  <span class="card-type">Case study</span>
+                  <strong>Comparable rollout pattern</strong>
+                  <p>Evidence, caveats, and sources appear while the discussion is still alive.</p>
+                </div>
+                <div class="research-card deep-card">
+                  <span class="card-type">Deep Research</span>
+                  <strong>What to verify next</strong>
+                  <p>Primary sources and counterpoints for the selected card.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="hero-inner">
-          <p class="eyebrow">macOS 14+ meeting audio workspace</p>
+          <p class="eyebrow">
+            <span data-copy="ja">AI research companion for meetings</span>
+            <span data-copy="en">AI research companion for meetings</span>
+          </p>
           <h1 id="hero-title">kAIgi</h1>
           <p class="lead">
-            Macの内部音声とマイク音声を分けて録音し、Apple Speechのオンデバイス認識で会議の文字起こしを作成します。
+            <span data-copy="ja">議論の流れから、AIが参考情報を引き寄せる。論点、事例、反例、技術選択肢をResearch Cardとして提示し、会議をその場で前に進めます。</span>
+            <span data-copy="en">AI pulls useful context from the discussion itself. kAIgi surfaces research cards, examples, counterpoints, and technical options so the meeting can move while ideas are still fresh.</span>
           </p>
           <div class="hero-actions" id="download">
-            <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">インストール</a>
-            <a class="button secondary" href="#setup">インストール手順</a>
+            <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
+              <span data-copy="ja">最新版をインストール</span>
+              <span data-copy="en">Install latest version</span>
+            </a>
+            <a class="button secondary" href="#research">
+              <span data-copy="ja">AI Researchを見る</span>
+              <span data-copy="en">See AI Research</span>
+            </a>
           </div>
           <dl class="release-facts" aria-label="Release facts">
             <div>
@@ -56,35 +110,112 @@
               <dd>macOS 14+</dd>
             </div>
             <div>
-              <dt>Transcription</dt>
-              <dd>On-device</dd>
+              <dt>Focus</dt>
+              <dd>AI Research Cards</dd>
             </div>
             <div>
-              <dt>Storage</dt>
-              <dd>Local files</dd>
+              <dt>Download</dt>
+              <dd>Signed DMG</dd>
             </div>
           </dl>
         </div>
       </section>
 
-      <section class="band summary-band" aria-labelledby="summary-title">
+      <section class="band intro-band" id="research" aria-labelledby="research-title">
         <div class="content-grid">
           <div>
-            <p class="section-kicker">What it does</p>
-            <h2 id="summary-title">会議の音を扱いやすい記録にする</h2>
+            <p class="section-kicker">
+              <span data-copy="ja">Core value</span>
+              <span data-copy="en">Core value</span>
+            </p>
+            <h2 id="research-title">
+              <span data-copy="ja">議論を止めずに、次の材料を出す。</span>
+              <span data-copy="en">Bring the next piece of context without stopping the discussion.</span>
+            </h2>
           </div>
           <div class="feature-grid">
             <article class="feature">
-              <h3>内部音声とマイクを分離</h3>
-              <p>Mac上で再生される音声と自分のマイク音声を別トラックとして保存します。</p>
+              <span class="feature-mark">01</span>
+              <h3>
+                <span data-copy="ja">論点を拾う</span>
+                <span data-copy="en">Reads the room</span>
+              </h3>
+              <p>
+                <span data-copy="ja">会話の流れから、いま調べる価値がある問いを抽出します。単なる録音ログではなく、議論に戻せる論点として扱います。</span>
+                <span data-copy="en">kAIgi follows the flow of the meeting and extracts questions worth researching now, not just notes to read later.</span>
+              </p>
             </article>
             <article class="feature">
-              <h3>ローカル文字起こし</h3>
-              <p>Apple Speechのオンデバイス認識を使い、クラウドSTTへフォールバックしません。</p>
+              <span class="feature-mark">02</span>
+              <h3>
+                <span data-copy="ja">参考情報を出す</span>
+                <span data-copy="en">Surfaces useful context</span>
+              </h3>
+              <p>
+                <span data-copy="ja">関連事例、既存サービス、技術選択肢、反例をResearch Cardとして提示します。根拠URLも一緒に残ります。</span>
+                <span data-copy="en">Research Cards bring examples, existing products, technical options, and counterpoints with source links.</span>
+              </p>
             </article>
             <article class="feature">
-              <h3>会議後の再利用</h3>
-              <p>音声、Markdown、JSONをセッション単位で保存し、後続のAI処理へ渡しやすくします。</p>
+              <span class="feature-mark">03</span>
+              <h3>
+                <span data-copy="ja">深掘りできる</span>
+                <span data-copy="en">Goes deeper on demand</span>
+              </h3>
+              <p>
+                <span data-copy="ja">気になるカードはDeep Researchで掘り下げられます。比較、注意点、次に検証すべきことまでまとめます。</span>
+                <span data-copy="en">Deep Research expands a card with comparisons, caveats, and the next things the team should verify.</span>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band evidence-band" aria-labelledby="cards-title">
+        <div class="content-grid">
+          <div>
+            <p class="section-kicker">
+              <span data-copy="ja">Discussion loop</span>
+              <span data-copy="en">Discussion loop</span>
+            </p>
+            <h2 id="cards-title">
+              <span data-copy="ja">記録よりも、会話を活性化することに寄せる。</span>
+              <span data-copy="en">Built less for archiving, more for activating the conversation.</span>
+            </h2>
+          </div>
+          <div class="card-strip">
+            <article class="insight-card">
+              <p class="tag">Related work</p>
+              <h3>
+                <span data-copy="ja">「似た試みはある？」にすぐ答える</span>
+                <span data-copy="en">Answer “has anyone tried this?” quickly</span>
+              </h3>
+              <p>
+                <span data-copy="ja">議論中に出たアイデアへ、近い研究・プロダクト・導入事例を添えます。</span>
+                <span data-copy="en">Attach nearby research, products, and rollout examples to ideas as they emerge.</span>
+              </p>
+            </article>
+            <article class="insight-card">
+              <p class="tag">Counterpoint</p>
+              <h3>
+                <span data-copy="ja">反例やリスクも拾う</span>
+                <span data-copy="en">Catch risks and counterexamples</span>
+              </h3>
+              <p>
+                <span data-copy="ja">都合の良い情報だけでなく、判断を強くするための反対材料も提示します。</span>
+                <span data-copy="en">Not only supportive evidence; kAIgi also looks for friction that improves decisions.</span>
+              </p>
+            </article>
+            <article class="insight-card">
+              <p class="tag">Next check</p>
+              <h3>
+                <span data-copy="ja">次の確認事項まで落とす</span>
+                <span data-copy="en">Turn context into next checks</span>
+              </h3>
+              <p>
+                <span data-copy="ja">Deep Researchは、追加で見るべき一次情報や検証観点を短く整理します。</span>
+                <span data-copy="en">Deep Research summarizes primary sources and what the team should inspect next.</span>
+              </p>
             </article>
           </div>
         </div>
@@ -93,147 +224,125 @@
       <section class="band" id="setup" aria-labelledby="setup-title">
         <div class="content-grid">
           <div>
-            <p class="section-kicker">Setup</p>
-            <h2 id="setup-title">インストールと初回設定</h2>
+            <p class="section-kicker">
+              <span data-copy="ja">Install</span>
+              <span data-copy="en">Install</span>
+            </p>
+            <h2 id="setup-title">
+              <span data-copy="ja">Macに入れて、すぐ会議で使う。</span>
+              <span data-copy="en">Install on your Mac and use it in the next meeting.</span>
+            </h2>
           </div>
           <ol class="steps">
             <li>
               <span class="step-number">1</span>
               <div>
-                <h3>最新版DMGをダウンロード</h3>
-                <p>上のインストールボタンから <code>kAIgi.dmg</code> をダウンロードします。ブラウザのダウンロード一覧またはDownloadsフォルダから開けます。</p>
+                <h3>
+                  <span data-copy="ja">最新版DMGをダウンロード</span>
+                  <span data-copy="en">Download the latest DMG</span>
+                </h3>
+                <p>
+                  <span data-copy="ja">インストールボタンから <code>kAIgi.dmg</code> をダウンロードします。</span>
+                  <span data-copy="en">Use the install button to download <code>kAIgi.dmg</code>.</span>
+                </p>
               </div>
             </li>
             <li>
               <span class="step-number">2</span>
               <div>
-                <h3>DMG内のkAIgiを開く</h3>
-                <p><code>kAIgi.dmg</code> をダブルクリックし、Finderに表示された <code>kAIgi.app</code> を開きます。</p>
+                <h3>
+                  <span data-copy="ja">kAIgiを開く</span>
+                  <span data-copy="en">Open kAIgi</span>
+                </h3>
+                <p>
+                  <span data-copy="ja"><code>kAIgi.dmg</code> を開き、Finderに表示された <code>kAIgi.app</code> を起動します。</span>
+                  <span data-copy="en">Open <code>kAIgi.dmg</code>, then launch <code>kAIgi.app</code> from the Finder window.</span>
+                </p>
               </div>
             </li>
             <li>
               <span class="step-number">3</span>
               <div>
-                <h3>Applicationsへ移動して開く</h3>
-                <p>確認画面で「移動して開く」を選ぶと、kAIgiがApplicationsへコピーされ、コピー先のアプリが自動で開き直されます。</p>
+                <h3>
+                  <span data-copy="ja">Applicationsへ移動して開く</span>
+                  <span data-copy="en">Move to Applications</span>
+                </h3>
+                <p>
+                  <span data-copy="ja">確認画面で「移動して開く」を選ぶと、コピー先のアプリが自動で開き直されます。</span>
+                  <span data-copy="en">Choose “Move and Open” when prompted. kAIgi copies itself to Applications and reopens from there.</span>
+                </p>
               </div>
             </li>
             <li>
               <span class="step-number">4</span>
               <div>
-                <h3>DMGを自動で取り出す</h3>
-                <p>コピー先のkAIgiが起動した後、元のDMGは自動で取り出されます。Finderで手動操作する必要はありません。</p>
-              </div>
-            </li>
-            <li>
-              <span class="step-number">5</span>
-              <div>
-                <h3>権限を許可</h3>
-                <p>マイク、画面収録、音声認識を許可します。画面収録は変更後にアプリの再起動が必要になることがあります。</p>
+                <h3>
+                  <span data-copy="ja">初回設定を済ませる</span>
+                  <span data-copy="en">Finish first-run setup</span>
+                </h3>
+                <p>
+                  <span data-copy="ja">会議音声を扱うためのmacOS確認と、AI Research用のOpenAI API key設定をアプリ内で済ませます。</span>
+                  <span data-copy="en">Complete the macOS prompts for meeting audio and add your OpenAI API key for AI Research inside the app.</span>
+                </p>
               </div>
             </li>
           </ol>
-          <p class="setup-note">
-            マイク権限はmacOSがアプリ単位で管理します。移動確認で「このまま開く」を選んだ場合や、一度拒否した場合は、Applicationsへ入れ直してからシステム設定の「プライバシーとセキュリティ」で許可をオンにしてください。
-          </p>
         </div>
       </section>
 
-      <section class="band contrast" aria-labelledby="permissions-title">
+      <section class="band help-band" id="help" aria-labelledby="help-title">
         <div class="content-grid">
           <div>
-            <p class="section-kicker">Permissions</p>
-            <h2 id="permissions-title">必要なmacOS権限</h2>
+            <p class="section-kicker">
+              <span data-copy="ja">Help when needed</span>
+              <span data-copy="en">Help when needed</span>
+            </p>
+            <h2 id="help-title">
+              <span data-copy="ja">困った時だけ開いて確認。</span>
+              <span data-copy="en">Open these only when something needs attention.</span>
+            </h2>
           </div>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th scope="col">権限</th>
-                  <th scope="col">用途</th>
-                  <th scope="col">補足</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">マイク</th>
-                  <td>自分の声を録音します。</td>
-                  <td>一度拒否した場合、アプリ内ボタンでは再確認を出せません。システム設定でkAIgiをオンにしてください。</td>
-                </tr>
-                <tr>
-                  <th scope="row">画面収録</th>
-                  <td>Mac上で再生される内部音声を取得します。</td>
-                  <td>macOSの設定では画面収録または画面とシステムオーディオ収録として表示されます。</td>
-                </tr>
-                <tr>
-                  <th scope="row">音声認識</th>
-                  <td>Apple Speechでローカル文字起こしを行います。</td>
-                  <td>オンデバイス認識を使い、クラウドSTTには切り替えません。</td>
-                </tr>
-                <tr>
-                  <th scope="row">Documents</th>
-                  <td>録音ファイルと文字起こしを保存します。</td>
-                  <td><code>~/Documents/KAIgiRecordings</code> にセッション単位で保存します。</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section class="band" id="privacy" aria-labelledby="privacy-title">
-        <div class="content-grid">
-          <div>
-            <p class="section-kicker">Privacy</p>
-            <h2 id="privacy-title">ローカル優先の設計</h2>
-          </div>
-          <div class="privacy-list">
-            <article class="feature">
-              <h3>録音と文字起こしはMac内に保存</h3>
-              <p>録音ファイル、Markdown、JSON、セッション情報はローカルのDocumentsフォルダに保存されます。</p>
-            </article>
-            <article class="feature">
-              <h3>OpenAI連携は任意</h3>
-              <p>Research機能を使う場合のみ、ユーザーが設定したAPI keyでOpenAI APIへ送信します。API keyはKeychainに保存されます。</p>
-            </article>
-            <article class="feature">
-              <h3>会議参加者への説明が必要</h3>
-              <p>録音を始める前に、参加者へ録音と文字起こしを行うことを伝えてください。</p>
-            </article>
-          </div>
-          <p class="policy-link">
-            詳細は <a href="./privacy.html">Privacy Policy</a> を確認してください。
-          </p>
-        </div>
-      </section>
-
-      <section class="band contrast" aria-labelledby="trouble-title">
-        <div class="content-grid">
-          <div>
-            <p class="section-kicker">Troubleshooting</p>
-            <h2 id="trouble-title">よくある確認ポイント</h2>
-          </div>
-          <div class="trouble-list">
-            <article>
-              <h3>Micを許可できない</h3>
-              <p>kAIgiを終了し、<code>Applications/kAIgi.app</code> から起動し直してください。一度拒否している場合は、システム設定のマイクでkAIgiをオンにします。</p>
-            </article>
-            <article>
-              <h3>マイク一覧にkAIgiが出ない</h3>
-              <p>DMG内や古い開発版から起動している可能性があります。Applications内のkAIgiから起動し、必要なら <code>tccutil reset Microphone ai.app.kaigi</code> 後に再度Micを押してください。</p>
-            </article>
-            <article>
-              <h3>内部音声が録音されない</h3>
-              <p>システム設定の画面収録でkAIgiがオンになっているか確認し、変更後にアプリを再起動してください。</p>
-            </article>
-            <article>
-              <h3>文字起こしされない</h3>
-              <p>音声認識権限を許可し、macOSのオンデバイス認識が利用できる環境で実行してください。</p>
-            </article>
-            <article>
-              <h3>相手の声が二重に入る</h3>
-              <p>スピーカー再生音がマイクにも入る場合があります。会議ではヘッドホンまたはイヤホンの使用を推奨します。</p>
-            </article>
+          <div class="accordion-list">
+            <details>
+              <summary>
+                <span data-copy="ja">Micの許可がうまくいかない</span>
+                <span data-copy="en">Microphone access is not working</span>
+              </summary>
+              <p>
+                <span data-copy="ja">kAIgiを終了し、Applications内の <code>kAIgi.app</code> から起動し直してください。一度拒否している場合は、システム設定のマイクでkAIgiをオンにします。</span>
+                <span data-copy="en">Quit kAIgi and reopen <code>kAIgi.app</code> from Applications. If access was denied once, enable kAIgi in macOS Microphone settings.</span>
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span data-copy="ja">内部音声が入らない</span>
+                <span data-copy="en">System audio is missing</span>
+              </summary>
+              <p>
+                <span data-copy="ja">システム設定の画面収録または画面とシステムオーディオ収録でkAIgiがオンになっているか確認し、変更後にアプリを再起動します。</span>
+                <span data-copy="en">Enable kAIgi in Screen Recording or Screen & System Audio Recording settings, then restart the app after changing the permission.</span>
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span data-copy="ja">AI Researchが動かない</span>
+                <span data-copy="en">AI Research is not producing cards</span>
+              </summary>
+              <p>
+                <span data-copy="ja">設定でAI Researchを有効にし、OpenAI API keyが保存済みか確認してください。議論内容が少ない時は、カードが出るまで少し発話が必要です。</span>
+                <span data-copy="en">Enable AI Research in settings and confirm that your OpenAI API key is saved. If the discussion is still short, kAIgi may wait for more context before creating cards.</span>
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span data-copy="ja">相手の声が二重に入る</span>
+                <span data-copy="en">The other speaker is captured twice</span>
+              </summary>
+              <p>
+                <span data-copy="ja">スピーカー再生音がマイクにも入っている可能性があります。会議ではヘッドホンまたはイヤホンの使用を推奨します。</span>
+                <span data-copy="en">Your microphone may be picking up speaker output. Use headphones or earbuds during meetings.</span>
+              </p>
+            </details>
           </div>
         </div>
       </section>
@@ -246,5 +355,29 @@
         <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
       </div>
     </footer>
+
+    <script>
+      (() => {
+        const stored = window.localStorage.getItem("kaigi-language");
+        const prefersJapanese = (navigator.language || "").toLowerCase().startsWith("ja");
+        const initial = stored || (prefersJapanese ? "ja" : "en");
+        const buttons = document.querySelectorAll("[data-language-option]");
+
+        function setLanguage(language) {
+          document.documentElement.lang = language;
+          document.body.dataset.language = language;
+          window.localStorage.setItem("kaigi-language", language);
+          buttons.forEach((button) => {
+            button.setAttribute("aria-pressed", String(button.dataset.languageOption === language));
+          });
+        }
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => setLanguage(button.dataset.languageOption));
+        });
+
+        setLanguage(initial === "en" ? "en" : "ja");
+      })();
+    </script>
   </body>
 </html>
