@@ -3,25 +3,63 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>kAIgi - AI Research for live discussions</title>
+    <title>kAIgi - 会議の議論を支えるAI Researchアプリ</title>
     <meta
       name="description"
       content="kAIgiは、会議やアイディエーションの流れからAIが参考情報を引き寄せ、議論を前に進めるmacOSアプリです。"
     >
+    <meta name="robots" content="index,follow">
+    <meta name="application-name" content="kAIgi">
+    <meta name="apple-mobile-web-app-title" content="kAIgi">
     <meta name="theme-color" content="#0c0d10">
-    <meta property="og:title" content="kAIgi">
+    <meta property="og:site_name" content="kAIgi">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="kAIgi - AI Research for live discussions">
     <meta
       property="og:description"
-      content="AI Research Cards and Deep Research for live discussions on macOS."
+      content="議論の流れからAIが参考情報を引き寄せ、Research CardとDeep Researchで会議を前に進めるmacOSアプリ。"
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/">
-    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/app-icon.png">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta property="og:image:secure_url" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="kAIgi - AI Research Cards for live discussions">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="kAIgi - AI Research for live discussions">
+    <meta
+      name="twitter:description"
+      content="議論の流れからAIが参考情報を引き寄せ、Research CardとDeep Researchで会議を前に進めるmacOSアプリ。"
+    >
+    <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta name="twitter:image:alt" content="kAIgi - AI Research Cards for live discussions">
     <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/">
+    <link rel="sitemap" type="application/xml" href="./sitemap.xml">
     <link rel="icon" href="./assets/app-icon.png">
     <link rel="apple-touch-icon" href="./assets/app-icon.png">
     <link rel="stylesheet" href="./styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "kAIgi",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "macOS 14+",
+        "description": "kAIgiは、会議やアイディエーションの流れからAIが参考情報を引き寄せ、Research CardとDeep Researchで議論を前に進めるmacOSアプリです。",
+        "url": "https://keigo1110.github.io/kAIgi-download/",
+        "downloadUrl": "https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg",
+        "image": "https://keigo1110.github.io/kAIgi-download/assets/ogp.png",
+        "softwareVersion": "0.1.2",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
   </head>
   <body data-language="ja">
     <header class="site-header">
@@ -29,28 +67,15 @@
         <img src="./assets/app-icon.png" alt="" width="36" height="36">
         <span>kAIgi</span>
       </a>
-      <nav aria-label="Primary">
-        <a href="#research">
-          <span data-copy="ja">AI Research</span>
-          <span data-copy="en">AI Research</span>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language">
+          <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
+          <button type="button" data-language-option="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
+          <span data-copy="ja">ダウンロード</span>
+          <span data-copy="en">Download</span>
         </a>
-        <a href="#demo">
-          <span data-copy="ja">デモ</span>
-          <span data-copy="en">Demo</span>
-        </a>
-        <a href="#setup">
-          <span data-copy="ja">インストール</span>
-          <span data-copy="en">Install</span>
-        </a>
-        <a href="#help">
-          <span data-copy="ja">ヘルプ</span>
-          <span data-copy="en">Help</span>
-        </a>
-        <a href="https://github.com/keigo1110/kAIgi-download">GitHub</a>
-      </nav>
-      <div class="language-switch" aria-label="Language">
-        <button type="button" data-language-option="ja" aria-pressed="true">日本語</button>
-        <button type="button" data-language-option="en" aria-pressed="false">English</button>
       </div>
     </header>
 
@@ -69,8 +94,8 @@
             </p>
             <div class="hero-actions" id="download">
               <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
-                <span data-copy="ja">最新版をインストール</span>
-                <span data-copy="en">Install latest version</span>
+                <span data-copy="ja">最新版をダウンロード</span>
+                <span data-copy="en">Download latest version</span>
               </a>
             </div>
           </div>
@@ -373,6 +398,29 @@
         </div>
       </section>
 
+      <section class="download-cta" aria-labelledby="download-cta-title">
+        <div class="download-cta-inner">
+          <div class="download-cta-copy">
+            <p class="section-kicker">
+              <span data-copy="ja">Download</span>
+              <span data-copy="en">Download</span>
+            </p>
+            <h2 id="download-cta-title">
+              <span data-copy="ja">準備できたら、最新版をダウンロード。</span>
+              <span data-copy="en">Ready to try it? Download the latest version.</span>
+            </h2>
+            <p>
+              <span data-copy="ja">署名・公証済みのDMGをGitHub Releasesから取得できます。</span>
+              <span data-copy="en">Get the signed and notarized DMG from GitHub Releases.</span>
+            </p>
+          </div>
+          <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
+            <span data-copy="ja">最新版をダウンロード</span>
+            <span data-copy="en">Download latest version</span>
+          </a>
+        </div>
+      </section>
+
       <section class="band help-band" id="help" aria-labelledby="help-title">
         <div class="content-grid">
           <div>
@@ -432,10 +480,12 @@
     </main>
 
     <footer class="site-footer">
+      <span aria-hidden="true"></span>
       <p>&copy; 2026 kAIgi</p>
-      <div>
+      <div class="footer-links">
         <a href="./privacy.html">Privacy Policy</a>
         <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
+        <a href="https://github.com/keigo1110/kAIgi-download">GitHub</a>
       </div>
     </footer>
 
