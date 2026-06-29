@@ -811,11 +811,6 @@ h1 {
   letter-spacing: 0;
 }
 
-.download-cta p {
-  margin: 12px 0 0;
-  color: var(--muted);
-}
-
 .intro-band {
   border-top: 1px solid rgba(244, 240, 232, 0.08);
 }
