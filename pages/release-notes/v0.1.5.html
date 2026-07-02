@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.1.5</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 28px 28px;
+      font-size: 15px;
+      line-height: 1.65;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    main {
+      max-width: 760px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: #57606a;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0 0 10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root,
+      body {
+        background: #0d1117;
+        color: #f0f6fc;
+      }
+
+      p {
+        color: #8b949e;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.1.5</h1>
+    <p>録音データを守る安定性と、AI Research のプライバシー制御を中心に改善しました。</p>
+    <ul>
+      <li>録音停止やアプリ終了時の保存処理を強化し、録音データが途中で失われにくいようにしました。</li>
+      <li>長時間録音でも扱いやすいよう、音声ファイルのM4A圧縮保存と不要音声の削除を安定させました。</li>
+      <li>AI Research の外部送信設定を尊重し、OpenAI API には保存不可指定で送信するようにしました。</li>
+      <li>文字起こしの時刻合わせと低信頼部分の扱いを改善し、長い録音の再解析を安定させました。</li>
+      <li>履歴の読み込み、検索、壊れた録音メタデータの復元を改善しました。</li>
+      <li>更新配布の署名検証とリリース手順を整備しました。</li>
+    </ul>
+  </main>
+</body>
+</html>
