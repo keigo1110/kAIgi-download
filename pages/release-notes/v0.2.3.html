@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.2.3</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 28px 28px;
+      font-size: 15px;
+      line-height: 1.65;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    main {
+      max-width: 760px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: #57606a;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0 0 10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root,
+      body {
+        background: #0d1117;
+        color: #f0f6fc;
+      }
+
+      p {
+        color: #8b949e;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.2.3</h1>
+    <p>人名や製品名を利用者自身で整えられる、シンプルな音声認識辞書を追加したリリースです。macOS 14以降を搭載したApple Silicon Macに対応します。</p>
+    <ul>
+      <li>アプリ設定から、人名・製品名・略語を音声認識の優先候補として手動登録できるようにしました。</li>
+      <li>自動学習した語を一覧で確認し、期限なしで残すか、不要な語として削除できます。</li>
+      <li>削除した語が自動学習で復活しないようにし、必要になった場合は手動登録で戻せるようにしました。</li>
+      <li>手動登録語は期限なしで保持し、自動学習語は7日で整理する分かりやすい保存方針にしました。</li>
+      <li>端末内Researchデータを削除しても手動登録語は残るようにし、プライバシー説明も更新しました。</li>
+    </ul>
+  </main>
+</body>
+</html>
