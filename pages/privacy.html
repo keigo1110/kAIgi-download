@@ -70,7 +70,7 @@
             <span data-copy="ja">kAIgiは会議音声とAI Researchを扱うアプリです。録音対象、保存場所、任意の外部送信について、ユーザーが判断できるように説明します。</span>
             <span data-copy="en">kAIgi handles meeting audio and AI Research. This policy explains what is recorded, where data is stored, and when external services may be used.</span>
           </p>
-          <p class="updated">Last updated: 2026-06-29</p>
+          <p class="updated">Last updated: 2026-07-10</p>
         </div>
       </section>
 
@@ -83,6 +83,10 @@
           <p>
             <span data-copy="ja">kAIgiは、ユーザーが録音を開始したセッションについて、Mac上で再生されている内部音声、マイク音声、文字起こし、AI Researchのカード、セッションメタデータを保存します。これらは標準では <code>~/Documents/KAIgiRecordings</code> に保存されます。</span>
             <span data-copy="en">For sessions started by the user, kAIgi stores system audio, microphone audio, transcripts, AI Research cards, and session metadata. By default, these files are stored in <code>~/Documents/KAIgiRecordings</code>.</span>
+          </p>
+          <p>
+            <span data-copy="ja">Local LLMのモデル、再利用用Research Memory、動的音声認識辞書は <code>~/Library/Application Support/kAIgi</code> に保存されます。Research Memoryには、マスキングした検索論点、生成済みカード、参照した情報源とフィードバックが含まれることがあります。</span>
+            <span data-copy="en">Local LLM models, reusable Research Memory, and the dynamic speech-recognition lexicon are stored in <code>~/Library/Application Support/kAIgi</code>. Research Memory may include masked research prompts, generated cards, referenced sources, and feedback.</span>
           </p>
 
           <h2>
@@ -99,8 +103,8 @@
             <span data-copy="en">AI Research and OpenAI</span>
           </h2>
           <p>
-            <span data-copy="ja">AI Research機能を有効にした場合、匿名化した直近の文字起こしと検索論点をOpenAI APIへ送信することがあります。この機能は任意であり、ユーザーが設定したOpenAI API keyを使用します。API keyはmacOS Keychainに保存されます。利用モデルはkAIgiの既定値を使用し、ユーザーがアプリ内でモデルを選択する必要はありません。</span>
-            <span data-copy="en">When AI Research is enabled, kAIgi may send sanitized transcript context and research prompts to the OpenAI API. This feature is optional and uses the OpenAI API key entered by the user. The API key is stored in macOS Keychain. kAIgi uses its default model configuration; users do not need to choose models in the app.</span>
+            <span data-copy="ja">AI Research機能を有効にした場合、マスキングした直近の文字起こしと検索論点をOpenAI APIへ送信することがあります。マスキングは完全な匿名化を保証するものではありません。この機能は任意であり、ユーザーが設定したOpenAI API keyを使用します。API keyはmacOS Keychainに保存されます。利用モデルはkAIgiの既定値を使用し、ユーザーがアプリ内でモデルを選択する必要はありません。</span>
+            <span data-copy="en">When AI Research is enabled, kAIgi may send masked recent transcript context and research prompts to the OpenAI API. Masking does not guarantee complete anonymization. This feature is optional and uses the OpenAI API key entered by the user. The API key is stored in macOS Keychain. kAIgi uses its default model configuration; users do not need to choose models in the app.</span>
           </p>
 
           <h2>
@@ -117,8 +121,8 @@
             <span data-copy="en">Deleting data</span>
           </h2>
           <p>
-            <span data-copy="ja">保存済みの録音、文字起こし、AI Researchの結果は、Finderから該当セッションフォルダを削除することで削除できます。OpenAI API keyはアプリ内の設定から削除できます。</span>
-            <span data-copy="en">Saved recordings, transcripts, and AI Research results can be deleted by removing the relevant session folder in Finder. The OpenAI API key can be removed from the app settings.</span>
+            <span data-copy="ja">保存済みの録音、文字起こし、セッション内のAI Research結果は、Finderから該当セッションフォルダを削除することで削除できます。アプリ全体で再利用するResearch Memoryと動的音声認識辞書は、アプリ設定の「端末内Researchデータ」から削除できます。Local LLMモデルとOpenAI API keyも、それぞれアプリ設定から削除できます。</span>
+            <span data-copy="en">Saved recordings, transcripts, and per-session AI Research results can be deleted by removing the relevant session folder in Finder. Reusable Research Memory and the dynamic speech-recognition lexicon can be deleted from “On-device Research Data” in app settings. Local LLM models and the OpenAI API key can also be removed separately in app settings.</span>
           </p>
 
           <h2>

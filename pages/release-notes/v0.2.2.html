@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.2.2</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 28px 28px;
+      font-size: 15px;
+      line-height: 1.65;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    main {
+      max-width: 760px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: #57606a;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0 0 10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root,
+      body {
+        background: #0d1117;
+        color: #f0f6fc;
+      }
+
+      p {
+        color: #8b949e;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.2.2</h1>
+    <p>ローカル処理を増やし、録音データの保全と利用者によるデータ管理を強化したリリースです。macOS 14以降を搭載したApple Silicon Macに対応します。</p>
+    <ul>
+      <li>任意で準備できるLocal LLMにより、論点整理、話題転換、検索候補、文脈圧縮、音声認識の補助候補をMac上で処理できるようにしました。</li>
+      <li>録音開始ごとに参加者への通知と必要な同意を確認し、Research Memoryと動的音声認識辞書を設定から削除できるようにしました。</li>
+      <li>停止時の時間がかかる再認識より先にライブ文字起こしを保存し、終了処理が長引いた場合にも記録を残しやすくしました。</li>
+      <li>AI ResearchとAIマップの更新を整理し、同じ処理の重複や古い結果の反映を抑えて、長い会議での安定性を高めました。</li>
+      <li>Local LLMモデルの検証、ダウンロード、削除、アプリ終了時の処理を堅牢化しました。</li>
+      <li>OpenAI APIへ送る情報のマスキング範囲と、Mac内に保存するResearchデータの削除方法をプライバシーポリシーへ明記しました。</li>
+    </ul>
+  </main>
+</body>
+</html>
