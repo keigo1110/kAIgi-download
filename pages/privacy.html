@@ -70,7 +70,7 @@
             <span data-copy="ja">kAIgiは会議音声とAI Researchを扱うアプリです。録音対象、保存場所、任意の外部送信について、ユーザーが判断できるように説明します。</span>
             <span data-copy="en">kAIgi handles meeting audio and AI Research. This policy explains what is recorded, where data is stored, and when external services may be used.</span>
           </p>
-          <p class="updated">Last updated: 2026-07-13</p>
+          <p class="updated">Last updated: 2026-07-14</p>
         </div>
       </section>
 
@@ -85,8 +85,8 @@
             <span data-copy="en">For sessions started by the user, kAIgi stores system audio, microphone audio, transcripts, AI Research cards, and session metadata. By default, these files are stored in <code>~/Documents/KAIgiRecordings</code>.</span>
           </p>
           <p>
-            <span data-copy="ja">Local LLMのモデル、再利用用Research Memory、手動登録または自動学習した音声認識語は <code>~/Library/Application Support/kAIgi</code> に保存されます。Research Memoryには、マスキングした検索論点、生成済みカード、参照した情報源とフィードバックが含まれることがあります。カードと生成履歴は種類に応じて30〜365日、情報源の再利用履歴は30日を上限とし、期限切れデータを起動時と利用中1日1回までの頻度で削除します。</span>
-            <span data-copy="en">Local LLM models, reusable Research Memory, and manually saved or automatically learned speech-recognition terms are stored in <code>~/Library/Application Support/kAIgi</code>. Research Memory may include masked research prompts, generated cards, referenced sources, and feedback. Cards and generation records are retained for up to 30–365 days depending on type; source-reuse records are retained for up to 30 days. Expired records are removed at app startup and at most once per day while in use.</span>
+            <span data-copy="ja">Local LLMのモデル、再利用用Research Memory、手動登録または自動学習した音声認識語は <code>~/Library/Application Support/kAIgi</code> に保存されます。Research Memoryには、マスキングした検索論点、生成済みカード、参照した情報源とフィードバックが含まれることがあります。Research Cardは既定では自動削除しません。ユーザーが30、90、180、365日のいずれかを明示的に選んだ場合だけ、作成日が期限を超えたピン留めされていないカードを自動削除します。設定がない、未知、または破損している場合は無期限保持になります。カードを自動再利用するための種類別鮮度は物理削除とは別で、鮮度を過ぎてもカードはLibraryに残ります。生成履歴と情報源の再利用キャッシュは派生データとして30日で整理します。清掃は起動時と通常1日1回試行し、一時的に清掃だけが失敗した場合は通常の利用を妨げず15分以上あけて再試行します。</span>
+            <span data-copy="en">Local LLM models, reusable Research Memory, and manually saved or automatically learned speech-recognition terms are stored in <code>~/Library/Application Support/kAIgi</code>. Research Memory may include masked research prompts, generated cards, referenced sources, and feedback. By default, Research Cards are not deleted automatically. Only when the user explicitly selects 30, 90, 180, or 365 days does kAIgi automatically delete unpinned cards whose creation date is beyond that period. A missing, unknown, or damaged setting resolves to indefinite retention. Type-specific freshness for automatic reuse is separate from physical deletion; a stale card remains available in the Library. Generation records and the source-reuse cache are derived data and are cleaned after 30 days. Cleanup is attempted at startup and normally once per day. If cleanup alone fails temporarily, normal use continues and cleanup is retried after at least 15 minutes.</span>
           </p>
 
           <h2>
@@ -94,8 +94,8 @@
             <span data-copy="en">Transcription</span>
           </h2>
           <p>
-            <span data-copy="ja">文字起こしにはApple Speechのオンデバイス認識を使用します。クラウドSTT APIへの自動フォールバックは行いません。</span>
-            <span data-copy="en">kAIgi uses Apple Speech on-device recognition for transcription and does not automatically fall back to a cloud speech-to-text API.</span>
+            <span data-copy="ja">文字起こしにはApple Speechのオンデバイス認識を使用します。選択した認識言語は次の録音開始時に固定され、言語ごとの辞書を使用します。クラウドSTT APIへの自動フォールバックは行いません。認識経路の改善に使うため、完了セッション数、SpeechAnalyzerで認識を実際に試行したセッション数、fallbackが発生したセッション数と理由別件数だけを端末内へ保存します。fallback率はSpeechAnalyzerを試行したセッションだけを分母にします。この集計には音声、文字起こし本文、Appleの詳細エラー文を含めず、外部へ送信しません。</span>
+            <span data-copy="en">kAIgi uses Apple Speech on-device recognition for transcription. The selected recognition language is fixed when the next recording starts and uses a language-specific dictionary. kAIgi does not automatically fall back to a cloud speech-to-text API. To improve recognition routing, kAIgi stores only local aggregate counts for completed sessions, sessions that actually attempted recognition with SpeechAnalyzer, sessions that used fallback, and fallback reasons. The fallback rate uses only SpeechAnalyzer-attempted sessions as its denominator. This aggregate does not contain audio, transcript text, or Apple's detailed error text and is not sent externally.</span>
           </p>
 
           <h2>
@@ -121,8 +121,8 @@
             <span data-copy="en">Deleting data</span>
           </h2>
           <p>
-            <span data-copy="ja">保存済みの録音、文字起こし、セッション内のAI Research結果は、Finderから該当セッションフォルダを削除することで削除できます。アプリ全体で再利用するResearch Memoryと自動学習した音声認識語は、アプリ設定の「端末内Researchデータ」から削除できます。手動登録した音声認識語は辞書から個別に削除できます。Local LLMモデルとOpenAI API keyも、それぞれアプリ設定から削除できます。</span>
-            <span data-copy="en">Saved recordings, transcripts, and per-session AI Research results can be deleted by removing the relevant session folder in Finder. Reusable Research Memory and automatically learned speech-recognition terms can be deleted from “On-device Research Data” in app settings. Manually saved speech-recognition terms can be removed individually from the dictionary. Local LLM models and the OpenAI API key can also be removed separately in app settings.</span>
+            <span data-copy="ja">保存済みの録音、文字起こし、セッション内のAI Research結果は、Finderから該当セッションフォルダを削除することで削除できます。Research Libraryでは再利用用カードを個別に削除でき、設定の「端末内Researchデータ」ではピン留めしたカードを含むResearch Memoryと全言語の自動学習語を削除できます。手動登録した音声認識語は各言語の辞書から個別に削除できます。STT診断の端末内集計は、アプリ設定の「集計をリセット」から削除できます。Local LLMモデルとOpenAI API keyも、それぞれアプリ設定から削除できます。</span>
+            <span data-copy="en">Saved recordings, transcripts, and per-session AI Research results can be deleted by removing the relevant session folder in Finder. Reusable cards can be deleted individually in the Research Library. “On-device Research Data” in app settings deletes Research Memory, including pinned cards, and automatically learned terms for every language. Manually saved speech-recognition terms can be removed individually from each language's dictionary. The local STT diagnostics aggregate can be deleted with “Reset Summary” in app settings. Local LLM models and the OpenAI API key can also be removed separately in app settings.</span>
           </p>
 
           <h2>

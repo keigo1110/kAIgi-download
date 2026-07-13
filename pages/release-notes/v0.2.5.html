@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.2.5</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 28px 28px;
+      font-size: 15px;
+      line-height: 1.65;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    main {
+      max-width: 760px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: #57606a;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0 0 10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root,
+      body {
+        background: #0d1117;
+        color: #f0f6fc;
+      }
+
+      p {
+        color: #8b949e;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.2.5</h1>
+    <p>録音開始・停止時の不要な待ち時間を減らし、認識状態の確認と利用者自身によるデータ管理を強化しました。macOS 14以降を搭載したApple Silicon Macに対応します。</p>
+    <ul>
+      <li>発話の証跡がないspeaker／micチャンネルを停止後の再認識から外し、音声メモや片側だけ発話した会議で不要な待機を減らしました。小声を取りこぼしにくいよう、ライブ用の音声検知より低い独立した証跡も最終認識候補の判定に使います。</li>
+      <li>Macでオンデバイス認識に対応する言語を選べるようにし、手動登録語と自動学習語を言語別の辞書へ分離しました。既存の辞書は日本語（ja-JP）の辞書へ引き継ぐ移行に対応します。現在、公開コーパスによる実音声品質評価は日本語のみです。</li>
+      <li>SpeechAnalyzerで認識を試行したセッション数、fallbackが発生したセッション数、分類した理由別件数を、音声や文字起こし本文を含まない端末内集計で確認・リセットできます。</li>
+      <li>Research Libraryへ検索、絞り込み、ピン留め、個別削除を追加しました。Research Cardは既定では自動削除せず、利用者が30、90、180、365日のいずれかを明示的に選んだ場合だけ、作成日から期限を過ぎた未ピン留めカードを自動削除します。</li>
+      <li>録音開始、キャンセル、予期しない停止、アプリ終了が重なった場合の復旧を強化し、音声ファイルの終了処理を待ってから最終文字起こしへ進むようにしました。</li>
+      <li>録音開始時は進行中のLocal LLMダウンロードの中断処理を待ってから録音へ進み、再利用可能な途中データがあれば次回のダウンロードで活用します。</li>
+      <li>起動や画面再表示だけでSystem Settingsを開かないようにしました。Start RecordingではmacOS標準の許可確認が表示される場合がありますが、拒否済み権限の設定画面をkAIgiが開くのは、利用者が権限パネルの操作を明示した場合だけです。</li>
+    </ul>
+  </main>
+</body>
+</html>
