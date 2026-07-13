@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.2.4</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 28px 28px;
+      font-size: 15px;
+      line-height: 1.65;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    main {
+      max-width: 760px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: #57606a;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0 0 10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root,
+      body {
+        background: #0d1117;
+        color: #f0f6fc;
+      }
+
+      p {
+        color: #8b949e;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.2.4</h1>
+    <p>文字起こしの品質と、長時間会議での負荷・安定性を重点的に改善したリリースです。macOS 14以降を搭載したApple Silicon Macに対応します。</p>
+    <ul>
+      <li>macOS 26以降では、Appleの会話・長時間音声向けSpeechAnalyzerを優先するようにしました。</li>
+      <li>SpeechAnalyzerを利用できない場合や認識に失敗した場合は、従来のオンデバイス認識へ安全に戻ります。</li>
+      <li>人名・製品名などの登録語を新しい認識方式にも反映し、文字起こしの文脈を保ちやすくしました。</li>
+      <li>長時間録音で処理待ちやメモリ使用量が増え続けないよう、音声保存、文字起こし、live表示、停止処理を見直しました。</li>
+      <li>録音終了、タイトル変更、音声圧縮が重なってもセッション情報を失わないよう保存処理を直列化し、圧縮後に残った未参照WAVを安全に回収します。</li>
+      <li>画面収録権限を後から取り消した場合の案内、Research Memoryの保存期間と自動削除、外部送信前のマスキング説明を改善しました。</li>
+      <li>複数の日本語公開音声と60分負荷試験を使い、精度、空結果、fallback、処理時間、メモリを検証しました。</li>
+    </ul>
+  </main>
+</body>
+</html>

@@ -70,7 +70,7 @@
             <span data-copy="ja">kAIgiは会議音声とAI Researchを扱うアプリです。録音対象、保存場所、任意の外部送信について、ユーザーが判断できるように説明します。</span>
             <span data-copy="en">kAIgi handles meeting audio and AI Research. This policy explains what is recorded, where data is stored, and when external services may be used.</span>
           </p>
-          <p class="updated">Last updated: 2026-07-10</p>
+          <p class="updated">Last updated: 2026-07-13</p>
         </div>
       </section>
 
@@ -85,8 +85,8 @@
             <span data-copy="en">For sessions started by the user, kAIgi stores system audio, microphone audio, transcripts, AI Research cards, and session metadata. By default, these files are stored in <code>~/Documents/KAIgiRecordings</code>.</span>
           </p>
           <p>
-            <span data-copy="ja">Local LLMのモデル、再利用用Research Memory、手動登録または自動学習した音声認識語は <code>~/Library/Application Support/kAIgi</code> に保存されます。Research Memoryには、マスキングした検索論点、生成済みカード、参照した情報源とフィードバックが含まれることがあります。</span>
-            <span data-copy="en">Local LLM models, reusable Research Memory, and manually saved or automatically learned speech-recognition terms are stored in <code>~/Library/Application Support/kAIgi</code>. Research Memory may include masked research prompts, generated cards, referenced sources, and feedback.</span>
+            <span data-copy="ja">Local LLMのモデル、再利用用Research Memory、手動登録または自動学習した音声認識語は <code>~/Library/Application Support/kAIgi</code> に保存されます。Research Memoryには、マスキングした検索論点、生成済みカード、参照した情報源とフィードバックが含まれることがあります。カードと生成履歴は種類に応じて30〜365日、情報源の再利用履歴は30日を上限とし、期限切れデータを起動時と利用中1日1回までの頻度で削除します。</span>
+            <span data-copy="en">Local LLM models, reusable Research Memory, and manually saved or automatically learned speech-recognition terms are stored in <code>~/Library/Application Support/kAIgi</code>. Research Memory may include masked research prompts, generated cards, referenced sources, and feedback. Cards and generation records are retained for up to 30–365 days depending on type; source-reuse records are retained for up to 30 days. Expired records are removed at app startup and at most once per day while in use.</span>
           </p>
 
           <h2>
@@ -103,8 +103,8 @@
             <span data-copy="en">AI Research and OpenAI</span>
           </h2>
           <p>
-            <span data-copy="ja">AI Research機能を有効にした場合、マスキングした直近の文字起こしと検索論点をOpenAI APIへ送信することがあります。マスキングは完全な匿名化を保証するものではありません。この機能は任意であり、ユーザーが設定したOpenAI API keyを使用します。API keyはmacOS Keychainに保存されます。利用モデルはkAIgiの既定値を使用し、ユーザーがアプリ内でモデルを選択する必要はありません。</span>
-            <span data-copy="en">When AI Research is enabled, kAIgi may send masked recent transcript context and research prompts to the OpenAI API. Masking does not guarantee complete anonymization. This feature is optional and uses the OpenAI API key entered by the user. The API key is stored in macOS Keychain. kAIgi uses its default model configuration; users do not need to choose models in the app.</span>
+            <span data-copy="ja">AI Research機能を有効にした場合、簡易マスキングした直近の文字起こしと検索論点をOpenAI APIへ送信することがあります。この処理は完全な匿名化ではなく、敬称のない人名、社名、住所、文脈依存の固有名詞を検出できない場合があります。この機能は任意であり、ユーザーが設定したOpenAI API keyを使用します。API keyはmacOS Keychainに保存されます。利用モデルはkAIgiの既定値を使用し、ユーザーがアプリ内でモデルを選択する必要はありません。</span>
+            <span data-copy="en">When AI Research is enabled, kAIgi may send lightly masked recent transcript context and research prompts to the OpenAI API. This is not complete anonymization and may miss names without honorifics, company names, addresses, and context-specific proper nouns. This feature is optional and uses the OpenAI API key entered by the user. The API key is stored in macOS Keychain. kAIgi uses its default model configuration; users do not need to choose models in the app.</span>
           </p>
 
           <h2>
