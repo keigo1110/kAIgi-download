@@ -81,8 +81,8 @@
             <span data-copy="en">Data stored by kAIgi</span>
           </h2>
           <p>
-            <span data-copy="ja">kAIgiは、ユーザーが録音を開始したセッションについて、Mac上で再生されている内部音声、マイク音声、文字起こし、AI Researchのカード、セッションメタデータを保存します。これらは標準では <code>~/Documents/KAIgiRecordings</code> に保存されます。</span>
-            <span data-copy="en">For sessions started by the user, kAIgi stores system audio, microphone audio, transcripts, AI Research cards, and session metadata. By default, these files are stored in <code>~/Documents/KAIgiRecordings</code>.</span>
+            <span data-copy="ja">kAIgiは、ユーザーが録音を開始したセッションについて、Mac上で再生されている内部音声、マイク音声、単語時刻を含む文字起こし、任意の話者解析結果、AI Researchのカード、セッションメタデータを保存します。話者解析結果にはセッション内の話者区間、表示名、モデル版が含まれます。これらは標準では <code>~/Documents/KAIgiRecordings</code> に保存されます。</span>
+            <span data-copy="en">For sessions started by the user, kAIgi stores system audio, microphone audio, transcripts with word timing, optional speaker-analysis results, AI Research cards, and session metadata. Speaker-analysis results include per-session speaker intervals, display names, and the model version. By default, these files are stored in <code>~/Documents/KAIgiRecordings</code>.</span>
           </p>
           <p>
             <span data-copy="ja">Local LLMのモデル、再利用用Research Memory、手動登録または自動学習した音声認識語は <code>~/Library/Application Support/kAIgi</code> に保存されます。Research Memoryには、マスキングした検索論点、生成済みカード、参照した情報源とフィードバックが含まれることがあります。Research Cardは既定では自動削除しません。ユーザーが30、90、180、365日のいずれかを明示的に選んだ場合だけ、作成日が期限を超えたピン留めされていないカードを自動削除します。設定がない、未知、または破損している場合は無期限保持になります。カードを自動再利用するための種類別鮮度は物理削除とは別で、鮮度を過ぎてもカードはLibraryに残ります。生成履歴と情報源の再利用キャッシュは派生データとして30日で整理します。清掃は起動時と通常1日1回試行し、一時的に清掃だけが失敗した場合は通常の利用を妨げず15分以上あけて再試行します。</span>
@@ -96,6 +96,19 @@
           <p>
             <span data-copy="ja">文字起こしにはApple Speechのオンデバイス認識を使用します。選択した認識言語は次の録音開始時に固定され、言語ごとの辞書を使用します。クラウドSTT APIへの自動フォールバックは行いません。認識経路の改善に使うため、完了セッション数、SpeechAnalyzerで認識を実際に試行したセッション数、fallbackが発生したセッション数と理由別件数だけを端末内へ保存します。fallback率はSpeechAnalyzerを試行したセッションだけを分母にします。この集計には音声、文字起こし本文、Appleの詳細エラー文を含めず、外部へ送信しません。</span>
             <span data-copy="en">kAIgi uses Apple Speech on-device recognition for transcription. The selected recognition language is fixed when the next recording starts and uses a language-specific dictionary. kAIgi does not automatically fall back to a cloud speech-to-text API. To improve recognition routing, kAIgi stores only local aggregate counts for completed sessions, sessions that actually attempted recognition with SpeechAnalyzer, sessions that used fallback, and fallback reasons. The fallback rate uses only SpeechAnalyzer-attempted sessions as its denominator. This aggregate does not contain audio, transcript text, or Apple's detailed error text and is not sent externally.</span>
+          </p>
+
+          <h2>
+            <span data-copy="ja">話者分離</span>
+            <span data-copy="en">Speaker diarization</span>
+          </h2>
+          <p>
+            <span data-copy="ja">話者分離を有効にし、設定で明示的にモデルをダウンロードすると、録音停止後にFluidAudioとFluidInferenceのCore MLモデルを使ってMac上でシステム音声を解析します。モデル取得時は <code>huggingface.co</code> へ接続しますが、会議音声や文字起こしはモデル提供元へ送信しません。モデルは <code>~/Library/Application Support/kAIgi/Models/SpeakerDiarization</code> に保存され、設定から削除できます。モデルの提供元、固定版、ライセンスはリポジトリのThird-party on-device models文書に記載します。</span>
+            <span data-copy="en">When speaker diarization is enabled and the user explicitly downloads its model in Settings, kAIgi analyzes system audio on the Mac after recording stops using FluidAudio and a FluidInference Core ML model. Downloading connects to <code>huggingface.co</code>, but meeting audio and transcripts are not sent to the model provider. The model is stored under <code>~/Library/Application Support/kAIgi/Models/SpeakerDiarization</code> and can be deleted in Settings. Provider, pinned revision, and license details are recorded in the repository's Third-party on-device models document.</span>
+          </p>
+          <p>
+            <span data-copy="ja">kAIgiは声紋embeddingや会議横断の話者データベースを保存しません。保存する話者IDはセッション内だけで有効です。マイクを既定で「あなた」と表示しますが、会議室で複数人が同じマイクを使う場合などに備え、マイクを含む表示名をユーザーが変更できます。時刻が欠ける、重なる、または対応しない語は単一話者へ推測せず、重なりまたは話者不明として表示します。</span>
+            <span data-copy="en">kAIgi does not store voice embeddings or a cross-meeting speaker database. Stored speaker IDs are valid only within one session. The microphone defaults to “You,” but users can rename it and other speakers, including when several people share a room microphone. Words with missing, overlapping, or unmatched timing are shown as overlap or unknown rather than guessed as one speaker.</span>
           </p>
 
           <h2>
@@ -121,8 +134,8 @@
             <span data-copy="en">Deleting data</span>
           </h2>
           <p>
-            <span data-copy="ja">保存済みの録音、文字起こし、セッション内のAI Research結果は、Finderから該当セッションフォルダを削除することで削除できます。Research Libraryでは再利用用カードを個別に削除でき、設定の「端末内Researchデータ」ではピン留めしたカードを含むResearch Memoryと全言語の自動学習語を削除できます。手動登録した音声認識語は各言語の辞書から個別に削除できます。STT診断の端末内集計は、アプリ設定の「集計をリセット」から削除できます。Local LLMモデルとOpenAI API keyも、それぞれアプリ設定から削除できます。</span>
-            <span data-copy="en">Saved recordings, transcripts, and per-session AI Research results can be deleted by removing the relevant session folder in Finder. Reusable cards can be deleted individually in the Research Library. “On-device Research Data” in app settings deletes Research Memory, including pinned cards, and automatically learned terms for every language. Manually saved speech-recognition terms can be removed individually from each language's dictionary. The local STT diagnostics aggregate can be deleted with “Reset Summary” in app settings. Local LLM models and the OpenAI API key can also be removed separately in app settings.</span>
+            <span data-copy="ja">保存済みの録音、文字起こし、話者区間と変更した話者名、セッション内のAI Research結果は、履歴をゴミ箱へ移動するかFinderから該当セッションフォルダを削除することでまとめて削除できます。「音声だけ削除」は音声ファイルだけを削除し、文字起こしと話者解析結果は残します。設定の「端末内Researchデータ」はResearch Memoryと全言語の自動学習語を削除しますが、録音セッション内の話者解析結果は削除しません。Research Libraryでは再利用用カードを個別に削除でき、手動登録した音声認識語は各言語の辞書から個別に削除できます。STT診断の端末内集計は録音データ設定の「診断データを削除」から、Local LLMモデル、話者分離モデル、OpenAI API keyはそれぞれ設定から削除できます。</span>
+            <span data-copy="en">Saved audio, transcripts, speaker intervals and edited speaker names, and per-session AI Research results can be removed together by moving the history item to Trash or deleting its session folder in Finder. “Delete audio only” removes only audio files and leaves the transcript and speaker-analysis result. “On-device Research Data” deletes Research Memory and automatically learned terms for every language, but it does not delete per-session speaker-analysis results. Reusable cards can be deleted individually in the Research Library, and manually saved recognition terms can be removed from each language's dictionary. The STT diagnostics aggregate can be removed with Delete Diagnostics under Recording Data; Local LLM models, the speaker-diarization model, and the OpenAI API key can each be deleted in Settings.</span>
           </p>
 
           <h2>

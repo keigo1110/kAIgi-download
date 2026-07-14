@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.2.6</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 28px 28px;
+      font-size: 15px;
+      line-height: 1.65;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    main {
+      max-width: 760px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: #57606a;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0 0 10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root,
+      body {
+        background: #0d1117;
+        color: #f0f6fc;
+      }
+
+      p {
+        color: #8b949e;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.2.6</h1>
+    <p>保存音声、文字起こし、話者区間を同じ会議時刻へ対応づけ、任意のオンデバイス話者分離を履歴画面まで統合しました。macOS 14以降を搭載したApple Silicon Macに対応します。</p>
+    <ul>
+      <li>speaker／micの保存WAVについて、変換後の実フレーム位置と共通host clock上の会議時刻を対応づけます。音声欠落、timestampの逆行、曖昧な区間は補間や推測をせず、時刻不明として扱います。</li>
+      <li>Apple Speechから得られる単語・attributed runの時刻を保存し、履歴上で正確な時刻、近似時刻、時刻不明を区別して表示します。旧形式の録音履歴も引き続き読み込めます。</li>
+      <li>FluidAudio 0.15.5と固定revisionのFluidInference Core MLモデルを使い、録音停止後にspeaker音声をMac上で話者分離できます。機能は既定でオフで、モデルは設定から明示的にダウンロードします。会議音声や文字起こしをモデル提供元へ送信せず、話者embedding（声紋）は保存しません。</li>
+      <li>話者別表示では同時発話を重ね、対応が曖昧な語は「話者不明」と表示します。speaker側とmic側の表示名を変更でき、同じ音声チャンネル内の話者候補を統合できます。</li>
+      <li>同じ話者の短い自然な間は一つの読みやすい発話へまとめ、長い無音と実際の話者変更は別の発話として保持します。この表示上の整理は保存済み話者区間や精度評価を書き換えません。</li>
+      <li>ライブ文字起こしで過去の単語がまとめて消えないよう重複チャンクの置換を修正しました。過去へスクロールすると最新追従を自動解除し、「最新へ」で再開できます。列表示ではspeaker／micを個別に全文コピーでき、話者別表示では時刻と現在の話者名を含む全文をコピーできます。</li>
+      <li>Apple Speechが無音後に句読点や記号だけを返した場合は発話として表示・保存・話者割当・コピーしません。発話に付いた通常の句読点は保持します。</li>
+      <li>無音またはノイズだけのspeaker／micは長い保存後認識へ入れず、短い救済試行だけで停止処理を完了します。</li>
+      <li>設定を左側の「一般」「録音・認識」「AI Research」と右側の詳細に整理しました。STT診断の閲覧・コピーは開発版だけに表示し、正式版には端末内集計の削除操作だけを残します。</li>
+      <li>文字起こしの確定と話者解析を分離しました。話者解析はバックグラウンドの独立ステージとして実行し、終了・中断・失敗時は元のWAVを保持します。次回起動後は履歴から安全に再実行できます。</li>
+      <li>話者名の修正は再解析後も保持し、異なるモデル版のprovenanceは引き継ぎません。モデル版と固定した推論設定を含む話者解析結果だけを置換可能なsidecarへ保存します。</li>
+      <li>権利、SHA-256、RTTMを固定したdevelopment corpusとblind holdoutでDER／JER、処理時間、最大RSSを測る開発用評価runnerを追加しました。公開AMI development subsetは固定SHA-256を検証して自動準備できます。VADは既存方式とFluidAudio Sileroを独立評価します。</li>
+    </ul>
+    <p>録音、音声認識、話者解析は端末内で処理されます。話者分離モデルの取得時だけhuggingface.coへ接続します。</p>
+  </main>
+</body>
+</html>
