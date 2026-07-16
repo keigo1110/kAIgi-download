@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.2.8</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 28px 28px;
+      font-size: 15px;
+      line-height: 1.65;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    main {
+      max-width: 760px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: #57606a;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0 0 10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root,
+      body {
+        background: #0d1117;
+        color: #f0f6fc;
+      }
+
+      p {
+        color: #8b949e;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.2.8</h1>
+    <p>話者別文字起こしと音声ナビゲーションを強化し、長時間録音でも安定して使えるようにしました。macOS 14以降を搭載するApple Silicon Macに対応します。</p>
+    <ul>
+      <li>話者別文字起こしの操作をコンパクトに整理し、話者名変更、話者別全文コピー、横スクロールに対応しました。</li>
+      <li>Speaker／マイクの波形を表示し、波形クリック、話者ターン、検索結果から該当時刻を再生できます。</li>
+      <li>検索結果の一致箇所を強調し、該当位置への移動と再生を一つの検索基盤で扱います。</li>
+      <li>再生進捗を波形表示へ分離し、長い文字起こし全体の不要な再描画を抑えました。</li>
+      <li>履歴切替、録音開始、音声削除時に古い再生や波形が残らないようにしました。</li>
+      <li>キャンセルされた波形生成を誤って利用不可としてキャッシュしないようにしました。</li>
+    </ul>
+    <p>録音、音声認識、話者解析は端末内で処理されます。既存の録音データと従来の保存形式は引き続き読み込めます。</p>
+  </main>
+</body>
+</html>
