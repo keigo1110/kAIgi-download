@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.2.7</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 28px 28px;
+      font-size: 15px;
+      line-height: 1.65;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    main {
+      max-width: 760px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: #57606a;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0 0 10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root,
+      body {
+        background: #0d1117;
+        color: #f0f6fc;
+      }
+
+      p {
+        color: #8b949e;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.2.7</h1>
+    <p>録音履歴とバックエンドの安定性・応答性を改善しました。macOS 14以降を搭載するApple Silicon Macに対応します。</p>
+    <ul>
+      <li>履歴の読み込みを集約し、連続更新時も最新要求を優先して処理します。</li>
+      <li>段階的な履歴表示と検索インデックスの再構築を整理し、不要な再描画を抑えました。</li>
+      <li>保存先とdevice／inode世代で録音を識別し、同じパスの置換による古い結果の誤適用を防ぎます。</li>
+      <li>固定したディレクトリdescriptorから履歴を読み込み、読み込み中の置換や遅延タスクによる誤表示を防ぎます。</li>
+      <li>rename、削除、音声削除と履歴更新が競合した場合の再読み込みを安全に集約します。</li>
+      <li>テスト影響範囲の自動選択と開発ワークフローを整備し、日常の検証を高速化しました。</li>
+    </ul>
+    <p>録音、音声認識、話者解析は端末内で処理されます。既存の録音データと0.2.6の保存形式は引き続き読み込めます。</p>
+  </main>
+</body>
+</html>
