@@ -62,11 +62,23 @@
     </script>
   </head>
   <body data-language="ja">
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="kAIgi home">
         <img src="./assets/app-icon.png" alt="" width="36" height="36">
         <span>kAIgi</span>
       </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#demo">
+          <span data-copy="ja">流れ</span>
+          <span data-copy="en">Flow</span>
+        </a>
+        <a href="#research">Research</a>
+        <a href="#setup">
+          <span data-copy="ja">はじめる</span>
+          <span data-copy="en">Get started</span>
+        </a>
+      </nav>
       <div class="header-actions">
         <div class="language-switch" aria-label="Language">
           <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
@@ -83,14 +95,10 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-inner">
           <div class="hero-copy">
-            <p class="eyebrow">
-              <span data-copy="ja">AI research companion for meetings</span>
-              <span data-copy="en">AI research companion for meetings</span>
-            </p>
             <h1 id="hero-title">kAIgi</h1>
-            <p class="lead">
-              <span data-copy="ja">議論の流れから、AIが参考情報を引き寄せる。論点、事例、反例、技術選択肢をResearch Cardとして提示し、会議をその場で前に進めます。</span>
-              <span data-copy="en">AI pulls useful context from the discussion itself. kAIgi surfaces research cards, examples, counterpoints, and technical options so the meeting can move while ideas are still fresh.</span>
+            <p class="hero-manifesto">
+              <span data-copy="ja">議論の中に、次の発見を。</span>
+              <span data-copy="en">Bring the next discovery into the room.</span>
             </p>
             <div class="hero-actions" id="download">
               <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
@@ -101,46 +109,15 @@
           </div>
 
           <div class="hero-stage" aria-hidden="true">
-            <img class="hero-icon" src="./assets/app-icon.png" alt="" width="1024" height="1024">
-            <div class="hero-float hero-float-source">
-              <span>Source matched</span>
-              <strong>Official docs</strong>
-            </div>
-            <div class="hero-float hero-float-counter">
-              <span>Counterpoint</span>
-              <strong>Adoption risk</strong>
-            </div>
-            <div class="hero-float hero-float-depth">
-              <span>Deep Research</span>
-              <strong>Next checks</strong>
-            </div>
-            <div class="meeting-canvas">
-              <div class="canvas-topbar">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <div class="canvas-body">
-                <div class="transcript-pane">
-                  <p class="pane-label">Live discussion</p>
-                  <div class="line speaker-a">A: Pricing risk came up again.</div>
-                  <div class="line speaker-b">B: Are there strong examples?</div>
-                  <div class="line speaker-a">A: We need a sharper angle.</div>
-                </div>
-                <div class="research-pane">
-                  <p class="pane-label">AI Research</p>
-                  <div class="research-card visual-card">
-                    <span class="card-type">Case study</span>
-                    <strong>Comparable rollout pattern</strong>
-                    <p>Evidence, caveats, and sources appear while the discussion is still alive.</p>
-                  </div>
-                  <div class="research-card deep-card">
-                    <span class="card-type">Deep Research</span>
-                    <strong>What to verify next</strong>
-                    <p>Primary sources and counterpoints for the selected card.</p>
-                  </div>
-                </div>
-              </div>
+            <div class="hero-art-frame">
+              <img
+                src="./assets/hero-magic-v1.png"
+                alt=""
+                width="1672"
+                height="941"
+                fetchpriority="high"
+                decoding="async"
+              >
             </div>
           </div>
         </div>
@@ -154,8 +131,8 @@
               <span data-copy="en">Demo</span>
             </p>
             <h2 id="demo-title">
-              <span data-copy="ja">会話の流れから、カードが立ち上がる。</span>
-              <span data-copy="en">Cards rise from the flow of the conversation.</span>
+              <span data-copy="ja">会話が、問いへ変わる。</span>
+              <span data-copy="en">A conversation becomes a question worth pursuing.</span>
             </h2>
             <div class="demo-steps">
               <article data-demo-step="0">
@@ -182,50 +159,24 @@
             </div>
           </div>
 
-          <div class="demo-device" aria-hidden="true">
-            <div class="demo-window-bar">
-              <span></span>
-              <span></span>
-              <span></span>
-              <strong>kAIgi</strong>
-            </div>
-            <div class="demo-app">
-              <div class="demo-transcript">
-                <p class="pane-label">Live discussion</p>
-                <div class="demo-line active">A: We need a way to compare launch options.</div>
-                <div class="demo-line">B: What worked for similar products?</div>
-                <div class="demo-line">C: The risk is choosing the obvious path too early.</div>
-                <div class="demo-signal">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <em>Detecting research angle</em>
-                </div>
-              </div>
-              <div class="demo-research">
-                <p class="pane-label">AI Research</p>
-                <article class="demo-card demo-card-primary">
-                  <span class="card-type">Research Card</span>
-                  <h3>Launch pattern from adjacent tools</h3>
-                  <p>Finds a comparable rollout, the tradeoff it exposed, and why it matters now.</p>
-                  <ul>
-                    <li>Comparable market motion</li>
-                    <li>Counterpoint for the current plan</li>
-                  </ul>
-                </article>
-                <article class="demo-card demo-card-deep">
-                  <span class="card-type">Deep Research</span>
-                  <h3>What to verify before deciding</h3>
-                  <p>Turns the selected card into primary-source checks and a sharper decision lens.</p>
-                  <div class="demo-sources">
-                    <span>Official docs</span>
-                    <span>Case study</span>
-                    <span>Pricing note</span>
-                  </div>
-                </article>
-              </div>
+          <div class="cinematic-scene" aria-hidden="true">
+            <img
+              src="./assets/observatory-magic-v1.png"
+              alt=""
+              width="1672"
+              height="941"
+              loading="lazy"
+              decoding="async"
+            >
+            <span class="scene-ring scene-ring-one"></span>
+            <span class="scene-ring scene-ring-two"></span>
+            <span class="scene-pulse"></span>
+            <div class="scene-caption">
+              <span>kAIgi / 01—03</span>
+              <strong>Question → discovery</strong>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -237,8 +188,8 @@
               <span data-copy="en">Core value</span>
             </p>
             <h2 id="research-title">
-              <span data-copy="ja">議論を支える</span>
-              <span data-copy="en">Support the discussion</span>
+              <span data-copy="ja">議論に、次の発見を返す。</span>
+              <span data-copy="en">Return the next discovery to the discussion.</span>
             </h2>
           </div>
           <div class="feature-grid">
@@ -280,6 +231,16 @@
       </section>
 
       <section class="band evidence-band" aria-labelledby="cards-title">
+        <div class="evidence-art" aria-hidden="true">
+          <img
+            src="./assets/research-archive-magic-v1.png"
+            alt=""
+            width="1536"
+            height="1024"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
         <div class="content-grid">
           <div>
             <p class="section-kicker">
@@ -287,8 +248,8 @@
               <span data-copy="en">Discussion loop</span>
             </p>
             <h2 id="cards-title">
-              <span data-copy="ja">議論を活性化させる</span>
-              <span data-copy="en">Activate the discussion</span>
+              <span data-copy="ja">問いの周りに、世界を広げる。</span>
+              <span data-copy="en">Widen the world around a question.</span>
             </h2>
           </div>
           <div class="card-strip">
@@ -399,6 +360,16 @@
       </section>
 
       <section class="download-cta" aria-labelledby="download-cta-title">
+        <div class="download-art" aria-hidden="true">
+          <img
+            src="./assets/download-magic-v1.png"
+            alt=""
+            width="1672"
+            height="941"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
         <div class="download-cta-inner">
           <div class="download-cta-copy">
             <p class="section-kicker">
@@ -406,8 +377,8 @@
               <span data-copy="en">Download</span>
             </p>
             <h2 id="download-cta-title">
-              <span data-copy="ja">準備できたら、最新版をダウンロード。</span>
-              <span data-copy="en">Ready to try it? Download the latest version.</span>
+              <span data-copy="ja">会議の中に、次の発見を。</span>
+              <span data-copy="en">Bring the next discovery into the room.</span>
             </h2>
           </div>
           <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
@@ -505,6 +476,39 @@
           button.addEventListener("click", () => setLanguage(button.dataset.languageOption));
         });
 
+        const hero = document.querySelector(".hero");
+        const heroStage = document.querySelector(".hero-stage");
+        const pointerMotion = window.matchMedia("(hover: hover) and (pointer: fine)");
+        let pointerFrame = 0;
+
+        function setHeroPointer(event) {
+          if (!hero || !heroStage || !pointerMotion.matches) {
+            return;
+          }
+
+          const rect = hero.getBoundingClientRect();
+          const x = ((event.clientX - rect.left) / rect.width - 0.5).toFixed(3);
+          const y = ((event.clientY - rect.top) / rect.height - 0.5).toFixed(3);
+          window.cancelAnimationFrame(pointerFrame);
+          pointerFrame = window.requestAnimationFrame(() => {
+            heroStage.style.setProperty("--pointer-x", x);
+            heroStage.style.setProperty("--pointer-y", y);
+          });
+        }
+
+        function resetHeroPointer() {
+          if (!heroStage) {
+            return;
+          }
+
+          window.cancelAnimationFrame(pointerFrame);
+          heroStage.style.setProperty("--pointer-x", "0");
+          heroStage.style.setProperty("--pointer-y", "0");
+        }
+
+        hero?.addEventListener("pointermove", setHeroPointer, { passive: true });
+        hero?.addEventListener("pointerleave", resetHeroPointer, { passive: true });
+
         const demoSections = document.querySelectorAll("[data-scroll-demo]");
         let scrollTicking = false;
 
@@ -542,6 +546,158 @@
 
         setLanguage(initial === "en" ? "en" : "ja");
         updateScrollDemos();
+      })();
+    </script>
+
+    <script>
+      /* Cinematic motion layer: staggered reveal-on-scroll + scroll-linked
+         parallax + hero entrance. Fully self-contained and defensive — if
+         anything throws, the reveal styles never engage (content stays
+         visible) because .js-motion is only added on the happy path. */
+      (() => {
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+        if (reduce.matches || !("IntersectionObserver" in window)) {
+          return;
+        }
+
+        const root = document.documentElement;
+
+        try {
+          root.classList.add("js-motion");
+
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-in");
+                  io.unobserve(entry.target);
+                }
+              });
+            },
+            { rootMargin: "0px 0px -12% 0px", threshold: 0.08 }
+          );
+
+          function reveal(selector, stagger) {
+            const nodes = document.querySelectorAll(selector);
+            nodes.forEach((node, index) => {
+              node.classList.add("reveal");
+              if (stagger) {
+                node.style.setProperty("--reveal-delay", `${index * stagger}ms`);
+              }
+              io.observe(node);
+            });
+          }
+
+          // Hero entrance — reveal on load, not on scroll.
+          const heroEls = [
+            document.querySelector(".hero-copy h1"),
+            document.querySelector(".hero-manifesto"),
+            document.querySelector(".hero-actions"),
+          ].filter(Boolean);
+          heroEls.forEach((el, index) => {
+            el.classList.add("reveal");
+            el.style.setProperty("--reveal-delay", `${120 + index * 130}ms`);
+          });
+          requestAnimationFrame(() =>
+            requestAnimationFrame(() =>
+              heroEls.forEach((el) => el.classList.add("is-in"))
+            )
+          );
+
+          // Scroll-revealed content, staggered within each group.
+          reveal(".demo-copy .section-kicker");
+          reveal(".demo-copy h2");
+          reveal(".demo-steps");
+          reveal(".intro-band .section-kicker");
+          reveal(".intro-band .content-grid h2");
+          reveal(".intro-band .feature", 90);
+          reveal(".evidence-band .section-kicker");
+          reveal(".evidence-band .content-grid h2");
+          reveal(".evidence-band .insight-card", 90);
+          reveal("#setup .section-kicker");
+          reveal("#setup h2");
+          reveal("#setup .steps li", 80);
+          reveal(".download-cta .section-kicker");
+          reveal(".download-cta h2");
+          reveal(".download-cta .button");
+          reveal(".help-band .section-kicker");
+          reveal(".help-band h2");
+          reveal(".accordion-list");
+
+          // Safety net: force-reveal anything already in view after a beat,
+          // in case an observer notification is missed.
+          window.setTimeout(() => {
+            document.querySelectorAll(".reveal:not(.is-in)").forEach((el) => {
+              if (el.getBoundingClientRect().top < window.innerHeight) {
+                el.classList.add("is-in");
+              }
+            });
+          }, 1400);
+
+          // Parallax (desktop widths only).
+          const desktop = window.matchMedia("(min-width: 981px)");
+          const heroFrame = document.querySelector(".hero-art-frame");
+          const evidenceImg = document.querySelector(".evidence-art img");
+          const evidenceBand = document.querySelector(".evidence-band");
+          const downloadImg = document.querySelector(".download-art img");
+          const downloadCta = document.querySelector(".download-cta");
+          const progressBar = document.querySelector(".scroll-progress span");
+          let parallaxTicking = false;
+
+          function driftThrough(el, band, range) {
+            if (!el || !band) {
+              return;
+            }
+            const rect = band.getBoundingClientRect();
+            const progress =
+              (window.innerHeight - rect.top) /
+              (window.innerHeight + rect.height);
+            const clamped = Math.min(Math.max(progress, 0), 1);
+            el.style.setProperty(
+              "--scroll-y",
+              `${((clamped - 0.5) * range).toFixed(1)}px`
+            );
+          }
+
+          function updateParallax() {
+            if (progressBar) {
+              const doc = document.documentElement;
+              const max = doc.scrollHeight - window.innerHeight;
+              const p = max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0;
+              progressBar.style.setProperty("--progress", p.toFixed(4));
+            }
+            if (!desktop.matches) {
+              return;
+            }
+            const y = window.scrollY || 0;
+            if (heroFrame) {
+              heroFrame.style.setProperty(
+                "--scroll-y",
+                `${Math.min(y * 0.12, 90).toFixed(1)}px`
+              );
+            }
+            driftThrough(evidenceImg, evidenceBand, 120);
+            driftThrough(downloadImg, downloadCta, 110);
+          }
+
+          function requestParallax() {
+            if (parallaxTicking) {
+              return;
+            }
+            parallaxTicking = true;
+            window.requestAnimationFrame(() => {
+              updateParallax();
+              parallaxTicking = false;
+            });
+          }
+
+          window.addEventListener("scroll", requestParallax, { passive: true });
+          window.addEventListener("resize", requestParallax);
+          updateParallax();
+        } catch (error) {
+          // Fail open: never leave content hidden behind the reveal styles.
+          root.classList.remove("js-motion");
+        }
       })();
     </script>
   </body>
