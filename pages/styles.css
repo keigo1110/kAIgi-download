@@ -596,6 +596,110 @@ details p {
   margin-top: 0;
 }
 
+.guide-intro {
+  max-width: 700px;
+}
+
+.guide-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.guide-card,
+.command-card,
+.guide-note {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.guide-card,
+.command-card {
+  padding: 22px;
+}
+
+.guide-card h3,
+.command-card h3 {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.guide-card p,
+.command-card p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.command-list {
+  display: grid;
+  gap: 14px;
+}
+
+.command-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.command-heading span {
+  flex: 0 0 auto;
+  color: var(--amber);
+  font-size: 0.82rem;
+  font-weight: 760;
+}
+
+.command-card pre {
+  max-width: 100%;
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  overflow-x: auto;
+  border: 1px solid rgba(116, 231, 238, 0.16);
+  border-radius: 7px;
+  background: #080b13;
+  color: #e7edf0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.command-card pre code {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  white-space: pre;
+}
+
+.guide-note {
+  padding: 22px;
+  background:
+    linear-gradient(135deg, rgba(116, 231, 238, 0.1), transparent 55%),
+    var(--panel);
+}
+
+.guide-note.warning {
+  border-color: rgba(248, 200, 124, 0.45);
+  background:
+    linear-gradient(135deg, rgba(248, 200, 124, 0.11), transparent 60%),
+    var(--panel);
+}
+
+.guide-note h2,
+.guide-note h3 {
+  margin: 0;
+}
+
+.guide-note p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.guide-note a {
+  color: var(--cyan);
+  text-underline-offset: 4px;
+}
+
 .site-footer {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -711,6 +815,12 @@ details p {
 
   .download-cta-inner .button {
     justify-self: start;
+  }
+
+  .command-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
   }
 }
 

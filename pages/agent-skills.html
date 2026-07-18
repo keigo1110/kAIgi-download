@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>CLI / Agent Skill - kAIgi</title>
+    <meta
+      name="description"
+      content="kAIgi CLIとAgent Skillで、CodexやClaude Codeから録音と文字起こしを扱う方法。"
+    >
+    <meta name="robots" content="index,follow">
+    <meta name="application-name" content="kAIgi">
+    <meta name="theme-color" content="#060811">
+    <meta property="og:site_name" content="kAIgi">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="CLI / Agent Skill - kAIgi">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/agent-skills.html">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/agent-skills.html">
+    <link rel="icon" href="./assets/app-icon.png">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body data-language="ja">
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="kAIgi home">
+        <img src="./assets/app-icon.png" alt="" width="36" height="36">
+        <span>kAIgi</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./index.html">
+          <span data-copy="ja">トップ</span>
+          <span data-copy="en">Home</span>
+        </a>
+        <a href="#commands">
+          <span data-copy="ja">コマンド</span>
+          <span data-copy="en">Commands</span>
+        </a>
+        <a href="#workflow">
+          <span data-copy="ja">使い方</span>
+          <span data-copy="en">Workflow</span>
+        </a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language">
+          <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
+          <button type="button" data-language-option="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
+          <span data-copy="ja">ダウンロード</span>
+          <span data-copy="en">Download</span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="policy-hero" aria-labelledby="guide-title">
+        <div class="narrow guide-intro">
+          <p class="eyebrow">CLI / AGENT SKILL</p>
+          <h1 id="guide-title">
+            <span data-copy="ja">文字起こしを、次の作業へ。</span>
+            <span data-copy="en">Take your transcript into the next task.</span>
+          </h1>
+          <p class="lead">
+            <span data-copy="ja">CLIはkAIgiの録音と文字起こしを操作するプログラムです。Agent Skillは、CodexやClaude CodeがそのCLIを安全に使うための説明書です。</span>
+            <span data-copy="en">The CLI is the program that operates on kAIgi recordings and transcripts. The Agent Skill is the instruction manual that teaches Codex and Claude Code how to use that CLI safely.</span>
+          </p>
+          <p class="updated">kAIgi 0.2.10</p>
+        </div>
+      </section>
+
+      <section class="band" aria-labelledby="difference-title">
+        <div class="narrow policy-copy">
+          <h2 id="difference-title">
+            <span data-copy="ja">CLIとAgent Skillの違い</span>
+            <span data-copy="en">CLI and Agent Skill are different</span>
+          </h2>
+          <div class="guide-grid">
+            <article class="guide-card">
+              <h3>
+                <span data-copy="ja">CLI：実際に動く道具</span>
+                <span data-copy="en">CLI: the tool that runs</span>
+              </h3>
+              <p>
+                <span data-copy="ja">ターミナルから実行するkAIgiのプログラムです。録音を探す、文字起こしを読む、音声ファイルを文字起こしする、といった処理を行います。</span>
+                <span data-copy="en">A kAIgi program run from Terminal. It finds recordings, reads transcripts, and transcribes audio files.</span>
+              </p>
+            </article>
+            <article class="guide-card">
+              <h3>
+                <span data-copy="ja">Agent Skill：使い方を教える説明書</span>
+                <span data-copy="en">Agent Skill: the instruction manual</span>
+              </h3>
+              <p>
+                <span data-copy="ja">CodexやClaude Codeに、どのコマンドをどの順番で使うか、文字起こしをどう確認・修正するかを伝えます。Skillだけでは録音を操作できません。</span>
+                <span data-copy="en">It tells Codex and Claude Code which commands to use, in what order, and how to review and correct transcripts. The Skill cannot operate recordings by itself.</span>
+              </p>
+            </article>
+          </div>
+          <p class="guide-note">
+            <span data-copy="ja">設定では、まずCLIとAgent Skillをそれぞれインストールします。その後、CodexやClaude Codeで「kAIgiの文字起こしを高精度化して」と依頼すると、SkillがCLIを使った手順を案内します。</span>
+            <span data-copy="en">In Settings, install the CLI and Agent Skill separately. Then ask Codex or Claude Code to improve a kAIgi transcript; the Skill guides it through the CLI workflow.</span>
+          </p>
+        </div>
+      </section>
+
+      <section class="band evidence-band" id="commands" aria-labelledby="commands-title">
+        <div class="narrow policy-copy">
+          <p class="section-kicker">Commands</p>
+          <h2 id="commands-title">
+            <span data-copy="ja">コマンド一覧</span>
+            <span data-copy="en">Command list</span>
+          </h2>
+          <p>
+            <span data-copy="ja">録音IDは最初に <code>list</code> または <code>search</code> で確認します。</span>
+            <span data-copy="en">Find a recording ID with <code>list</code> or <code>search</code> first.</span>
+          </p>
+          <div class="command-list">
+            <article class="command-card">
+              <div class="command-heading">
+                <h3><code>kaigi recordings list --limit 20</code></h3>
+                <span data-copy="ja">録音を探す</span>
+                <span data-copy="en">Find recordings</span>
+              </div>
+              <p>
+                <span data-copy="ja">録音タイトル、日時、長さ、音声・文字起こしの有無を一覧します。</span>
+                <span data-copy="en">Lists titles, dates, durations, and whether audio and transcripts exist.</span>
+              </p>
+            </article>
+            <article class="command-card">
+              <div class="command-heading">
+                <h3><code>kaigi recordings inspect &lt;recording-id&gt; --max-segments 500</code></h3>
+                <span data-copy="ja">全文を確認</span>
+                <span data-copy="en">Inspect a transcript</span>
+              </div>
+              <p>
+                <span data-copy="ja">話者・時刻・確度と一緒に文字起こしを確認します。</span>
+                <span data-copy="en">Inspects the transcript with speakers, timing, and confidence.</span>
+              </p>
+            </article>
+            <article class="command-card">
+              <div class="command-heading">
+                <h3><code>kaigi recordings search "query" --limit 20</code></h3>
+                <span data-copy="ja">録音内を検索</span>
+                <span data-copy="en">Search transcripts</span>
+              </div>
+              <p>
+                <span data-copy="ja">録音タイトルと文字起こし本文から録音を絞り込みます。</span>
+                <span data-copy="en">Searches recording titles and transcript text.</span>
+              </p>
+            </article>
+            <article class="command-card">
+              <div class="command-heading">
+                <h3><code>kaigi recordings export &lt;recording-id&gt; --out "$working"</code></h3>
+                <span data-copy="ja">編集用に取り出す</span>
+                <span data-copy="en">Create a working copy</span>
+              </div>
+              <p>
+                <span data-copy="ja">録音IDと元データのハッシュを含む編集用コピーを作ります。正式データは直接編集しません。</span>
+                <span data-copy="en">Creates a recording-bound working copy. Do not edit canonical files directly.</span>
+              </p>
+            </article>
+            <article class="command-card">
+              <div class="command-heading">
+                <h3><code>kaigi recordings apply-transcript &lt;recording-id&gt; --in "$working"</code></h3>
+                <span data-copy="ja">修正を反映</span>
+                <span data-copy="en">Apply corrections</span>
+              </div>
+              <p>
+                <span data-copy="ja">検証した文字だけの修正をkAIgiへ反映します。古いコピーは拒否されます。</span>
+                <span data-copy="en">Validates and applies text-only corrections. Stale working copies are rejected.</span>
+              </p>
+            </article>
+            <article class="command-card">
+              <div class="command-heading">
+                <h3><code>kaigi transcribe /path/to/audio.m4a --quality accurate --out /tmp/kaigi-transcription.json</code></h3>
+                <span data-copy="ja">音声ファイルを文字起こし</span>
+                <span data-copy="en">Transcribe an audio file</span>
+              </div>
+              <p>
+                <span data-copy="ja">外部音声をMac上で文字起こしします。結果はJSONで、録音一覧には自動追加しません。</span>
+                <span data-copy="en">Transcribes an external audio file on this Mac. The JSON result is not added to the library automatically.</span>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band" id="workflow" aria-labelledby="workflow-title">
+        <div class="narrow policy-copy">
+          <p class="section-kicker">Two-pass refinement</p>
+          <h2 id="workflow-title">
+            <span data-copy="ja">高精度化は2段階</span>
+            <span data-copy="en">Refine in two passes</span>
+          </h2>
+          <div class="guide-grid">
+            <article class="guide-card">
+              <h3>
+                <span data-copy="ja">1. 確度の低い箇所を直す</span>
+                <span data-copy="en">1. Fix low-confidence segments</span>
+              </h3>
+              <p>
+                <span data-copy="ja"><code>needsReview</code> または確度 <code>0.70</code> 未満を、前後の発話や固有名詞と照合します。確信できない部分は残します。</span>
+                <span data-copy="en">Review <code>needsReview</code> segments or confidence below <code>0.70</code> using nearby speech and names. Leave uncertain wording unchanged.</span>
+              </p>
+            </article>
+            <article class="guide-card">
+              <h3>
+                <span data-copy="ja">2. 全体の文脈で整える</span>
+                <span data-copy="en">2. Normalize with full context</span>
+              </h3>
+              <p>
+                <span data-copy="ja">全文を読み直し、名前・製品名・専門用語・句読点を一貫させます。要約や発話の追加はしません。</span>
+                <span data-copy="en">Re-read the full transcript and normalize names, products, technical terms, and punctuation. Never summarize or add speech.</span>
+              </p>
+            </article>
+            <article class="guide-card">
+              <h3>
+                <span data-copy="ja">3. 最後に一度だけ反映</span>
+                <span data-copy="en">3. Apply once at the end</span>
+              </h3>
+              <p>
+                <span data-copy="ja">2段階が終わってから <code>apply-transcript</code> を実行し、kAIgi上で結果を確認します。</span>
+                <span data-copy="en">Run <code>apply-transcript</code> only after both passes, then verify the result in kAIgi.</span>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band help-band" aria-labelledby="privacy-title">
+        <div class="narrow policy-copy">
+          <div class="guide-note warning">
+            <h2 id="privacy-title">
+              <span data-copy="ja">プライバシーの確認</span>
+              <span data-copy="en">Privacy check</span>
+            </h2>
+            <p>
+              <span data-copy="ja">CLIはこのMac上で処理します。ただし、CodexやClaude Codeのモデルがクラウド上、または動作場所不明の場合、Agent Skillは録音コマンドの前に確認を求めます。許可しなければ処理は開始しません。</span>
+              <span data-copy="en">The CLI processes data on this Mac. If the Codex or Claude Code model is cloud-hosted or its location is unknown, the Agent Skill asks for permission before recording commands. Nothing starts without permission.</span>
+            </p>
+            <p>
+              <span data-copy="ja"><code>list</code> はタイトルや日時などのメタデータ、<code>inspect</code>・<code>search</code>・<code>export</code>・<code>apply-transcript</code> は文字起こし本文を扱います。AI ResearchのOpenAI API連携は別の機能です。詳しくは<a href="./privacy.html">プライバシーポリシー</a>をご確認ください。</span>
+              <span data-copy="en"><code>list</code> handles metadata such as title and date; <code>inspect</code>, <code>search</code>, <code>export</code>, and <code>apply-transcript</code> handle transcript text. AI Research’s OpenAI API integration is separate. See the <a href="./privacy.html">Privacy Policy</a>.</span>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span aria-hidden="true"></span>
+      <p>&copy; 2026 kAIgi</p>
+      <div class="footer-links">
+        <a href="./index.html">
+          <span data-copy="ja">トップ</span>
+          <span data-copy="en">Home</span>
+        </a>
+        <a href="./privacy.html">Privacy Policy</a>
+        <a href="https://github.com/keigo1110/kAIgi-download">GitHub</a>
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        const stored = window.localStorage.getItem("kaigi-language");
+        const prefersJapanese = (navigator.language || "").toLowerCase().startsWith("ja");
+        const initial = stored || (prefersJapanese ? "ja" : "en");
+        const buttons = document.querySelectorAll("[data-language-option]");
+
+        function setLanguage(language) {
+          document.documentElement.lang = language;
+          document.body.dataset.language = language;
+          window.localStorage.setItem("kaigi-language", language);
+          buttons.forEach((button) => {
+            button.setAttribute("aria-pressed", String(button.dataset.languageOption === language));
+          });
+        }
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => setLanguage(button.dataset.languageOption));
+        });
+
+        setLanguage(initial === "en" ? "en" : "ja");
+      })();
+    </script>
+  </body>
+</html>
