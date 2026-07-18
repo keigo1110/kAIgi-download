@@ -6,12 +6,12 @@
     <language>ja</language>
     <link>https://keigo1110.github.io/kAIgi-download/</link>
     <item>
-      <title>kAIgi 0.2.8</title>
-      <sparkle:version>22</sparkle:version>
-      <sparkle:shortVersionString>0.2.8</sparkle:shortVersionString>
-      <sparkle:releaseNotesLink>https://keigo1110.github.io/kAIgi-download/release-notes/v0.2.8.html</sparkle:releaseNotesLink>
-      <pubDate>Thu, 16 Jul 2026 15:26:57 +0000</pubDate>
-      <enclosure url="https://github.com/keigo1110/kAIgi-download/releases/download/v0.2.8/kAIgi-0.2.8.dmg" length="91871718" type="application/octet-stream" sparkle:edSignature="YSMzZzcPFdNR/2fPh5hLEqvvNJII69QQ9ocK5p7iq8+3MehQxART37JfF88911dBb7bTpNFERKUJ8qsTCkWRDg==" />
+      <title>kAIgi 0.2.9</title>
+      <sparkle:version>23</sparkle:version>
+      <sparkle:shortVersionString>0.2.9</sparkle:shortVersionString>
+      <sparkle:releaseNotesLink>https://keigo1110.github.io/kAIgi-download/release-notes/v0.2.9.html</sparkle:releaseNotesLink>
+      <pubDate>Sat, 18 Jul 2026 03:43:02 +0000</pubDate>
+      <enclosure url="https://github.com/keigo1110/kAIgi-download/releases/download/v0.2.9/kAIgi-0.2.9.dmg" length="91992424" type="application/octet-stream" sparkle:edSignature="VAWNpgnN8niQJR3qLX4WnKsir/Z0GbYWo5iYrs36E/39qvBPhCmO+0JVcywFXCAOgbJVxWSb4I2LdRhSWZFBDA==" />
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
     </item>
   </channel>

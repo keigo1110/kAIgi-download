@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.2.9</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 28px 28px;
+      font-size: 15px;
+      line-height: 1.65;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    main {
+      max-width: 760px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: #57606a;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0 0 10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root,
+      body {
+        background: #0d1117;
+        color: #f0f6fc;
+      }
+
+      p {
+        color: #8b949e;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.2.9</h1>
+    <p>議論ログを中心に、会議の流れと話題のまとまりを追いやすくしました。録音、音声認識、話者解析、議論ログの処理は端末内で行われます。</p>
+    <ul>
+      <li>AI Researchのラジアルマップに代わり、発言を時系列で追えるコミットログ型の議論ログを表示します。</li>
+      <li>議論ログを「会議」&gt;「議題ブロック」&gt;「発言」の2階層で整理し、会議全体から話題と発言へ移動できます。</li>
+      <li>録音停止時のバックフィルにより、会議末尾の発言や話題が議論ログから欠落しにくくなりました。</li>
+      <li>話者解析がすべて失敗する回帰を修正し、話者別の文字起こしを正しく生成できるようにしました。</li>
+      <li>ライブ文字起こしの自動追従を修正し、認識が停滞している場合は状態を確認できるようにしました。</li>
+    </ul>
+    <p>既知の限界として、録音中の議論ログに表示されるセグメントタイトルは、話題の境界が確定した時点で追加されます。単一の話題が続いている間は「（進行中・N件の発言）」という進行状況のみが表示され、議題ブロックの見出しは録音停止後に表示されます。このライブ追従体験の改善は後続リリースで予定しています。</p>
+    <p>既存の録音データと従来の保存形式は引き続き読み込めます。</p>
+  </main>
+</body>
+</html>
