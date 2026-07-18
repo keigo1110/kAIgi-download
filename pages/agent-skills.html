@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark">
-    <title>CLI / Agent Skill - kAIgi</title>
+    <title>CLI / Skills - kAIgi</title>
     <meta
       name="description"
       content="kAIgi CLIとAgent Skillで、CodexやClaude Codeから録音と文字起こしを扱う方法。"
@@ -14,7 +14,7 @@
     <meta name="theme-color" content="#060811">
     <meta property="og:site_name" content="kAIgi">
     <meta property="og:locale" content="ja_JP">
-    <meta property="og:title" content="CLI / Agent Skill - kAIgi">
+    <meta property="og:title" content="CLI / Skills - kAIgi">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/agent-skills.html">
     <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
@@ -73,8 +73,8 @@
       <section class="band" aria-labelledby="difference-title">
         <div class="narrow policy-copy">
           <h2 id="difference-title">
-            <span data-copy="ja">CLIとAgent Skillの違い</span>
-            <span data-copy="en">CLI and Agent Skill are different</span>
+            <span data-copy="ja">CLIとSkillsの違い</span>
+            <span data-copy="en">CLI and Skills are different</span>
           </h2>
           <div class="guide-grid">
             <article class="guide-card">
@@ -89,8 +89,8 @@
             </article>
             <article class="guide-card">
               <h3>
-                <span data-copy="ja">Agent Skill：使い方を教える説明書</span>
-                <span data-copy="en">Agent Skill: the instruction manual</span>
+                <span data-copy="ja">Skill：使い方を教える説明書</span>
+                <span data-copy="en">Skill: the instruction manual</span>
               </h3>
               <p>
                 <span data-copy="ja">CodexやClaude Codeに、どのコマンドをどの順番で使うか、文字起こしをどう確認・修正するかを伝えます。Skillだけでは録音を操作できません。</span>
@@ -99,9 +99,45 @@
             </article>
           </div>
           <p class="guide-note">
-            <span data-copy="ja">設定では、まずCLIとAgent Skillをそれぞれインストールします。その後、CodexやClaude Codeで「kAIgiの文字起こしを高精度化して」と依頼すると、SkillがCLIを使った手順を案内します。</span>
-            <span data-copy="en">In Settings, install the CLI and Agent Skill separately. Then ask Codex or Claude Code to improve a kAIgi transcript; the Skill guides it through the CLI workflow.</span>
+            <span data-copy="ja">設定では、まずCLIとkAIgi Skillをそれぞれインストールします。その後、CodexやClaude CodeでSkillを呼び出すと、CLIを使った手順を案内します。</span>
+            <span data-copy="en">In Settings, install the CLI and kAIgi Skill separately. Then invoke the Skill in Codex or Claude Code; it guides the CLI workflow.</span>
           </p>
+        </div>
+      </section>
+
+      <section class="band" aria-labelledby="invoke-title">
+        <div class="narrow policy-copy">
+          <p class="section-kicker">Invoke</p>
+          <h2 id="invoke-title">
+            <span data-copy="ja">Skillsの呼び出し方</span>
+            <span data-copy="en">How to invoke the Skill</span>
+          </h2>
+          <div class="command-list">
+            <article class="command-card">
+              <div class="command-heading">
+                <h3>Codex</h3>
+                <span data-copy="ja">自然文で指定</span>
+                <span data-copy="en">Name it in your request</span>
+              </div>
+              <pre><code>kAIgi skillを使って、選択した文字起こしを2段階で高精度化して</code></pre>
+              <p>
+                <span data-copy="ja">CodexのSkills一覧から <code>kaigi</code> を選べる場合は、そこから指定します。環境によっては <code>$kaigi</code> と表示されます。</span>
+                <span data-copy="en">If your Codex surface has a Skills picker, select <code>kaigi</code>. Some surfaces show the explicit mention as <code>$kaigi</code>.</span>
+              </p>
+            </article>
+            <article class="command-card">
+              <div class="command-heading">
+                <h3>Claude Code</h3>
+                <span data-copy="ja">スラッシュコマンド</span>
+                <span data-copy="en">Slash command</span>
+              </div>
+              <pre><code>/kaigi 選択した文字起こしを2段階で高精度化して</code></pre>
+              <p>
+                <span data-copy="ja">入力欄で <code>/</code> を入力すると、利用できるSkillsを一覧できます。依頼内容に応じて自動で読み込まれることもあります。</span>
+                <span data-copy="en">Type <code>/</code> to see available Skills. Claude Code may also load it automatically when the request matches its description.</span>
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -237,8 +273,8 @@
               <span data-copy="en">Privacy check</span>
             </h2>
             <p>
-              <span data-copy="ja">CLIはこのMac上で処理します。ただし、CodexやClaude Codeのモデルがクラウド上、または動作場所不明の場合、Agent Skillは録音コマンドの前に確認を求めます。許可しなければ処理は開始しません。</span>
-              <span data-copy="en">The CLI processes data on this Mac. If the Codex or Claude Code model is cloud-hosted or its location is unknown, the Agent Skill asks for permission before recording commands. Nothing starts without permission.</span>
+              <span data-copy="ja">CLIはこのMac上で処理します。kAIgiアプリはCLIを初めてインストールする際、CodexやClaude Codeのモデルによっては文字起こしがモデル提供元へ送られる可能性があることを警告します。0.2.10ではコマンドごとの確認は行いません。</span>
+              <span data-copy="en">The CLI processes data on this Mac. kAIgi shows a warning when you install the CLI for the first time because the selected Codex or Claude Code model may receive transcript text. kAIgi 0.2.10 does not ask for confirmation before every command.</span>
             </p>
             <p>
               <span data-copy="ja"><code>list</code> はタイトルや日時などのメタデータ、<code>inspect</code>・<code>search</code>・<code>export</code>・<code>apply-transcript</code> は文字起こし本文を扱います。AI ResearchのOpenAI API連携は別の機能です。詳しくは<a href="./privacy.html">プライバシーポリシー</a>をご確認ください。</span>
