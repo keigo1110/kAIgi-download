@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.2.10</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 28px 28px;
+      font-size: 15px;
+      line-height: 1.65;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    main {
+      max-width: 760px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: #57606a;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0 0 10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root,
+      body {
+        background: #0d1117;
+        color: #f0f6fc;
+      }
+
+      p {
+        color: #8b949e;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.2.10</h1>
+    <p>ライブ文字起こしとAI支援の役割を整理し、録音後の文字起こしをほかのツールでも活用しやすくしました。</p>
+    <ul>
+      <li>「文字起こし」「議論ログ」「AI Research」を独立した3つのパネルに整理しました。狭い画面では右の2パネルが自動でタブにまとまり、表示は右上のボタンから切り替えられます。</li>
+      <li>設定画面を整理し、議論ログとLocal LLMを同じセクションから設定できるようにしました。</li>
+      <li>音声ファイルをインポートし、通常の録音と同じspeaker音声として端末内で文字起こしできるようにしました。</li>
+      <li>kAIgi CLIとCodex／Claude Code向けAgent Skillを設定画面からインストールできるようにしました。Agent Skillは低確度箇所を先に直し、全文脈で整える二段階の文脈校正を案内します。古い作業コピーによる上書きを防ぎ、修正した文字起こしはkAIgiがアクティブで録音を選択中なら自動で反映されます。</li>
+      <li>AIで変更された文字起こしには「AI補正済み」を表示します。元の音声認識が付けた「要確認」は消さず、別の情報として確認できます。</li>
+      <li>スレッド表示と話者別表示の左側に時刻と再生操作をまとめ、文字起こし位置から音声を再生できるようにしました。</li>
+      <li>波形の再生済み部分と未再生部分を見分けやすくし、一時停止後も再生位置を保持するようにしました。</li>
+    </ul>
+    <p>既知の限界として、speaker音声とマイク音声のミックス再生には対応していません。インポートした音声はまずspeaker音声として文字起こしされ、話者分離は必要に応じて別途実行します。議論ログの生成品質は0.2.9と同等で、精度向上は0.2.11で予定しています。</p>
+    <p>録音、音声認識、話者解析、議論ログ、CLIによる文字起こし処理は端末内で行われます。CLIを初めてインストールする際、CodexやClaude Codeのモデルによっては文字起こしがモデル提供元へ送られる可能性があることを警告します。0.2.10ではコマンドごとの確認や名前のマスクは行わず、より強いプライバシー機能は後続リリースで検討します。AI Researchを有効にした場合のみ、Web検索が必要な処理で設定済みのOpenAI APIを使用します。既存の録音データと保存形式は引き続き読み込めます。</p>
+  </main>
+</body>
+</html>
