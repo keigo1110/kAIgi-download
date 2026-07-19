@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>Privacy Plan - kAIgi</title>
+    <meta
+      name="description"
+      content="kAIgiの現在のプライバシー仕様と、今後議論するプライバシー機能の計画。"
+    >
+    <meta name="robots" content="index,follow">
+    <meta name="application-name" content="kAIgi">
+    <meta name="theme-color" content="#060811">
+    <meta property="og:site_name" content="kAIgi">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="Privacy Plan - kAIgi">
+    <meta
+      property="og:description"
+      content="kAIgiの現在のプライバシー仕様と、今後議論するプライバシー機能の計画。"
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/privacy-plan.html">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/privacy-plan.html">
+    <link rel="icon" href="./assets/app-icon.png">
+    <link rel="apple-touch-icon" href="./assets/app-icon.png">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body data-language="ja">
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="kAIgi home">
+        <img src="./assets/app-icon.png" alt="" width="36" height="36">
+        <span>kAIgi</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./index.html"><span data-copy="ja">トップ</span><span data-copy="en">Home</span></a>
+        <a href="#current"><span data-copy="ja">現在</span><span data-copy="en">Current</span></a>
+        <a href="#plan"><span data-copy="ja">計画</span><span data-copy="en">Plan</span></a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language">
+          <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
+          <button type="button" data-language-option="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
+          <span data-copy="ja">ダウンロード</span>
+          <span data-copy="en">Download</span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="policy-hero" aria-labelledby="privacy-plan-title">
+        <div class="narrow guide-intro">
+          <p class="eyebrow">PRIVACY PLAN</p>
+          <h1 id="privacy-plan-title"><span data-copy="ja">プライバシーを、選べる設計へ。</span><span data-copy="en">Make privacy choices visible.</span></h1>
+          <p class="lead"><span data-copy="ja">このページは、kAIgiの現在の動作と、これから議論するプライバシー機能の候補を分けて整理します。候補は確定仕様や実装済み機能ではありません。</span><span data-copy="en">This page separates kAIgi’s current behavior from privacy features for future discussion. The candidates below are not commitments or implemented features.</span></p>
+          <p class="updated"><span data-copy="ja">議論用ドラフト · kAIgi 0.2.10</span><span data-copy="en">Discussion draft · kAIgi 0.2.10</span></p>
+        </div>
+      </section>
+
+      <section class="band" id="current" aria-labelledby="current-title">
+        <div class="narrow policy-copy">
+          <p class="section-kicker">Current</p>
+          <h2 id="current-title"><span data-copy="ja">現在の仕様</span><span data-copy="en">Current behavior</span></h2>
+          <div class="guide-note warning">
+            <h3><span data-copy="ja">0.2.10での境界</span><span data-copy="en">The boundary in 0.2.10</span></h3>
+            <p><span data-copy="ja">kAIgi CLIはMac上で録音と文字起こしを扱い、CLI自体が音声や文字起こしをクラウドへアップロードすることはありません。一方、CodexやClaude CodeがCLIの出力をモデルへ渡す場合、選択したモデル提供元へメタデータや文字起こしが送られる可能性があります。アプリはCLI初回インストール時にこの点を警告しますが、現時点ではコマンドごとの確認、送信先の自動判定、名前のマスキングは行いません。</span><span data-copy="en">The kAIgi CLI handles recordings and transcripts on this Mac and does not upload them to the cloud by itself. However, when Codex or Claude Code passes CLI output to its model, metadata or transcript text may reach the selected model provider. kAIgi warns about this before the first CLI installation. It does not yet ask before every command, detect the provider automatically, or mask names.</span></p>
+          </div>
+          <div class="guide-grid">
+            <article class="guide-card"><h3><span data-copy="ja">ローカル処理</span><span data-copy="en">Local processing</span></h3><p><span data-copy="ja">録音、オンデバイス文字起こし、議論ログはMac上で処理します。</span><span data-copy="en">Recording, on-device transcription, and discussion logs are processed on the Mac.</span></p></article>
+            <article class="guide-card"><h3><span data-copy="ja">初回インストール警告</span><span data-copy="en">First-install warning</span></h3><p><span data-copy="ja">CLIを初めてインストールする前に、モデル提供元への送信可能性を説明します。</span><span data-copy="en">Before the first CLI installation, kAIgi explains that model providers may receive content.</span></p></article>
+            <article class="guide-card"><h3><span data-copy="ja">AI Researchは別機能</span><span data-copy="en">AI Research is separate</span></h3><p><span data-copy="ja">AI ResearchのOpenAI API連携はCLIとは別の設定・送信経路です。</span><span data-copy="en">AI Research’s OpenAI API integration is a separate setting and transmission path.</span></p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band evidence-band" id="plan" aria-labelledby="plan-title">
+        <div class="narrow policy-copy">
+          <p class="section-kicker">Plan</p>
+          <h2 id="plan-title"><span data-copy="ja">今後検討する機能</span><span data-copy="en">Features to discuss</span></h2>
+          <div class="command-list">
+            <article class="command-card"><div class="command-heading"><h3><span data-copy="ja">1. 送信前の確認</span><span data-copy="en">1. Confirm before sending</span></h3><span data-copy="ja">最優先候補</span><span data-copy="en">Top candidate</span></div><p><span data-copy="ja">クラウドまたは送信先不明のモデルへ渡る前に、何が送られるかを表示し、明示的に許可できるようにします。録音一覧のメタデータと文字起こし本文を分けて説明します。</span><span data-copy="en">Before content reaches a cloud or unknown model, show what will be sent and let the user allow it explicitly. Explain recording metadata separately from transcript text.</span></p></article>
+            <article class="command-card"><div class="command-heading"><h3><span data-copy="ja">2. 送信先の見える化</span><span data-copy="en">2. Show the destination</span></h3><span data-copy="ja">判断の土台</span><span data-copy="en">Decision foundation</span></div><p><span data-copy="ja">ローカル、クラウド、判定不能を区別し、どの処理がどこへ渡る可能性があるかを設定と実行時に確認できるようにします。</span><span data-copy="en">Distinguish local, cloud, and unknown processing so users can see where each operation may send data in Settings and at execution time.</span></p></article>
+            <article class="command-card"><div class="command-heading"><h3><span data-copy="ja">3. 名前・固有名詞のマスキング</span><span data-copy="en">3. Mask names and proper nouns</span></h3><span data-copy="ja">品質との両立</span><span data-copy="en">Balance with quality</span></div><p><span data-copy="ja">送信前のコピーだけを一貫した仮名へ置き換え、元の録音・文字起こしはMacに残します。マスキングによる精度低下と、元に戻せる範囲を明示します。</span><span data-copy="en">Replace names with consistent aliases only in the copy sent out, while keeping the original recording and transcript on the Mac. Explain accuracy trade-offs and what can be restored.</span></p></article>
+            <article class="command-card"><div class="command-heading"><h3><span data-copy="ja">4. ローカル限定モード</span><span data-copy="en">4. Local-only mode</span></h3><span data-copy="ja">強い保護</span><span data-copy="en">Strong protection</span></div><p><span data-copy="ja">外部モデルへの送信を許可しない設定を用意し、クラウドや判定不能な経路を失敗させます。使えない機能を事前に説明します。</span><span data-copy="en">Provide a setting that rejects cloud or unknown paths and explain in advance which features become unavailable.</span></p></article>
+            <article class="command-card"><div class="command-heading"><h3><span data-copy="ja">5. 送信履歴の確認</span><span data-copy="en">5. Review transmission history</span></h3><span data-copy="ja">後から確認</span><span data-copy="en">Review later</span></div><p><span data-copy="ja">いつ、どの機能が、どの種類のデータを外部モデルへ渡したかを、本文を保存せずに確認できるようにします。</span><span data-copy="en">Let users review when a feature sent which type of data to an external model without retaining transcript content in the log.</span></p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band help-band" aria-labelledby="decision-title">
+        <div class="narrow policy-copy">
+          <div class="guide-note"><h2 id="decision-title"><span data-copy="ja">次に決めること</span><span data-copy="en">What we need to decide next</span></h2><p><span data-copy="ja">推奨順は、①送信内容と送信先を表示して明示許可、②送信前コピーのマスキング、③ローカル限定モード、④送信履歴です。まず①を決めると、ユーザーがその場で判断でき、マスキングの品質低下を無理に受け入れずに済みます。</span><span data-copy="en">The recommended order is: (1) show the content and destination and ask explicitly, (2) mask the outgoing copy, (3) add local-only mode, and (4) add transmission history. Deciding (1) first gives users an immediate choice without forcing them to accept masking quality loss.</span></p><p><span data-copy="ja">候補への意見や具体的な利用場面は、<a href="https://github.com/keigo1110/kAIgi-download/issues">GitHub Issues</a>で受け付けます。正式な仕様に採用した機能は、実装前にこのページとプライバシーポリシーを更新します。</span><span data-copy="en">Share use cases and feedback in <a href="https://github.com/keigo1110/kAIgi-download/issues">GitHub Issues</a>. Once a candidate becomes an adopted feature, this page and the Privacy Policy will be updated before implementation.</span></p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span aria-hidden="true"></span><p>&copy; 2026 kAIgi</p><div class="footer-links"><a href="./index.html"><span data-copy="ja">トップ</span><span data-copy="en">Home</span></a><a href="./agent-skills.html">CLI / Skills</a><a href="./privacy.html">Privacy Policy</a><a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a></div></footer>
+
+    <script>
+      (() => {
+        const stored = window.localStorage.getItem("kaigi-language");
+        const prefersJapanese = (navigator.language || "").toLowerCase().startsWith("ja");
+        const initial = stored || (prefersJapanese ? "ja" : "en");
+        const buttons = document.querySelectorAll("[data-language-option]");
+        function setLanguage(language) {
+          document.documentElement.lang = language;
+          document.body.dataset.language = language;
+          window.localStorage.setItem("kaigi-language", language);
+          buttons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.languageOption === language)));
+        }
+        buttons.forEach((button) => button.addEventListener("click", () => setLanguage(button.dataset.languageOption)));
+        setLanguage(initial === "en" ? "en" : "ja");
+      })();
+    </script>
+  </body>
+</html>
