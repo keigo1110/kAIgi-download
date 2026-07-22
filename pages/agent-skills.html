@@ -113,8 +113,8 @@
             <span data-copy="en">The kAIgi CLI works with recordings and transcripts locally. The Agent Skill teaches Codex and Claude Code how to use it safely, refine low-confidence text, improve the full context, and return the result to kAIgi.</span>
           </p>
           <p class="updated">
-            <span data-copy="ja">kAIgi 0.2.10</span>
-            <span data-copy="en">kAIgi 0.2.10</span>
+            <span data-copy="ja">kAIgi 0.2.11</span>
+            <span data-copy="en">kAIgi 0.2.11</span>
           </p>
         </div>
       </section>
@@ -276,6 +276,39 @@
             </article>
             <article class="command-card">
               <div class="command-heading">
+                <h3><code>kaigi recordings discussion-log export &lt;recording-id&gt; --out "$context"</code></h3>
+                <span data-copy="ja">議論ログの材料を取り出す</span>
+                <span data-copy="en">Export discussion-log context</span>
+              </div>
+              <p>
+                <span data-copy="ja">全文、録音ID、文字起こしハッシュ、発話列、現在の議論ログを、エージェントが後処理できる作業用JSONとして取り出します。元の録音データは変更しません。</span>
+                <span data-copy="en">Exports the full transcript, recording ID, source hash, utterance list, and current discussion log as a working JSON for an agent. It does not change the recording.</span>
+              </p>
+            </article>
+            <article class="command-card">
+              <div class="command-heading">
+                <h3><code>kaigi recordings discussion-log validate &lt;recording-id&gt; --in "$context"</code></h3>
+                <span data-copy="ja">議論ログを反映前に検証</span>
+                <span data-copy="en">Validate a discussion log</span>
+              </div>
+              <p>
+                <span data-copy="ja"><code>discussion_log</code>のスキーマ、発話の完全一致、セグメントの連続被覆、議題ブロック、録音ハッシュを確認します。正式データは変更しません。</span>
+                <span data-copy="en">Checks the <code>discussion_log</code> schema, exact utterance identity, contiguous segment coverage, topic blocks, and recording hash without changing canonical data.</span>
+              </p>
+            </article>
+            <article class="command-card">
+              <div class="command-heading">
+                <h3><code>kaigi recordings discussion-log apply &lt;recording-id&gt; --in "$context"</code></h3>
+                <span data-copy="ja">議論ログを反映</span>
+                <span data-copy="en">Apply a discussion log</span>
+              </div>
+              <p>
+                <span data-copy="ja">検証済みの議論ログだけを、セッションの排他的ロック下で <code>discussion_log.json</code> へ原子的に反映します。文字起こしが先に変わっていれば古い作業コピーとして拒否します。</span>
+                <span data-copy="en">Publishes only the validated discussion log to <code>discussion_log.json</code> under the session's exclusive lock. It rejects a stale working copy if the transcript changed first.</span>
+              </p>
+            </article>
+            <article class="command-card">
+              <div class="command-heading">
                 <h3><code>kaigi transcribe /path/to/audio.m4a --quality accurate --out /tmp/kaigi-transcription.json</code></h3>
                 <span data-copy="ja">音声ファイルを文字起こし</span>
                 <span data-copy="en">Transcribe an audio file</span>
@@ -339,8 +372,8 @@
               <span data-copy="en">Privacy check</span>
             </h2>
             <p>
-              <span data-copy="ja">CLIは音声と文字起こしをこのMac上で処理します。kAIgiアプリはCLIを初めてインストールする際、CodexやClaude Codeのモデルによっては文字起こしがモデル提供元へ送られる可能性があることを警告します。0.2.10ではコマンドごとの確認は行いません。<code>list</code> はタイトルや日時などのメタデータ、<code>inspect</code>・<code>search</code>・<code>export</code>・<code>apply-transcript</code> は文字起こし本文を扱います。</span>
-              <span data-copy="en">The CLI processes audio and transcripts on this Mac. kAIgi shows a warning when you install the CLI for the first time because the selected Codex or Claude Code model may receive transcript text. kAIgi 0.2.10 does not ask for confirmation before every command. <code>list</code> handles metadata such as title and date; <code>inspect</code>, <code>search</code>, <code>export</code>, and <code>apply-transcript</code> handle transcript text.</span>
+              <span data-copy="ja">CLIは音声と文字起こしをこのMac上で処理します。kAIgiアプリはCLIを初めてインストールする際、CodexやClaude Codeのモデルによっては文字起こしがモデル提供元へ送られる可能性があることを警告します。0.2.11ではコマンドごとの確認は行いません。<code>list</code> はタイトルや日時などのメタデータ、<code>inspect</code>・<code>search</code>・<code>export</code>・<code>apply-transcript</code>・<code>discussion-log</code> は文字起こし本文を扱います。</span>
+              <span data-copy="en">The CLI processes audio and transcripts on this Mac. kAIgi shows a warning when you install the CLI for the first time because the selected Codex or Claude Code model may receive transcript text. kAIgi 0.2.11 does not ask for confirmation before every command. <code>list</code> handles metadata such as title and date; <code>inspect</code>, <code>search</code>, <code>export</code>, <code>apply-transcript</code>, and <code>discussion-log</code> handle transcript text.</span>
             </p>
             <p>
               <span data-copy="ja">AI ResearchのOpenAI API連携は別の機能です。詳しくは<a href="./privacy.html">プライバシーポリシー</a>を確認してください。</span>

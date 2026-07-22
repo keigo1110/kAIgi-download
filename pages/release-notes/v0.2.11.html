@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.2.11</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 28px 28px;
+      font-size: 15px;
+      line-height: 1.65;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    main {
+      max-width: 760px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: #57606a;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0 0 10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root,
+      body {
+        background: #0d1117;
+        color: #f0f6fc;
+      }
+
+      p {
+        color: #8b949e;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.2.11</h1>
+    <p>録音履歴をプロジェクト単位で整理し、認識設定と音声確認を使いやすくしました。</p>
+    <ul>
+      <li>履歴サイドバーを「検索 → プロジェクト → ログ」の順に整理しました。プロジェクトは空の状態でも作成でき、録音をドラッグ＆ドロップして所属を変更できます。</li>
+      <li>プロジェクトごとに名前、色、アイコンを設定できます。プロジェクト名を変更しても録音との関連は維持され、削除時には確認のうえ所属録音をログへ戻します。録音データは削除されません。</li>
+      <li>履歴カードの長さを「2時間4分」「58分」のように読みやすく表示し、カード内のプロジェクト設定操作をなくしました。</li>
+      <li>設定を全面ページにし、「録音・認識」でマイク入力とスピーカーの確認を行えるようにしました。</li>
+      <li>文字起こし言語を最大4件まで優先順に設定できます。同じ録音に対して端末内で候補を認識し、結果が近い場合は上位の言語を優先します。変更は次の録音から反映されます。</li>
+    </ul>
+    <p>録音、文字起こし、話者解析、議論ログ、追加した言語候補の認識はこのMac上で処理されます。初めて使う言語では、Apple管理の音声認識アセットの準備に時間がかかる場合があります。AI Researchを有効にした場合のみ、Web検索が必要な処理で設定済みのOpenAI APIを使用します。既存の録音データと保存形式は引き続き読み込めます。</p>
+  </main>
+</body>
+</html>
