@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.2.12</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 28px 28px;
+      font-size: 15px;
+      line-height: 1.65;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    main {
+      max-width: 760px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: #57606a;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0 0 10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root,
+      body {
+        background: #0d1117;
+        color: #f0f6fc;
+      }
+
+      p {
+        color: #8b949e;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.2.12</h1>
+    <p>録音の保存効率、複数音声の確認、プロジェクト整理を改善し、長時間の会議ログをより軽快に扱えるようにしました。</p>
+    <ul>
+      <li>「同時」再生で、スピーカー音声とマイク音声を会議の同じ時間軸で重ねて再生できます。再生位置を保ったままトラックの表示を切り替え、波形から任意の位置へ移動できます。</li>
+      <li>対応するMacでは、録音後のタイトルをAppleの端末内言語モデルで自動生成できます。利用できない場合や生成に失敗した場合は、安全な既定タイトルを使います。</li>
+      <li>録音中と解析中は安全なPCMを保持し、AAC-LCを利用できるMacでは完了後にマイクとスピーカーの各トラックをM4Aへ圧縮します。圧縮または検証に失敗した場合も、元のPCMを自動で保持するため音声を失いません。</li>
+      <li>新しい録音では、文字起こしとAI Researchの正本をバージョン付きJSONへ統一しました。既存の記録とMarkdownファイルは引き続き読み込めます。</li>
+      <li>サイドバーでプロジェクトをドラッグして、自然な表示のまま並び順を変更できます。波形、発話バブル、検索・AI Research表示も整理し、再生中の滑らかさと色の一貫性を改善しました。</li>
+    </ul>
+    <p>録音、文字起こし、話者解析、タイトル生成、議論ログはこのMac上で処理されます。AI Researchを有効にした場合のみ、Web検索が必要な処理で設定済みのOpenAI APIを使用します。</p>
+  </main>
+</body>
+</html>
