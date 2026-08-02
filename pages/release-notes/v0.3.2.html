@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.3.2</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 28px 28px;
+      font-size: 15px;
+      line-height: 1.65;
+      background: #ffffff;
+      color: #1f2328;
+    }
+
+    main {
+      max-width: 760px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: #57606a;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0 0 10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root,
+      body {
+        background: #0d1117;
+        color: #f0f6fc;
+      }
+
+      p {
+        color: #8b949e;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.3.2</h1>
+    <p>ワークスペースを Text・Audio・Visual の3つにしました。論文などのPDFを読むTextと、画面とカメラを記録するVisualを追加しています。どちらも開発中の実験機能で、ツールバーに「実験的」と表示されます。</p>
+    <ul>
+      <li>Textワークスペースを追加しました。PDFを取り込み、左に原文のページ、右に段落と対訳を並べて読めます。対訳は1文ずつ並ぶので、原文と訳文の対応を探す必要がありません。</li>
+      <li>2段組みの論文は、左段を読み切ってから右段へ進む順序に並べ替えます。段組みを確定できなかったページは、順序が入れ替わっている可能性を明示します。</li>
+      <li>翻訳はmacOS 15以降のApple翻訳をこのMac上で使います。macOS 14では対訳ペインがその条件を示し、リーダーとコメントは通常どおり使えます。</li>
+      <li>段落にコメントを書けます。PDFに元から入っている付箋・ハイライト・取り消し線・下線も、作成者名や更新日時とともに読めます。採用したコメントは注釈付きの別名PDFとして書き出せます。</li>
+      <li>kaigi documents コマンドで、Claude CodeやCodexが本文・対訳・コメントを読み、コメントを書き戻せます。AIが書いたコメントは提案として届き、採用して初めて自分のコメントになります。</li>
+      <li>Visualワークスペースを追加しました。画面とカメラを同時に録画でき、画像・動画・Gaussian Splat（PLY）を管理コピーとして取り込み、このMac上のApple Visionで解析できます。</li>
+      <li>外観を「自動（macOSに合わせる）」「ライト」「ダーク」から選べるようになりました。既定は従来どおり自動です。</li>
+      <li>サイドバーの行操作を見直しました。行にポインタを重ねる、またはキーボードで移動するだけで名前変更と削除が表示されます。</li>
+    </ul>
+    <p>PDFの取り込み、本文の抽出、翻訳、コメント、録画、Vision解析はすべてこのMac上で処理され、外部へ送信しません。翻訳で未導入の言語を使う場合のみ、macOSがApple管理の言語モデルの取得を確認します。AI Researchを有効にした場合のみ、Web検索が必要な処理で設定済みのOpenAI APIを使用します。</p>
+    <p>取り込んだPDFの元ファイルは変更も削除もしません。既存の録音データと保存形式は引き続き読み込めます。</p>
+  </main>
+</body>
+</html>
