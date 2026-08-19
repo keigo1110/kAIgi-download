@@ -618,6 +618,10 @@ details p {
   padding: 22px;
 }
 
+.command-card {
+  min-width: 0;
+}
+
 .guide-card h3,
 .command-card h3 {
   margin: 0;
@@ -633,6 +637,7 @@ details p {
 
 .command-list {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 14px;
 }
 
@@ -944,6 +949,11 @@ details p {
 
   .band {
     padding: 70px 20px;
+  }
+
+  .command-card pre code {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
   }
 
   .download-cta {
