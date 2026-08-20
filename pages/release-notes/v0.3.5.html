@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.3.5</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <style>
+    :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; background: #fff; color: #1f2328; }
+    body { margin: 0; padding: 24px 28px 28px; font-size: 15px; line-height: 1.65; background: #fff; color: #1f2328; }
+    main { max-width: 760px; }
+    h1 { margin: 0 0 8px; font-size: 28px; line-height: 1.25; font-weight: 700; }
+    p { margin: 0 0 18px; color: #57606a; }
+    ul { margin: 0 0 18px; padding-left: 1.25em; }
+    li { margin: 0 0 10px; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    @media (prefers-color-scheme: dark) {
+      :root, body { background: #0d1117; color: #f0f6fc; }
+      p { color: #8b949e; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.3.5</h1>
+    <p>Text、Audio、CLIの連携を整理し、日常のPDF閲覧とAI agentからの安全な活用を改善しました。</p>
+    <ul>
+      <li>Textから「実験的」の表示を外し、検索を1つの欄へ統合しました。サイドバーのプロジェクトも履歴と一緒にスクロールできます。</li>
+      <li>References以降の参考文献は表示したまま、対訳と構造生成の対象から除外します。</li>
+      <li>画像PDF向けに、明示的で停止可能な端末内OCRを追加しました。PDFを開いただけでは開始しません。</li>
+      <li>翻訳の保存状態を「保存済み・保存待ち・失敗」として表示し、失敗時の再試行とアプリ終了後の復旧に対応しました。</li>
+      <li>PDF内のコメントやハイライトを読み取り専用で表示します。安全上限に達した場合は、表示件数と省略理由を明示します。</li>
+      <li><code>kaigi capabilities</code>がコマンドの副作用、対応schema、処理上限、終了コードを返します。未知・重複オプションは実行前に拒否します。</li>
+      <li><code>list</code>と<code>search</code>は走査の完了状態を返し、「存在しない」と「確認し切れない」を区別できます。</li>
+      <li><code>kaigi documents context</code>で、必要なページと本文・対訳・構造・注釈だけを、読み取り専用コンテキストとしてAI agentへ渡せます。</li>
+      <li>互換性を検証できたM4AはPCMへ全展開・再圧縮せず、バイト同一のまま保存します。</li>
+      <li>波形サマリーを保存し、履歴表示のたびにM4A全体を復号する処理を避けました。録音時のPCM変換バッファも再利用します。</li>
+      <li>AppKitの起動順依存を修正し、長時間テストの実時間待ちと重複計算を削減しました。</li>
+    </ul>
+  </main>
+</body>
+</html>
