@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.3.4</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <style>
+    :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; background: #fff; color: #1f2328; }
+    body { margin: 0; padding: 24px 28px 28px; font-size: 15px; line-height: 1.65; background: #fff; color: #1f2328; }
+    main { max-width: 760px; }
+    h1 { margin: 0 0 8px; font-size: 28px; line-height: 1.25; font-weight: 700; }
+    p { margin: 0 0 18px; color: #57606a; }
+    ul { margin: 0 0 18px; padding-left: 1.25em; }
+    li { margin: 0 0 10px; }
+    @media (prefers-color-scheme: dark) {
+      :root, body { background: #0d1117; color: #f0f6fc; }
+      p { color: #8b949e; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.3.4</h1>
+    <p>Textを「PDFの保管庫」から、Finder上のPDFをそのまま扱うビューアへ変更しました。翻訳・構造・コメントはPDFと分離して残ります。</p>
+    <ul>
+      <li>操作を「PDFを開く」に変更しました。PDF本体はFinder上の場所に残り、閲覧だけでは書き換えません。サムネールでページを操作したときだけ元PDFを更新します。</li>
+      <li>Command-Oでどの画面からでもPDFを開けます。TextではCommand-+／-／0を拡大・縮小・幅に合わせるへ割り当てました。</li>
+      <li>Finderの「このアプリケーションで開く」からkAIgiを選び、そのままTextでPDFを開けます。</li>
+      <li>左上の1行に検索と表示切替をまとめました。検索は「任意の一致」と「正確な語句」に対応し、サムネールとプロジェクト／更新履歴のどちらでも使えます。</li>
+      <li>更新履歴は閲覧しただけでは動かず、翻訳・構造・コメント、または元PDFのページを更新したときに上へ移ります。同じPDFをもう一度開いても重複しません。</li>
+      <li>更新履歴はクリック、Return／Space、VoiceOverから選択でき、現在の選択を読み上げます。</li>
+      <li>ページ下部の拡大縮小操作は、ポインター移動またはスクロール中だけ表示し、最後の操作から2秒後に隠れます。</li>
+      <li>サムネールは複数選択、ドラッグ並べ替え、Deleteによるページ削除に対応します。変更は完成した一時PDFから元PDFへ原子的に保存し、別アプリによる先行変更は上書きしません。</li>
+      <li>Finderでの移動・改名を自動追跡します。見つからない場合は、翻訳・構造・コメントを保持したままPDFを再リンクできます。</li>
+      <li>PDFが別内容へ変わった場合は自動採用せず、確認してから更新します。コメントは残り、本文・翻訳・構造は新しい内容に照合し直されます。</li>
+      <li>履歴の右クリックから、PDF本体、kAIgiデータフォルダ、本文・翻訳・構造・コメントなどのJSONファイルをFinderに直接表示できます。</li>
+      <li>履歴を削除してもFinder上のPDFは残ります。「注釈付きPDFを書き出す」は、採用したコメントを含む別PDFを明示的に作る操作として維持しています。</li>
+      <li>CLIはPDFの場所に依存せず、分離された本文・構造・コメントを引き続き利用できます。</li>
+      <li>PDFを開くだけでは対訳を開始しません。「対訳を作成」を押した後だけ端末内で全文を処理し、右ヘッダーの小さなプログレスバーで進捗を確認・中止できます。完了時は自動で処理状態を閉じ、失敗時は未翻訳分からやり直せます。</li>
+      <li>「構造を生成」を青い主操作にし、短い英語段落を最大16件ずつ処理します。日本語などはトークン量で安全に分割し、完成した要点から順次表示します。</li>
+      <li>図表とReferencesを要約対象から外し、DiscussionやConclusionなど空の節は端末内モデルの通常応答で補完します。原文を要約として代用せず、失敗は再試行可能な未完了として残します。</li>
+      <li>「残りを補う」は正常な要点を再利用し、「作り直す」はすべての要点を置き換えます。</li>
+      <li>文書全体の読み筋は折りたためます。章見出しのクリックはPDF上の該当箇所へ移動し、折りたたみは隣の開閉ボタンへ分離しました。</li>
+      <li>構造生成の中止後は、モデル処理が実際に戻るまで新しい生成を開始せず、処理の重複を防ぎます。</li>
+      <li>PDFを開く／再リンク／書き出す画面や内容変更の確認も、kAIgiの日本語／英語設定に揃えました。</li>
+      <li>録音と音声インポートは、音声を保存する設定なら検証済みM4Aへ集約します。圧縮中に終了しても次回起動時に未完了分だけを再開し、成功を確認するまで元のWAV／CAFは残します。</li>
+      <li>既存のWAV／CAFは、履歴の「M4Aに圧縮」または設定の「音声ストレージを最適化…」から変換できます。一括処理は対象件数、現在容量、回収見込みを先に示し、失敗した録音は変更しません。</li>
+      <li>話者解析に不要なマイク音声を先に最適化し、保存済みM4Aから話者解析をやり直せるようにしました。多チャンネルのインポートはチャンネル数に応じたビットレートで保存します。</li>
+      <li>Audio、Text、Visualの項目をプロジェクトへドラッグして移動でき、履歴へ戻す操作やプロジェクトの並べ替えも同じ操作感に揃えました。</li>
+      <li>キーボード操作は維持したまま、サイドバー行を覆う大きな青いフォーカス枠を低強調の行ハイライトへ置き換えました。</li>
+    </ul>
+    <p>0.3.3以前の実験的なText管理コピーとTextプロジェクトは、0.3.4で初めてTextを開いたときにリセットされ、復旧可能なように旧Text領域ごとゴミ箱へ移ります。AudioとVisualのデータには触れません。</p>
+  </main>
+</body>
+</html>
