@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.3.6</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <style>
+    :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; background: #fff; color: #1f2328; }
+    body { margin: 0; padding: 24px 28px 28px; font-size: 15px; line-height: 1.65; background: #fff; color: #1f2328; }
+    main { max-width: 760px; }
+    h1 { margin: 0 0 8px; font-size: 28px; line-height: 1.25; font-weight: 700; }
+    p { margin: 0 0 18px; color: #57606a; }
+    ul { margin: 0 0 18px; padding-left: 1.25em; }
+    li { margin: 0 0 10px; }
+    @media (prefers-color-scheme: dark) {
+      :root, body { background: #0d1117; color: #f0f6fc; }
+      p { color: #8b949e; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.3.6</h1>
+    <p>PDFを読みながら対訳と構造を扱う操作を、より滑らかで迷いの少ないものにしました。</p>
+    <ul>
+      <li>対訳・構造の生成中やPDFのスクロール中に、サムネールが再構築されてちらつく問題を修正しました。</li>
+      <li>短時間で終わる読み込みでは進捗表示を遅延し、一瞬だけクルクルが見えるちらつきを抑えました。</li>
+      <li>選択した対訳の段落、または構造の要点だけを再生成できます。以前の結果は新しい結果が完成するまで保持します。</li>
+      <li>対訳カードの横幅全体を選択できるようにし、構造は章・節・要点の階層を控えめな区切りとインデントで整理しました。</li>
+      <li>変更済みのCodex Agent Skillもインストール済みとして表示し、利用者の変更を自動で上書きしないことを明確にしました。</li>
+      <li>CLI／Agent Skillの公開ガイドへ、主要機能を一目で理解できる図解を追加しました。</li>
+    </ul>
+  </main>
+</body>
+</html>

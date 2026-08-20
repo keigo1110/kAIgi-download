@@ -2981,3 +2981,212 @@ body::after {
     box-shadow: none;
   }
 }
+
+/* ============================================================
+   Agent capabilities — visual stories before command reference
+   ============================================================ */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  border: 0;
+  margin: -1px;
+  white-space: nowrap;
+}
+
+.capability-band {
+  padding: clamp(92px, 11vw, 150px) 24px;
+  border-block: 1px solid rgba(174, 195, 234, 0.12);
+  background:
+    radial-gradient(circle at 88% 8%, rgba(179, 156, 255, 0.13), transparent 30rem),
+    radial-gradient(circle at 4% 64%, rgba(116, 231, 238, 0.08), transparent 34rem),
+    #070a14;
+}
+
+.capability-shell {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.capability-intro {
+  max-width: 790px;
+  margin-bottom: clamp(44px, 7vw, 82px);
+}
+
+.capability-intro h2 {
+  max-width: 720px;
+  margin: 14px 0 20px;
+  font-family: var(--magic-serif, ui-serif, Georgia, serif);
+  font-size: clamp(2.5rem, 5.2vw, 5.4rem);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.capability-intro > p:last-child {
+  max-width: 680px;
+  margin: 0;
+  color: rgba(237, 240, 255, 0.66);
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
+}
+
+.capability-stories {
+  display: grid;
+  gap: 28px;
+}
+
+.capability-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr);
+  align-items: stretch;
+  min-height: 390px;
+  overflow: hidden;
+  border: 1px solid rgba(174, 195, 234, 0.17);
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, rgba(20, 29, 49, 0.84), rgba(8, 12, 24, 0.94)),
+    var(--panel);
+  box-shadow:
+    0 28px 72px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  content-visibility: auto;
+  contain-intrinsic-size: 390px;
+}
+
+.capability-story:nth-child(even) {
+  grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.18fr);
+}
+
+.capability-story:nth-child(even) .capability-visual {
+  order: 2;
+}
+
+.capability-story:nth-child(even) .capability-copy {
+  order: 1;
+}
+
+.capability-visual {
+  position: relative;
+  min-height: 390px;
+  margin: 0;
+  overflow: hidden;
+  background: #03050b;
+}
+
+.capability-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent 68%, rgba(7, 10, 20, 0.42)),
+    linear-gradient(180deg, transparent 70%, rgba(3, 5, 11, 0.26));
+}
+
+.capability-story:nth-child(even) .capability-visual::after {
+  background:
+    linear-gradient(270deg, transparent 68%, rgba(7, 10, 20, 0.42)),
+    linear-gradient(180deg, transparent 70%, rgba(3, 5, 11, 0.26));
+}
+
+.capability-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.92) contrast(1.04);
+}
+
+.capability-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(30px, 4vw, 56px);
+}
+
+.capability-number {
+  margin: 0 0 18px;
+  color: var(--cyan);
+  font-size: 0.7rem;
+  font-weight: 760;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.capability-copy h3 {
+  margin: 0;
+  font-family: var(--magic-serif, ui-serif, Georgia, serif);
+  font-size: clamp(1.7rem, 2.7vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.capability-copy > p:not(.capability-number, .capability-command) {
+  margin: 18px 0 0;
+  color: rgba(237, 240, 255, 0.64);
+  font-size: 0.96rem;
+}
+
+.capability-command {
+  margin: 26px 0 0;
+  color: rgba(237, 240, 255, 0.48);
+  font-size: 0.78rem;
+  line-height: 1.9;
+}
+
+.capability-command code {
+  border-color: rgba(116, 231, 238, 0.16);
+  background: rgba(116, 231, 238, 0.055);
+  color: rgba(237, 240, 255, 0.76);
+}
+
+@media (max-width: 860px) {
+  .capability-story,
+  .capability-story:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
+  .capability-story:nth-child(even) .capability-visual,
+  .capability-story:nth-child(even) .capability-copy {
+    order: initial;
+  }
+
+  .capability-visual,
+  .capability-visual img {
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+  }
+
+  .capability-visual::after,
+  .capability-story:nth-child(even) .capability-visual::after {
+    background: linear-gradient(180deg, transparent 72%, rgba(7, 10, 20, 0.38));
+  }
+}
+
+@media (max-width: 620px) {
+  .capability-band {
+    padding-inline: 18px;
+  }
+
+  .capability-intro h2 {
+    font-size: clamp(2.35rem, 12vw, 3.65rem);
+  }
+
+  .capability-story {
+    min-height: 0;
+    border-radius: 18px;
+  }
+
+  .capability-copy {
+    padding: 28px 24px 32px;
+  }
+}
