@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>kAIgi - 会議の議論を支えるAI Researchアプリ</title>
+    <title>kAIgi - 会議と文献をつなぐRecall / AI Researchアプリ</title>
     <meta
       name="description"
-      content="kAIgiは、会議やアイディエーションの流れからAIが参考情報を引き寄せ、議論を前に進めるmacOSアプリです。"
+      content="kAIgiは、Mac上の会議文字起こしとPDFを横断するRecall、オンデバイス文字起こし、AI Researchで議論を支えるmacOSアプリです。"
     >
     <meta name="robots" content="index,follow">
     <meta name="application-name" content="kAIgi">
@@ -15,10 +15,10 @@
     <meta property="og:site_name" content="kAIgi">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:title" content="kAIgi - AI Research for live discussions">
+    <meta property="og:title" content="kAIgi - Recall and AI Research for meetings">
     <meta
       property="og:description"
-      content="議論の流れからAIが参考情報を引き寄せ、Research CardとDeep Researchで会議を前に進めるmacOSアプリ。"
+      content="会議文字起こしとPDFをMac上で横断するRecallと、議論を前に進めるAI Researchを備えたmacOSアプリ。"
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/">
@@ -27,15 +27,15 @@
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="kAIgi - AI Research Cards for live discussions">
+    <meta property="og:image:alt" content="kAIgi - Recall and AI Research for meetings">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="kAIgi - AI Research for live discussions">
+    <meta name="twitter:title" content="kAIgi - Recall and AI Research for meetings">
     <meta
       name="twitter:description"
-      content="議論の流れからAIが参考情報を引き寄せ、Research CardとDeep Researchで会議を前に進めるmacOSアプリ。"
+      content="会議文字起こしとPDFをMac上で横断するRecallと、議論を前に進めるAI Researchを備えたmacOSアプリ。"
     >
     <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
-    <meta name="twitter:image:alt" content="kAIgi - AI Research Cards for live discussions">
+    <meta name="twitter:image:alt" content="kAIgi - Recall and AI Research for meetings">
     <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/">
     <link rel="sitemap" type="application/xml" href="./sitemap.xml">
     <link rel="icon" href="./assets/app-icon.png">
@@ -48,11 +48,11 @@
         "name": "kAIgi",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "macOS 14+",
-        "description": "kAIgiは、会議やアイディエーションの流れからAIが参考情報を引き寄せ、Research CardとDeep Researchで議論を前に進めるmacOSアプリです。",
+        "description": "kAIgiは、Mac上の会議文字起こしとPDFを横断するRecall、オンデバイス文字起こし、AI Researchで議論を支えるmacOSアプリです。",
         "url": "https://keigo1110.github.io/kAIgi-download/",
         "downloadUrl": "https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg",
         "image": "https://keigo1110.github.io/kAIgi-download/assets/ogp.png",
-        "softwareVersion": "0.3.7",
+        "softwareVersion": "0.4.1",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -73,6 +73,7 @@
           <span data-copy="ja">流れ</span>
           <span data-copy="en">Flow</span>
         </a>
+        <a href="#recall">Recall</a>
         <a href="#research">Research</a>
         <a href="#setup">
           <span data-copy="ja">はじめる</span>
@@ -177,6 +178,53 @@
             </div>
           </div>
 
+        </div>
+      </section>
+
+      <section class="band intro-band recall-band" id="recall" aria-labelledby="recall-title">
+        <div class="content-grid">
+          <div>
+            <p class="section-kicker">Recall</p>
+            <h2 id="recall-title">
+              <span data-copy="ja">あの議論と、この文献をつなぐ。</span>
+              <span data-copy="en">Connect that discussion to this paper.</span>
+            </h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature">
+              <span class="feature-mark">01</span>
+              <h3>
+                <span data-copy="ja">AudioとPDFを一緒に探す</span>
+                <span data-copy="en">Search meetings and papers together</span>
+              </h3>
+              <p>
+                <span data-copy="ja">保存済みの文字起こしと抽出済みPDFを、ひとつの画面で横に見比べられます。検索結果は必ず元の発話やPDF位置へ戻れます。</span>
+                <span data-copy="en">Compare saved transcripts and extracted PDFs in one workspace. Every result can return to its original utterance or PDF location.</span>
+              </p>
+            </article>
+            <article class="feature">
+              <span class="feature-mark">02</span>
+              <h3>
+                <span data-copy="ja">日本語の議論と英語論文をつなぐ</span>
+                <span data-copy="en">Bridge Japanese and English</span>
+              </h3>
+              <p>
+                <span data-copy="ja">語句に一致する結果をすぐ表示し、対応するMacではAppleのオンデバイス機能が意味の近さと日英検索を自動で補助します。</span>
+                <span data-copy="en">Exact and lexical matches appear immediately. On supported Macs, Apple's on-device models automatically assist meaning-based and Japanese–English retrieval.</span>
+              </p>
+            </article>
+            <article class="feature">
+              <span class="feature-mark">03</span>
+              <h3>
+                <span data-copy="ja">答えではなく、根拠へ</span>
+                <span data-copy="en">Go to evidence, not a generated answer</span>
+              </h3>
+              <p>
+                <span data-copy="ja">Recallは要約を正解として保存しません。候補を並べ、関連をたどり、判断したい時は現在の元データを開いて確かめられます。</span>
+                <span data-copy="en">Recall does not store a generated summary as truth. It ranks candidates, lets you explore related evidence, and rechecks the current source before opening it.</span>
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
