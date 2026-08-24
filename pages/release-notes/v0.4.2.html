@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.4.2</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <style>
+    :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; background: #fff; color: #1f2328; }
+    body { margin: 0; padding: 24px 28px 28px; font-size: 15px; line-height: 1.65; background: #fff; color: #1f2328; }
+    main { max-width: 760px; }
+    h1 { margin: 0 0 8px; font-size: 28px; line-height: 1.25; font-weight: 700; }
+    h2 { margin: 24px 0 8px; font-size: 19px; line-height: 1.35; }
+    p { margin: 0 0 18px; color: #57606a; }
+    ul { margin: 0 0 18px; padding-left: 1.25em; }
+    li { margin: 0 0 10px; }
+    @media (prefers-color-scheme: dark) {
+      :root, body { background: #0d1117; color: #f0f6fc; }
+      p { color: #8b949e; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.4.2</h1>
+    <p>会議と文献の意味的な位置関係を、カテゴリ、キーワード、資料の三段階で探索できる「Semantic Zoom」をRecallへ追加しました。</p>
+
+    <h2>会議と文献を同じ地図で探索</h2>
+    <ul>
+      <li>Audio会議とPDF論文を、意味の近さ、日付、資料量、資料種類から選んだ二つの軸へ配置できます。</li>
+      <li>カテゴリの国境、キーワードの県境、個々の資料のスポットが、倍率に合わせて連続的に現れます。</li>
+      <li>検索は地図を絞り込まず、該当資料の位置を目的地として示します。選択したスポットから元の発話またはPDF位置を開けます。</li>
+      <li>Audioは会話の吹き出し、PDFはノート表紙として表示し、プロジェクトに属する資料にはその色とアイコンを反映します。</li>
+    </ul>
+
+    <h2>大きなライブラリでも待ち時間を抑制</h2>
+    <ul>
+      <li>変更されていない資料の配置用ベクトルと有限階層をMac内の派生Atlasから再利用します。</li>
+      <li>新規・変更資料を小さなまとまりで処理し、完了した分から地図へ追加します。Recall検索が必要な時は検索を優先します。</li>
+      <li>画面周辺だけをLOD（詳細度）に応じて読み、地図移動中もスポットと境界の座標を安定させます。</li>
+      <li>10万件の防御上限までAudioとPDFを交互に取り込み、一方だけが先に枠を使い切らないようにします。</li>
+    </ul>
+
+    <h2>元データとプライバシーを維持</h2>
+    <ul>
+      <li>Atlasは再生成可能なsource ID、改訂、ベクトル、有限階層だけを保存します。文字起こし本文、PDF本文、引用、翻訳文、検索語、資料ごとのタイトル、画面座標は保存しません。</li>
+      <li>元資料が削除されたことを権威あるAudio／PDF台帳で確認してから、対応する派生データだけを除外します。一時的な読み込み失敗では消しません。</li>
+      <li>破損やモデル変更時は元のAudio／PDFへ触れず、派生Atlasだけを安全に作り直します。</li>
+      <li>日本語と英語の意味的な橋渡しは、macOS 15以降と必要なApple言語アセットに依存します。語句によるRecall検索はmacOS 14でも利用できます。</li>
+    </ul>
+  </main>
+</body>
+</html>
