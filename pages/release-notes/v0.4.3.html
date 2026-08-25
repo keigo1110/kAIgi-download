@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>kAIgi 0.4.3</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <style>
+    :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; background: #fff; color: #1f2328; }
+    body { margin: 0; padding: 24px 28px 28px; font-size: 15px; line-height: 1.65; background: #fff; color: #1f2328; }
+    main { max-width: 760px; }
+    h1 { margin: 0 0 8px; font-size: 28px; line-height: 1.25; font-weight: 700; }
+    h2 { margin: 24px 0 8px; font-size: 19px; line-height: 1.35; }
+    p { margin: 0 0 18px; color: #57606a; }
+    ul { margin: 0 0 18px; padding-left: 1.25em; }
+    li { margin: 0 0 10px; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; }
+    @media (prefers-color-scheme: dark) {
+      :root, body { background: #0d1117; color: #f0f6fc; }
+      p { color: #8b949e; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>kAIgi 0.4.3</h1>
+    <p>一度削除した論文PDFを再取得した時に、以前の翻訳、構造、コメント、読書位置へ安全に戻れるようになりました。Textデータの書き出しと、内容を確認してから行う安全な読み込みにも対応します。</p>
+
+    <h2>同じPDFなら、読書履歴へ自動で戻る</h2>
+    <ul>
+      <li>完全に同じPDFを開くと、ファイル名や保存場所が変わっていても以前の履歴へ自動で再接続します。</li>
+      <li>元PDFがない間も、保存済み本文をRecall、Semantic Zoom、文書内検索で利用できます。</li>
+      <li>設定の「PDF・データ」で、元PDFがない文書や内容が変わった文書を確認し、再リンクできます。</li>
+    </ul>
+
+    <h2>別版は、自動で混ぜずに人が選ぶ</h2>
+    <ul>
+      <li>DOI、arXiv、タイトル、本文が近いPDFは、新旧を比べて「過去の記録にリンク」または「別の文書として開く」を選べます。</li>
+      <li>別版へリンクしても、違う文章へ古い翻訳や構造を表示しません。コメントは根拠を再探索し、見つからないものも未解決として残します。</li>
+    </ul>
+
+    <h2>Textデータを安全に書き出し・読み込み</h2>
+    <ul>
+      <li>抽出本文、翻訳、構造、コメント、文書履歴、Textプロジェクトを1つの <code>.kaigitextbackup</code> へ書き出せます。</li>
+      <li>元PDF、Finderの場所、再接続情報、録音、APIキーは含みません。</li>
+      <li>読み込み前に全データを検証し、文書ごとに追加、完全一致への統合、読み込まない、を確認できます。</li>
+      <li>確定時はライブラリ全体を安全に切り替えます。通常の失敗や壊れたバックアップで、既存履歴を途中まで更新しません。</li>
+    </ul>
+
+    <h2>知っておいてほしいこと</h2>
+    <ul>
+      <li>バックアップに元PDFは入りません。復元した文書は保存済み本文を読めますが、元ページを開くにはPDFの再接続が必要です。</li>
+      <li>バックアップには抽出本文やコメントが含まれます。保存先と共有相手を管理してください。</li>
+      <li>Text履歴の削除はkAIgi独自データをゴミ箱へ移し、Finder上の元PDFを残します。FinderからPDFだけを削除した場合はText履歴が残ります。</li>
+    </ul>
+  </main>
+</body>
+</html>

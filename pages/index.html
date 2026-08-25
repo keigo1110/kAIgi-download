@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>kAIgi - 会議と文献を地図でつなぐRecall / AI Researchアプリ</title>
+    <title>kAIgi - 会議と文献を地図でつなぐRecall / PDFリーダー</title>
     <meta
       name="description"
-      content="kAIgiは、Mac上の会議文字起こしとPDFを横断検索し、Semantic Zoomで意味の近さを見渡せるRecall、オンデバイス文字起こし、AI Researchを備えたmacOSアプリです。"
+      content="kAIgiは、Mac上の会議文字起こしとPDFを横断検索し、Semantic Zoomで意味の近さを見渡せるRecall、読んだ論文の翻訳・構造・メモを保つPDFリーダー、AI Researchを備えたmacOSアプリです。"
     >
     <meta name="robots" content="index,follow">
     <meta name="application-name" content="kAIgi">
@@ -18,7 +18,7 @@
     <meta property="og:title" content="kAIgi - Recall and AI Research for meetings">
     <meta
       property="og:description"
-      content="会議文字起こしとPDFを横断検索し、意味の近さを地図で見渡せるRecallと、議論を前に進めるAI Researchを備えたmacOSアプリ。"
+      content="会議とPDFをRecallの地図でつなぎ、読んだ論文の翻訳・構造・メモをPDFの再取得後も呼び戻せるmacOSアプリ。"
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/">
@@ -32,7 +32,7 @@
     <meta name="twitter:title" content="kAIgi - Recall and AI Research for meetings">
     <meta
       name="twitter:description"
-      content="会議文字起こしとPDFを横断検索し、意味の近さを地図で見渡せるRecallと、議論を前に進めるAI Researchを備えたmacOSアプリ。"
+      content="会議とPDFをRecallの地図でつなぎ、読んだ論文の翻訳・構造・メモをPDFの再取得後も呼び戻せるmacOSアプリ。"
     >
     <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
     <meta name="twitter:image:alt" content="kAIgi - Recall and AI Research for meetings">
@@ -48,11 +48,11 @@
         "name": "kAIgi",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "macOS 14+",
-        "description": "kAIgiは、Mac上の会議文字起こしとPDFを横断検索し、Semantic Zoomで意味の近さを見渡せるRecall、オンデバイス文字起こし、AI Researchを備えたmacOSアプリです。",
+        "description": "kAIgiは、Mac上の会議文字起こしとPDFを横断検索し、Semantic Zoomで意味の近さを見渡せるRecall、読んだ論文の翻訳・構造・メモを保つPDFリーダー、AI Researchを備えたmacOSアプリです。",
         "url": "https://keigo1110.github.io/kAIgi-download/",
         "downloadUrl": "https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg",
         "image": "https://keigo1110.github.io/kAIgi-download/assets/ogp.png",
-        "softwareVersion": "0.4.2",
+        "softwareVersion": "0.4.3",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -74,6 +74,7 @@
           <span data-copy="en">Flow</span>
         </a>
         <a href="#recall">Recall</a>
+        <a href="#paper-memory">0.4.3</a>
         <a href="#research">Research</a>
         <a href="#setup">
           <span data-copy="ja">はじめる</span>
@@ -105,6 +106,12 @@
               <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
                 <span data-copy="ja">最新版をダウンロード</span>
                 <span data-copy="en">Download latest version</span>
+              </a>
+              <a class="hero-release-link" href="./release-notes/v0.4.3.html">
+                <strong>0.4.3</strong>
+                <span data-copy="ja">PDFを消しても、読んだ記憶は残る</span>
+                <span data-copy="en">Your reading history returns with the PDF</span>
+                <span aria-hidden="true">↗</span>
               </a>
             </div>
           </div>
@@ -224,6 +231,62 @@
                 <span data-copy="en">Exact and lexical matches appear immediately. On supported Macs, Apple's on-device models assist meaning-based and Japanese–English retrieval without sending source text or queries to an external search service.</span>
               </p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band intro-band paper-memory-band" id="paper-memory" aria-labelledby="paper-memory-title">
+        <div class="content-grid">
+          <div>
+            <p class="section-kicker">kAIgi 0.4.3 / Paper memory</p>
+            <h2 id="paper-memory-title">
+              <span data-copy="ja">PDFが戻れば、読んだ時間も戻る。</span>
+              <span data-copy="en">When the PDF returns, your reading returns with it.</span>
+            </h2>
+          </div>
+          <div class="paper-memory-content">
+            <div class="feature-grid">
+              <article class="feature">
+                <span class="feature-mark">01</span>
+                <h3>
+                  <span data-copy="ja">完全に同じPDFなら自動で再接続</span>
+                  <span data-copy="en">Exact PDFs reconnect automatically</span>
+                </h3>
+                <p>
+                  <span data-copy="ja">いったんFinderから消したPDFでも、完全に同じPDFをもう一度開けば、以前の翻訳、構造、コメント、読書位置へ自動で戻ります。ファイル名や保存場所が違っても構いません。</span>
+                  <span data-copy="en">Delete a PDF from Finder, then open the exact same file again to restore its translations, structure, comments, and reading position—even under a different name or location.</span>
+                </p>
+              </article>
+              <article class="feature">
+                <span class="feature-mark">02</span>
+                <h3>
+                  <span data-copy="ja">別版は、見比べてから選ぶ</span>
+                  <span data-copy="en">Compare revisions before linking</span>
+                </h3>
+                <p>
+                  <span data-copy="ja">arXivの改訂版や出版社版らしいPDFは自動で混ぜません。新旧を比べ、「過去の記録にリンク」か「別の文書として開く」かを選べます。違う文章へ古い翻訳を表示せず、コメントは再び根拠を探します。</span>
+                  <span data-copy="en">Likely arXiv revisions or publisher editions are never merged automatically. Compare both and choose whether to link the prior record or keep a separate document. Old translations never appear beside changed text, while comments look for their evidence again.</span>
+                </p>
+              </article>
+              <article class="feature">
+                <span class="feature-mark">03</span>
+                <h3>
+                  <span data-copy="ja">元PDFがなくても探せる、持ち出せる</span>
+                  <span data-copy="en">Search offline and carry your work forward</span>
+                </h3>
+                <p>
+                  <span data-copy="ja">保存済み本文は元PDFがない間もRecall、Zoom、検索で使えます。Textデータは検証可能なバックアップへ書き出し、内容を1件ずつ確認して安全に読み込めます。元PDFやFinderの場所は含みません。</span>
+                  <span data-copy="en">Stored text remains available to Recall, Zoom, and search while the source PDF is absent. Export verifiable Text backups and review each document before a safe import. Source PDFs and Finder locations stay out of the backup.</span>
+                </p>
+              </article>
+            </div>
+            <p class="paper-memory-more">
+              <a href="./release-notes/v0.4.3.html">
+                <span data-copy="ja">0.4.3の変更点と安全上の注意を読む</span>
+                <span data-copy="en">Read the 0.4.3 changes and safety notes</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </p>
           </div>
         </div>
       </section>
@@ -359,8 +422,8 @@
                   <span data-copy="en">Download the latest DMG</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">macOS 14以降を搭載したApple Silicon Macで、インストールボタンから <code>kAIgi.dmg</code> をダウンロードします。</span>
-                  <span data-copy="en">On an Apple Silicon Mac running macOS 14 or later, use the install button to download <code>kAIgi.dmg</code>.</span>
+                  <span data-copy="ja">macOS 14以降を搭載したApple SiliconまたはIntel Macで、インストールボタンから <code>kAIgi.dmg</code> をダウンロードします。</span>
+                  <span data-copy="en">On an Apple silicon or Intel Mac running macOS 14 or later, use the install button to download <code>kAIgi.dmg</code>.</span>
                 </p>
               </div>
             </li>

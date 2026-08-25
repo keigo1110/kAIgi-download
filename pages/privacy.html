@@ -67,10 +67,10 @@
             <span data-copy="en">kAIgi Privacy Policy</span>
           </h1>
           <p class="lead">
-            <span data-copy="ja">kAIgiは会議音声、Recall、AI Researchを扱うアプリです。録音対象、保存場所、端末内処理、任意の外部送信について、ユーザーが判断できるように説明します。</span>
-            <span data-copy="en">kAIgi handles meeting audio, Recall, and AI Research. This policy explains what is recorded, where data is stored, what runs on device, and when external services may be used.</span>
+            <span data-copy="ja">kAIgiは会議音声、Textで開くPDF、Recall、AI Researchを扱うアプリです。録音対象、保存場所、端末内処理、任意の外部送信について、ユーザーが判断できるように説明します。</span>
+            <span data-copy="en">kAIgi handles meeting audio, PDFs opened in Text, Recall, and AI Research. This policy explains what is recorded, where data is stored, what runs on device, and when external services may be used.</span>
           </p>
-          <p class="updated">Last updated: 2026-08-25</p>
+          <p class="updated">Last updated: 2026-08-26</p>
         </div>
       </section>
 
@@ -91,6 +91,23 @@
           <p>
             <span data-copy="ja">Local LLMのモデル、再利用用Research Memory、手動登録または自動学習した音声認識語は <code>~/Library/Application Support/kAIgi</code> に保存されます。Research Memoryには、マスキングした検索論点、生成済みカード、参照した情報源とフィードバックが含まれることがあります。Research Cardは既定では自動削除しません。ユーザーが30、90、180、365日のいずれかを明示的に選んだ場合だけ、作成日が期限を超えたピン留めされていないカードを自動削除します。設定がない、未知、または破損している場合は無期限保持になります。カードを自動再利用するための種類別鮮度は物理削除とは別で、鮮度を過ぎてもカードはLibraryに残ります。生成履歴と情報源の再利用キャッシュは派生データとして30日で整理します。清掃は起動時と通常1日1回試行し、一時的に清掃だけが失敗した場合は通常の利用を妨げず15分以上あけて再試行します。</span>
             <span data-copy="en">Local LLM models, reusable Research Memory, and manually saved or automatically learned speech-recognition terms are stored in <code>~/Library/Application Support/kAIgi</code>. Research Memory may include masked research prompts, generated cards, referenced sources, and feedback. By default, Research Cards are not deleted automatically. Only when the user explicitly selects 30, 90, 180, or 365 days does kAIgi automatically delete unpinned cards whose creation date is beyond that period. A missing, unknown, or damaged setting resolves to indefinite retention. Type-specific freshness for automatic reuse is separate from physical deletion; a stale card remains available in the Library. Generation records and the source-reuse cache are derived data and are cleaned after 30 days. Cleanup is attempted at startup and normally once per day. If cleanup alone fails temporarily, normal use continues and cleanup is retried after at least 15 minutes.</span>
+          </p>
+
+          <h2>
+            <span data-copy="ja">PDFとTextデータ</span>
+            <span data-copy="en">PDFs and Text data</span>
+          </h2>
+          <p>
+            <span data-copy="ja">Textで開いた元PDFはFinderの場所に残り、kAIgiはPDFを複製しません。kAIgiは再接続用ブックマークとファイル識別情報に加え、文書履歴、抽出本文、翻訳、生成した構造、コメント、読書位置、プロジェクト情報を <code>~/Library/Application Support/kAIgi/Text</code> に分離して保存します。Finderから元PDFを削除しても、このTextデータは削除されず、保存済み本文はRecall、Zoom、文書内検索で引き続き使われます。元ページを表示する操作だけはPDFの再接続が必要です。</span>
+            <span data-copy="en">A source PDF opened in Text remains at its Finder location; kAIgi does not duplicate it. Separately, kAIgi stores a reconnection bookmark and file identity together with document history, extracted text, translations, generated structure, comments, reading position, and project information under <code>~/Library/Application Support/kAIgi/Text</code>. Deleting the source PDF in Finder does not delete this Text data. Stored text remains available to Recall, Zoom, and in-document search; only operations that display the source page require reconnection.</span>
+          </p>
+          <p>
+            <span data-copy="ja">同じバイト列のPDFを再び開くと、SHA-256による完全一致を確認して以前の履歴へ自動で再接続します。DOI、arXiv識別子、タイトル、本文の近さ、以前と同じFinder位置は、「同じ論文の別版かもしれない」という比較候補を作るためだけに使います。これらの弱い一致だけで自動統合せず、ユーザーが新旧を確認してリンクまたは別文書を選びます。別版へリンクした場合も、翻訳は原文が一致する文だけを再利用し、構造と抽出本文は現在のPDFに一致するまで表示しません。コメントの根拠を再発見できない場合は、未解決として残します。</span>
+            <span data-copy="en">When the exact PDF bytes are opened again, kAIgi verifies their SHA-256 and automatically reconnects the previous history. A DOI, arXiv identifier, similar title or text, or the same former Finder location is used only to propose that a file may be another revision of the same paper. These weaker matches never merge records automatically; the user compares both and chooses whether to link or keep a separate document. Even after linking a revision, a translation is reused only for a sentence whose source text still matches, and structure or extracted text stays hidden until it matches the current PDF. Comments whose evidence cannot be found remain visible as unresolved.</span>
+          </p>
+          <p>
+            <span data-copy="ja">「Textデータを書き出す」は、文書履歴、抽出本文、翻訳、構造、コメント、Textプロジェクトを1つの <code>.kaigitextbackup</code> ファイルへ保存します。元PDF、Finderの場所、再接続用ブックマーク、録音、APIキーは含みません。読み込みでは、ファイル形式・容量・各データ・完全性を既存データの変更前に検証し、文書ごとに追加・完全一致への統合・読み込まない、の許可された選択肢を表示します。確定時にもバックアップと現在のライブラリを再確認し、準備したライブラリ全体を一度に置き換えます。通常の失敗で既存Text履歴を部分更新しません。バックアップには抽出本文やコメントなどの内容が入るため、ユーザーは保存先と共有相手を管理し、不要になった書き出しファイルをFinderから削除する必要があります。</span>
+            <span data-copy="en">Export Text Data stores document history, extracted text, translations, structure, comments, and Text projects in one <code>.kaigitextbackup</code> file. It excludes source PDFs, Finder locations, reconnection bookmarks, recordings, and API keys. Before changing existing data, import validates the format, size, every artifact, and overall integrity, then shows the allowed per-document choices: add, merge an exact match, or skip. At confirmation, kAIgi rechecks both the backup and the current library and publishes one prepared library generation. An ordinary failure does not partially update the existing Text history. Because the backup contains extracted text, comments, and other content, users must control where it is stored and shared and delete an unneeded exported file in Finder.</span>
           </p>
 
           <h2>
@@ -161,6 +178,10 @@
           <p>
             <span data-copy="ja">保存済みの録音、文字起こし、話者区間と変更した話者名、セッション内のAI Research結果、議論ログは、履歴をゴミ箱へ移動するかFinderから該当セッションフォルダを削除することでまとめて削除できます。Recallの詳細検索索引と検索状態はメモリ上だけにあり、アプリ終了時に消えます。派生Atlasは、元のAudio／PDFが削除されたことを権威ある台帳で確認した後に対応する資料を自動で除外します。Atlas全体だけを削除する場合は、kAIgiを終了してからFinderで <code>~/Library/Application Support/kAIgi/Recall</code> を削除できます。元のAudio／PDFには影響せず、次にSemantic Zoomを開いた時に必要な分を再生成します。設定の「端末内Researchデータ」は議論ログやRecall Atlasを削除しません（議論ログはResearch Memoryではなくセッション内データです）。「音声だけ削除」は音声ファイルだけを削除し、文字起こしと話者解析結果は残します。設定の「端末内Researchデータ」はResearch Memoryと全言語の自動学習語を削除しますが、録音セッション内の話者解析結果は削除しません。Research Libraryでは再利用用カードを個別に削除でき、手動登録した音声認識語は各言語の辞書から個別に削除できます。STT診断の端末内集計は録音データ設定の「診断データを削除」から、Local LLMモデル、話者分離モデル、OpenAI API keyはそれぞれ設定から削除できます。話者分離モデルの削除完了には、実行中の解析が終了し、管理対象の一時スナップショットも安全に削除されていることが必要です。</span>
             <span data-copy="en">Saved audio, transcripts, speaker intervals and edited speaker names, per-session AI Research results, and the discussion log can be removed together by moving the history item to Trash or deleting its session folder in Finder. Recall's detailed search index and search state exist only in memory and disappear when the app quits. After an authoritative Audio/PDF catalog confirms that a source was deleted, the derived atlas automatically excludes its corresponding entry. To remove only the complete atlas, quit kAIgi and delete <code>~/Library/Application Support/kAIgi/Recall</code> in Finder. This does not affect the source Audio/PDF data; kAIgi regenerates required atlas entries when Semantic Zoom is opened again. “On-device Research Data” does not delete discussion logs or the Recall atlas — discussion logs are per-session data, not Research Memory. “Delete audio only” removes only audio files and leaves the transcript and speaker-analysis result. “On-device Research Data” deletes Research Memory and automatically learned terms for every language, but it does not delete per-session speaker-analysis results. Reusable cards can be deleted individually in the Research Library, and manually saved recognition terms can be removed from each language's dictionary. The STT diagnostics aggregate can be removed with Delete Diagnostics under Recording Data; Local LLM models, the speaker-diarization model, and the OpenAI API key can each be deleted in Settings. Speaker-model deletion completes only after active analysis has finished and all managed temporary snapshots have also been removed safely.</span>
+          </p>
+          <p>
+            <span data-copy="ja">Textの更新履歴で削除を選ぶと、その文書の抽出本文、翻訳、構造、コメント、読書状態を含むkAIgi独自データをゴミ箱へ移し、Finder上の元PDFは残します。反対に、Finderで元PDFだけを削除してもkAIgi独自データは残ります。kAIgiが書き出した <code>.kaigitextbackup</code> はユーザーが選んだ場所にある独立ファイルであり、元のText履歴を削除しても自動では削除されません。</span>
+            <span data-copy="en">Deleting an item from Text Updates moves kAIgi's companion data for that document—including extracted text, translations, structure, comments, and reading state—to Trash while leaving the source PDF in Finder. Conversely, deleting only the source PDF in Finder leaves the companion data in kAIgi. An exported <code>.kaigitextbackup</code> is an independent file at the location chosen by the user and is not automatically removed when the original Text history is deleted.</span>
           </p>
 
           <h2>
