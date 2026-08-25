@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" data-language="ja">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +7,7 @@
     <title>CLI / Skills - kAIgi</title>
     <meta
       name="description"
-      content="kAIgi CLIとAgent Skillで、CodexやClaude Codeから録音と文字起こしを安全に扱う方法。"
+      content="kAIgi CLIとAgent Skillで、CodexやClaude Codeから録音・文字起こし・一度読んだ文献の根拠を安全に扱う方法。"
     >
     <meta name="robots" content="index,follow">
     <meta name="application-name" content="kAIgi">
@@ -17,7 +17,7 @@
     <meta property="og:title" content="CLI / Skills - kAIgi">
     <meta
       property="og:description"
-      content="kAIgi CLIとAgent Skillで、CodexやClaude Codeから録音と文字起こしを安全に扱う方法。"
+      content="kAIgi CLIとAgent Skillで、CodexやClaude Codeから録音・文字起こし・一度読んだ文献の根拠を安全に扱う方法。"
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/agent-skills.html">
@@ -31,22 +31,24 @@
     <meta name="twitter:title" content="CLI / Skills - kAIgi">
     <meta
       name="twitter:description"
-      content="kAIgi CLIとAgent Skillで、CodexやClaude Codeから録音と文字起こしを安全に扱う方法。"
+      content="kAIgi CLIとAgent Skillで、CodexやClaude Codeから録音・文字起こし・一度読んだ文献の根拠を安全に扱う方法。"
     >
     <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
     <meta name="twitter:image:alt" content="kAIgi CLI and Agent Skills for transcripts">
     <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/agent-skills.html">
     <link rel="sitemap" type="application/xml" href="./sitemap.xml">
-    <link rel="icon" href="./assets/app-icon.png">
-    <link rel="apple-touch-icon" href="./assets/app-icon.png">
+    <link rel="icon" href="./assets/app-icon-180.png">
+    <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
+    <script src="./site-preload.js"></script>
     <link rel="stylesheet" href="./styles.css">
+    <script defer src="./site.js"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "TechArticle",
         "headline": "CLI / Skills - kAIgi",
         "name": "kAIgi CLI and Agent Skills guide",
-        "description": "kAIgi CLIとAgent Skillで、CodexやClaude Codeから録音と文字起こしを安全に扱う方法。",
+        "description": "kAIgi CLIとAgent Skillで、CodexやClaude Codeから録音、文字起こし、一度読んだ文献の根拠を安全に扱う方法。",
         "url": "https://keigo1110.github.io/kAIgi-download/agent-skills.html",
         "inLanguage": ["ja", "en"],
         "about": [
@@ -68,10 +70,18 @@
       }
     </script>
   </head>
-  <body data-language="ja">
+  <body
+    data-language="ja"
+    data-title-ja="CLI / Skills - kAIgi 0.4.4"
+    data-title-en="CLI / Skills - kAIgi 0.4.4"
+  >
+    <a class="skip-link" href="#main-content">
+      <span data-copy="ja">本文へ移動</span>
+      <span data-copy="en">Skip to content</span>
+    </a>
     <header class="site-header">
       <a class="brand" href="./index.html" aria-label="kAIgi home">
-        <img src="./assets/app-icon.png" alt="" width="36" height="36">
+        <img src="./assets/app-icon-180.png" alt="" width="36" height="36">
         <span>kAIgi</span>
       </a>
       <nav class="site-nav" aria-label="Primary">
@@ -104,21 +114,21 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <section class="policy-hero" aria-labelledby="guide-title">
         <div class="narrow guide-intro">
           <p class="eyebrow">CLI / SKILLS</p>
           <h1 id="guide-title">
-            <span data-copy="ja">文字起こしを、次の作業へ。</span>
-            <span data-copy="en">Take your transcript into the next task.</span>
+            <span data-copy="ja">会議と文献を、次の作業へ。</span>
+            <span data-copy="en">Take meetings and papers into the next task.</span>
           </h1>
           <p class="lead">
-            <span data-copy="ja">kAIgi CLIは録音と文字起こしをローカルで扱い、Agent SkillはCodexやClaude Codeに安全な使い方を伝えます。低確度の箇所を直し、全体の文脈で整えた結果をkAIgiへ戻せます。</span>
-            <span data-copy="en">The kAIgi CLI works with recordings and transcripts locally. The Agent Skill teaches Codex and Claude Code how to use it safely, refine low-confidence text, improve the full context, and return the result to kAIgi.</span>
+            <span data-copy="ja">kAIgi CLIは録音・文字起こし・抽出済みの文献本文をローカルで扱います。Agent Skillは、低確度の発話を整える手順と、一度読んだ論文から根拠を集めて関連研究へつなぐ安全な読み方をCodexやClaude Codeへ伝えます。</span>
+            <span data-copy="en">The kAIgi CLI works locally with recordings, transcripts, and extracted paper text. The Agent Skill teaches Codex and Claude Code how to refine uncertain speech and gather traceable evidence from papers you have already read.</span>
           </p>
           <p class="updated">
-            <span data-copy="ja">kAIgi 0.4.3</span>
-            <span data-copy="en">kAIgi 0.4.3</span>
+            <span data-copy="ja">kAIgi 0.4.4</span>
+            <span data-copy="en">kAIgi 0.4.4</span>
           </p>
         </div>
       </section>
@@ -173,8 +183,8 @@
               <span data-copy="en">See what an agent can do at a glance.</span>
             </h2>
             <p>
-              <span data-copy="ja">コマンドを覚える前に、4つの使い方から選べます。Agent Skillが安全な手順を案内し、正式データへ反映する操作は検証後に明示して行います。</span>
-              <span data-copy="en">Choose from four practical workflows before learning any commands. The Agent Skill guides the safe steps, and canonical data is changed only after validation and an explicit apply.</span>
+              <span data-copy="ja">コマンドを覚える前に、5つの使い方から選べます。Agent Skillが安全な手順を案内し、正式データへ反映する操作は検証後に明示して行います。</span>
+              <span data-copy="en">Choose from five practical workflows before learning any commands. The Agent Skill guides the safe steps, and canonical data is changed only after validation and an explicit apply.</span>
             </p>
           </header>
 
@@ -294,6 +304,35 @@
                 <p class="capability-command"><code>transcribe</code></p>
               </div>
             </article>
+
+            <article class="capability-story" id="documents">
+              <figure class="capability-visual" role="img" aria-labelledby="capability-literature-alt">
+                <img
+                  src="./assets/research-archive-magic-v1.webp"
+                  alt=""
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <figcaption class="visually-hidden" id="capability-literature-alt">
+                  <span data-copy="ja">読了した複数の文献から、ページと段落に結び付いた根拠が次の論文へ集まる様子</span>
+                  <span data-copy="en">Evidence tied to pages and passages flows from previously read papers into the next manuscript.</span>
+                </figcaption>
+              </figure>
+              <div class="capability-copy">
+                <p class="capability-number">05 / LITERATURE</p>
+                <h3>
+                  <span data-copy="ja">読んだ文献から、関連研究の根拠を集める</span>
+                  <span data-copy="en">Build related-work evidence from papers you have read</span>
+                </h3>
+                <p>
+                  <span data-copy="ja">抽出済み文献を横断し、テーマに近い論文と根拠段落を、版・ページ・本文ハッシュつきで絞り込みます。CLIはレビュー本文を生成せず、必要なページだけを次の精読へ渡します。</span>
+                  <span data-copy="en">Search extracted papers and shortlist relevant documents and passages with revision, page, and source hashes. The CLI does not write a literature review; it hands the selected pages to a focused reading step.</span>
+                </p>
+                <p class="capability-command"><code>documents research-context</code> · <code>documents context</code></p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -342,8 +381,8 @@
             <span data-copy="en">Command list</span>
           </h2>
           <p>
-            <span data-copy="ja">録音IDは最初の <code>list</code> または <code>search</code> で確認します。パスに空白がある場合は引用符で囲んでください。</span>
-            <span data-copy="en">Find a recording ID with <code>list</code> or <code>search</code> first. Quote paths that contain spaces.</span>
+            <span data-copy="ja">録音IDまたは文書IDは、対象領域の <code>list</code> または <code>search</code> で確認します。パスに空白がある場合は引用符で囲んでください。</span>
+            <span data-copy="en">Find a recording or document ID with the matching <code>list</code> or <code>search</code> command. Quote paths that contain spaces.</span>
           </p>
           <div class="command-list">
             <article class="command-card">
@@ -355,6 +394,39 @@
               <p>
                 <span data-copy="ja">利用できるコマンドと文字起こしschemaの対応範囲をJSONで確認します。<code>kaigi --help</code> と <code>kaigi help &lt;command&gt;</code> では、全体またはコマンド別の使い方を確認できます。schemaが新しすぎる場合は、kAIgiの設定で「CLIを更新」を実行してください。</span>
                 <span data-copy="en">Reports the available commands and supported transcript-schema range as JSON. Use <code>kaigi --help</code> or <code>kaigi help &lt;command&gt;</code> for global or scoped usage. If the schema is newer than the CLI supports, choose “Update CLI” in kAIgi Settings.</span>
+              </p>
+            </article>
+            <article class="command-card" id="document-commands">
+              <div class="command-heading">
+                <h3><code>kaigi documents research-context "embodied agency" --limit 8 --max-blocks-per-document 16 --best-effort</code></h3>
+                <span data-copy="ja">文献を横断</span>
+                <span data-copy="en">Search the literature set</span>
+              </div>
+              <p>
+                <span data-copy="ja">kAIgiで本文を抽出済みの文献を語句で順位付けし、関連度の高い文書、根拠段落、自分のコメントを1つの有界なJSONへまとめます。<code>scan_complete</code>、<code>truncated</code>、<code>limitations</code> を確認してから、見つからないという結論を出します。</span>
+                <span data-copy="en">Lexically ranks papers whose text kAIgi has extracted and returns a bounded JSON set of relevant documents, evidence passages, and your annotations. Check <code>scan_complete</code>, <code>truncated</code>, and <code>limitations</code> before concluding that evidence is absent.</span>
+              </p>
+            </article>
+            <article class="command-card">
+              <div class="command-heading">
+                <h3><code>kaigi documents list --limit 20 --best-effort</code></h3>
+                <span data-copy="ja">文書を探す</span>
+                <span data-copy="en">Find a document</span>
+              </div>
+              <p>
+                <span data-copy="ja"><code>documents search "query"</code> と組み合わせ、タイトル、識別子、抽出済み本文から対象文書を絞り込みます。元PDFのパスやバイナリは返しません。</span>
+                <span data-copy="en">Combine with <code>documents search "query"</code> to find a document by title, identity, or extracted text. Source PDF paths and bytes are never returned.</span>
+              </p>
+            </article>
+            <article class="command-card">
+              <div class="command-heading">
+                <h3><code>kaigi documents context &lt;document-id&gt; --pages 3-8 --include text,structure,annotations</code></h3>
+                <span data-copy="ja">必要なページを精読</span>
+                <span data-copy="en">Read selected pages closely</span>
+              </div>
+              <p>
+                <span data-copy="ja">横断検索で選んだ文書から、必要なページと要素だけを読み取り専用で取得します。ページ、段落ID、本文ハッシュ、抽出の完全性、省略状態を保つため、引用候補を元の版へ戻して確認できます。</span>
+                <span data-copy="en">Reads only the selected pages and components from a shortlisted document. Page, block ID, source hash, extraction completeness, and truncation state stay attached so candidate citations can be checked against the exact revision.</span>
               </p>
             </article>
             <article class="command-card">
@@ -521,8 +593,8 @@
               <span data-copy="en">Privacy check</span>
             </h2>
             <p>
-              <span data-copy="ja">CLIは音声と文字起こしをこのMac上で処理します。kAIgiアプリはCLIを初めてインストールする際、CodexやClaude Codeのモデルによっては文字起こしがモデル提供元へ送られる可能性があることを警告します。現行CLIではコマンドごとの確認は行いません。<code>list</code> はタイトルや日時などのメタデータ、<code>inspect</code>・<code>search</code>・<code>export</code>・<code>apply-transcript</code>・<code>discussion-log</code> は文字起こし本文を扱います。</span>
-              <span data-copy="en">The CLI processes audio and transcripts on this Mac. kAIgi shows a warning when you install the CLI for the first time because the selected Codex or Claude Code model may receive transcript text. The current CLI does not ask for confirmation before every command. <code>list</code> handles metadata such as title and date; <code>inspect</code>, <code>search</code>, <code>export</code>, <code>apply-transcript</code>, and <code>discussion-log</code> handle transcript text.</span>
+              <span data-copy="ja">CLI自体は音声、文字起こし、抽出済みPDF本文をこのMac上で読み取ります。ただしCodexやClaude Codeへ依頼した場合、選択したモデルと設定によってはCLIの出力がモデル提供元へ送られます。kAIgiはCLIの初回インストール時に警告しますが、現行CLIはコマンドごとの確認を行いません。録音の <code>inspect</code>・<code>search</code>・<code>export</code>・<code>apply-transcript</code>・<code>discussion-log</code> は文字起こし本文を扱い、文書の <code>search</code>・<code>research-context</code>・<code>context</code>・<code>inspect</code> は抽出本文や指定したコメントを扱います。</span>
+              <span data-copy="en">The CLI itself reads audio, transcripts, and extracted PDF text on this Mac. When you ask Codex or Claude Code to use it, however, CLI output may be sent to the selected model provider under that agent's settings. kAIgi warns when the CLI is installed for the first time, but the current CLI does not confirm every command. Recording <code>inspect</code>, <code>search</code>, <code>export</code>, <code>apply-transcript</code>, and <code>discussion-log</code> handle transcript text; document <code>search</code>, <code>research-context</code>, <code>context</code>, and <code>inspect</code> handle extracted text and requested annotations.</span>
             </p>
             <p>
               <span data-copy="ja">AI ResearchのOpenAI API連携は別の機能です。詳しくは<a href="./privacy.html">プライバシーポリシー</a>を確認してください。</span>
@@ -546,28 +618,5 @@
       </div>
     </footer>
 
-    <script>
-      (() => {
-        const stored = window.localStorage.getItem("kaigi-language");
-        const prefersJapanese = (navigator.language || "").toLowerCase().startsWith("ja");
-        const initial = stored || (prefersJapanese ? "ja" : "en");
-        const buttons = document.querySelectorAll("[data-language-option]");
-
-        function setLanguage(language) {
-          document.documentElement.lang = language;
-          document.body.dataset.language = language;
-          window.localStorage.setItem("kaigi-language", language);
-          buttons.forEach((button) => {
-            button.setAttribute("aria-pressed", String(button.dataset.languageOption === language));
-          });
-        }
-
-        buttons.forEach((button) => {
-          button.addEventListener("click", () => setLanguage(button.dataset.languageOption));
-        });
-
-        setLanguage(initial === "en" ? "en" : "ja");
-      })();
-    </script>
   </body>
 </html>

@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" data-language="ja">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Privacy Policy - kAIgi</title>
     <meta
       name="description"
-      content="kAIgiの録音、Recall、AI Research、OpenAI連携、保存データに関するプライバシーポリシー。"
+      content="kAIgiの録音、PDF、CLI、Recall、AI Research、外部モデル連携、保存データに関するプライバシーポリシー。"
     >
     <meta name="robots" content="index,follow">
     <meta name="application-name" content="kAIgi">
@@ -17,7 +17,7 @@
     <meta property="og:title" content="Privacy Policy - kAIgi">
     <meta
       property="og:description"
-      content="kAIgiの録音、Recall、AI Research、OpenAI連携、保存データに関するプライバシーポリシー。"
+      content="kAIgiの録音、PDF、CLI、Recall、AI Research、外部モデル連携、保存データに関するプライバシーポリシー。"
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/privacy.html">
@@ -31,19 +31,29 @@
     <meta name="twitter:title" content="Privacy Policy - kAIgi">
     <meta
       name="twitter:description"
-      content="kAIgiの録音、Recall、AI Research、OpenAI連携、保存データに関するプライバシーポリシー。"
+      content="kAIgiの録音、PDF、CLI、Recall、AI Research、外部モデル連携、保存データに関するプライバシーポリシー。"
     >
     <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
     <meta name="twitter:image:alt" content="kAIgi - AI Research Cards for live discussions">
     <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/privacy.html">
-    <link rel="icon" href="./assets/app-icon.png">
-    <link rel="apple-touch-icon" href="./assets/app-icon.png">
+    <link rel="icon" href="./assets/app-icon-180.png">
+    <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
+    <script src="./site-preload.js"></script>
     <link rel="stylesheet" href="./styles.css">
+    <script defer src="./site.js"></script>
   </head>
-  <body data-language="ja">
+  <body
+    data-language="ja"
+    data-title-ja="プライバシーポリシー - kAIgi"
+    data-title-en="Privacy Policy - kAIgi"
+  >
+    <a class="skip-link" href="#main-content">
+      <span data-copy="ja">本文へ移動</span>
+      <span data-copy="en">Skip to content</span>
+    </a>
     <header class="site-header">
       <a class="brand" href="./index.html" aria-label="kAIgi home">
-        <img src="./assets/app-icon.png" alt="" width="36" height="36">
+        <img src="./assets/app-icon-180.png" alt="" width="36" height="36">
         <span>kAIgi</span>
       </a>
       <div class="header-actions">
@@ -58,7 +68,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <section class="policy-hero">
         <div class="narrow">
           <p class="eyebrow">Privacy Policy</p>
@@ -108,6 +118,19 @@
           <p>
             <span data-copy="ja">「Textデータを書き出す」は、文書履歴、抽出本文、翻訳、構造、コメント、Textプロジェクトを1つの <code>.kaigitextbackup</code> ファイルへ保存します。元PDF、Finderの場所、再接続用ブックマーク、録音、APIキーは含みません。読み込みでは、ファイル形式・容量・各データ・完全性を既存データの変更前に検証し、文書ごとに追加・完全一致への統合・読み込まない、の許可された選択肢を表示します。確定時にもバックアップと現在のライブラリを再確認し、準備したライブラリ全体を一度に置き換えます。通常の失敗で既存Text履歴を部分更新しません。バックアップには抽出本文やコメントなどの内容が入るため、ユーザーは保存先と共有相手を管理し、不要になった書き出しファイルをFinderから削除する必要があります。</span>
             <span data-copy="en">Export Text Data stores document history, extracted text, translations, structure, comments, and Text projects in one <code>.kaigitextbackup</code> file. It excludes source PDFs, Finder locations, reconnection bookmarks, recordings, and API keys. Before changing existing data, import validates the format, size, every artifact, and overall integrity, then shows the allowed per-document choices: add, merge an exact match, or skip. At confirmation, kAIgi rechecks both the backup and the current library and publishes one prepared library generation. An ordinary failure does not partially update the existing Text history. Because the backup contains extracted text, comments, and other content, users must control where it is stored and shared and delete an unneeded exported file in Finder.</span>
+          </p>
+
+          <h2>
+            <span data-copy="ja">CLIと外部エージェント</span>
+            <span data-copy="en">CLI and external agents</span>
+          </h2>
+          <p>
+            <span data-copy="ja">kAIgi CLIは録音、文字起こし、Textに保存した抽出本文をこのMac上で読み取ります。文書コマンドは元PDFのパス、Finderブックマーク、PDFバイナリを返さず、<code>research-context</code> と <code>context</code> は文書数、ページ、段落、読み取り量、最終出力に上限を設けます。CLI自体はこれらの内容をkAIgiのサーバーや外部検索サービスへ送信しません。</span>
+            <span data-copy="en">The kAIgi CLI reads recordings, transcripts, and extracted text stored by Text on this Mac. Document commands exclude source PDF paths, Finder bookmarks, and PDF bytes. <code>research-context</code> and <code>context</code> bound document count, pages, passages, bytes read, and final output. The CLI itself does not send this content to a kAIgi server or external search service.</span>
+          </p>
+          <p>
+            <span data-copy="ja">Codex、Claude Code、その他のエージェントへCLIの利用を依頼すると、選択したモデルとその設定に従って、CLIが返した文字起こし、抽出本文、翻訳、構造、コメントなどがモデル提供元へ送られることがあります。kAIgiはCLIの初回インストール時にこの可能性を警告しますが、現行CLIはコマンドごとの確認を行いません。エージェントへ渡す前に、対象文書、ページ範囲、<code>--include</code> の内容を確認してください。</span>
+            <span data-copy="en">When you ask Codex, Claude Code, or another agent to use the CLI, transcript text, extracted text, translations, structure, annotations, or other CLI output may be sent to that model provider under the selected model and agent settings. kAIgi warns about this possibility when the CLI is first installed, but the current CLI does not confirm every command. Review the selected document, page range, and <code>--include</code> components before giving context to an agent.</span>
           </p>
 
           <h2>
@@ -202,33 +225,11 @@
       <p>&copy; 2026 kAIgi</p>
       <div class="footer-links">
         <a href="./index.html">Home</a>
+        <a href="./agent-skills.html">CLI / Skills</a>
         <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
         <a href="https://github.com/keigo1110/kAIgi-download">GitHub</a>
       </div>
     </footer>
 
-    <script>
-      (() => {
-        const stored = window.localStorage.getItem("kaigi-language");
-        const prefersJapanese = (navigator.language || "").toLowerCase().startsWith("ja");
-        const initial = stored || (prefersJapanese ? "ja" : "en");
-        const buttons = document.querySelectorAll("[data-language-option]");
-
-        function setLanguage(language) {
-          document.documentElement.lang = language;
-          document.body.dataset.language = language;
-          window.localStorage.setItem("kaigi-language", language);
-          buttons.forEach((button) => {
-            button.setAttribute("aria-pressed", String(button.dataset.languageOption === language));
-          });
-        }
-
-        buttons.forEach((button) => {
-          button.addEventListener("click", () => setLanguage(button.dataset.languageOption));
-        });
-
-        setLanguage(initial === "en" ? "en" : "ja");
-      })();
-    </script>
   </body>
 </html>

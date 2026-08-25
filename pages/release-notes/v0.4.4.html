@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ja" data-language="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>kAIgi 0.4.4 - リリースノート</title>
+    <meta
+      name="description"
+      content="kAIgi 0.4.4のリリースノート。一度読んだ文献をCLIから関連研究へつなぐResearch Contextと、検索・PDF・サイドバーの操作感改善。"
+    >
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0c0d10">
+    <meta property="og:site_name" content="kAIgi">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="kAIgi 0.4.4 - Research context for papers you have read">
+    <meta
+      property="og:description"
+      content="Bring traceable evidence from papers already read in kAIgi into your next related-work draft, with a calmer and more stable reading experience."
+    >
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.4.html">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="kAIgi 0.4.4">
+    <meta name="twitter:description" content="Research context for papers you have read, plus smoother PDF and sidebar interactions.">
+    <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.4.html">
+    <link rel="icon" href="../assets/app-icon-180.png">
+    <link rel="apple-touch-icon" href="../assets/app-icon-180.png">
+    <script src="../site-preload.js"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <script defer src="../site.js"></script>
+  </head>
+  <body
+    data-language="ja"
+    data-title-ja="kAIgi 0.4.4 - リリースノート"
+    data-title-en="kAIgi 0.4.4 - Release notes"
+  >
+    <a class="skip-link" href="#main-content">
+      <span data-copy="ja">本文へ移動</span>
+      <span data-copy="en">Skip to content</span>
+    </a>
+
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="kAIgi home">
+        <img src="../assets/app-icon-180.png" alt="" width="36" height="36">
+        <span>kAIgi</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html">
+          <span data-copy="ja">トップ</span>
+          <span data-copy="en">Home</span>
+        </a>
+        <a href="../agent-skills.html">
+          <span data-copy="ja">CLI / Skills</span>
+          <span data-copy="en">CLI / Skills</span>
+        </a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language">
+          <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
+          <button type="button" data-language-option="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
+          <span data-copy="ja">ダウンロード</span>
+          <span data-copy="en">Download</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="policy-hero" aria-labelledby="release-title">
+        <div class="narrow release-intro">
+          <p class="eyebrow">RELEASE / 0.4.4</p>
+          <h1 id="release-title">
+            <span data-copy="ja">読んだ文献を、次の論文の文脈へ。</span>
+            <span data-copy="en">Bring every paper you read into the next one.</span>
+          </h1>
+          <p class="lead">
+            <span data-copy="ja">kAIgi 0.4.4は、Textで一度読んだ文献をCLIから横断し、関連研究に必要な根拠を版・ページ・段落へ結び付けたまま取り出せます。同時に、PDF、検索、サイドバーの操作を落ち着かせました。</span>
+            <span data-copy="en">kAIgi 0.4.4 searches papers previously read in Text and returns related-work evidence tied to the exact revision, page, and passage. It also makes PDF, search, and sidebar interactions calmer and more stable.</span>
+          </p>
+          <ul class="release-meta" aria-label="Release requirements">
+            <li>Version 0.4.4</li>
+            <li>Build 38</li>
+            <li>macOS 14+</li>
+            <li>Apple silicon + Intel</li>
+          </ul>
+          <div class="release-actions">
+            <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
+              <span data-copy="ja">kAIgi 0.4.4をダウンロード</span>
+              <span data-copy="en">Download kAIgi 0.4.4</span>
+            </a>
+            <a class="button secondary" href="../agent-skills.html#document-commands">
+              <span data-copy="ja">文献CLIの使い方</span>
+              <span data-copy="en">Literature CLI guide</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="narrow policy-copy">
+          <section class="release-section" aria-labelledby="context-title">
+            <p class="section-kicker">Research context</p>
+            <h2 id="context-title">
+              <span data-copy="ja">手元の文献から、根拠を選ぶ</span>
+              <span data-copy="en">Select evidence from the papers already on your Mac</span>
+            </h2>
+            <ul class="release-list">
+              <li>
+                <strong><code>documents research-context</code></strong>
+                <span data-copy="ja">抽出済み文献を横断し、テーマに近い論文と根拠段落、自分のコメントを、明示した上限内のJSONへまとめます。</span>
+                <span data-copy="en">Searches extracted papers and returns relevant documents, evidence passages, and your annotations in explicitly bounded JSON.</span>
+              </li>
+              <li>
+                <strong><span data-copy="ja">引用候補を元の版へ戻せる</span><span data-copy="en">Return every candidate citation to its exact revision</span></strong>
+                <span data-copy="ja">DOI・arXiv ID、PDFのSHA-256、ページ、段落ID、本文ハッシュを保持します。自分のコメントは著者の文章と別のフィールドで返します。</span>
+                <span data-copy="en">DOI or arXiv identity, PDF SHA-256, page, block ID, and source hash stay attached. Your annotations remain separate from author text.</span>
+              </li>
+              <li>
+                <strong><span data-copy="ja">候補抽出から精読へ</span><span data-copy="en">Move from discovery to close reading</span></strong>
+                <span data-copy="ja">候補を選んだ後は <code>documents context</code> で必要なページだけを読みます。検索結果を論文レビューそのものとして扱いません。</span>
+                <span data-copy="en">After shortlisting, use <code>documents context</code> for the pages you need. The ranked result is evidence discovery, not a generated literature review.</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="release-section" aria-labelledby="continuity-title">
+            <p class="section-kicker">Interaction continuity</p>
+            <h2 id="continuity-title">
+              <span data-copy="ja">読み手の視線を動かさない</span>
+              <span data-copy="en">Keep the reader's attention in place</span>
+            </h2>
+            <ul class="release-list">
+              <li>
+                <strong><span data-copy="ja">PDFと検索の状態を版ごとに管理</span><span data-copy="en">Bind PDF and search state to the exact revision</span></strong>
+                <span data-copy="ja">文書を切り替えた時に古いページや検索結果を残さず、同じ版へ戻った時だけ解析済みPDFを再利用します。</span>
+                <span data-copy="en">Old pages and search results are cleared when documents change; parsed PDF state is reused only for the same revision.</span>
+              </li>
+              <li>
+                <strong><span data-copy="ja">検索・録音・サイドバーの寸法を安定化</span><span data-copy="en">Stable geometry for search, recording, and sidebars</span></strong>
+                <span data-copy="ja">進捗やボタンの表示切替で隣の要素が跳ねないようにし、ホバー行が再利用された時の遅延表示も停止します。</span>
+                <span data-copy="en">Progress and button changes no longer push neighboring controls around, and recycled rows cancel stale hover intent.</span>
+              </li>
+              <li>
+                <strong>Reduce Motion</strong>
+                <span data-copy="ja">標準モーションを共通化し、macOSの「視差効果を減らす」に従って不要な動きを止めます。</span>
+                <span data-copy="en">Standard motion is centralized and unnecessary movement stops when macOS Reduce Motion is enabled.</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="release-section release-safety" aria-labelledby="safety-title">
+            <h2 id="safety-title">
+              <span data-copy="ja">知っておいてほしいこと</span>
+              <span data-copy="en">What to know</span>
+            </h2>
+            <p>
+              <span data-copy="ja">文献の順位付けは説明可能な語句一致で、意味検索や論文の重要度判定ではありません。<code>scan_complete</code>、<code>truncated</code>、<code>limitations</code> を確認し、必要なページを原文で読み直してください。</span>
+              <span data-copy="en">Literature ranking is explainable lexical matching, not semantic retrieval or a judgment of scholarly importance. Check <code>scan_complete</code>, <code>truncated</code>, and <code>limitations</code>, then reread the relevant source pages.</span>
+            </p>
+            <p>
+              <span data-copy="ja">CLI自体はローカルで動き、元PDFのパスやバイナリを返しません。ただしCodexやClaude Codeへ依頼すると、CLI出力が選択したモデル提供元へ送られることがあります。対象文書とページ範囲を確認してください。</span>
+              <span data-copy="en">The CLI itself runs locally and excludes source PDF paths and bytes. When used through Codex or Claude Code, CLI output may be sent to the selected model provider. Review the document and page scope first.</span>
+            </p>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span aria-hidden="true"></span>
+      <p>&copy; 2026 kAIgi</p>
+      <div class="footer-links">
+        <a href="../index.html">
+          <span data-copy="ja">トップ</span>
+          <span data-copy="en">Home</span>
+        </a>
+        <a href="../agent-skills.html">CLI / Skills</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
+      </div>
+    </footer>
+  </body>
+</html>

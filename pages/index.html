@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" data-language="ja">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>kAIgi - 会議と文献を地図でつなぐRecall / PDFリーダー</title>
+    <title>kAIgi 0.4.4 - 読んだ文献を論文執筆の文脈へ</title>
     <meta
       name="description"
-      content="kAIgiは、Mac上の会議文字起こしとPDFを横断検索し、Semantic Zoomで意味の近さを見渡せるRecall、読んだ論文の翻訳・構造・メモを保つPDFリーダー、AI Researchを備えたmacOSアプリです。"
+      content="kAIgiは、会議文字起こしとPDFをRecallで横断し、一度読んだ文献の根拠をCLIから論文執筆へつなげられるmacOSアプリです。PDFリーダー、Semantic Zoom、AI Researchを備えています。"
     >
     <meta name="robots" content="index,follow">
     <meta name="application-name" content="kAIgi">
@@ -15,10 +15,10 @@
     <meta property="og:site_name" content="kAIgi">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:title" content="kAIgi - Recall and AI Research for meetings">
+    <meta property="og:title" content="kAIgi 0.4.4 - Research context for every paper you read">
     <meta
       property="og:description"
-      content="会議とPDFをRecallの地図でつなぎ、読んだ論文の翻訳・構造・メモをPDFの再取得後も呼び戻せるmacOSアプリ。"
+      content="会議とPDFをRecallでつなぎ、一度読んだ文献の根拠をCLIから次の論文執筆へ持ち込めるmacOSアプリ。"
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/">
@@ -27,20 +27,22 @@
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="kAIgi - Recall and AI Research for meetings">
+    <meta property="og:image:alt" content="kAIgi 0.4.4 - Recall and research context for meetings and papers">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="kAIgi - Recall and AI Research for meetings">
+    <meta name="twitter:title" content="kAIgi 0.4.4 - Research context for every paper you read">
     <meta
       name="twitter:description"
-      content="会議とPDFをRecallの地図でつなぎ、読んだ論文の翻訳・構造・メモをPDFの再取得後も呼び戻せるmacOSアプリ。"
+      content="会議とPDFをRecallでつなぎ、一度読んだ文献の根拠をCLIから次の論文執筆へ持ち込めるmacOSアプリ。"
     >
     <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
-    <meta name="twitter:image:alt" content="kAIgi - Recall and AI Research for meetings">
+    <meta name="twitter:image:alt" content="kAIgi 0.4.4 - Recall and research context for meetings and papers">
     <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/">
     <link rel="sitemap" type="application/xml" href="./sitemap.xml">
-    <link rel="icon" href="./assets/app-icon.png">
-    <link rel="apple-touch-icon" href="./assets/app-icon.png">
+    <link rel="icon" href="./assets/app-icon-180.png">
+    <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
+    <script src="./site-preload.js"></script>
     <link rel="stylesheet" href="./styles.css">
+    <script defer src="./site.js"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -48,11 +50,11 @@
         "name": "kAIgi",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "macOS 14+",
-        "description": "kAIgiは、Mac上の会議文字起こしとPDFを横断検索し、Semantic Zoomで意味の近さを見渡せるRecall、読んだ論文の翻訳・構造・メモを保つPDFリーダー、AI Researchを備えたmacOSアプリです。",
+        "description": "kAIgiは、Mac上の会議文字起こしとPDFを横断し、一度読んだ文献の根拠をCLIから論文執筆へつなげられるRecall、PDFリーダー、AI Researchを備えたmacOSアプリです。",
         "url": "https://keigo1110.github.io/kAIgi-download/",
         "downloadUrl": "https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg",
         "image": "https://keigo1110.github.io/kAIgi-download/assets/ogp.png",
-        "softwareVersion": "0.4.3",
+        "softwareVersion": "0.4.4",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -61,11 +63,19 @@
       }
     </script>
   </head>
-  <body data-language="ja">
+  <body
+    data-language="ja"
+    data-title-ja="kAIgi 0.4.4 - 読んだ文献を論文執筆の文脈へ"
+    data-title-en="kAIgi 0.4.4 - Research context for every paper you read"
+  >
+    <a class="skip-link" href="#top">
+      <span data-copy="ja">本文へ移動</span>
+      <span data-copy="en">Skip to content</span>
+    </a>
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="kAIgi home">
-        <img src="./assets/app-icon.png" alt="" width="36" height="36">
+        <img src="./assets/app-icon-180.png" alt="" width="36" height="36">
         <span>kAIgi</span>
       </a>
       <nav class="site-nav" aria-label="Primary">
@@ -74,7 +84,7 @@
           <span data-copy="en">Flow</span>
         </a>
         <a href="#recall">Recall</a>
-        <a href="#paper-memory">0.4.3</a>
+        <a href="#research-context">0.4.4</a>
         <a href="#research">Research</a>
         <a href="#setup">
           <span data-copy="ja">はじめる</span>
@@ -93,7 +103,7 @@
       </div>
     </header>
 
-    <main id="top">
+    <main id="top" tabindex="-1">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-inner">
           <div class="hero-copy">
@@ -104,22 +114,30 @@
             </p>
             <div class="hero-actions" id="download">
               <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
-                <span data-copy="ja">最新版をダウンロード</span>
-                <span data-copy="en">Download latest version</span>
+                <span data-copy="ja">kAIgi 0.4.4をダウンロード</span>
+                <span data-copy="en">Download kAIgi 0.4.4</span>
               </a>
-              <a class="hero-release-link" href="./release-notes/v0.4.3.html">
-                <strong>0.4.3</strong>
-                <span data-copy="ja">PDFを消しても、読んだ記憶は残る</span>
-                <span data-copy="en">Your reading history returns with the PDF</span>
+              <a class="hero-release-link" href="./release-notes/v0.4.4.html">
+                <strong>0.4.4</strong>
+                <span data-copy="ja">読んだ文献を、次の論文の文脈へ</span>
+                <span data-copy="en">Bring every paper you read into the next one</span>
                 <span aria-hidden="true">↗</span>
               </a>
             </div>
+            <ul class="release-facts" aria-label="Release facts">
+              <li>macOS 14+</li>
+              <li>Apple silicon + Intel</li>
+              <li>
+                <span data-copy="ja">PDF・CLIはローカル優先</span>
+                <span data-copy="en">Local-first PDF and CLI</span>
+              </li>
+            </ul>
           </div>
 
           <div class="hero-stage" aria-hidden="true">
             <div class="hero-art-frame">
               <img
-                src="./assets/hero-magic-v1.png"
+                src="./assets/hero-magic-v1.webp"
                 alt=""
                 width="1672"
                 height="941"
@@ -169,7 +187,7 @@
 
           <div class="cinematic-scene" aria-hidden="true">
             <img
-              src="./assets/observatory-magic-v1.png"
+              src="./assets/observatory-magic-v1.webp"
               alt=""
               width="1672"
               height="941"
@@ -235,116 +253,71 @@
         </div>
       </section>
 
-      <section class="band intro-band paper-memory-band" id="paper-memory" aria-labelledby="paper-memory-title">
+      <section class="band intro-band release-feature-band" id="research-context" aria-labelledby="research-context-title">
         <div class="content-grid">
           <div>
-            <p class="section-kicker">kAIgi 0.4.3 / Paper memory</p>
-            <h2 id="paper-memory-title">
-              <span data-copy="ja">PDFが戻れば、読んだ時間も戻る。</span>
-              <span data-copy="en">When the PDF returns, your reading returns with it.</span>
+            <p class="section-kicker">kAIgi 0.4.4 / Research context</p>
+            <h2 id="research-context-title">
+              <span data-copy="ja">読んだ文献を、次の論文の文脈へ。</span>
+              <span data-copy="en">Bring every paper you read into the next one.</span>
             </h2>
           </div>
-          <div class="paper-memory-content">
+          <div class="release-feature-content">
             <div class="feature-grid">
               <article class="feature">
                 <span class="feature-mark">01</span>
                 <h3>
-                  <span data-copy="ja">完全に同じPDFなら自動で再接続</span>
-                  <span data-copy="en">Exact PDFs reconnect automatically</span>
+                  <span data-copy="ja">手元の文献をまとめて探す</span>
+                  <span data-copy="en">Search the papers already on your Mac</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">いったんFinderから消したPDFでも、完全に同じPDFをもう一度開けば、以前の翻訳、構造、コメント、読書位置へ自動で戻ります。ファイル名や保存場所が違っても構いません。</span>
-                  <span data-copy="en">Delete a PDF from Finder, then open the exact same file again to restore its translations, structure, comments, and reading position—even under a different name or location.</span>
+                  <span data-copy="ja">kAIgiで本文を取り出した文献をCLIから横断し、テーマに近い論文と根拠段落をひとつの有界なコンテキストへまとめます。出版社サイトへ再アクセスする必要はありません。</span>
+                  <span data-copy="en">Search papers whose text kAIgi has already extracted and collect relevant documents and evidence passages in one bounded context—without reopening publisher sites.</span>
                 </p>
               </article>
               <article class="feature">
                 <span class="feature-mark">02</span>
                 <h3>
-                  <span data-copy="ja">別版は、見比べてから選ぶ</span>
-                  <span data-copy="en">Compare revisions before linking</span>
+                  <span data-copy="ja">根拠の場所と版を失わない</span>
+                  <span data-copy="en">Keep every passage tied to its source</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">arXivの改訂版や出版社版らしいPDFは自動で混ぜません。新旧を比べ、「過去の記録にリンク」か「別の文書として開く」かを選べます。違う文章へ古い翻訳を表示せず、コメントは再び根拠を探します。</span>
-                  <span data-copy="en">Likely arXiv revisions or publisher editions are never merged automatically. Compare both and choose whether to link the prior record or keep a separate document. Old translations never appear beside changed text, while comments look for their evidence again.</span>
+                  <span data-copy="ja">DOI・arXiv ID、PDFの版、ページ、段落ID、本文ハッシュを保ったまま渡します。自分のコメントは著者の主張と分けるため、関連研究の根拠へ戻れます。</span>
+                  <span data-copy="en">Carry DOI or arXiv identity, PDF revision, page, block ID, and source hash with each passage. Your notes remain separate from author claims, so related-work drafts stay traceable.</span>
                 </p>
               </article>
               <article class="feature">
                 <span class="feature-mark">03</span>
                 <h3>
-                  <span data-copy="ja">元PDFがなくても探せる、持ち出せる</span>
-                  <span data-copy="en">Search offline and carry your work forward</span>
+                  <span data-copy="ja">読む流れを切らない</span>
+                  <span data-copy="en">Stay in the reading flow</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">保存済み本文は元PDFがない間もRecall、Zoom、検索で使えます。Textデータは検証可能なバックアップへ書き出し、内容を1件ずつ確認して安全に読み込めます。元PDFやFinderの場所は含みません。</span>
-                  <span data-copy="en">Stored text remains available to Recall, Zoom, and search while the source PDF is absent. Export verifiable Text backups and review each document before a safe import. Source PDFs and Finder locations stay out of the backup.</span>
+                  <span data-copy="ja">PDFの切り替え、検索、サイドバー操作の表示を安定させ、不要なちらつきとレイアウト移動を抑えました。Reduce Motion設定にも一貫して従います。</span>
+                  <span data-copy="en">PDF switching, search, and sidebar controls now keep stable geometry with less flicker and layout movement, while consistently respecting Reduce Motion.</span>
                 </p>
               </article>
             </div>
-            <p class="paper-memory-more">
-              <a href="./release-notes/v0.4.3.html">
-                <span data-copy="ja">0.4.3の変更点と安全上の注意を読む</span>
-                <span data-copy="en">Read the 0.4.3 changes and safety notes</span>
+            <div class="release-feature-links">
+              <a href="./release-notes/v0.4.4.html">
+                <span data-copy="ja">0.4.4の変更点と安全上の注意</span>
+                <span data-copy="en">0.4.4 changes and safety notes</span>
                 <span aria-hidden="true">→</span>
               </a>
-            </p>
+              <a href="./agent-skills.html#document-commands">
+                <span data-copy="ja">文献CLIの使い方</span>
+                <span data-copy="en">How to use the literature CLI</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="band intro-band" id="research" aria-labelledby="research-title">
-        <div class="content-grid">
-          <div>
-            <p class="section-kicker">
-              <span data-copy="ja">Core value</span>
-              <span data-copy="en">Core value</span>
-            </p>
-            <h2 id="research-title">
-              <span data-copy="ja">議論に、次の発見を返す。</span>
-              <span data-copy="en">Return the next discovery to the discussion.</span>
-            </h2>
-          </div>
-          <div class="feature-grid">
-            <article class="feature">
-              <span class="feature-mark">01</span>
-              <h3>
-                <span data-copy="ja">論点を拾う</span>
-                <span data-copy="en">Reads the room</span>
-              </h3>
-              <p>
-                <span data-copy="ja">会話の流れから、いま調べる価値がある問いを抽出します。単なる録音ログではなく、議論に戻せる論点として扱います。</span>
-                <span data-copy="en">kAIgi follows the flow of the meeting and extracts questions worth researching now, not just notes to read later.</span>
-              </p>
-            </article>
-            <article class="feature">
-              <span class="feature-mark">02</span>
-              <h3>
-                <span data-copy="ja">参考情報を出す</span>
-                <span data-copy="en">Surfaces useful context</span>
-              </h3>
-              <p>
-                <span data-copy="ja">関連事例、既存サービス、技術選択肢、反例をResearch Cardとして提示します。根拠URLも一緒に残ります。</span>
-                <span data-copy="en">Research Cards bring examples, existing products, technical options, and counterpoints with source links.</span>
-              </p>
-            </article>
-            <article class="feature">
-              <span class="feature-mark">03</span>
-              <h3>
-                <span data-copy="ja">深掘りできる</span>
-                <span data-copy="en">Goes deeper on demand</span>
-              </h3>
-              <p>
-                <span data-copy="ja">気になるカードはDeep Researchで掘り下げられます。比較、注意点、次に検証すべきことまでまとめます。</span>
-                <span data-copy="en">Deep Research expands a card with comparisons, caveats, and the next things the team should verify.</span>
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="band evidence-band" aria-labelledby="cards-title">
+      <section class="band evidence-band" id="research" aria-labelledby="cards-title">
         <div class="evidence-art" aria-hidden="true">
           <img
-            src="./assets/research-archive-magic-v1.png"
+            src="./assets/research-archive-magic-v1.webp"
             alt=""
             width="1536"
             height="1024"
@@ -473,7 +446,7 @@
       <section class="download-cta" aria-labelledby="download-cta-title">
         <div class="download-art" aria-hidden="true">
           <img
-            src="./assets/download-magic-v1.png"
+            src="./assets/download-magic-v1.webp"
             alt=""
             width="1672"
             height="941"
@@ -493,8 +466,8 @@
             </h2>
           </div>
           <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
-            <span data-copy="ja">最新版をダウンロード</span>
-            <span data-copy="en">Download latest version</span>
+            <span data-copy="ja">kAIgi 0.4.4をダウンロード</span>
+            <span data-copy="en">Download kAIgi 0.4.4</span>
           </a>
         </div>
       </section>
@@ -565,6 +538,10 @@
           <span data-copy="ja">CLI / Skills</span>
           <span data-copy="en">CLI / Skills</span>
         </a>
+        <a href="./release-notes/v0.4.4.html">
+          <span data-copy="ja">0.4.4 リリースノート</span>
+          <span data-copy="en">0.4.4 Release notes</span>
+        </a>
         <a href="./privacy.html">Privacy Policy</a>
         <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
         <a href="https://github.com/keigo1110/kAIgi-download">GitHub</a>
@@ -573,31 +550,14 @@
 
     <script>
       (() => {
-        const stored = window.localStorage.getItem("kaigi-language");
-        const prefersJapanese = (navigator.language || "").toLowerCase().startsWith("ja");
-        const initial = stored || (prefersJapanese ? "ja" : "en");
-        const buttons = document.querySelectorAll("[data-language-option]");
-
-        function setLanguage(language) {
-          document.documentElement.lang = language;
-          document.body.dataset.language = language;
-          window.localStorage.setItem("kaigi-language", language);
-          buttons.forEach((button) => {
-            button.setAttribute("aria-pressed", String(button.dataset.languageOption === language));
-          });
-        }
-
-        buttons.forEach((button) => {
-          button.addEventListener("click", () => setLanguage(button.dataset.languageOption));
-        });
-
         const hero = document.querySelector(".hero");
         const heroStage = document.querySelector(".hero-stage");
         const pointerMotion = window.matchMedia("(hover: hover) and (pointer: fine)");
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
         let pointerFrame = 0;
 
         function setHeroPointer(event) {
-          if (!hero || !heroStage || !pointerMotion.matches) {
+          if (!hero || !heroStage || !pointerMotion.matches || reduceMotion.matches) {
             return;
           }
 
@@ -620,9 +580,6 @@
           heroStage.style.setProperty("--pointer-x", "0");
           heroStage.style.setProperty("--pointer-y", "0");
         }
-
-        hero?.addEventListener("pointermove", setHeroPointer, { passive: true });
-        hero?.addEventListener("pointerleave", resetHeroPointer, { passive: true });
 
         const demoSections = document.querySelectorAll("[data-scroll-demo]");
         let scrollTicking = false;
@@ -656,11 +613,19 @@
           });
         }
 
-        window.addEventListener("scroll", requestDemoUpdate, { passive: true });
-        window.addEventListener("resize", requestDemoUpdate);
-
-        setLanguage(initial === "en" ? "en" : "ja");
-        updateScrollDemos();
+        if (reduceMotion.matches) {
+          demoSections.forEach((section) => {
+            section.dataset.frame = "2";
+            section.style.setProperty("--demo-lift", "0px");
+            section.style.setProperty("--demo-scale", "1");
+          });
+        } else {
+          hero?.addEventListener("pointermove", setHeroPointer, { passive: true });
+          hero?.addEventListener("pointerleave", resetHeroPointer, { passive: true });
+          window.addEventListener("scroll", requestDemoUpdate, { passive: true });
+          window.addEventListener("resize", requestDemoUpdate);
+          updateScrollDemos();
+        }
       })();
     </script>
 
