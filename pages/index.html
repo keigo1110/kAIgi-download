@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>kAIgi 0.4.4 - 読んだ文献を論文執筆の文脈へ</title>
+    <title>kAIgi 0.4.5 - 会議と論文に、根拠から尋ねる</title>
     <meta
       name="description"
-      content="kAIgiは、会議文字起こしとPDFをRecallで横断し、一度読んだ文献の根拠をCLIから論文執筆へつなげられるmacOSアプリです。PDFリーダー、Semantic Zoom、AI Researchを備えています。"
+      content="kAIgiは、Macに保存した会議文字起こしと論文を探し、根拠を開けるAskで質問し、CodexやClaude Codeへ引用可能な文脈を渡せるmacOSアプリです。"
     >
     <meta name="robots" content="index,follow">
     <meta name="application-name" content="kAIgi">
@@ -15,10 +15,10 @@
     <meta property="og:site_name" content="kAIgi">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:title" content="kAIgi 0.4.4 - Research context for every paper you read">
+    <meta property="og:title" content="kAIgi 0.4.5 - Ask meetings and papers from the evidence">
     <meta
       property="og:description"
-      content="会議とPDFをRecallでつなぎ、一度読んだ文献の根拠をCLIから次の論文執筆へ持ち込めるmacOSアプリ。"
+      content="Macに保存した会議と論文を探し、根拠付きで尋ね、CodexやClaude Codeでの執筆へつなぐmacOSアプリ。"
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/">
@@ -27,15 +27,15 @@
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="kAIgi 0.4.4 - Recall and research context for meetings and papers">
+    <meta property="og:image:alt" content="kAIgi 0.4.5 - grounded Ask and agent context for meetings and papers">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="kAIgi 0.4.4 - Research context for every paper you read">
+    <meta name="twitter:title" content="kAIgi 0.4.5 - Ask meetings and papers from the evidence">
     <meta
       name="twitter:description"
-      content="会議とPDFをRecallでつなぎ、一度読んだ文献の根拠をCLIから次の論文執筆へ持ち込めるmacOSアプリ。"
+      content="Macに保存した会議と論文を探し、根拠付きで尋ね、CodexやClaude Codeでの執筆へつなぐmacOSアプリ。"
     >
     <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
-    <meta name="twitter:image:alt" content="kAIgi 0.4.4 - Recall and research context for meetings and papers">
+    <meta name="twitter:image:alt" content="kAIgi 0.4.5 - grounded Ask and agent context for meetings and papers">
     <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/">
     <link rel="sitemap" type="application/xml" href="./sitemap.xml">
     <link rel="icon" href="./assets/app-icon-180.png">
@@ -50,11 +50,11 @@
         "name": "kAIgi",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "macOS 14+",
-        "description": "kAIgiは、Mac上の会議文字起こしとPDFを横断し、一度読んだ文献の根拠をCLIから論文執筆へつなげられるRecall、PDFリーダー、AI Researchを備えたmacOSアプリです。",
+        "description": "kAIgiは、Macに保存した会議文字起こしと論文を探し、根拠を開けるAskで質問し、CodexやClaude Codeへ引用可能な文脈を渡せるmacOSアプリです。",
         "url": "https://keigo1110.github.io/kAIgi-download/",
         "downloadUrl": "https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg",
         "image": "https://keigo1110.github.io/kAIgi-download/assets/ogp.png",
-        "softwareVersion": "0.4.4",
+        "softwareVersion": "0.4.5",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -65,8 +65,8 @@
   </head>
   <body
     data-language="ja"
-    data-title-ja="kAIgi 0.4.4 - 読んだ文献を論文執筆の文脈へ"
-    data-title-en="kAIgi 0.4.4 - Research context for every paper you read"
+    data-title-ja="kAIgi 0.4.5 - 会議と論文に、根拠から尋ねる"
+    data-title-en="kAIgi 0.4.5 - Ask meetings and papers from the evidence"
   >
     <a class="skip-link" href="#top">
       <span data-copy="ja">本文へ移動</span>
@@ -84,8 +84,8 @@
           <span data-copy="en">Flow</span>
         </a>
         <a href="#recall">Recall</a>
-        <a href="#research-context">0.4.4</a>
-        <a href="#research">Research</a>
+        <a href="#ask">Ask</a>
+        <a href="#agent-context">CLI</a>
         <a href="#setup">
           <span data-copy="ja">はじめる</span>
           <span data-copy="en">Get started</span>
@@ -109,18 +109,18 @@
           <div class="hero-copy">
             <h1 id="hero-title">kAIgi</h1>
             <p class="hero-manifesto">
-              <span data-copy="ja">議論の中に、次の発見を。</span>
-              <span data-copy="en">Bring the next discovery into the room.</span>
+              <span data-copy="ja">会議と論文に、<br>根拠から尋ねる。</span>
+              <span data-copy="en">Ask your meetings and papers.<br>Follow every answer to evidence.</span>
             </p>
             <div class="hero-actions" id="download">
               <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
-                <span data-copy="ja">kAIgi 0.4.4をダウンロード</span>
-                <span data-copy="en">Download kAIgi 0.4.4</span>
+                <span data-copy="ja">kAIgi 0.4.5をダウンロード</span>
+                <span data-copy="en">Download kAIgi 0.4.5</span>
               </a>
-              <a class="hero-release-link" href="./release-notes/v0.4.4.html">
-                <strong>0.4.4</strong>
-                <span data-copy="ja">読んだ文献を、次の論文の文脈へ</span>
-                <span data-copy="en">Bring every paper you read into the next one</span>
+              <a class="hero-release-link" href="./release-notes/v0.4.5.html">
+                <strong>0.4.5</strong>
+                <span data-copy="ja">探す、尋ねる、論文執筆へつなぐ</span>
+                <span data-copy="en">Find, ask, and carry evidence into writing</span>
                 <span aria-hidden="true">↗</span>
               </a>
             </div>
@@ -128,8 +128,8 @@
               <li>macOS 14+</li>
               <li>Apple silicon + Intel</li>
               <li>
-                <span data-copy="ja">PDF・CLIはローカル優先</span>
-                <span data-copy="en">Local-first PDF and CLI</span>
+                <span data-copy="ja">Ask・質問は端末内処理／実験的</span>
+                <span data-copy="en">On-device Ask and Questions / Experimental</span>
               </li>
             </ul>
           </div>
@@ -157,29 +157,29 @@
               <span data-copy="en">Demo</span>
             </p>
             <h2 id="demo-title">
-              <span data-copy="ja">会話が、問いへ変わる。</span>
-              <span data-copy="en">A conversation becomes a question worth pursuing.</span>
+              <span data-copy="ja">探す。確かめる。書く。</span>
+              <span data-copy="en">Find it. Verify it. Write with it.</span>
             </h2>
             <div class="demo-steps">
               <article data-demo-step="0">
                 <span>01</span>
                 <p>
-                  <span data-copy="ja">議論の中で、調べる価値がある問いを検知します。</span>
-                  <span data-copy="en">kAIgi detects questions worth researching as the discussion unfolds.</span>
+                  <span data-copy="ja">曖昧な記憶から、保存済みの会議録や論文を探します。</span>
+                  <span data-copy="en">Start with a vague memory and find the saved meeting or paper behind it.</span>
                 </p>
               </article>
               <article data-demo-step="1">
                 <span>02</span>
                 <p>
-                  <span data-copy="ja">Research Cardが、事例・反例・技術選択肢を会話へ戻します。</span>
-                  <span data-copy="en">Research Cards bring examples, counterpoints, and technical options back into the room.</span>
+                  <span data-copy="ja">要約や人数を尋ね、答えを元の発話・PDF段落へ結びます。</span>
+                  <span data-copy="en">Ask for a summary or participant count and trace the answer to the exact utterance or PDF passage.</span>
                 </p>
               </article>
               <article data-demo-step="2">
                 <span>03</span>
                 <p>
-                  <span data-copy="ja">気になるカードはDeep Researchで深掘りし、次に検証すべき観点まで整理します。</span>
-                  <span data-copy="en">Deep Research expands a card into sources, caveats, and the next checks to run.</span>
+                  <span data-copy="ja">同じ根拠をCLIでCodexやClaude Codeへ渡し、論文執筆の議論を続けます。</span>
+                  <span data-copy="en">Carry the same evidence through the CLI into Codex or Claude Code and continue the writing discussion.</span>
                 </p>
               </article>
             </div>
@@ -199,7 +199,7 @@
             <span class="scene-pulse"></span>
             <div class="scene-caption">
               <span>kAIgi / 01—03</span>
-              <strong>Question → discovery</strong>
+              <strong>Search → evidence → writing</strong>
             </div>
           </div>
 
@@ -211,55 +211,59 @@
           <div>
             <p class="section-kicker">Recall</p>
             <h2 id="recall-title">
-              <span data-copy="ja">あの議論と、この文献が、同じ地図に。</span>
-              <span data-copy="en">Put that discussion and this paper on the same map.</span>
+              <span data-copy="ja">同じ資料を、三つの距離から。</span>
+              <span data-copy="en">Three ways to approach the same source library.</span>
             </h2>
           </div>
           <div class="feature-grid">
             <article class="feature">
-              <span class="feature-mark">01</span>
+              <span class="feature-mark">RECALL</span>
               <h3>
-                <span data-copy="ja">AudioとPDFを一緒に探す</span>
-                <span data-copy="en">Search meetings and papers together</span>
+                <span data-copy="ja">結果を直接、速く読む</span>
+                <span data-copy="en">Scan direct results quickly</span>
               </h3>
               <p>
-                <span data-copy="ja">保存済みの文字起こしと抽出済みPDFを、ひとつの画面で横に見比べられます。生成した答えを正解にせず、必ず元の発話やPDF位置へ戻れます。</span>
-                <span data-copy="en">Compare saved transcripts and extracted PDFs in one workspace. Recall keeps the source authoritative, so every result can return to its original utterance or PDF location.</span>
+                <span data-copy="ja">保存済みの文字起こしと抽出済みPDFを横断し、一致箇所を一覧で比較します。候補を自分で読みたい時の最短経路です。</span>
+                <span data-copy="en">Search saved transcripts and extracted PDFs together, then compare matching passages directly. This is the shortest path when you want to inspect candidates yourself.</span>
               </p>
             </article>
             <article class="feature">
-              <span class="feature-mark">02</span>
+              <span class="feature-mark">ASK</span>
               <h3>
-                <span data-copy="ja">Semantic Zoomで見渡す</span>
-                <span data-copy="en">Explore with Semantic Zoom</span>
+                <span data-copy="ja">会話しながら絞り込む</span>
+                <span data-copy="en">Narrow the library through conversation</span>
               </h3>
               <p>
-                <span data-copy="ja">カテゴリ、キーワード、資料へ連続的に近づきながら、意味の近い会議と文献を地図として探索できます。検索しても地図は消えず、目的地だけを示します。</span>
-                <span data-copy="en">Move continuously from categories to keywords to individual sources, exploring semantically nearby meetings and papers as a map. Search locates a destination without hiding the surrounding terrain.</span>
+                <span data-copy="ja">「論文だけ」「一つ目を要約して」と続けて尋ね、候補探しから内容確認まで進めます。回答の出典から元の箇所を開けます。</span>
+                <span data-copy="en">Continue with prompts such as “papers only” or “summarize the first one,” moving from discovery to content questions while keeping source links.</span>
               </p>
             </article>
             <article class="feature">
-              <span class="feature-mark">03</span>
+              <span class="feature-mark">ZOOM</span>
               <h3>
-                <span data-copy="ja">日本語の議論と英語論文をつなぐ</span>
-                <span data-copy="en">Bridge Japanese and English</span>
+                <span data-copy="ja">全体を意味の地図で眺める</span>
+                <span data-copy="en">See the whole library as a meaning map</span>
               </h3>
               <p>
-                <span data-copy="ja">語句に一致する結果をすぐ表示し、対応するMacではAppleのオンデバイス機能が意味の近さと日英検索を補助します。本文や検索語を外部検索サービスへ送りません。</span>
-                <span data-copy="en">Exact and lexical matches appear immediately. On supported Macs, Apple's on-device models assist meaning-based and Japanese–English retrieval without sending source text or queries to an external search service.</span>
+                <span data-copy="ja">カテゴリ、キーワード、資料へ連続的に近づき、会議と文献の近さを見渡します。検索しても地図を消さず、目的地だけを示します。</span>
+                <span data-copy="en">Move continuously from categories to keywords to sources and survey how meetings and papers relate. Search marks a destination without erasing the map.</span>
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="band intro-band release-feature-band" id="research-context" aria-labelledby="research-context-title">
+      <section class="band intro-band release-feature-band" id="ask" aria-labelledby="ask-title">
         <div class="content-grid">
           <div>
-            <p class="section-kicker">kAIgi 0.4.4 / Research context</p>
-            <h2 id="research-context-title">
-              <span data-copy="ja">読んだ文献を、次の論文の文脈へ。</span>
-              <span data-copy="en">Bring every paper you read into the next one.</span>
+            <p class="section-kicker">kAIgi 0.4.5 / Grounded Ask</p>
+            <span class="experimental-badge">
+              <span data-copy="ja">実験的</span>
+              <span data-copy="en">Experimental</span>
+            </span>
+            <h2 id="ask-title">
+              <span data-copy="ja">探して、続けて尋ねる。</span>
+              <span data-copy="en">Find a source, then keep asking.</span>
             </h2>
           </div>
           <div class="release-feature-content">
@@ -267,46 +271,46 @@
               <article class="feature">
                 <span class="feature-mark">01</span>
                 <h3>
-                  <span data-copy="ja">手元の文献をまとめて探す</span>
-                  <span data-copy="en">Search the papers already on your Mac</span>
+                  <span data-copy="ja">曖昧な記憶から資料へ</span>
+                  <span data-copy="en">From a vague memory to exact sources</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">kAIgiで本文を取り出した文献をCLIから横断し、テーマに近い論文と根拠段落をひとつの有界なコンテキストへまとめます。出版社サイトへ再アクセスする必要はありません。</span>
-                  <span data-copy="en">Search papers whose text kAIgi has already extracted and collect relevant documents and evidence passages in one bounded context—without reopening publisher sites.</span>
+                  <span data-copy="ja">Askは自然な言葉から保存済み会議録と論文を横断します。候補名は生成せず、kAIgiにある正確なタイトルと根拠を返します。</span>
+                  <span data-copy="en">Ask searches saved meetings and papers from natural language. It does not invent candidate titles; it returns exact library titles with evidence.</span>
                 </p>
               </article>
               <article class="feature">
                 <span class="feature-mark">02</span>
                 <h3>
-                  <span data-copy="ja">根拠の場所と版を失わない</span>
-                  <span data-copy="en">Keep every passage tied to its source</span>
+                  <span data-copy="ja">選んだ1資料を深く聞く</span>
+                  <span data-copy="en">Question one selected source closely</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">DOI・arXiv ID、PDFの版、ページ、段落ID、本文ハッシュを保ったまま渡します。自分のコメントは著者の主張と分けるため、関連研究の根拠へ戻れます。</span>
-                  <span data-copy="en">Carry DOI or arXiv identity, PDF revision, page, block ID, and source hash with each passage. Your notes remain separate from author claims, so related-work drafts stay traceable.</span>
+                  <span data-copy="ja">TextとAudioの「質問」は、今開いている論文または会議録だけを対象にします。要約や実験参加者数の回答から、元の段落・発話へ戻れます。</span>
+                  <span data-copy="en">Questions in Text and Audio stay within the currently open paper or meeting. Answers such as summaries or participant counts link back to the source passage or utterance.</span>
                 </p>
               </article>
               <article class="feature">
                 <span class="feature-mark">03</span>
                 <h3>
-                  <span data-copy="ja">読む流れを切らない</span>
-                  <span data-copy="en">Stay in the reading flow</span>
+                  <span data-copy="ja">答えられない時も、作らない</span>
+                  <span data-copy="en">When evidence is weak, do not make an answer up</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">PDFの切り替え、検索、サイドバー操作の表示を安定させ、不要なちらつきとレイアウト移動を抑えました。Reduce Motion設定にも一貫して従います。</span>
-                  <span data-copy="en">PDF switching, search, and sidebar controls now keep stable geometry with less flicker and layout movement, while consistently respecting Reduce Motion.</span>
+                  <span data-copy="ja">回答はこのMac内で処理し、会話は保存しません。対応モデルがない、根拠が足りない、生成に失敗した場合は、裏付けのない回答ではなく根拠候補を示します。</span>
+                  <span data-copy="en">Answers are processed on this Mac and conversations are not saved. If no supported model is available, evidence is insufficient, or generation fails, kAIgi shows evidence candidates instead of an unsupported answer.</span>
                 </p>
               </article>
             </div>
             <div class="release-feature-links">
-              <a href="./release-notes/v0.4.4.html">
-                <span data-copy="ja">0.4.4の変更点と安全上の注意</span>
-                <span data-copy="en">0.4.4 changes and safety notes</span>
+              <a href="./release-notes/v0.4.5.html">
+                <span data-copy="ja">0.4.5の変更点と制約</span>
+                <span data-copy="en">0.4.5 changes and limitations</span>
                 <span aria-hidden="true">→</span>
               </a>
-              <a href="./agent-skills.html#document-commands">
-                <span data-copy="ja">文献CLIの使い方</span>
-                <span data-copy="en">How to use the literature CLI</span>
+              <a href="./privacy.html#local-ai">
+                <span data-copy="ja">端末内AIとプライバシー</span>
+                <span data-copy="en">On-device AI and privacy</span>
                 <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -314,7 +318,7 @@
         </div>
       </section>
 
-      <section class="band evidence-band" id="research" aria-labelledby="cards-title">
+      <section class="band evidence-band" id="agent-context" aria-labelledby="cards-title">
         <div class="evidence-art" aria-hidden="true">
           <img
             src="./assets/research-archive-magic-v1.webp"
@@ -328,48 +332,57 @@
         <div class="content-grid">
           <div>
             <p class="section-kicker">
-              <span data-copy="ja">Discussion loop</span>
-              <span data-copy="en">Discussion loop</span>
+              <span data-copy="ja">Codex / Claude Code</span>
+              <span data-copy="en">Codex / Claude Code</span>
             </p>
             <h2 id="cards-title">
-              <span data-copy="ja">問いの周りに、世界を広げる。</span>
-              <span data-copy="en">Widen the world around a question.</span>
+              <span data-copy="ja">同じ問いで、<br>会議と論文を。</span>
+              <span data-copy="en">One research question.<br>Meetings and papers together.</span>
             </h2>
           </div>
-          <div class="card-strip">
-            <article class="insight-card">
-              <p class="tag">Related work</p>
-              <h3>
-                <span data-copy="ja">「似た試みはある？」にすぐ答える</span>
-                <span data-copy="en">Answer “has anyone tried this?” quickly</span>
-              </h3>
-              <p>
-                <span data-copy="ja">議論中に出たアイデアへ、近い研究・プロダクト・導入事例を添えます。</span>
-                <span data-copy="en">Attach nearby research, products, and rollout examples to ideas as they emerge.</span>
-              </p>
-            </article>
-            <article class="insight-card">
-              <p class="tag">Counterpoint</p>
-              <h3>
-                <span data-copy="ja">反例やリスクも拾う</span>
-                <span data-copy="en">Catch risks and counterexamples</span>
-              </h3>
-              <p>
-                <span data-copy="ja">都合の良い情報だけでなく、判断を強くするための反対材料も提示します。</span>
-                <span data-copy="en">Not only supportive evidence; kAIgi also looks for friction that improves decisions.</span>
-              </p>
-            </article>
-            <article class="insight-card">
-              <p class="tag">Next check</p>
-              <h3>
-                <span data-copy="ja">次の確認事項まで落とす</span>
-                <span data-copy="en">Turn context into next checks</span>
-              </h3>
-              <p>
-                <span data-copy="ja">Deep Researchは、追加で見るべき一次情報や検証観点を短く整理します。</span>
-                <span data-copy="en">Deep Research summarizes primary sources and what the team should inspect next.</span>
-              </p>
-            </article>
+          <div class="agent-context-content">
+            <div class="card-strip">
+              <article class="insight-card">
+                <p class="tag">ONE COMMAND</p>
+                <h3>
+                  <span data-copy="ja">資料の種類をまたいで探す</span>
+                  <span data-copy="en">Search both kinds of source together</span>
+                </h3>
+                <p>
+                  <span data-copy="ja"><code>kaigi context</code> は、保存済みの会議録と論文を1回で検索し、テーマに近い箇所をまとめます。</span>
+                  <span data-copy="en"><code>kaigi context</code> searches saved meetings and papers in one call and gathers passages relevant to the topic.</span>
+                </p>
+              </article>
+              <article class="insight-card">
+                <p class="tag">TRACEABLE</p>
+                <h3>
+                  <span data-copy="ja">要約ではなく、正確な根拠を渡す</span>
+                  <span data-copy="en">Pass exact evidence, not a generated summary</span>
+                </h3>
+                <p>
+                  <span data-copy="ja">発話時刻、PDFページ、段落ID、本文ハッシュを保ち、CodexやClaudeが原文へ戻れる形で返します。</span>
+                  <span data-copy="en">Utterance timing, PDF pages, block IDs, and source hashes stay attached so Codex or Claude can return to the original text.</span>
+                </p>
+              </article>
+              <article class="insight-card">
+                <p class="tag">BOUNDED</p>
+                <h3>
+                  <span data-copy="ja">確認できた範囲を隠さない</span>
+                  <span data-copy="en">Make retrieval completeness explicit</span>
+                </h3>
+                <p>
+                  <span data-copy="ja">走査件数、上限、省略、読めなかった候補を種類別に返します。未確認を「該当なし」と取り違えません。</span>
+                  <span data-copy="en">Scan counts, limits, omissions, and unreadable candidates are reported per source kind, preventing “not checked” from becoming “not found.”</span>
+                </p>
+              </article>
+            </div>
+            <div class="release-feature-links agent-context-links">
+              <a href="./agent-skills.html#context-command">
+                <span data-copy="ja">Codex／Claudeで使う手順</span>
+                <span data-copy="en">Use it with Codex or Claude</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -466,8 +479,8 @@
             </h2>
           </div>
           <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
-            <span data-copy="ja">kAIgi 0.4.4をダウンロード</span>
-            <span data-copy="en">Download kAIgi 0.4.4</span>
+            <span data-copy="ja">kAIgi 0.4.5をダウンロード</span>
+            <span data-copy="en">Download kAIgi 0.4.5</span>
           </a>
         </div>
       </section>
@@ -517,6 +530,16 @@
             </details>
             <details>
               <summary>
+                <span data-copy="ja">Askが文章で回答しない</span>
+                <span data-copy="en">Ask shows evidence but no generated answer</span>
+              </summary>
+              <p>
+                <span data-copy="ja">Appleのオンデバイス回答にはmacOS 26以降とApple Intelligence対応環境が必要です。利用できない場合は、設定でLocal LLMの準備状況を確認してください。どちらも使えない時や根拠が不足する時は、推測せず確認できる根拠候補だけを表示します。</span>
+                <span data-copy="en">Apple's on-device answers require macOS 26 or later and an Apple Intelligence-capable environment. Otherwise, check that the Local LLM is ready in Settings. When neither model is available or evidence is insufficient, kAIgi avoids guessing and shows inspectable evidence candidates.</span>
+              </p>
+            </details>
+            <details>
+              <summary>
                 <span data-copy="ja">相手の声が二重に入る</span>
                 <span data-copy="en">The other speaker is captured twice</span>
               </summary>
@@ -538,9 +561,9 @@
           <span data-copy="ja">CLI / Skills</span>
           <span data-copy="en">CLI / Skills</span>
         </a>
-        <a href="./release-notes/v0.4.4.html">
-          <span data-copy="ja">0.4.4 リリースノート</span>
-          <span data-copy="en">0.4.4 Release notes</span>
+        <a href="./release-notes/v0.4.5.html">
+          <span data-copy="ja">0.4.5 リリースノート</span>
+          <span data-copy="en">0.4.5 Release notes</span>
         </a>
         <a href="./privacy.html">Privacy Policy</a>
         <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>

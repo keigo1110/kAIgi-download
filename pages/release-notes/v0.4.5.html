@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ja" data-language="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>kAIgi 0.4.5 - リリースノート</title>
+    <meta
+      name="description"
+      content="kAIgi 0.4.5のリリースノート。会議録と論文を探して根拠付きで対話するAsk、1資料への質問、Codex／Claude Code向け統合コンテキスト。"
+    >
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0c0d10">
+    <meta property="og:site_name" content="kAIgi">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="kAIgi 0.4.5 - Grounded Ask and unified agent context">
+    <meta
+      property="og:description"
+      content="Find saved meetings and papers, ask questions with traceable evidence, and carry bounded source context into Codex or Claude Code."
+    >
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.5.html">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="kAIgi 0.4.5">
+    <meta name="twitter:description" content="Grounded Ask, source Questions, and one bounded context for meetings and papers.">
+    <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.5.html">
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+    <link rel="icon" href="../assets/app-icon-180.png">
+    <link rel="apple-touch-icon" href="../assets/app-icon-180.png">
+    <script src="../site-preload.js"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <script defer src="../site.js"></script>
+  </head>
+  <body
+    data-language="ja"
+    data-title-ja="kAIgi 0.4.5 - リリースノート"
+    data-title-en="kAIgi 0.4.5 - Release notes"
+  >
+    <a class="skip-link" href="#main-content">
+      <span data-copy="ja">本文へ移動</span>
+      <span data-copy="en">Skip to content</span>
+    </a>
+
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="kAIgi home">
+        <img src="../assets/app-icon-180.png" alt="" width="36" height="36">
+        <span>kAIgi</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html">
+          <span data-copy="ja">トップ</span>
+          <span data-copy="en">Home</span>
+        </a>
+        <a href="../agent-skills.html">
+          <span data-copy="ja">CLI / Skills</span>
+          <span data-copy="en">CLI / Skills</span>
+        </a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language">
+          <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
+          <button type="button" data-language-option="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
+          <span data-copy="ja">ダウンロード</span>
+          <span data-copy="en">Download</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="policy-hero" aria-labelledby="release-title">
+        <div class="narrow release-intro">
+          <p class="eyebrow">RELEASE / 0.4.5</p>
+          <h1 id="release-title">
+            <span data-copy="ja">探して、根拠から尋ねる。</span>
+            <span data-copy="en">Find it, then ask from the evidence.</span>
+          </h1>
+          <p class="lead">
+            <span data-copy="ja">kAIgi 0.4.5は、保存済みの会議録と論文をAskで探し、そのまま根拠付きで内容を尋ねられます。CodexやClaude Codeへは、会議と論文の正確な根拠を一つの有界なコンテキストとして渡せます。</span>
+            <span data-copy="en">kAIgi 0.4.5 finds saved meetings and papers through Ask, then answers content questions with traceable evidence. Codex and Claude Code can receive exact meeting and paper evidence in one bounded context.</span>
+          </p>
+          <ul class="release-meta" aria-label="Release requirements">
+            <li>Version 0.4.5</li>
+            <li>Build 39</li>
+            <li>macOS 14+</li>
+            <li>Apple silicon + Intel</li>
+          </ul>
+          <div class="release-actions">
+            <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
+              <span data-copy="ja">kAIgi 0.4.5をダウンロード</span>
+              <span data-copy="en">Download kAIgi 0.4.5</span>
+            </a>
+            <a class="button secondary" href="../agent-skills.html#context-command">
+              <span data-copy="ja">Codex／Claudeで使う</span>
+              <span data-copy="en">Use with Codex or Claude</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="narrow policy-copy">
+          <section class="release-section" aria-labelledby="ask-release-title">
+            <p class="section-kicker">Grounded Ask</p>
+            <h2 id="ask-release-title">
+              <span data-copy="ja">候補探しから、内容の質問まで</span>
+              <span data-copy="en">From finding candidates to questioning their content</span>
+            </h2>
+            <ul class="release-list">
+              <li>
+                <strong><span data-copy="ja">Recall・Ask・Zoomを役割で分ける</span><span data-copy="en">Recall, Ask, and Zoom have distinct roles</span></strong>
+                <span data-copy="ja">Recallは検索結果を直接読む一覧、Askは会議録と論文を対話的に探して尋ねる面、Zoomは資料全体を眺める意味の地図です。</span>
+                <span data-copy="en">Recall is the direct result list, Ask finds and questions meetings and papers conversationally, and Zoom is the semantic overview of the library.</span>
+              </li>
+              <li>
+                <strong><span data-copy="ja">1資料だけに聞ける「質問」</span><span data-copy="en">Questions stay within one selected source</span></strong>
+                <span data-copy="ja">Textでは論文、Audioでは会議録を一つだけ選び、要約や実験参加者数などを尋ねられます。回答の出典から元のPDF段落または発話を開けます。</span>
+                <span data-copy="en">Select one paper in Text or one meeting in Audio and ask for a summary, participant count, or another detail. Citations open the original PDF passage or utterance.</span>
+              </li>
+              <li>
+                <strong><span data-copy="ja">短い回答と検証済みの出典</span><span data-copy="en">Concise answers with validated citations</span></strong>
+                <span data-copy="ja">質問の言語に合わせて通常1〜3文で返します。未知の出典、根拠不足、生成失敗は完成回答として採用せず、確認できる根拠候補へ戻します。</span>
+                <span data-copy="en">Answers normally use one to three sentences in the question's language. Unknown citations, insufficient evidence, or generation failure are not accepted as finished answers; kAIgi falls back to inspectable evidence candidates.</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="release-section" aria-labelledby="context-release-title">
+            <p class="section-kicker">Agent context</p>
+            <h2 id="context-release-title">
+              <span data-copy="ja">会議と論文を、一つの問いでCodexへ</span>
+              <span data-copy="en">Bring meetings and papers into Codex under one question</span>
+            </h2>
+            <ul class="release-list">
+              <li>
+                <strong><code>kaigi context "テーマ"</code></strong>
+                <span data-copy="ja">保存済み会議録と抽出済み論文を一度に検索し、正確な文字起こし区間とPDF段落をまとめます。</span>
+                <span data-copy="en">Searches saved meetings and extracted papers together and returns exact transcript intervals and PDF passages.</span>
+              </li>
+              <li>
+                <strong><span data-copy="ja">原文へ戻れる識別情報</span><span data-copy="en">Identity that returns to the original source</span></strong>
+                <span data-copy="ja">元データのSHA-256、発話時刻、ページ、段落ID、本文ハッシュ、一致語、次に深く読むためのコマンドを保持します。</span>
+                <span data-copy="en">Source SHA-256, utterance timing, page, block ID, passage hash, matched terms, and next-step reading commands stay attached.</span>
+              </li>
+              <li>
+                <strong><span data-copy="ja">未確認を「該当なし」にしない</span><span data-copy="en">Do not turn “unchecked” into “not found”</span></strong>
+                <span data-copy="ja"><code>completeness.recordings</code> と <code>completeness.documents</code> が、走査件数、完了、省略、読めなかった候補を種類別に返します。CLIは回答や論文レビューそのものを生成しません。</span>
+                <span data-copy="en"><code>completeness.recordings</code> and <code>completeness.documents</code> report scan counts, completion, omissions, and unreadable candidates per source kind. The CLI does not generate an answer or literature review.</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="release-section" aria-labelledby="surface-title">
+            <p class="section-kicker">Work surfaces</p>
+            <h2 id="surface-title">
+              <span data-copy="ja">読む・聞く・眺める場所を広く</span>
+              <span data-copy="en">More room to read, listen, and explore</span>
+            </h2>
+            <ul class="release-list">
+              <li>
+                <strong><span data-copy="ja">ZoomとPDFを端まで使う</span><span data-copy="en">Use the full Zoom and PDF surfaces</span></strong>
+                <span data-copy="ja">意味の地図とPDF本体から不要な外枠を外し、主作業面を広げました。PDF名にもリーダー相当の横幅を確保します。</span>
+                <span data-copy="en">Unnecessary outer framing is removed from the semantic map and PDF body, while document titles receive the reader's usable width.</span>
+              </li>
+              <li>
+                <strong><span data-copy="ja">補助情報は必要な時だけ</span><span data-copy="en">Secondary information appears on demand</span></strong>
+                <span data-copy="ja">Audioの認識情報は文字起こしツールバーの情報アイコンへ移し、Askと質問のプライバシー表示も入力操作と同じ1行へまとめました。</span>
+                <span data-copy="en">Audio recognition details move behind an info button in the transcript toolbar, and Ask privacy status now shares the same row as composing controls.</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="release-section release-safety" aria-labelledby="safety-title">
+            <h2 id="safety-title">
+              <span data-copy="ja">Askと「質問」は実験的です</span>
+              <span data-copy="en">Ask and Questions are experimental</span>
+            </h2>
+            <p>
+              <span data-copy="ja">検索と回答はこのMac内で処理し、会話は保存しません。Appleのオンデバイス回答にはmacOS 26以降、Apple Intelligence対応Mac、利用可能なモデルと言語が必要です。利用できない場合は、準備済みLocal LLMへ切り替え、どちらも使えなければ根拠候補だけを表示します。</span>
+              <span data-copy="en">Search and answering run on this Mac and conversations are not saved. Apple's on-device answers require macOS 26 or later, an Apple Intelligence-capable Mac, and an available model and language. kAIgi falls back to a prepared Local LLM, then to evidence candidates when neither model is available.</span>
+            </p>
+            <p>
+              <span data-copy="ja">回答の引用は検証しますが、学術的な正しさや根拠が主張を十分に支えることまで自動証明するものではありません。重要な内容は出典を開いて原文で確認してください。CodexやClaude Codeをクラウドモデルで使う場合、CLI出力は選択したモデル提供元へ送られることがあります。</span>
+              <span data-copy="en">kAIgi validates citation identity, but it cannot prove scholarly correctness or that the cited evidence fully supports a claim. Open the source and verify important content. When Codex or Claude Code uses a cloud model, CLI output may be sent to the selected model provider.</span>
+            </p>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span aria-hidden="true"></span>
+      <p>&copy; 2026 kAIgi</p>
+      <div class="footer-links">
+        <a href="../index.html">
+          <span data-copy="ja">トップ</span>
+          <span data-copy="en">Home</span>
+        </a>
+        <a href="../agent-skills.html">CLI / Skills</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
+      </div>
+    </footer>
+  </body>
+</html>

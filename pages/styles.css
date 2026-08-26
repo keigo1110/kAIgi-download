@@ -3418,6 +3418,38 @@ body::after {
   margin-top: 0;
 }
 
+.experimental-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  margin: 14px 0 20px;
+  padding: 5px 11px;
+  border: 1px solid rgba(248, 200, 124, 0.52);
+  border-radius: 999px;
+  background: rgba(248, 200, 124, 0.1);
+  color: var(--amber);
+  font-size: 0.68rem;
+  font-weight: 760;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.agent-context-content {
+  min-width: 0;
+}
+
+.agent-context-links {
+  margin-top: 28px;
+}
+
+.agent-context-links a {
+  color: var(--cinema-cyan, var(--cyan));
+}
+
+.insight-card code {
+  color: inherit;
+}
+
 @media (max-width: 620px) {
   .hero-release-link {
     align-items: flex-start;
@@ -3438,7 +3470,15 @@ body::after {
     font-size: clamp(2.75rem, 13vw, 4.2rem);
   }
 
+  .evidence-band #cards-title {
+    font-size: clamp(2.7rem, 12vw, 3.6rem);
+  }
+
   .release-actions .button {
     width: 100%;
+  }
+
+  .experimental-badge {
+    margin-bottom: 16px;
   }
 }

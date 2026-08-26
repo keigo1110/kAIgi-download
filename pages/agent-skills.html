@@ -7,7 +7,7 @@
     <title>CLI / Skills - kAIgi</title>
     <meta
       name="description"
-      content="kAIgi CLIとAgent Skillで、CodexやClaude Codeから録音・文字起こし・一度読んだ文献の根拠を安全に扱う方法。"
+      content="kAIgi CLIとAgent Skillで、CodexやClaude Codeから会議録と一度読んだ文献を横断し、追跡可能な根拠を安全に扱う方法。"
     >
     <meta name="robots" content="index,follow">
     <meta name="application-name" content="kAIgi">
@@ -17,7 +17,7 @@
     <meta property="og:title" content="CLI / Skills - kAIgi">
     <meta
       property="og:description"
-      content="kAIgi CLIとAgent Skillで、CodexやClaude Codeから録音・文字起こし・一度読んだ文献の根拠を安全に扱う方法。"
+      content="kAIgi CLIとAgent Skillで、CodexやClaude Codeから会議録と一度読んだ文献を横断し、追跡可能な根拠を安全に扱う方法。"
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/agent-skills.html">
@@ -31,7 +31,7 @@
     <meta name="twitter:title" content="CLI / Skills - kAIgi">
     <meta
       name="twitter:description"
-      content="kAIgi CLIとAgent Skillで、CodexやClaude Codeから録音・文字起こし・一度読んだ文献の根拠を安全に扱う方法。"
+      content="kAIgi CLIとAgent Skillで、CodexやClaude Codeから会議録と一度読んだ文献を横断し、追跡可能な根拠を安全に扱う方法。"
     >
     <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
     <meta name="twitter:image:alt" content="kAIgi CLI and Agent Skills for transcripts">
@@ -48,7 +48,7 @@
         "@type": "TechArticle",
         "headline": "CLI / Skills - kAIgi",
         "name": "kAIgi CLI and Agent Skills guide",
-        "description": "kAIgi CLIとAgent Skillで、CodexやClaude Codeから録音、文字起こし、一度読んだ文献の根拠を安全に扱う方法。",
+        "description": "kAIgi CLIとAgent Skillで、CodexやClaude Codeから会議録と一度読んだ文献を横断し、追跡可能な根拠を安全に扱う方法。",
         "url": "https://keigo1110.github.io/kAIgi-download/agent-skills.html",
         "inLanguage": ["ja", "en"],
         "about": [
@@ -72,8 +72,8 @@
   </head>
   <body
     data-language="ja"
-    data-title-ja="CLI / Skills - kAIgi 0.4.4"
-    data-title-en="CLI / Skills - kAIgi 0.4.4"
+    data-title-ja="CLI / Skills - kAIgi 0.4.5"
+    data-title-en="CLI / Skills - kAIgi 0.4.5"
   >
     <a class="skip-link" href="#main-content">
       <span data-copy="ja">本文へ移動</span>
@@ -123,12 +123,12 @@
             <span data-copy="en">Take meetings and papers into the next task.</span>
           </h1>
           <p class="lead">
-            <span data-copy="ja">kAIgi CLIは録音・文字起こし・抽出済みの文献本文をローカルで扱います。Agent Skillは、低確度の発話を整える手順と、一度読んだ論文から根拠を集めて関連研究へつなぐ安全な読み方をCodexやClaude Codeへ伝えます。</span>
-            <span data-copy="en">The kAIgi CLI works locally with recordings, transcripts, and extracted paper text. The Agent Skill teaches Codex and Claude Code how to refine uncertain speech and gather traceable evidence from papers you have already read.</span>
+            <span data-copy="ja">kAIgi CLIは録音・文字起こし・抽出済みの文献本文をローカルで扱います。0.4.5では会議と論文を一つの問いで探し、正確な根拠をCodexやClaude Codeへ渡して論文執筆の議論を始められます。</span>
+            <span data-copy="en">The kAIgi CLI works locally with recordings, transcripts, and extracted paper text. In 0.4.5, one query can find both meetings and papers and pass exact evidence into Codex or Claude Code for a writing discussion.</span>
           </p>
           <p class="updated">
-            <span data-copy="ja">kAIgi 0.4.4</span>
-            <span data-copy="en">kAIgi 0.4.4</span>
+            <span data-copy="ja">kAIgi 0.4.5</span>
+            <span data-copy="en">kAIgi 0.4.5</span>
           </p>
         </div>
       </section>
@@ -323,14 +323,14 @@
               <div class="capability-copy">
                 <p class="capability-number">05 / LITERATURE</p>
                 <h3>
-                  <span data-copy="ja">読んだ文献から、関連研究の根拠を集める</span>
-                  <span data-copy="en">Build related-work evidence from papers you have read</span>
+                  <span data-copy="ja">会議と文献から、執筆の根拠を集める</span>
+                  <span data-copy="en">Gather writing evidence from meetings and papers</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">抽出済み文献を横断し、テーマに近い論文と根拠段落を、版・ページ・本文ハッシュつきで絞り込みます。CLIはレビュー本文を生成せず、必要なページだけを次の精読へ渡します。</span>
-                  <span data-copy="en">Search extracted papers and shortlist relevant documents and passages with revision, page, and source hashes. The CLI does not write a literature review; it hands the selected pages to a focused reading step.</span>
+                  <span data-copy="ja">統合 <code>context</code> で会議録と抽出済み文献を一度に探し、発話時刻・ページ・段落・本文ハッシュつきの根拠を渡します。CLIは回答やレビュー本文を生成しません。</span>
+                  <span data-copy="en">Unified <code>context</code> searches transcripts and extracted papers together and returns evidence with utterance timing, page, passage, and source hashes. The CLI does not generate an answer or literature review.</span>
                 </p>
-                <p class="capability-command"><code>documents research-context</code> · <code>documents context</code></p>
+                <p class="capability-command"><code>context</code> · <code>documents context</code> · <code>recordings inspect</code></p>
               </div>
             </article>
           </div>
@@ -351,7 +351,7 @@
                 <span data-copy="ja">自然文で指定</span>
                 <span data-copy="en">Name it in your request</span>
               </div>
-              <pre><code>kAIgi skillを使って、選択した文字起こしを2段階で高精度化して</code></pre>
+              <pre><code>kAIgi skillを使って、「遠隔操作」をテーマに会議と論文の根拠を集めて議論して</code></pre>
               <p>
                 <span data-copy="ja">CodexのSkills一覧から <code>kaigi</code> を選べる場合は、そこから指定しても構いません。環境によっては <code>$kaigi</code> と表示されます。</span>
                 <span data-copy="en">If your Codex surface has a Skills picker, select <code>kaigi</code>. Some surfaces show the explicit mention as <code>$kaigi</code>.</span>
@@ -363,7 +363,7 @@
                 <span data-copy="ja">スラッシュコマンド</span>
                 <span data-copy="en">Slash command</span>
               </div>
-              <pre><code>/kaigi 選択した文字起こしを2段階で高精度化して</code></pre>
+              <pre><code>/kaigi 「遠隔操作」をテーマに会議と論文の根拠を集めて議論して</code></pre>
               <p>
                 <span data-copy="ja">入力欄で <code>/</code> を入力すると、利用できるSkillsを一覧できます。名前を指定しなくても、依頼内容に応じて自動で読み込まれることがあります。</span>
                 <span data-copy="en">Type <code>/</code> to see available Skills. Claude Code may also load the Skill automatically when the request matches its description.</span>
@@ -394,6 +394,17 @@
               <p>
                 <span data-copy="ja">利用できるコマンドと文字起こしschemaの対応範囲をJSONで確認します。<code>kaigi --help</code> と <code>kaigi help &lt;command&gt;</code> では、全体またはコマンド別の使い方を確認できます。schemaが新しすぎる場合は、kAIgiの設定で「CLIを更新」を実行してください。</span>
                 <span data-copy="en">Reports the available commands and supported transcript-schema range as JSON. Use <code>kaigi --help</code> or <code>kaigi help &lt;command&gt;</code> for global or scoped usage. If the schema is newer than the CLI supports, choose “Update CLI” in kAIgi Settings.</span>
+              </p>
+            </article>
+            <article class="command-card" id="context-command">
+              <div class="command-heading">
+                <h3><code>kaigi context "embodied agency" --limit 6 --max-evidence-per-source 6 --best-effort</code></h3>
+                <span data-copy="ja">会議と文献を一度に探す</span>
+                <span data-copy="en">Search meetings and papers together</span>
+              </div>
+              <p>
+                <span data-copy="ja">保存済みの会議録と抽出済み文献を横断し、正確な文字起こし区間とPDF段落を一つの有界なJSONへまとめます。各候補には元データのSHA-256、位置、一致語、次に深く読むためのコマンドが付きます。<code>completeness.recordings</code> と <code>completeness.documents</code> を確認してから、不在を判断してください。</span>
+                <span data-copy="en">Searches saved meetings and extracted papers and returns exact transcript intervals and PDF passages in one bounded JSON response. Each candidate includes source SHA-256, location, matched terms, and the next command for close reading. Check <code>completeness.recordings</code> and <code>completeness.documents</code> before concluding that evidence is absent.</span>
               </p>
             </article>
             <article class="command-card" id="document-commands">
@@ -593,8 +604,8 @@
               <span data-copy="en">Privacy check</span>
             </h2>
             <p>
-              <span data-copy="ja">CLI自体は音声、文字起こし、抽出済みPDF本文をこのMac上で読み取ります。ただしCodexやClaude Codeへ依頼した場合、選択したモデルと設定によってはCLIの出力がモデル提供元へ送られます。kAIgiはCLIの初回インストール時に警告しますが、現行CLIはコマンドごとの確認を行いません。録音の <code>inspect</code>・<code>search</code>・<code>export</code>・<code>apply-transcript</code>・<code>discussion-log</code> は文字起こし本文を扱い、文書の <code>search</code>・<code>research-context</code>・<code>context</code>・<code>inspect</code> は抽出本文や指定したコメントを扱います。</span>
-              <span data-copy="en">The CLI itself reads audio, transcripts, and extracted PDF text on this Mac. When you ask Codex or Claude Code to use it, however, CLI output may be sent to the selected model provider under that agent's settings. kAIgi warns when the CLI is installed for the first time, but the current CLI does not confirm every command. Recording <code>inspect</code>, <code>search</code>, <code>export</code>, <code>apply-transcript</code>, and <code>discussion-log</code> handle transcript text; document <code>search</code>, <code>research-context</code>, <code>context</code>, and <code>inspect</code> handle extracted text and requested annotations.</span>
+              <span data-copy="ja">CLI自体は音声、文字起こし、抽出済みPDF本文をこのMac上で読み取ります。ただしCodexやClaude Codeへ依頼した場合、選択したモデルと設定によってはCLIの出力がモデル提供元へ送られます。kAIgiはCLIの初回インストール時に警告しますが、現行CLIはコマンドごとの確認を行いません。統合 <code>context</code>、録音の <code>inspect</code>・<code>search</code>・<code>export</code>・<code>apply-transcript</code>・<code>discussion-log</code>、文書の <code>search</code>・<code>research-context</code>・<code>context</code>・<code>inspect</code> は文字起こし本文、抽出本文、または指定したコメントを扱います。</span>
+              <span data-copy="en">The CLI itself reads audio, transcripts, and extracted PDF text on this Mac. When you ask Codex or Claude Code to use it, however, CLI output may be sent to the selected model provider under that agent's settings. kAIgi warns when the CLI is installed for the first time, but the current CLI does not confirm every command. Unified <code>context</code>, recording <code>inspect</code>, <code>search</code>, <code>export</code>, <code>apply-transcript</code>, and <code>discussion-log</code>, plus document <code>search</code>, <code>research-context</code>, <code>context</code>, and <code>inspect</code>, handle transcript text, extracted text, or requested annotations.</span>
             </p>
             <p>
               <span data-copy="ja">AI ResearchのOpenAI API連携は別の機能です。詳しくは<a href="./privacy.html">プライバシーポリシー</a>を確認してください。</span>
