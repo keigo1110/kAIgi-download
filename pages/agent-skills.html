@@ -40,7 +40,7 @@
     <link rel="icon" href="./assets/app-icon-180.png">
     <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
     <script src="./site-preload.js"></script>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css?v=0.4.6">
     <script defer src="./site.js"></script>
     <script type="application/ld+json">
       {
@@ -72,8 +72,8 @@
   </head>
   <body
     data-language="ja"
-    data-title-ja="CLI / Skills - kAIgi 0.4.5"
-    data-title-en="CLI / Skills - kAIgi 0.4.5"
+    data-title-ja="CLI / Skills - kAIgi 0.4.6"
+    data-title-en="CLI / Skills - kAIgi 0.4.6"
   >
     <a class="skip-link" href="#main-content">
       <span data-copy="ja">本文へ移動</span>
@@ -123,12 +123,12 @@
             <span data-copy="en">Take meetings and papers into the next task.</span>
           </h1>
           <p class="lead">
-            <span data-copy="ja">kAIgi CLIは録音・文字起こし・抽出済みの文献本文をローカルで扱います。0.4.5では会議と論文を一つの問いで探し、正確な根拠をCodexやClaude Codeへ渡して論文執筆の議論を始められます。</span>
-            <span data-copy="en">The kAIgi CLI works locally with recordings, transcripts, and extracted paper text. In 0.4.5, one query can find both meetings and papers and pass exact evidence into Codex or Claude Code for a writing discussion.</span>
+            <span data-copy="ja">kAIgi CLIは録音・文字起こし・抽出済みの文献本文をローカルで扱います。0.4.6では会議と論文の正確な根拠に加え、文書全体への自分のノートも、引用可能な原文とは明確に分けてCodexやClaude Codeへ渡せます。</span>
+            <span data-copy="en">The kAIgi CLI works locally with recordings, transcripts, and extracted paper text. In 0.4.6, it can pass exact meeting and paper evidence to Codex or Claude Code together with your document-wide notes, explicitly separated from citable source text.</span>
           </p>
           <p class="updated">
-            <span data-copy="ja">kAIgi 0.4.5</span>
-            <span data-copy="en">kAIgi 0.4.5</span>
+            <span data-copy="ja">kAIgi 0.4.6</span>
+            <span data-copy="en">kAIgi 0.4.6</span>
           </p>
         </div>
       </section>
@@ -414,8 +414,8 @@
                 <span data-copy="en">Search the literature set</span>
               </div>
               <p>
-                <span data-copy="ja">kAIgiで本文を抽出済みの文献を語句で順位付けし、関連度の高い文書、根拠段落、自分のコメントを1つの有界なJSONへまとめます。<code>scan_complete</code>、<code>truncated</code>、<code>limitations</code> を確認してから、見つからないという結論を出します。</span>
-                <span data-copy="en">Lexically ranks papers whose text kAIgi has extracted and returns a bounded JSON set of relevant documents, evidence passages, and your annotations. Check <code>scan_complete</code>, <code>truncated</code>, and <code>limitations</code> before concluding that evidence is absent.</span>
+                <span data-copy="ja">kAIgiで本文を抽出済みの文献を語句で順位付けし、関連度の高い文書、根拠段落、文書ノート、自分のコメントを1つの有界なJSONへまとめます。<code>document_note_scope.source_evidence</code> は <code>false</code> なので、自由な考察を引用根拠と取り違えません。<code>scan_complete</code>、<code>truncated</code>、<code>limitations</code> を確認してから、見つからないという結論を出します。</span>
+                <span data-copy="en">Lexically ranks papers whose text kAIgi has extracted and returns a bounded JSON set of relevant documents, evidence passages, document notes, and source-bound annotations. <code>document_note_scope.source_evidence</code> is <code>false</code>, preventing freeform thinking from being mistaken for citable evidence. Check <code>scan_complete</code>, <code>truncated</code>, and <code>limitations</code> before concluding that evidence is absent.</span>
               </p>
             </article>
             <article class="command-card">
@@ -436,8 +436,8 @@
                 <span data-copy="en">Read selected pages closely</span>
               </div>
               <p>
-                <span data-copy="ja">横断検索で選んだ文書から、必要なページと要素だけを読み取り専用で取得します。ページ、段落ID、本文ハッシュ、抽出の完全性、省略状態を保つため、引用候補を元の版へ戻して確認できます。</span>
-                <span data-copy="en">Reads only the selected pages and components from a shortlisted document. Page, block ID, source hash, extraction completeness, and truncation state stay attached so candidate citations can be checked against the exact revision.</span>
+                <span data-copy="ja">横断検索で選んだ文書から、必要なページと要素だけを読み取り専用で取得します。<code>annotations</code> を含めると、文書全体への自分の考察は <code>document_note</code>、本文に結び付く記述は <code>annotations</code> として分かれます。ページ、段落ID、本文ハッシュ、抽出の完全性、省略状態も保つため、引用候補を元の版へ戻して確認できます。</span>
+                <span data-copy="en">Reads only the selected pages and components from a shortlisted document. When <code>annotations</code> is included, document-wide thinking appears as <code>document_note</code>, while source-bound writing remains in <code>annotations</code>. Page, block ID, source hash, extraction completeness, and truncation state stay attached so candidate citations can be checked against the exact revision.</span>
               </p>
             </article>
             <article class="command-card">
@@ -604,8 +604,8 @@
               <span data-copy="en">Privacy check</span>
             </h2>
             <p>
-              <span data-copy="ja">CLI自体は音声、文字起こし、抽出済みPDF本文をこのMac上で読み取ります。ただしCodexやClaude Codeへ依頼した場合、選択したモデルと設定によってはCLIの出力がモデル提供元へ送られます。kAIgiはCLIの初回インストール時に警告しますが、現行CLIはコマンドごとの確認を行いません。統合 <code>context</code>、録音の <code>inspect</code>・<code>search</code>・<code>export</code>・<code>apply-transcript</code>・<code>discussion-log</code>、文書の <code>search</code>・<code>research-context</code>・<code>context</code>・<code>inspect</code> は文字起こし本文、抽出本文、または指定したコメントを扱います。</span>
-              <span data-copy="en">The CLI itself reads audio, transcripts, and extracted PDF text on this Mac. When you ask Codex or Claude Code to use it, however, CLI output may be sent to the selected model provider under that agent's settings. kAIgi warns when the CLI is installed for the first time, but the current CLI does not confirm every command. Unified <code>context</code>, recording <code>inspect</code>, <code>search</code>, <code>export</code>, <code>apply-transcript</code>, and <code>discussion-log</code>, plus document <code>search</code>, <code>research-context</code>, <code>context</code>, and <code>inspect</code>, handle transcript text, extracted text, or requested annotations.</span>
+              <span data-copy="ja">CLI自体は音声、文字起こし、抽出済みPDF本文をこのMac上で読み取ります。ただしCodexやClaude Codeへ依頼した場合、選択したモデルと設定によってはCLIの出力がモデル提供元へ送られます。kAIgiはCLIの初回インストール時に警告しますが、現行CLIはコマンドごとの確認を行いません。統合 <code>context</code>、録音の <code>inspect</code>・<code>search</code>・<code>export</code>・<code>apply-transcript</code>・<code>discussion-log</code>、文書の <code>search</code>・<code>research-context</code>・<code>context</code>・<code>inspect</code> は文字起こし本文、抽出本文、文書ノート、または指定したコメントを扱います。文書ノートは自分の考察であり、原文の引用根拠ではありません。</span>
+              <span data-copy="en">The CLI itself reads audio, transcripts, and extracted PDF text on this Mac. When you ask Codex or Claude Code to use it, however, CLI output may be sent to the selected model provider under that agent's settings. kAIgi warns when the CLI is installed for the first time, but the current CLI does not confirm every command. Unified <code>context</code>, recording <code>inspect</code>, <code>search</code>, <code>export</code>, <code>apply-transcript</code>, and <code>discussion-log</code>, plus document <code>search</code>, <code>research-context</code>, <code>context</code>, and <code>inspect</code>, handle transcript text, extracted text, document notes, or requested annotations. Document notes are your own thinking, not citable source evidence.</span>
             </p>
             <p>
               <span data-copy="ja">AI ResearchのOpenAI API連携は別の機能です。詳しくは<a href="./privacy.html">プライバシーポリシー</a>を確認してください。</span>

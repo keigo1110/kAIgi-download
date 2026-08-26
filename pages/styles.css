@@ -3305,6 +3305,10 @@ body::after {
   color: var(--amber);
 }
 
+.release-feature-band .feature-grid {
+  gap: clamp(24px, 3vw, 42px);
+}
+
 .release-feature-band .feature {
   min-width: 0;
 }

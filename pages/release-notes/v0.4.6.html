@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ja" data-language="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>kAIgi 0.4.6 - リリースノート</title>
+    <meta
+      name="description"
+      content="kAIgi 0.4.6のリリースノート。構造を入口にした論文読解、自由な文書ノート、根拠付き付箋、短く信頼できる要点生成。"
+    >
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0c0d10">
+    <meta property="og:site_name" content="kAIgi">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="kAIgi 0.4.6 - Structured reading and document notes">
+    <meta
+      property="og:description"
+      content="Read papers from a concise structure, keep freeform thinking separate from grounded stickies, and carry both safely into agent context."
+    >
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.6.html">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="kAIgi 0.4.6">
+    <meta name="twitter:description" content="Structured reading, freeform document notes, grounded stickies, and safer paper identity.">
+    <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.6.html">
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+    <link rel="icon" href="../assets/app-icon-180.png">
+    <link rel="apple-touch-icon" href="../assets/app-icon-180.png">
+    <script src="../site-preload.js"></script>
+    <link rel="stylesheet" href="../styles.css?v=0.4.6">
+    <script defer src="../site.js"></script>
+  </head>
+  <body
+    data-language="ja"
+    data-title-ja="kAIgi 0.4.6 - リリースノート"
+    data-title-en="kAIgi 0.4.6 - Release notes"
+  >
+    <a class="skip-link" href="#main-content">
+      <span data-copy="ja">本文へ移動</span>
+      <span data-copy="en">Skip to content</span>
+    </a>
+
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="kAIgi home">
+        <img src="../assets/app-icon-180.png" alt="" width="36" height="36">
+        <span>kAIgi</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html">
+          <span data-copy="ja">トップ</span>
+          <span data-copy="en">Home</span>
+        </a>
+        <a href="../agent-skills.html">
+          <span data-copy="ja">CLI / Skills</span>
+          <span data-copy="en">CLI / Skills</span>
+        </a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language">
+          <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
+          <button type="button" data-language-option="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
+          <span data-copy="ja">ダウンロード</span>
+          <span data-copy="en">Download</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="policy-hero" aria-labelledby="release-title">
+        <div class="narrow release-intro">
+          <p class="eyebrow">RELEASE / 0.4.6</p>
+          <h1 id="release-title">
+            <span data-copy="ja">構造から読み、自分の考えを残す。</span>
+            <span data-copy="en">Read the structure. Keep your own thinking.</span>
+          </h1>
+          <p class="lead">
+            <span data-copy="ja">kAIgi 0.4.6は、論文の短い構造を読書の入口にし、文書全体への自由なノートと、原文へ戻れる付箋を一つの作業面へまとめます。自分の考察と引用可能な根拠は、アプリでもCLIでも明確に分けます。</span>
+            <span data-copy="en">kAIgi 0.4.6 starts paper reading from a concise structure and brings freeform document notes together with stickies that return to the source. Your thinking stays explicitly separate from citable evidence in both the app and CLI.</span>
+          </p>
+          <ul class="release-meta" aria-label="Release requirements">
+            <li>Version 0.4.6</li>
+            <li>Build 40</li>
+            <li>macOS 14+</li>
+            <li>Apple silicon + Intel</li>
+          </ul>
+          <div class="release-actions">
+            <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
+              <span data-copy="ja">kAIgi 0.4.6をダウンロード</span>
+              <span data-copy="en">Download kAIgi 0.4.6</span>
+            </a>
+            <a class="button secondary" href="../agent-skills.html#document-commands">
+              <span data-copy="ja">文献コンテキストを使う</span>
+              <span data-copy="en">Use literature context</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="narrow policy-copy">
+          <section class="release-section" aria-labelledby="reading-release-title">
+            <p class="section-kicker">Structure &amp; Notes</p>
+            <h2 id="reading-release-title">
+              <span data-copy="ja">論文を理解する作業面を、一つに</span>
+              <span data-copy="en">One workspace for understanding a paper</span>
+            </h2>
+            <ul class="release-list">
+              <li>
+                <strong><span data-copy="ja">構造を既定の入口に</span><span data-copy="en">Structure becomes the default entry point</span></strong>
+                <span data-copy="ja">Text右ペインを「構造・ノート・対訳・質問」の順にし、まず論文の全体像と読み筋を掴めるようにしました。狭い幅では切り替えを一行メニューへ畳みます。</span>
+                <span data-copy="en">The Text companion opens in the order Structure, Notes, Translation, and Questions, so the paper's shape and reading path come first. At narrow widths, the switcher collapses into a single-line menu.</span>
+              </li>
+              <li>
+                <strong><span data-copy="ja">自由なノートと根拠付き付箋</span><span data-copy="en">Freeform notes and grounded stickies</span></strong>
+                <span data-copy="ja">場所に依存しない感想や論点は大きな文書ノートへ、段落やPDF注釈に結び付く記述はその下の付箋へまとめます。付箋から元のPDF箇所へ戻れます。</span>
+                <span data-copy="en">Keep location-independent reflections in a larger document note, and source-bound paragraph or PDF comments as stickies below it. Each sticky can return to its original PDF location.</span>
+              </li>
+              <li>
+                <strong><span data-copy="ja">入力を止めず、消去は確認する</span><span data-copy="en">Type smoothly and confirm destructive clearing</span></strong>
+                <span data-copy="ja">ノート入力はPDFを含む画面全体を毎打鍵で描き直しません。文書切替や終了前に保存し、「消去」は確認してから実行します。</span>
+                <span data-copy="en">Note typing no longer redraws the full PDF workspace on every keystroke. Drafts save before document changes or quit, and clearing requires confirmation.</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="release-section" aria-labelledby="structure-release-title">
+            <p class="section-kicker">Reliable summaries</p>
+            <h2 id="structure-release-title">
+              <span data-copy="ja">翻訳ではなく、短い要点と読み筋へ</span>
+              <span data-copy="en">Concise points and a reading path, not a translation</span>
+            </h2>
+            <ul class="release-list">
+              <li>
+                <strong><span data-copy="ja">言語と圧縮を検査</span><span data-copy="en">Validate language and compression</span></strong>
+                <span data-copy="ja">各段落の要点を一文に限定し、選択した言語、長さ、原文に対する圧縮率を確認します。本文をほぼそのまま翻訳した出力や、別言語へ逸脱した出力は保存しません。</span>
+                <span data-copy="en">Each passage point is limited to one sentence and checked for the selected language, length, and compression against the source. Near-verbatim translations and wrong-language output are not saved.</span>
+              </li>
+              <li>
+                <strong><span data-copy="ja">欠けた読み筋だけを補う</span><span data-copy="en">Repair a missing reading path without discarding valid work</span></strong>
+                <span data-copy="ja">読み筋の生成だけが失敗した場合は一度再試行し、それでも欠ける時は有効な要点を再利用して「残りを補う」ことができます。</span>
+                <span data-copy="en">If only the reading path fails, kAIgi retries once. If it is still missing, “Complete the rest” reuses valid points and repairs only the unfinished result.</span>
+              </li>
+              <li>
+                <strong><span data-copy="ja">注意事項は必要な時だけ</span><span data-copy="en">Extraction notices stay on demand</span></strong>
+                <span data-copy="ja">段組み判定やPDF注釈の上限は常設バナーにせず、右ペインの一つの警告アイコンへ集約しました。構造やノートの表示領域を圧迫しません。</span>
+                <span data-copy="en">Column-detection uncertainty and PDF annotation limits now share one on-demand warning in the companion header instead of permanent banners that consume reading space.</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="release-section" aria-labelledby="identity-release-title">
+            <p class="section-kicker">Identity &amp; space</p>
+            <h2 id="identity-release-title">
+              <span data-copy="ja">正しい版へ戻り、作業領域を広く保つ</span>
+              <span data-copy="en">Return to the right revision and preserve working space</span>
+            </h2>
+            <ul class="release-list">
+              <li>
+                <strong><span data-copy="ja">別論文を同じ版として提案しない</span><span data-copy="en">Do not suggest a different paper as another revision</span></strong>
+                <span data-copy="ja">DOIとarXiv IDは第一ページ上部の本人確認領域だけから読み、参考文献にあるIDを使いません。固有タイトルが十分に一致しない候補も除外します。</span>
+                <span data-copy="en">DOI and arXiv IDs are read only from the first-page identity region, never from references. Candidates with distinct titles that do not sufficiently agree are also rejected.</span>
+              </li>
+              <li>
+                <strong><span data-copy="ja">質問欄を一行に保つ</span><span data-copy="en">Keep question composers on one line</span></strong>
+                <span data-copy="ja">AskとText／Audioの質問欄は、幅に合わせて端末内処理の説明と送信操作を短縮し、入力欄と会話領域を優先します。</span>
+                <span data-copy="en">Ask and Text/Audio question composers progressively shorten privacy and send controls as space narrows, preserving the input and conversation area.</span>
+              </li>
+              <li>
+                <strong><span data-copy="ja">プロジェクトは5件ずつ</span><span data-copy="en">Expand projects five items at a time</span></strong>
+                <span data-copy="ja">Audio、Text、Visualのプロジェクトは最初に最大5件を表示し、「さらに開く」で5件ずつ追加します。閉じると次回は5件へ戻ります。</span>
+                <span data-copy="en">Audio, Text, and Visual projects initially show up to five items and add five per expansion. Closing a project resets it to five for the next open.</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="release-section" aria-labelledby="agent-note-title">
+            <p class="section-kicker">Agent context</p>
+            <h2 id="agent-note-title">
+              <span data-copy="ja">自分のノートを、原文と混ぜずに渡す</span>
+              <span data-copy="en">Pass your notes without blending them into the source</span>
+            </h2>
+            <ul class="release-list">
+              <li>
+                <strong><code>document_note</code> / <code>document_note_scope</code></strong>
+                <span data-copy="ja"><code>documents inspect</code>、<code>documents context</code>、<code>documents research-context</code> は文書ノートを返します。<code>source_evidence: false</code> が、自分の考察を引用可能な原文から機械的にも区別します。</span>
+                <span data-copy="en"><code>documents inspect</code>, <code>documents context</code>, and <code>documents research-context</code> return document notes. <code>source_evidence: false</code> keeps your thinking machine-readably distinct from citable source text.</span>
+              </li>
+              <li>
+                <strong><span data-copy="ja">バックアップの競合を黙って捨てない</span><span data-copy="en">Do not silently discard backup conflicts</span></strong>
+                <span data-copy="ja">同じノートを別の場所で編集した版は既読扱いにせず、競合として取込を止めます。確認後に内容が変わった時も、古い確認結果では続行しません。</span>
+                <span data-copy="en">A note edited independently is not discarded as already imported; it stops the import as a conflict. If content changes after review, the stale confirmation cannot continue.</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="release-section release-safety" aria-labelledby="safety-title">
+            <h2 id="safety-title">
+              <span data-copy="ja">知っておいてほしいこと</span>
+              <span data-copy="en">What to know</span>
+            </h2>
+            <p>
+              <span data-copy="ja">Askと「質問」は引き続き実験的です。検索と回答はこのMac内で処理し、会話は保存しませんが、生成結果が学術的に正しいことを自動証明するものではありません。重要な内容は出典を開いて確認してください。</span>
+              <span data-copy="en">Ask and Questions remain experimental. Search and answering run on this Mac and conversations are not saved, but generated output is not automatic proof of scholarly correctness. Open the cited source for important claims.</span>
+            </p>
+            <p>
+              <span data-copy="ja">文書ノートは自分の考察であり、著者の記述ではありません。CodexやClaude Codeをクラウドモデルで使う場合、選択したCLI出力はモデル提供元へ送られることがあります。0.4.6でノートを保存した文書を0.4.5で開くと、互換性保護のためノートとコメントは読み取りません。0.4.6へ戻せば再び利用できます。</span>
+              <span data-copy="en">A document note is your own thinking, not the author's text. When Codex or Claude Code uses a cloud model, selected CLI output may be sent to that model provider. If a document with a 0.4.6 note is opened in 0.4.5, notes and comments are withheld for compatibility safety and become available again when reopened in 0.4.6.</span>
+            </p>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span aria-hidden="true"></span>
+      <p>&copy; 2026 kAIgi</p>
+      <div class="footer-links">
+        <a href="../index.html">
+          <span data-copy="ja">トップ</span>
+          <span data-copy="en">Home</span>
+        </a>
+        <a href="../agent-skills.html">CLI / Skills</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
+      </div>
+    </footer>
+  </body>
+</html>
