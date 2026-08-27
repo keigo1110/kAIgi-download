@@ -6,7 +6,7 @@
     <title>Privacy Policy - kAIgi</title>
     <meta
       name="description"
-      content="kAIgiの録音、PDF、CLI、Recall、Ask、AI Research、端末内モデル、外部モデル連携、保存データに関するプライバシーポリシー。"
+      content="kAIgiの録音、PDF、CLI、Recall、Ask、AI Research、端末内モデル、外部Web検索、保存データに関するプライバシーポリシー。"
     >
     <meta name="robots" content="index,follow">
     <meta name="application-name" content="kAIgi">
@@ -17,7 +17,7 @@
     <meta property="og:title" content="Privacy Policy - kAIgi">
     <meta
       property="og:description"
-      content="kAIgiの録音、PDF、CLI、Recall、Ask、AI Research、端末内モデル、外部モデル連携、保存データに関するプライバシーポリシー。"
+      content="kAIgiの録音、PDF、CLI、Recall、Ask、AI Research、端末内モデル、外部Web検索、保存データに関するプライバシーポリシー。"
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/privacy.html">
@@ -31,7 +31,7 @@
     <meta name="twitter:title" content="Privacy Policy - kAIgi">
     <meta
       name="twitter:description"
-      content="kAIgiの録音、PDF、CLI、Recall、Ask、AI Research、端末内モデル、外部モデル連携、保存データに関するプライバシーポリシー。"
+      content="kAIgiの録音、PDF、CLI、Recall、Ask、AI Research、端末内モデル、外部Web検索、保存データに関するプライバシーポリシー。"
     >
     <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
     <meta name="twitter:image:alt" content="kAIgi - meetings, papers, grounded Ask, and AI Research">
@@ -39,7 +39,7 @@
     <link rel="icon" href="./assets/app-icon-180.png">
     <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
     <script src="./site-preload.js"></script>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css?v=0.4.7">
     <script defer src="./site.js"></script>
   </head>
   <body
@@ -159,8 +159,8 @@
             <span data-copy="en">Before opening a result, kAIgi rereads the current transcript or PDF and verifies that its revision still matches the search result. If the source was changed or removed, kAIgi does not silently navigate to the stale location.</span>
           </p>
           <p>
-            <span data-copy="ja">AskとText／Audioの「質問」は、検索語、直近の会話、選んだ根拠をメモリ上だけで扱い、ファイルへ保存しません。回答は利用可能ならApple Foundation Models、そうでなければユーザーが準備したLocal LLMでこのMac内に生成します。いずれも利用できない場合は、生成回答の代わりに検索済みの根拠候補を表示します。Askと「質問」はOpenAI APIや外部検索サービスへ会話または本文を送信しません。</span>
-            <span data-copy="en">Ask and Questions in Text or Audio keep queries, recent conversation, and selected evidence only in memory and do not write them to files. Answers are generated on this Mac with Apple Foundation Models when available, otherwise with the user-prepared Local LLM. If neither is available, kAIgi shows retrieved evidence candidates instead of a generated answer. Ask and Questions do not send the conversation or source text to the OpenAI API or an external search service.</span>
+            <span data-copy="ja">AskとText／Audioの「質問」は、検索語、直近の会話、選んだ根拠をメモリ上だけで扱い、ファイルへ保存しません。検証済みGemma QAT Local LLMが準備済みなら回答に優先し、利用できない場合は対応MacのApple Foundation Modelsへ戻ります。いずれも利用できない場合は、生成回答の代わりに検索済みの根拠候補を表示します。Askと「質問」はOpenAI APIや外部検索サービスへ会話または本文を送信しません。</span>
+            <span data-copy="en">Ask and Questions in Text or Audio keep queries, recent conversation, and selected evidence only in memory and do not write them to files. A verified, prepared Gemma QAT Local LLM is preferred for answers, with Apple Foundation Models as the fallback on supported Macs. If neither is available, kAIgi shows retrieved evidence candidates instead of generated prose. Ask and Questions do not send the conversation or source text to the OpenAI API or an external search service.</span>
           </p>
 
           <h2>
@@ -181,12 +181,16 @@
           </p>
 
           <h2>
-            <span data-copy="ja">AI ResearchとOpenAI連携</span>
-            <span data-copy="en">AI Research and OpenAI</span>
+            <span data-copy="ja">AI ResearchとWeb検索</span>
+            <span data-copy="en">AI Research and web search</span>
           </h2>
           <p>
-            <span data-copy="ja">AI Research機能を有効にした場合、簡易マスキングした直近の文字起こしと検索論点をOpenAI APIへ送信することがあります。この処理は完全な匿名化ではなく、敬称のない人名、社名、住所、文脈依存の固有名詞を検出できない場合があります。この機能は任意であり、ユーザーが設定したOpenAI API keyを使用します。API keyはmacOS Keychainに保存されます。利用モデルはkAIgiの既定値を使用し、ユーザーがアプリ内でモデルを選択する必要はありません。</span>
-            <span data-copy="en">When AI Research is enabled, kAIgi may send lightly masked recent transcript context and research prompts to the OpenAI API. This is not complete anonymization and may miss names without honorifics, company names, addresses, and context-specific proper nouns. This feature is optional and uses the OpenAI API key entered by the user. The API key is stored in macOS Keychain. kAIgi uses its default model configuration; users do not need to choose models in the app.</span>
+            <span data-copy="ja">0.4.7のAI ResearchはOpenAI APIやAPI keyを使いません。ユーザーがAI Researchを有効にした場合、アプリに同梱したSearXNGを通してDuckDuckGoとWikipediaへ、最大256文字の検索語を送信します。検索語には常に簡易マスキングを適用しますが、これは完全な匿名化ではなく、敬称のない人名、社名、住所、文脈依存の固有名詞を検出できない場合があります。新規インストールではAI Researchはオフです。</span>
+            <span data-copy="en">AI Research in 0.4.7 does not use the OpenAI API or an API key. When the user enables AI Research, the bundled SearXNG runtime sends a search query of at most 256 characters to DuckDuckGo and Wikipedia. kAIgi always applies lightweight masking, but this is not complete anonymization and may miss names without honorifics, company names, addresses, and context-specific proper nouns. AI Research is off on a new installation.</span>
+          </p>
+          <p>
+            <span data-copy="ja">検索サービスへ録音音声、文字起こし全文、保存済みカード本文、Research Memoryの他の内容は送りません。Deep Researchではカード作成時に保存した同じ検索語だけを再送し、その値がない旧カードの表示文を検索語へ転用しません。検索結果ページを自動取得せず、上限付きのスニペットと出典URLだけを受け取ります。Local LLMが準備済みの場合だけ、そのスニペットから短い回答をこのMac上で作ります。モデルがない、失敗した、または出典を検証できない場合は、生成回答ではなくスニペットと出典を表示します。0.4.6以前にmacOS Keychainへ保存したOpenAI API keyは0.4.7のAI Researchでは使用せず、設定から削除できます。</span>
+            <span data-copy="en">kAIgi does not send recorded audio, the full transcript, saved card text, or other Research Memory content to the search services. Deep Research resends only the same query saved when its card was created and never derives a query from legacy card presentation text. It does not automatically fetch result pages; it receives bounded snippets and source URLs. Only when a Local LLM is prepared may kAIgi create a short answer from those snippets on this Mac. If the model is absent, fails, or cites unverifiable evidence, kAIgi shows snippets and sources instead of a generated answer. An OpenAI API key stored in macOS Keychain by 0.4.6 or earlier is not used by AI Research in 0.4.7 and can be deleted in Settings.</span>
           </p>
 
           <h2>

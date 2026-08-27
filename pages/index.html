@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>kAIgi 0.4.6 - 論文を構造で読み、考えをノートへ</title>
+    <title>kAIgi 0.4.7 - Gemmaで会議と資料に根拠から尋ねる</title>
     <meta
       name="description"
-      content="kAIgiは、Macに保存した会議と論文を探し、論文を構造で読み、自由なノートと根拠付き付箋を残し、CodexやClaude Codeへ追跡可能な文脈を渡せるmacOSアプリです。"
+      content="kAIgiは、会議をローカルで録音・文字起こしし、検証済みGemma QATと根拠検証ハーネスv2で保存した会議・論文へ尋ね、APIキー不要のWeb検索から出典付きResearch Cardも作れるmacOSアプリです。"
     >
     <meta name="robots" content="index,follow">
     <meta name="application-name" content="kAIgi">
@@ -15,10 +15,10 @@
     <meta property="og:site_name" content="kAIgi">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:title" content="kAIgi 0.4.6 - Read papers by structure and keep your thinking close">
+    <meta property="og:title" content="kAIgi 0.4.7 - Grounded answers with Gemma harness v2">
     <meta
       property="og:description"
-      content="論文を構造から読み、自由なノートと根拠付き付箋を分けて残し、会議と文献の根拠を執筆へつなぐmacOSアプリ。"
+      content="Ask meetings and papers with a verified local Gemma and bounded evidence harness, plus bundled web research without an API key."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/">
@@ -27,21 +27,21 @@
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="kAIgi 0.4.6 - structured reading, notes, and traceable research context">
+    <meta property="og:image:alt" content="kAIgi 0.4.7 - grounded local Gemma and bundled web research">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="kAIgi 0.4.6 - Read papers by structure and keep your thinking close">
+    <meta name="twitter:title" content="kAIgi 0.4.7 - Grounded answers with Gemma harness v2">
     <meta
       name="twitter:description"
-      content="論文を構造から読み、自由なノートと根拠付き付箋を分けて残し、会議と文献の根拠を執筆へつなぐmacOSアプリ。"
+      content="Ask meetings and papers with a verified local Gemma and bounded evidence harness, plus bundled web research without an API key."
     >
     <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
-    <meta name="twitter:image:alt" content="kAIgi 0.4.6 - structured reading, notes, and traceable research context">
+    <meta name="twitter:image:alt" content="kAIgi 0.4.7 - grounded local Gemma and bundled web research">
     <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/">
     <link rel="sitemap" type="application/xml" href="./sitemap.xml">
     <link rel="icon" href="./assets/app-icon-180.png">
     <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
     <script src="./site-preload.js"></script>
-    <link rel="stylesheet" href="./styles.css?v=0.4.6">
+    <link rel="stylesheet" href="./styles.css?v=0.4.7">
     <script defer src="./site.js"></script>
     <script type="application/ld+json">
       {
@@ -50,11 +50,11 @@
         "name": "kAIgi",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "macOS 14+",
-        "description": "kAIgiは、Macに保存した会議と論文を探し、論文を構造で読み、自由なノートと根拠付き付箋を残し、CodexやClaude Codeへ追跡可能な文脈を渡せるmacOSアプリです。",
+        "description": "kAIgiは、会議をローカルで録音・文字起こしし、検証済みGemma QATと根拠検証ハーネスv2で保存した会議・論文へ尋ね、APIキー不要のWeb検索から出典付きResearch Cardも作れるmacOSアプリです。",
         "url": "https://keigo1110.github.io/kAIgi-download/",
         "downloadUrl": "https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg",
         "image": "https://keigo1110.github.io/kAIgi-download/assets/ogp.png",
-        "softwareVersion": "0.4.6",
+        "softwareVersion": "0.4.7",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -65,8 +65,8 @@
   </head>
   <body
     data-language="ja"
-    data-title-ja="kAIgi 0.4.6 - 論文を構造で読み、考えをノートへ"
-    data-title-en="kAIgi 0.4.6 - Read papers by structure and keep your thinking close"
+    data-title-ja="kAIgi 0.4.7 - Gemmaで会議と資料に根拠から尋ねる"
+    data-title-en="kAIgi 0.4.7 - Grounded answers with Gemma harness v2"
   >
     <a class="skip-link" href="#top">
       <span data-copy="ja">本文へ移動</span>
@@ -84,7 +84,7 @@
           <span data-copy="en">Flow</span>
         </a>
         <a href="#recall">Recall</a>
-        <a href="#reading">Text</a>
+        <a href="#research">Research</a>
         <a href="#agent-context">CLI</a>
         <a href="#setup">
           <span data-copy="ja">はじめる</span>
@@ -114,19 +114,19 @@
             </p>
             <div class="hero-actions" id="download">
               <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
-                <span data-copy="ja">kAIgi 0.4.6をダウンロード</span>
-                <span data-copy="en">Download kAIgi 0.4.6</span>
+                <span data-copy="ja">kAIgi 0.4.7をダウンロード</span>
+                <span data-copy="en">Download kAIgi 0.4.7</span>
               </a>
-              <a class="hero-release-link" href="./release-notes/v0.4.6.html">
-                <strong>0.4.6</strong>
-                <span data-copy="ja">構造・ノート・根拠付き付箋</span>
-                <span data-copy="en">Structure, notes, and grounded stickies</span>
+              <a class="hero-release-link" href="./release-notes/v0.4.7.html">
+                <strong>0.4.7</strong>
+                <span data-copy="ja">Gemmaハーネスv2とAPIキー不要のAI Research</span>
+                <span data-copy="en">Gemma harness v2 and AI Research without an API key</span>
                 <span aria-hidden="true">↗</span>
               </a>
             </div>
             <ul class="release-facts" aria-label="Release facts">
               <li>macOS 14+</li>
-              <li>Apple silicon + Intel</li>
+              <li>Apple Silicon</li>
               <li>
                 <span data-copy="ja">Ask・質問は端末内処理／実験的</span>
                 <span data-copy="en">On-device Ask and Questions / Experimental</span>
@@ -253,13 +253,13 @@
         </div>
       </section>
 
-      <section class="band intro-band release-feature-band" id="reading" aria-labelledby="reading-title">
+      <section class="band intro-band release-feature-band" id="research" aria-labelledby="research-title">
         <div class="content-grid">
           <div>
-            <p class="section-kicker">kAIgi 0.4.6 / Structure &amp; Notes</p>
-            <h2 id="reading-title">
-              <span data-copy="ja">構造で読み、<br>自分の考えを残す。</span>
-              <span data-copy="en">Read by structure.<br>Keep your thinking close.</span>
+            <p class="section-kicker">kAIgi 0.4.7 / Gemma Harness v2 + Bundled Web Research</p>
+            <h2 id="research-title">
+              <span data-copy="ja">Gemmaで根拠から答え、<br>会議をWeb調査へ。</span>
+              <span data-copy="en">Answer from evidence.<br>Research the meeting.</span>
             </h2>
           </div>
           <div class="release-feature-content">
@@ -267,41 +267,41 @@
               <article class="feature">
                 <span class="feature-mark">01</span>
                 <h3>
-                  <span data-copy="ja">最初に、論文の読み筋を掴む</span>
-                  <span data-copy="en">Start with the paper's reading path</span>
+                  <span data-copy="ja">一つのGemmaを、安全に使い回す</span>
+                  <span data-copy="en">Reuse one Gemma safely</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">Textは構造を既定で開き、各段落を短い要点に圧縮します。論文をほぼ翻訳した長文や、指定言語と違う要点は完成結果として残しません。</span>
-                  <span data-copy="en">Text now opens on Structure and compresses each passage into a concise point. Near-verbatim translations and summaries in the wrong language are not kept as finished results.</span>
+                  <span data-copy="ja">24GB以上では検証済みGemma QATを議論整理、AI Research、Ask、資料内質問で共有します。ハーネスv2が引用・数値・形式を検証し、16GBでは常駐させません。</span>
+                  <span data-copy="en">On Macs with at least 24 GB, a verified Gemma QAT model is shared across discussion analysis, AI Research, Ask, and source Questions. Harness v2 checks citations, numbers, and output shape; 16 GB Macs do not keep a resident Local LLM.</span>
                 </p>
               </article>
               <article class="feature">
                 <span class="feature-mark">02</span>
                 <h3>
-                  <span data-copy="ja">自由なノートと根拠付き付箋</span>
-                  <span data-copy="en">Freeform notes and grounded stickies</span>
+                  <span data-copy="ja">短い検索語だけを外へ</span>
+                  <span data-copy="en">Only a short query leaves the Mac</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">文書全体への感想や論点は自由なノートへ、原文に結び付くコメントは付箋へ。自分の考察と引用できる本文を混ぜず、付箋から元の箇所へ戻れます。</span>
-                  <span data-copy="en">Keep reflections and open questions in a document note, and source-bound comments as stickies. Your thinking stays separate from citable text, while every sticky returns to its source.</span>
+                  <span data-copy="ja">簡易マスキングした最大256文字の検索語をDuckDuckGoとWikipediaへ送ります。音声、文字起こし全文、カード本文、Research Memoryの他の内容は送りません。</span>
+                  <span data-copy="en">kAIgi sends a lightly masked query of at most 256 characters to DuckDuckGo and Wikipedia—not audio, the full transcript, card text, or other Research Memory content.</span>
                 </p>
               </article>
               <article class="feature">
                 <span class="feature-mark">03</span>
                 <h3>
-                  <span data-copy="ja">同じ論文か、根拠から確かめる</span>
-                  <span data-copy="en">Verify paper identity from source-owned evidence</span>
+                  <span data-copy="ja">出典を残し、推測へ逃げない</span>
+                  <span data-copy="en">Keep sources and avoid unsupported prose</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">DOIやarXiv IDは第一ページの本人確認領域だけから読み、参考文献にある別論文のIDを版一致に使いません。タイトルが食い違う候補も自動提案しません。</span>
-                  <span data-copy="en">DOI and arXiv IDs come only from the first-page identity region, never another paper's reference entry. Candidates with conflicting titles are not suggested as the same paper.</span>
+                  <span data-copy="ja">Local LLMがなくても検索スニペットと出典URLを表示します。生成回答の引用を検証できなければ、根拠付きスニペットへ戻ります。</span>
+                  <span data-copy="en">Without a Local LLM, kAIgi still shows search snippets and source URLs. If generated citations cannot be verified, it falls back to grounded snippets.</span>
                 </p>
               </article>
             </div>
             <div class="release-feature-links">
-              <a href="./release-notes/v0.4.6.html">
-                <span data-copy="ja">0.4.6の変更点と制約</span>
-                <span data-copy="en">0.4.6 changes and limitations</span>
+              <a href="./release-notes/v0.4.7.html">
+                <span data-copy="ja">0.4.7の変更点とプライバシー境界</span>
+                <span data-copy="en">0.4.7 changes and privacy boundaries</span>
                 <span aria-hidden="true">→</span>
               </a>
               <a href="./agent-skills.html#document-commands">
@@ -404,8 +404,8 @@
                   <span data-copy="en">Download the latest DMG</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">macOS 14以降を搭載したApple SiliconまたはIntel Macで、インストールボタンから <code>kAIgi.dmg</code> をダウンロードします。</span>
-                  <span data-copy="en">On an Apple silicon or Intel Mac running macOS 14 or later, use the install button to download <code>kAIgi.dmg</code>.</span>
+                  <span data-copy="ja">macOS 14以降を搭載したApple Silicon Macで、インストールボタンから <code>kAIgi.dmg</code> をダウンロードします。</span>
+                  <span data-copy="en">On an Apple Silicon Mac running macOS 14 or later, use the install button to download <code>kAIgi.dmg</code>.</span>
                 </p>
               </div>
             </li>
@@ -443,8 +443,8 @@
                   <span data-copy="en">Finish first-run setup</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">会議音声を扱うためのmacOS確認とLocal LLMの準備を済ませます。Web検索を使う場合だけOpenAI API keyも設定します。</span>
-                  <span data-copy="en">Complete the macOS prompts for meeting audio and prepare the Local LLM. Add an OpenAI API key only if you want to use web research.</span>
+                  <span data-copy="ja">会議音声を扱うためのmacOS確認を済ませます。AI Researchは設定で有効にするだけで使え、APIキーやLocal LLMの準備は不要です。</span>
+                  <span data-copy="en">Complete the macOS prompts for meeting audio. AI Research works after you enable it in Settings, with no API key or Local LLM setup required.</span>
                 </p>
               </div>
             </li>
@@ -475,8 +475,8 @@
             </h2>
           </div>
           <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
-            <span data-copy="ja">kAIgi 0.4.6をダウンロード</span>
-            <span data-copy="en">Download kAIgi 0.4.6</span>
+            <span data-copy="ja">kAIgi 0.4.7をダウンロード</span>
+            <span data-copy="en">Download kAIgi 0.4.7</span>
           </a>
         </div>
       </section>
@@ -520,8 +520,8 @@
                 <span data-copy="en">AI Research is not producing cards</span>
               </summary>
               <p>
-                <span data-copy="ja">設定でAI Researchを有効にし、Local LLMの準備が完了しているか確認してください。Web検索を使うカードにはOpenAI API keyも必要です。議論内容が少ない時は、カードが出るまで少し発話が必要です。</span>
-                <span data-copy="en">Enable AI Research and confirm that the Local LLM is ready. Cards that use web research also require an OpenAI API key. If the discussion is still short, kAIgi may wait for more context before creating cards.</span>
+                <span data-copy="ja">設定でAI Researchを有効にし、インターネット接続を確認してください。APIキーやLocal LLMは不要です。議論内容が少ない時は、検索する論点が見つかるまで少し発話が必要です。</span>
+                <span data-copy="en">Enable AI Research in Settings and check your internet connection. No API key or Local LLM is required. If the discussion is still short, kAIgi may wait until it finds a useful research question.</span>
               </p>
             </details>
             <details>
@@ -530,8 +530,8 @@
                 <span data-copy="en">Ask shows evidence but no generated answer</span>
               </summary>
               <p>
-                <span data-copy="ja">回答はこのMac内で処理し、会話は保存しません。Appleのオンデバイス回答にはmacOS 26以降とApple Intelligence対応環境が必要です。利用できない場合は、設定でLocal LLMの準備状況を確認してください。どちらも使えない時や根拠が不足する時は、推測せず確認できる根拠候補だけを表示します。</span>
-                <span data-copy="en">Answers are processed on this Mac and conversations are not saved. Apple's on-device answers require macOS 26 or later and an Apple Intelligence-capable environment. Otherwise, check that the Local LLM is ready in Settings. When neither model is available or evidence is insufficient, kAIgi avoids guessing and shows inspectable evidence candidates.</span>
+                <span data-copy="ja">回答はこのMac内で処理し、会話は保存しません。設定で検証済みGemma QAT Local LLMを準備するとAskと資料内質問で優先して使います。未準備なら、macOS 26以降の対応環境ではAppleのオンデバイスモデルへ戻ります。どちらも使えない時や根拠が不足する時は、推測せず確認できる根拠候補だけを表示します。</span>
+                <span data-copy="en">Answers are processed on this Mac and conversations are not saved. Prepare the verified Gemma QAT Local LLM in Settings to make it the preferred model for Ask and source Questions. When it is unavailable, supported macOS 26 systems fall back to Apple's on-device model. If neither can answer or evidence is insufficient, kAIgi avoids guessing and shows inspectable evidence candidates.</span>
               </p>
             </details>
             <details>
@@ -557,9 +557,9 @@
           <span data-copy="ja">CLI / Skills</span>
           <span data-copy="en">CLI / Skills</span>
         </a>
-        <a href="./release-notes/v0.4.6.html">
-          <span data-copy="ja">0.4.6 リリースノート</span>
-          <span data-copy="en">0.4.6 Release notes</span>
+        <a href="./release-notes/v0.4.7.html">
+          <span data-copy="ja">0.4.7 リリースノート</span>
+          <span data-copy="en">0.4.7 Release notes</span>
         </a>
         <a href="./privacy.html">Privacy Policy</a>
         <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
