@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ja" data-language="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>kAIgi 0.4.8 - リリースノート</title>
+    <meta
+      name="description"
+      content="kAIgi 0.4.8のリリースノート。回答経路の表示、検索条件の編集、会議検出、Gemmaによる検証済みPDF要約。"
+    >
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0c0d10">
+    <meta property="og:site_name" content="kAIgi">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="kAIgi 0.4.8 - Traceable answers, controlled search, and stronger PDF summaries">
+    <meta
+      property="og:description"
+      content="See the route behind local answers, edit Deep Research scope before sending, and build validated document summaries with Gemma."
+    >
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.8.html">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="kAIgi 0.4.8">
+    <meta name="twitter:description" content="Traceable Gemma answers, controlled web research, meeting detection, and validated PDF summaries.">
+    <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.8.html">
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+    <link rel="icon" href="../assets/app-icon-180.png">
+    <link rel="apple-touch-icon" href="../assets/app-icon-180.png">
+    <script src="../site-preload.js"></script>
+    <link rel="stylesheet" href="../styles.css?v=0.4.8">
+    <script defer src="../site.js"></script>
+  </head>
+  <body
+    data-language="ja"
+    data-title-ja="kAIgi 0.4.8 - リリースノート"
+    data-title-en="kAIgi 0.4.8 - Release notes"
+  >
+    <a class="skip-link" href="#main-content">
+      <span data-copy="ja">本文へ移動</span>
+      <span data-copy="en">Skip to content</span>
+    </a>
+
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="kAIgi home">
+        <img src="../assets/app-icon-180.png" alt="" width="36" height="36">
+        <span>kAIgi</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html">
+          <span data-copy="ja">トップ</span>
+          <span data-copy="en">Home</span>
+        </a>
+        <a href="../agent-skills.html">
+          <span data-copy="ja">CLI / Skills</span>
+          <span data-copy="en">CLI / Skills</span>
+        </a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language">
+          <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
+          <button type="button" data-language-option="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
+          <span data-copy="ja">ダウンロード</span>
+          <span data-copy="en">Download</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="policy-hero" aria-labelledby="release-title">
+        <div class="narrow release-intro">
+          <p class="eyebrow">RELEASE / 0.4.8</p>
+          <h1 id="release-title">
+            <span data-copy="ja">答えの経路を見せ、検索とPDFを磨く。</span>
+            <span data-copy="en">Trace the answer. Control the search. Read the PDF.</span>
+          </h1>
+          <p class="lead">
+            <span data-copy="ja">kAIgi 0.4.8は、Gemmaの回答経路と検証結果を控えめに表示し、Deep Researchの検索条件を送信前に編集できるようにしました。PDFの構造と要約も、引用・数値・言語を検証するGemmaハーネスへ統合しています。</span>
+            <span data-copy="en">kAIgi 0.4.8 quietly exposes the route and validation behind Gemma answers, lets you edit Deep Research scope before sending, and brings PDF structure and summaries into a citation-, number-, and language-validated Gemma harness.</span>
+          </p>
+          <ul class="release-meta" aria-label="Release requirements">
+            <li>Version 0.4.8</li>
+            <li>Build 42</li>
+            <li>macOS 14+</li>
+            <li>Apple Silicon</li>
+          </ul>
+          <div class="release-actions">
+            <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
+              <span data-copy="ja">kAIgi 0.4.8をダウンロード</span>
+              <span data-copy="en">Download kAIgi 0.4.8</span>
+            </a>
+            <a class="button secondary" href="../privacy.html">
+              <span data-copy="ja">プライバシー境界を確認</span>
+              <span data-copy="en">Review the privacy boundary</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="policy-section">
+        <div class="narrow policy-copy">
+          <h2>
+            <span data-copy="ja">回答本文を邪魔せず、経路と根拠を示す</span>
+            <span data-copy="en">Show route and evidence without crowding the answer</span>
+          </h2>
+          <p>
+            <span data-copy="ja">AskとText／Audioの「質問」は、回答の下にGemma QAT、Apple fallback、決定的回答、根拠候補へのfallbackのどれを使ったか表示します。詳細には引用件数、要確認の根拠、競合値、再検証の実施、完成回答を出さなかった理由をまとめ、通常はpopoverへ畳みます。</span>
+            <span data-copy="en">Ask and source Questions now label whether they used Gemma QAT, Apple fallback, a deterministic answer, or an evidence-candidate fallback. Citation counts, evidence requiring review, conflicting values, verification passes, and refusal reasons stay folded into a popover by default.</span>
+          </p>
+          <p>
+            <span data-copy="ja">表示するのはモデルの思考過程ではなく、アプリが確認できる経路、検証結果、引用元です。根拠にない数値、否定、増減方向、因果関係、未知の引用は回答境界で拒否します。</span>
+            <span data-copy="en">This is not model chain-of-thought. It exposes only the route, validation facts, and cited source material that the app can verify. Unsupported numbers, negation, direction, causality, and unknown citations are rejected at the answer boundary.</span>
+          </p>
+        </div>
+      </section>
+
+      <section class="policy-section">
+        <div class="narrow policy-copy">
+          <h2>
+            <span data-copy="ja">送信する検索条件を、先に確認する</span>
+            <span data-copy="en">Review the exact search scope before sending</span>
+          </h2>
+          <p>
+            <span data-copy="ja">Deep Researchの開始前に、検索語、期間、最大4件のドメインを編集できます。簡易マスキングやドメイン正規化で値が変わる場合は、実際に送る条件も画面へ表示します。</span>
+            <span data-copy="en">Before Deep Research starts, you can edit the query, time range, and up to four domains. If lightweight masking or domain normalization changes a value, kAIgi also shows the exact scope it will send.</span>
+          </p>
+          <p>
+            <span data-copy="ja">結果にはDuckDuckGo／Wikipediaの状態、重複除去件数、検索時刻、memory cache、公開日を添えます。指定外ドメインのURLはPython helperとSwift公開境界の両方で拒否し、同一条件のcacheは最大10分だけメモリ上に保持します。結果ページ本文は自動取得しません。</span>
+            <span data-copy="en">Results expose DuckDuckGo and Wikipedia status, deduplication, search time, memory-cache use, and publication dates when available. URLs outside an allowed domain are rejected by both the Python helper and Swift publication boundary. Matching queries remain in memory for at most ten minutes, and result pages are never fetched automatically.</span>
+          </p>
+        </div>
+      </section>
+
+      <section class="policy-section">
+        <div class="narrow policy-copy">
+          <h2>
+            <span data-copy="ja">PDFの構造と要約を、検証してから保存する</span>
+            <span data-copy="en">Validate PDF structure and summaries before saving</span>
+          </h2>
+          <p>
+            <span data-copy="ja">「構造を生成」は検証済みGemma 4 E4B QATを優先します。段落ID、見出し、根拠ID、exact JSON schema、引用、数値、要求言語、要約密度をアプリが検証し、通らない項目だけ対応環境のAppleオンデバイスモデルへ戻します。</span>
+            <span data-copy="en">Generate Structure now prefers the verified Gemma 4 E4B QAT model. kAIgi validates paragraph and evidence IDs, headings, the exact JSON schema, citations, numbers, requested language, and summary density, then falls back to Apple's on-device model only for rejected work on supported systems.</span>
+          </p>
+          <p>
+            <span data-copy="ja">長い資料は上限付きbatchで処理し、完成分を逐次保存します。残りの段落・section・読み筋を表示して安全に再開できるため、1回の操作が無制限な生成requestへ膨らみません。text layerとOCRには同じ狭いUnicode正規化と検証を適用します。</span>
+            <span data-copy="en">Long documents run in bounded batches and publish completed work incrementally. Remaining paragraphs, sections, and overview work stay visible and resumable, so one click cannot expand into unbounded generation. Text-layer and OCR input share the same narrow Unicode normalization and validation path.</span>
+          </p>
+        </div>
+      </section>
+
+      <section class="policy-section">
+        <div class="narrow policy-copy">
+          <h2>
+            <span data-copy="ja">会議を見つけても、録音は勝手に始めない</span>
+            <span data-copy="en">Detect a meeting without ever auto-recording it</span>
+          </h2>
+          <p>
+            <span data-copy="ja">kAIgiが前面にある間、Zoom、Google Meet、Teams等の既知アプリと会議らしいwindow titleを端末内で確認し、録音可能な場合だけ小さな開始操作を表示します。汎用titleだけでは会議とみなさず、誤検出を避けます。</span>
+            <span data-copy="en">While kAIgi is in front, it locally checks known apps such as Zoom, Google Meet, and Teams together with meeting-like window titles, then offers a small recording action only when recording is available. Generic titles alone do not count as a meeting.</span>
+          </p>
+          <p>
+            <span data-copy="ja">提案をクリックしても従来の録音確認が開くだけで、録音は自動開始しません。window titleは保存、log、外部送信しません。検出できない場合も通常の録音操作は変わりません。</span>
+            <span data-copy="en">Clicking the suggestion opens the existing confirmation; recording never starts automatically. Window titles are not stored, logged, or transmitted. The ordinary recording control remains available when detection does not match.</span>
+          </p>
+        </div>
+      </section>
+
+      <section class="policy-section">
+        <div class="narrow policy-copy">
+          <h2>
+            <span data-copy="ja">Local AIの配布量を、用途を変えずに減らす</span>
+            <span data-copy="en">Reduce Local AI downloads without changing their purpose</span>
+          </h2>
+          <p>
+            <span data-copy="ja">Gemma QATから回答に使わないvision tensorを除き、新規ダウンロードを約956MB削減しました。固定revision、全SHA-256、tensor一覧、ファイル世代、process間lockの検証は維持し、既存モデルをbackgroundで削除・書き換えません。</span>
+            <span data-copy="en">The Gemma QAT download omits a vision tensor unused by grounded answers, reducing new downloads by about 956 MB. Pinned revision, complete SHA-256 checks, tensor inventory, file generations, and cross-process locks remain enforced, and existing models are never rewritten or deleted in the background.</span>
+          </p>
+          <p>
+            <span data-copy="ja">AI Researchは新規install時OFFのままです。Gemmaの回答、PDF要約、Ask、会議検出は端末内で行います。Web検索を有効にした場合だけ、画面で確認した短い検索条件をDuckDuckGoとWikipediaへ送信します。</span>
+            <span data-copy="en">AI Research remains off on new installations. Gemma answers, PDF summaries, Ask, and meeting detection stay on device. Only when web research is enabled does kAIgi send the short search scope shown in the UI to DuckDuckGo and Wikipedia.</span>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span aria-hidden="true"></span>
+      <p>&copy; 2026 kAIgi</p>
+      <div class="footer-links">
+        <a href="../index.html">
+          <span data-copy="ja">トップ</span>
+          <span data-copy="en">Home</span>
+        </a>
+        <a href="../agent-skills.html">CLI / Skills</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
+      </div>
+    </footer>
+  </body>
+</html>

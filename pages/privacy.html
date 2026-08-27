@@ -39,7 +39,7 @@
     <link rel="icon" href="./assets/app-icon-180.png">
     <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
     <script src="./site-preload.js"></script>
-    <link rel="stylesheet" href="./styles.css?v=0.4.7">
+    <link rel="stylesheet" href="./styles.css?v=0.4.8">
     <script defer src="./site.js"></script>
   </head>
   <body
@@ -80,7 +80,7 @@
             <span data-copy="ja">kAIgiは会議音声、Textで開くPDF、Recall、Ask、AI Researchを扱うアプリです。録音対象、保存場所、端末内処理、任意の外部送信について、ユーザーが判断できるように説明します。</span>
             <span data-copy="en">kAIgi handles meeting audio, PDFs opened in Text, Recall, Ask, and AI Research. This policy explains what is recorded, where data is stored, what runs on device, and when external services may be used.</span>
           </p>
-          <p class="updated">Last updated: 2026-08-27</p>
+          <p class="updated">Last updated: 2026-08-28</p>
         </div>
       </section>
 
@@ -185,12 +185,12 @@
             <span data-copy="en">AI Research and web search</span>
           </h2>
           <p>
-            <span data-copy="ja">0.4.7のAI ResearchはOpenAI APIやAPI keyを使いません。ユーザーがAI Researchを有効にした場合、アプリに同梱したSearXNGを通してDuckDuckGoとWikipediaへ、最大256文字の検索語を送信します。検索語には常に簡易マスキングを適用しますが、これは完全な匿名化ではなく、敬称のない人名、社名、住所、文脈依存の固有名詞を検出できない場合があります。新規インストールではAI Researchはオフです。</span>
-            <span data-copy="en">AI Research in 0.4.7 does not use the OpenAI API or an API key. When the user enables AI Research, the bundled SearXNG runtime sends a search query of at most 256 characters to DuckDuckGo and Wikipedia. kAIgi always applies lightweight masking, but this is not complete anonymization and may miss names without honorifics, company names, addresses, and context-specific proper nouns. AI Research is off on a new installation.</span>
+            <span data-copy="ja">0.4.8のAI ResearchはOpenAI APIやAPI keyを使いません。ユーザーがAI Researchを有効にした場合、アプリに同梱したSearXNGを通してDuckDuckGoとWikipediaへ、最大256文字の検索語を送信します。Deep Researchでは、ユーザーが送信前に確認・編集した期間と最大4件のドメイン指定も検索条件として送ります。検索語には常に簡易マスキングを適用しますが、これは完全な匿名化ではなく、敬称のない人名、社名、住所、文脈依存の固有名詞を検出できない場合があります。新規インストールではAI Researchはオフです。</span>
+            <span data-copy="en">AI Research in 0.4.8 does not use the OpenAI API or an API key. When the user enables AI Research, the bundled SearXNG runtime sends a search query of at most 256 characters to DuckDuckGo and Wikipedia. Deep Research also sends the time range and up to four domain restrictions that the user reviews and edits before submission. kAIgi always applies lightweight masking to the query, but this is not complete anonymization and may miss names without honorifics, company names, addresses, and context-specific proper nouns. AI Research is off on a new installation.</span>
           </p>
           <p>
-            <span data-copy="ja">検索サービスへ録音音声、文字起こし全文、保存済みカード本文、Research Memoryの他の内容は送りません。Deep Researchではカード作成時に保存した同じ検索語だけを再送し、その値がない旧カードの表示文を検索語へ転用しません。検索結果ページを自動取得せず、上限付きのスニペットと出典URLだけを受け取ります。Local LLMが準備済みの場合だけ、そのスニペットから短い回答をこのMac上で作ります。モデルがない、失敗した、または出典を検証できない場合は、生成回答ではなくスニペットと出典を表示します。0.4.6以前にmacOS Keychainへ保存したOpenAI API keyは0.4.7のAI Researchでは使用せず、設定から削除できます。</span>
-            <span data-copy="en">kAIgi does not send recorded audio, the full transcript, saved card text, or other Research Memory content to the search services. Deep Research resends only the same query saved when its card was created and never derives a query from legacy card presentation text. It does not automatically fetch result pages; it receives bounded snippets and source URLs. Only when a Local LLM is prepared may kAIgi create a short answer from those snippets on this Mac. If the model is absent, fails, or cites unverifiable evidence, kAIgi shows snippets and sources instead of a generated answer. An OpenAI API key stored in macOS Keychain by 0.4.6 or earlier is not used by AI Research in 0.4.7 and can be deleted in Settings.</span>
+            <span data-copy="ja">検索サービスへ録音音声、文字起こし全文、保存済みカード本文、Research Memoryの他の内容は送りません。Deep Researchではカード作成時に保存した同じ検索語だけを再送し、その値がない旧カードの表示文を検索語へ転用しません。検索結果ページを自動取得せず、上限付きのスニペットと出典URLだけを受け取ります。同一検索条件の結果は最大10分だけprocess内メモリへ保持し、diskへ検索cacheを保存しません。Local LLMが準備済みの場合だけ、そのスニペットから短い回答をこのMac上で作ります。モデルがない、失敗した、または出典を検証できない場合は、生成回答ではなくスニペットと出典を表示します。0.4.6以前にmacOS Keychainへ保存したOpenAI API keyは0.4.8のAI Researchでは使用せず、設定から削除できます。</span>
+            <span data-copy="en">kAIgi does not send recorded audio, the full transcript, saved card text, or other Research Memory content to the search services. Deep Research resends only the same query saved when its card was created and never derives a query from legacy card presentation text. It does not automatically fetch result pages; it receives bounded snippets and source URLs. Results for the same search scope remain only in process memory for at most ten minutes; no search cache is stored on disk. Only when a Local LLM is prepared may kAIgi create a short answer from those snippets on this Mac. If the model is absent, fails, or cites unverifiable evidence, kAIgi shows snippets and sources instead of a generated answer. An OpenAI API key stored in macOS Keychain by 0.4.6 or earlier is not used by AI Research in 0.4.8 and can be deleted in Settings.</span>
           </p>
 
           <h2>
@@ -200,6 +200,10 @@
           <p>
             <span data-copy="ja">会議、通話、対面の会話を録音する場合は、録音を開始する前に参加者へ通知し、必要な同意を得てください。録音に関する法令や社内ルールは地域や組織により異なります。</span>
             <span data-copy="en">Before recording a meeting, call, or in-person conversation, notify participants and obtain any required consent. Recording rules vary by location and organization.</span>
+          </p>
+          <p>
+            <span data-copy="ja">kAIgiが前面にある間、Zoom、Google Meet、Teams等の既知アプリと会議らしいwindow titleを端末内で確認し、録音開始の候補を表示する場合があります。この検出で録音が自動開始することはありません。window titleは保存、log、外部送信しません。</span>
+            <span data-copy="en">While kAIgi is in front, it may locally inspect known apps such as Zoom, Google Meet, and Teams together with meeting-like window titles to offer a recording action. Detection never starts recording automatically. Window titles are not stored, logged, or transmitted.</span>
           </p>
 
           <h2>
