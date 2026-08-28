@@ -599,6 +599,12 @@ details p {
   background: var(--bg);
 }
 
+.policy-section {
+  padding: 64px 24px;
+  border-bottom: 1px solid rgba(244, 240, 232, 0.08);
+  background: var(--bg);
+}
+
 .narrow {
   width: min(840px, 100%);
   margin: 0 auto;

@@ -40,7 +40,7 @@
     <link rel="icon" href="./assets/app-icon-180.png">
     <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
     <script src="./site-preload.js"></script>
-    <link rel="stylesheet" href="./styles.css?v=0.4.8">
+    <link rel="stylesheet" href="./styles.css?v=0.4.9">
     <script defer src="./site.js"></script>
     <script type="application/ld+json">
       {
@@ -72,8 +72,8 @@
   </head>
   <body
     data-language="ja"
-    data-title-ja="CLI / Skills - kAIgi 0.4.8"
-    data-title-en="CLI / Skills - kAIgi 0.4.8"
+    data-title-ja="CLI / Skills - kAIgi 0.4.9"
+    data-title-en="CLI / Skills - kAIgi 0.4.9"
   >
     <a class="skip-link" href="#main-content">
       <span data-copy="ja">本文へ移動</span>
@@ -123,12 +123,12 @@
             <span data-copy="en">Take meetings and papers into the next task.</span>
           </h1>
           <p class="lead">
-            <span data-copy="ja">kAIgi CLIは録音・文字起こし・抽出済みの文献本文をローカルで扱います。0.4.8では会議と論文の正確な根拠に加え、文書全体への自分のノートも、引用可能な原文とは明確に分けてCodexやClaude Codeへ渡せます。</span>
-            <span data-copy="en">The kAIgi CLI works locally with recordings, transcripts, and extracted paper text. In 0.4.8, it can pass exact meeting and paper evidence to Codex or Claude Code together with your document-wide notes, explicitly separated from citable source text.</span>
+            <span data-copy="ja">kAIgi CLIは録音・文字起こし・抽出済みの文献本文をローカルで扱います。0.4.9では会議と論文の正確な根拠を、根拠ID・完全性・SHA-256付きのローカルpackageとしてCodexやClaude Codeへ明示的に引き渡せます。</span>
+            <span data-copy="en">The kAIgi CLI works locally with recordings, transcripts, and extracted paper text. In 0.4.9, it can explicitly package exact meeting and paper evidence for Codex or Claude Code with evidence IDs, completeness, and SHA-256 hashes.</span>
           </p>
           <p class="updated">
-            <span data-copy="ja">kAIgi 0.4.8</span>
-            <span data-copy="en">kAIgi 0.4.8</span>
+            <span data-copy="ja">kAIgi 0.4.9</span>
+            <span data-copy="en">kAIgi 0.4.9</span>
           </p>
         </div>
       </section>
@@ -330,7 +330,7 @@
                   <span data-copy="ja">統合 <code>context</code> で会議録と抽出済み文献を一度に探し、発話時刻・ページ・段落・本文ハッシュつきの根拠を渡します。CLIは回答やレビュー本文を生成しません。</span>
                   <span data-copy="en">Unified <code>context</code> searches transcripts and extracted papers together and returns evidence with utterance timing, page, passage, and source hashes. The CLI does not generate an answer or literature review.</span>
                 </p>
-                <p class="capability-command"><code>context</code> · <code>documents context</code> · <code>recordings inspect</code></p>
+                <p class="capability-command"><code>context</code> · <code>evidence-package</code> · <code>documents context</code> · <code>recordings inspect</code></p>
               </div>
             </article>
           </div>
@@ -405,6 +405,17 @@
               <p>
                 <span data-copy="ja">保存済みの会議録と抽出済み文献を横断し、正確な文字起こし区間とPDF段落を一つの有界なJSONへまとめます。各候補には元データのSHA-256、位置、一致語、次に深く読むためのコマンドが付きます。<code>completeness.recordings</code> と <code>completeness.documents</code> を確認してから、不在を判断してください。</span>
                 <span data-copy="en">Searches saved meetings and extracted papers and returns exact transcript intervals and PDF passages in one bounded JSON response. Each candidate includes source SHA-256, location, matched terms, and the next command for close reading. Check <code>completeness.recordings</code> and <code>completeness.documents</code> before concluding that evidence is absent.</span>
+              </p>
+            </article>
+            <article class="command-card" id="evidence-package-command">
+              <div class="command-heading">
+                <h3><code>kaigi evidence-package "embodied agency" --out evidence.json --best-effort</code></h3>
+                <span data-copy="ja">監査可能な根拠packageを作る</span>
+                <span data-copy="en">Create an auditable evidence package</span>
+              </div>
+              <p>
+                <span data-copy="ja"><code>context</code>と同じ有界検索結果へ根拠IDを付け、完全性、payloadとpackageのSHA-256、外部未送信のreceiptをローカルに保存します。元ファイルpath、Finder bookmark、PDF binaryは含みません。CLIはモデルを起動・送信しないため、外部モデルへ渡す操作は利用者が別途許可します。</span>
+                <span data-copy="en">Runs the same bounded retrieval as <code>context</code>, then writes local evidence IDs, completeness, payload/package SHA-256 hashes, and a receipt confirming no external transmission. It excludes source paths, Finder bookmarks, and PDF bytes. The CLI does not launch or contact a model; sending the package requires separate user authorization.</span>
               </p>
             </article>
             <article class="command-card" id="document-commands">

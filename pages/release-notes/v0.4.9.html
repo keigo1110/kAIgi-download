@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ja" data-language="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>kAIgi 0.4.9 - リリースノート</title>
+    <meta name="description" content="kAIgi 0.4.9のリリースノート。負荷に配慮したLocal AI、ページ別PDF診断、可視multi-query、根拠パッケージ、堅牢な保存と更新。">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0c0d10">
+    <meta property="og:site_name" content="kAIgi">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="kAIgi 0.4.9 - Bounded local intelligence and auditable evidence">
+    <meta property="og:description" content="Resource-aware Local AI, per-page PDF repair, visible multi-query research, and auditable evidence handoff.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.9.html">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="kAIgi 0.4.9">
+    <meta name="twitter:description" content="Resource-aware Gemma, selective PDF repair, visible multi-query research, and auditable evidence packages.">
+    <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.9.html">
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+    <link rel="icon" href="../assets/app-icon-180.png">
+    <link rel="apple-touch-icon" href="../assets/app-icon-180.png">
+    <script src="../site-preload.js"></script>
+    <link rel="stylesheet" href="../styles.css?v=0.4.9">
+    <script defer src="../site.js"></script>
+  </head>
+  <body data-language="ja" data-title-ja="kAIgi 0.4.9 - リリースノート" data-title-en="kAIgi 0.4.9 - Release notes">
+    <a class="skip-link" href="#main-content">
+      <span data-copy="ja">本文へ移動</span>
+      <span data-copy="en">Skip to content</span>
+    </a>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="kAIgi home">
+        <img src="../assets/app-icon-180.png" alt="" width="36" height="36">
+        <span>kAIgi</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html"><span data-copy="ja">トップ</span><span data-copy="en">Home</span></a>
+        <a href="../agent-skills.html">CLI / Skills</a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language">
+          <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
+          <button type="button" data-language-option="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="policy-hero" aria-labelledby="release-title">
+        <div class="narrow release-intro">
+          <p class="eyebrow">RELEASE / 0.4.9</p>
+          <h1 id="release-title"><span data-copy="ja">端末内AIを有界に。根拠を監査可能に。</span><span data-copy="en">Bound local intelligence. Audit the evidence.</span></h1>
+          <p class="lead"><span data-copy="ja">kAIgi 0.4.9は、Macの負荷と録音を優先するLocal AI、ページ別PDF補修、最大3つの可視検索語、5.6 Sol等へ渡せる根拠パッケージを追加し、録音・更新・配布の復旧境界も強化します。</span><span data-copy="en">kAIgi 0.4.9 adds recording-aware Local AI, per-page PDF repair, up to three visible search queries, and auditable evidence packages for a user-selected frontier model, while strengthening recording, update, and release recovery boundaries.</span></p>
+          <ul class="release-meta" aria-label="Release requirements">
+            <li>Version 0.4.9</li>
+            <li>Build 43</li>
+            <li>macOS 14+</li>
+            <li>Apple Silicon</li>
+          </ul>
+          <div class="release-actions">
+            <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">kAIgi 0.4.9をダウンロード</span><span data-copy="en">Download kAIgi 0.4.9</span></a>
+            <a class="button secondary" href="../privacy.html"><span data-copy="ja">プライバシー境界を確認</span><span data-copy="en">Review the privacy boundary</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">録音を優先しながら、Gemmaを賢く使う</span><span data-copy="en">Use Gemma intelligently while recording stays first</span></h2>
+        <p><span data-copy="ja">1つの資源ガバナが録音、メモリ負荷、発熱、低電力モードを確認し、重い任意処理を開始前に延期します。進行中の物理処理を途中で二重実行せず、高メモリMacでは有限時間warmに保ちます。</span><span data-copy="en">One resource governor considers recording, memory pressure, thermal state, and Low Power Mode before admitting optional heavy work. It does not overlap a retry with unfinished physical work, and keeps Gemma warm for a finite memory-tiered interval.</span></p>
+        <p><span data-copy="ja">ハーネスv3は2回までの生成上限を維持し、名前、数値、単位、範囲、日付、否定、不確実性、増減方向、因果を根拠へ照合します。競合値は分け、検証できない主張は公開しません。</span><span data-copy="en">Harness v3 keeps the two-generation ceiling while checking names, numbers, units, scope, dates, negation, uncertainty, direction, and causality against evidence. Conflicting values remain separate and unsupported claims are not published.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">PDFの不足ページだけを補修する</span><span data-copy="en">Repair only the PDF pages that need it</span></h2>
+        <p><span data-copy="ja">text layerをページごとに診断し、画像と文字が混在するPDFでも不足ページと理由を示します。OCRは自動開始せず、明示操作で推奨ページだけをApple Visionで端末内処理し、正常なtext layerを置き換えません。</span><span data-copy="en">kAIgi diagnoses each page's text layer so a mixed PDF can expose the pages and reasons that need repair. OCR never starts automatically; an explicit action runs Apple Vision only on recommended pages without replacing healthy text.</span></p>
+        <p><span data-copy="ja">固定されたtext／image／sparse／mixed／malformed PDFコーパスで抽出と構造入力を回帰確認できます。結果は従来どおり対訳、構造、コメント、Recall、CLIへ渡ります。</span><span data-copy="en">A fixed text, image, sparse, mixed, and malformed PDF corpus protects extraction and structure input from regressions. Accepted text continues into translation, Structure, comments, Recall, and the CLI.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">検索の幅を広げても、送信語は隠さない</span><span data-copy="en">Broaden research without hiding outbound queries</span></h2>
+        <p><span data-copy="ja">Deep Researchは主検索語と補助語最大2件を、期間・ドメインとともに送信前に表示・編集します。検索は順番に実行し、一部失敗でも成功結果を残し、同じURLを全検索語間で重複除去します。</span><span data-copy="en">Deep Research shows and lets you edit the primary query and up to two supplemental queries together with time and domain scope. Queries run sequentially, partial success is preserved, and duplicate URLs are removed across the combined results.</span></p>
+        <p><span data-copy="ja">hidden queryや結果ページ本文の自動取得はありません。DuckDuckGo／Wikipediaへ送る値、成功件数、provider状態は確認できます。</span><span data-copy="en">There are no hidden queries and no automatic result-page fetches. The UI exposes what goes to DuckDuckGo and Wikipedia, successful-query count, and provider status.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">5.6 Sol等へ、同じ根拠を監査可能に渡す</span><span data-copy="en">Hand the same evidence to a frontier model, auditably</span></h2>
+        <p><span data-copy="ja"><code>kaigi evidence-package</code>はAudioとTextを有界検索し、根拠ID、完全性、SHA-256を含むJSONとreceiptをローカル作成します。元ファイルpath、bookmark、PDF binaryは含みません。</span><span data-copy="en"><code>kaigi evidence-package</code> performs bounded Audio and Text retrieval and writes local JSON plus a receipt with evidence IDs, completeness, and SHA-256 hashes. It excludes source paths, bookmarks, and PDF bytes.</span></p>
+        <p><span data-copy="ja">CLIはモデルを起動せず外部送信もしません。パッケージにはprivate/untrusted textが含まれるため、選択した外部モデルへ渡す操作は利用者が別途許可します。</span><span data-copy="en">The CLI neither launches a model nor transmits the package. Because it contains private, untrusted source text, sending it to a selected external model requires separate user authorization.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">保存・復旧・更新をfail-closedにする</span><span data-copy="en">Fail closed across storage, recovery, and updates</span></h2>
+        <p><span data-copy="ja">録音はApplication Supportへ保存し、旧Documentsライブラリをno-overwriteで移行します。議論ログ、音声最終化、起動時回収、将来schemaのread-only表示を強化しました。</span><span data-copy="en">Recordings now live in Application Support, with a no-overwrite migration from the legacy Documents library. Discussion checkpoints, audio finalization, startup recovery, and read-only handling of future schemas are stronger.</span></p>
+        <p><span data-copy="ja">clean／dirty trial証跡を分離し、notarizationはKeychain profileだけを使います。正式版の自動更新はSparkleの同意後だけ、開発版は無効です。新しい認証済みAgent Skillも古い同梱版から保護します。</span><span data-copy="en">Clean and dirty trial evidence are distinct, notarization is Keychain-profile-only, release automatic checks follow Sparkle consent, development checks stay off, and a newer authenticated Agent Skill is protected from bundled downgrades.</span></p>
+      </div></section>
+    </main>
+
+    <footer class="site-footer">
+      <span aria-hidden="true"></span>
+      <p>&copy; 2026 kAIgi</p>
+      <div class="footer-links">
+        <a href="../index.html"><span data-copy="ja">トップ</span><span data-copy="en">Home</span></a>
+        <a href="../agent-skills.html">CLI / Skills</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
+      </div>
+    </footer>
+  </body>
+</html>
