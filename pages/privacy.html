@@ -39,7 +39,7 @@
     <link rel="icon" href="./assets/app-icon-180.png">
     <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
     <script src="./site-preload.js"></script>
-    <link rel="stylesheet" href="./styles.css?v=0.4.9">
+    <link rel="stylesheet" href="./styles.css?v=0.4.10">
     <script defer src="./site.js"></script>
   </head>
   <body
@@ -189,12 +189,12 @@
             <span data-copy="en">AI Research and web search</span>
           </h2>
           <p>
-            <span data-copy="ja">0.4.9のAI ResearchはOpenAI APIやAPI keyを使いません。ユーザーがAI Researchを有効にした場合、アプリに同梱したSearXNGを通してDuckDuckGoとWikipediaへ、1件あたり最大256文字の検索語を送信します。Deep Researchでは、主検索語と補助検索語最大2件、期間、最大4件のドメイン指定をユーザーが送信前に確認・編集します。検索語には常に簡易マスキングを適用しますが、これは完全な匿名化ではなく、敬称のない人名、社名、住所、文脈依存の固有名詞を検出できない場合があります。新規インストールではAI Researchはオフです。</span>
-            <span data-copy="en">AI Research in 0.4.9 does not use the OpenAI API or an API key. When the user enables AI Research, the bundled SearXNG runtime sends queries of at most 256 characters each to DuckDuckGo and Wikipedia. For Deep Research, the user reviews and edits the primary query, up to two supplemental queries, the time range, and up to four domain restrictions before submission. kAIgi always applies lightweight masking to every query, but this is not complete anonymization and may miss names without honorifics, company names, addresses, and context-specific proper nouns. AI Research is off on a new installation.</span>
+            <span data-copy="ja">0.4.9以降のAI ResearchはOpenAI APIやAPI keyを使いません。ユーザーがAI Researchを有効にした場合、アプリに同梱したSearXNGを通してDuckDuckGoとWikipediaへ、1件あたり最大256文字の検索語を送信します。Deep Researchでは、主検索語と補助検索語最大2件、期間、最大4件のドメイン指定をユーザーが送信前に確認・編集します。検索語には常に簡易マスキングを適用しますが、これは完全な匿名化ではなく、敬称のない人名、社名、住所、文脈依存の固有名詞を検出できない場合があります。新規インストールではAI Researchはオフです。</span>
+            <span data-copy="en">Starting with 0.4.9, AI Research does not use the OpenAI API or an API key. When the user enables AI Research, the bundled SearXNG runtime sends queries of at most 256 characters each to DuckDuckGo and Wikipedia. For Deep Research, the user reviews and edits the primary query, up to two supplemental queries, the time range, and up to four domain restrictions before submission. kAIgi always applies lightweight masking to every query, but this is not complete anonymization and may miss names without honorifics, company names, addresses, and context-specific proper nouns. AI Research is off on a new installation.</span>
           </p>
           <p>
-            <span data-copy="ja">検索サービスへ録音音声、文字起こし全文、保存済みカード本文、Research Memoryの他の内容は送りません。Deep Researchは表示した検索語を順番に送信し、一部が失敗しても成功結果だけを利用できます。その値がない旧カードの表示文を検索語へ転用しません。検索結果ページを自動取得せず、上限付きのスニペットと出典URLだけを受け取り、全検索語間でURLを重複除去します。同一検索条件の結果は最大10分だけprocess内メモリへ保持し、diskへ検索cacheを保存しません。Local LLMが準備済みの場合だけ、そのスニペットから短い回答をこのMac上で作ります。モデルがない、失敗した、または出典を検証できない場合は、生成回答ではなくスニペットと出典を表示します。0.4.6以前にmacOS Keychainへ保存したOpenAI API keyは0.4.9のAI Researchでは使用せず、設定から削除できます。</span>
-            <span data-copy="en">kAIgi does not send recorded audio, the full transcript, saved card text, or other Research Memory content to the search services. Deep Research sends only the displayed queries, sequentially, and may use successful results when another query fails. It never derives a query from legacy card presentation text. It does not automatically fetch result pages; it receives bounded snippets and source URLs and de-duplicates URLs across all queries. Results for the same search scope remain only in process memory for at most ten minutes; no search cache is stored on disk. Only when a Local LLM is prepared may kAIgi create a short answer from those snippets on this Mac. If the model is absent, fails, or cites unverifiable evidence, kAIgi shows snippets and sources instead of a generated answer. An OpenAI API key stored in macOS Keychain by 0.4.6 or earlier is not used by AI Research in 0.4.9 and can be deleted in Settings.</span>
+            <span data-copy="ja">検索サービスへ録音音声、文字起こし全文、保存済みカード本文、Research Memoryの他の内容は送りません。Deep Researchは表示した検索語を順番に送信し、一部が失敗しても成功結果だけを利用できます。その値がない旧カードの表示文を検索語へ転用しません。検索結果ページを自動取得せず、上限付きのスニペットと出典URLだけを受け取り、全検索語間でURLを重複除去します。同一検索条件の結果は最大10分だけprocess内メモリへ保持し、diskへ検索cacheを保存しません。Local LLMが準備済みの場合だけ、そのスニペットから短い回答をこのMac上で作ります。モデルがない、失敗した、または出典を検証できない場合は、生成回答ではなくスニペットと出典を表示します。0.4.6以前にmacOS Keychainへ保存したOpenAI API keyは0.4.9以降のAI Researchでは使用せず、設定から削除できます。</span>
+            <span data-copy="en">kAIgi does not send recorded audio, the full transcript, saved card text, or other Research Memory content to the search services. Deep Research sends only the displayed queries, sequentially, and may use successful results when another query fails. It never derives a query from legacy card presentation text. It does not automatically fetch result pages; it receives bounded snippets and source URLs and de-duplicates URLs across all queries. Results for the same search scope remain only in process memory for at most ten minutes; no search cache is stored on disk. Only when a Local LLM is prepared may kAIgi create a short answer from those snippets on this Mac. If the model is absent, fails, or cites unverifiable evidence, kAIgi shows snippets and sources instead of a generated answer. An OpenAI API key stored in macOS Keychain by 0.4.6 or earlier is not used by AI Research starting with 0.4.9 and can be deleted in Settings.</span>
           </p>
 
           <h2>
@@ -206,8 +206,20 @@
             <span data-copy="en">Before recording a meeting, call, or in-person conversation, notify participants and obtain any required consent. Recording rules vary by location and organization.</span>
           </p>
           <p>
-            <span data-copy="ja">kAIgiが前面にある間、Zoom、Google Meet、Teams等の既知アプリと会議らしいwindow titleを端末内で確認し、録音開始の候補を表示する場合があります。この検出で録音が自動開始することはありません。window titleは保存、log、外部送信しません。</span>
-            <span data-copy="en">While kAIgi is in front, it may locally inspect known apps such as Zoom, Google Meet, and Teams together with meeting-like window titles to offer a recording action. Detection never starts recording automatically. Window titles are not stored, logged, or transmitted.</span>
+            <span data-copy="ja">kAIgiの実行中、設定で有効な場合はZoom、Google Meet、Microsoft Teams等の既知アプリと会議らしい有界なwindow titleを端末内で確認し、常駐UIへ録音候補を表示することがあります。全体またはサービスごとに検出を無効化できます。この検出で録音、権限要求、スクリーンショットが自動開始することはありません。window titleは保存、log、外部送信しません。</span>
+            <span data-copy="en">While kAIgi is running and detection is enabled, it may locally inspect known apps such as Zoom, Google Meet, and Microsoft Teams together with bounded meeting-like window titles and surface a recording suggestion in resident controls. Detection can be disabled globally or per service. It never starts recording, permission requests, or screenshots automatically. Window titles are not stored, logged, or transmitted.</span>
+          </p>
+          <p>
+            <span data-copy="ja">メニューバーまたは任意のノッチUIにある赤い「録音を開始」を押すと、その画面に表示されているスピーカー／マイクとAudioプロジェクトの条件で録音を開始します。このクリックはユーザー自身の明示要求であり、会議検出が代わりに実行することはありません。少なくとも1つの音源を選ぶ必要があります。</span>
+            <span data-copy="en">Pressing the red Start Recording control in the menu bar or optional notch UI starts with the visible system-audio, microphone, and Audio-project choices. That click is the user's explicit request; meeting detection never performs it on the user's behalf. At least one audio source must remain selected.</span>
+          </p>
+          <p>
+            <span data-copy="ja">ライブ対訳は既定でオフです。有効にした場合も、確定済み発話だけをApple Translationで端末内処理し、原文を残したまま表示します。数字や保護されたプロジェクト固有名詞を保持できない結果は表示せず、対訳で正本の文字起こしを上書きしません。履歴を開くだけで新しい翻訳を開始しません。</span>
+            <span data-copy="en">Live translation is off by default. When enabled, it uses Apple Translation on device only for confirmed utterances and displays the result without replacing the original. Results that fail to preserve numbers or protected project terms are withheld, translations never overwrite the canonical transcript, and merely opening history does not start new translation work.</span>
+          </p>
+          <p>
+            <span data-copy="ja">録音中の「ウインドウを根拠として保存」を明示的に押した場合だけ、クリック直前に前面だった通常アプリのウインドウをScreenCaptureKitで1回撮影します。PNG、アプリ名、有界なウインドウ名、録音内時刻、端末内OCR結果をVisualデータとして保存し、検索と録音時刻への移動に使います。自動撮影やスライド切替監視は行わず、画像やOCR本文を外部へ送信しません。画面収録権限と保存対象の機密性はユーザーが管理します。</span>
+            <span data-copy="en">Only when the user explicitly chooses Save Window as Evidence during recording does kAIgi capture the previously active ordinary-app window once with ScreenCaptureKit. It stores the PNG, app name, bounded window name, recording-relative time, and on-device OCR result as Visual data for search and timeline navigation. kAIgi does not automatically capture screens or watch for slide changes, and it does not transmit the image or OCR text externally. The user controls Screen Recording permission and the sensitivity of the selected window.</span>
           </p>
 
           <h2>

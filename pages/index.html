@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>kAIgi 0.4.9 - 録音を優先する端末内AIと監査可能な根拠</title>
+    <title>kAIgi 0.4.10 - 会議へすぐ入れる常駐録音と端末内AI</title>
     <meta
       name="description"
-      content="kAIgiは、会議をローカルで録音・文字起こしし、録音を優先するGemma QATと根拠検証ハーネスv3、ページ別PDF補修、送信前に見える複数検索語、CLI向け根拠パッケージを備えるmacOSアプリです。"
+      content="kAIgiは、メニューバーから明示的に録音を開始し、会議検出、プロジェクト固有名詞、ライブ対訳、画面根拠、ページ別PDF補修をMac上で扱うmacOSアプリです。"
     >
     <meta name="robots" content="index,follow">
     <meta name="application-name" content="kAIgi">
@@ -15,10 +15,10 @@
     <meta property="og:site_name" content="kAIgi">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:title" content="kAIgi 0.4.9 - Bounded local intelligence and auditable evidence">
+    <meta property="og:title" content="kAIgi 0.4.10 - Resident meeting controls and on-device intelligence">
     <meta
       property="og:description"
-      content="Keep recording responsive with bounded local Gemma, repair PDFs page by page, inspect every research query, and export auditable evidence."
+      content="Start recording from resident controls, preserve confirmed speech beside live translation, capture explicit visual evidence, and repair PDFs page by page."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/">
@@ -27,21 +27,21 @@
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="kAIgi 0.4.9 - bounded local intelligence and auditable evidence">
+    <meta property="og:image:alt" content="kAIgi 0.4.10 - resident meeting controls and on-device intelligence">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="kAIgi 0.4.9 - Bounded local intelligence and auditable evidence">
+    <meta name="twitter:title" content="kAIgi 0.4.10 - Resident meeting controls and on-device intelligence">
     <meta
       name="twitter:description"
-      content="Keep recording responsive with bounded local Gemma, repair PDFs page by page, inspect every research query, and export auditable evidence."
+      content="Start recording from resident controls, preserve confirmed speech beside live translation, capture explicit visual evidence, and repair PDFs page by page."
     >
     <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
-    <meta name="twitter:image:alt" content="kAIgi 0.4.9 - bounded local intelligence and auditable evidence">
+    <meta name="twitter:image:alt" content="kAIgi 0.4.10 - resident meeting controls and on-device intelligence">
     <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/">
     <link rel="sitemap" type="application/xml" href="./sitemap.xml">
     <link rel="icon" href="./assets/app-icon-180.png">
     <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
     <script src="./site-preload.js"></script>
-    <link rel="stylesheet" href="./styles.css?v=0.4.9">
+    <link rel="stylesheet" href="./styles.css?v=0.4.10">
     <script defer src="./site.js"></script>
     <script type="application/ld+json">
       {
@@ -50,11 +50,11 @@
         "name": "kAIgi",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "macOS 14+",
-        "description": "kAIgiは、会議をローカルで録音・文字起こしし、録音を優先するGemma QATと根拠検証ハーネスv3、ページ別PDF補修、送信前に見える複数検索語、CLI向け根拠パッケージを備えるmacOSアプリです。",
+        "description": "kAIgiは、メニューバーから明示的に録音を開始し、会議検出、プロジェクト固有名詞、ライブ対訳、画面根拠、ページ別PDF補修をMac上で扱うmacOSアプリです。",
         "url": "https://keigo1110.github.io/kAIgi-download/",
         "downloadUrl": "https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg",
         "image": "https://keigo1110.github.io/kAIgi-download/assets/ogp.png",
-        "softwareVersion": "0.4.9",
+        "softwareVersion": "0.4.10",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -65,8 +65,8 @@
   </head>
   <body
     data-language="ja"
-    data-title-ja="kAIgi 0.4.9 - 録音を優先する端末内AIと監査可能な根拠"
-    data-title-en="kAIgi 0.4.9 - Bounded local intelligence and auditable evidence"
+    data-title-ja="kAIgi 0.4.10 - 会議へすぐ入れる常駐録音と端末内AI"
+    data-title-en="kAIgi 0.4.10 - Resident meeting controls and on-device intelligence"
   >
     <a class="skip-link" href="#top">
       <span data-copy="ja">本文へ移動</span>
@@ -114,13 +114,13 @@
             </p>
             <div class="hero-actions" id="download">
               <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
-                <span data-copy="ja">kAIgi 0.4.9をダウンロード</span>
-                <span data-copy="en">Download kAIgi 0.4.9</span>
+                <span data-copy="ja">kAIgi 0.4.10をダウンロード</span>
+                <span data-copy="en">Download kAIgi 0.4.10</span>
               </a>
-              <a class="hero-release-link" href="./release-notes/v0.4.9.html">
-                <strong>0.4.9</strong>
-                <span data-copy="ja">有界Local AI、ページ別PDF補修、監査可能な根拠</span>
-                <span data-copy="en">Bounded Local AI, page-level PDF repair, auditable evidence</span>
+              <a class="hero-release-link" href="./release-notes/v0.4.10.html">
+                <strong>0.4.10</strong>
+                <span data-copy="ja">常駐録音、ライブ対訳、画面根拠、Liquid Glass</span>
+                <span data-copy="en">Resident recording, live translation, visual evidence, Liquid Glass</span>
                 <span aria-hidden="true">↗</span>
               </a>
             </div>
@@ -256,10 +256,10 @@
       <section class="band intro-band release-feature-band" id="research" aria-labelledby="research-title">
         <div class="content-grid">
           <div>
-            <p class="section-kicker">kAIgi 0.4.9 / Bounded Local AI + Auditable Evidence</p>
+            <p class="section-kicker">kAIgi 0.4.10 / Resident Meeting Intelligence</p>
             <h2 id="research-title">
-              <span data-copy="ja">Gemmaで根拠から答え、<br>会議をWeb調査へ。</span>
-              <span data-copy="en">Answer from evidence.<br>Research the meeting.</span>
+              <span data-copy="ja">会議を離れず録音し、<br>確定発話と画面を根拠へ。</span>
+              <span data-copy="en">Record without leaving the meeting.<br>Keep speech and visuals as evidence.</span>
             </h2>
           </div>
           <div class="release-feature-content">
@@ -267,41 +267,41 @@
               <article class="feature">
                 <span class="feature-mark">01</span>
                 <h3>
-                  <span data-copy="ja">録音を優先してGemmaを使う</span>
-                  <span data-copy="en">Keep recording ahead of Gemma</span>
+                  <span data-copy="ja">メニューバーから、その場で録音する</span>
+                  <span data-copy="en">Record directly from resident controls</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">録音、メモリ負荷、発熱、低電力モードを1つの資源ガバナが確認し、重い任意処理を開始前に延期します。ハーネスv3は根拠と主張を照合し、未検証の断定を公開しません。</span>
-                  <span data-copy="en">One resource governor considers recording, memory pressure, thermal state, and Low Power Mode before optional heavy work starts. Harness v3 checks claims against evidence and withholds unsupported assertions.</span>
+                  <span data-copy="ja">スピーカー／マイクとAudioプロジェクトを確認し、赤いボタンからメインウインドウを開かず録音を開始できます。会議検出が録音を自動開始することはありません。</span>
+                  <span data-copy="en">Review system audio, microphone, and Audio project state, then start from the red button without opening the main window. Meeting detection never starts recording automatically.</span>
                 </p>
               </article>
               <article class="feature">
                 <span class="feature-mark">02</span>
                 <h3>
-                  <span data-copy="ja">PDFをページ単位で診断・補修する</span>
-                  <span data-copy="en">Diagnose and repair PDFs page by page</span>
+                  <span data-copy="ja">確定発話だけを対訳し、原文を残す</span>
+                  <span data-copy="en">Translate confirmed speech without replacing it</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">text layerをページごとに評価し、不足ページと理由を表示します。OCRは明示操作で推奨ページだけをApple Visionにより端末内処理し、正常な本文は置き換えません。</span>
-                  <span data-copy="en">kAIgi evaluates each page's text layer and shows which pages need repair and why. An explicit action runs on-device Apple Vision only for recommended pages without replacing healthy text.</span>
+                  <span data-copy="ja">ライブ対訳は確定済み発話だけを処理し、原文の直下へ表示します。数字やプロジェクト固有名詞を失った結果は隠し、元の文字起こしを上書きしません。</span>
+                  <span data-copy="en">Live translation processes only confirmed utterances and appears beneath the original. Results that lose numbers or protected project terms are hidden, and source transcripts are never overwritten.</span>
                 </p>
               </article>
               <article class="feature">
                 <span class="feature-mark">03</span>
                 <h3>
-                  <span data-copy="ja">検索語と根拠の受け渡しを監査する</span>
-                  <span data-copy="en">Audit research queries and evidence handoff</span>
+                  <span data-copy="ja">画面とPDFを、明示操作で根拠にする</span>
+                  <span data-copy="en">Capture visual and PDF evidence explicitly</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">Deep Researchは最大3つの検索語を期間・ドメインとともに送信前に表示します。CLIは同じ根拠をID・完全性・SHA-256付きパッケージへまとめ、選んだ外部モデルへ自分で渡せます。</span>
-                  <span data-copy="en">Deep Research shows up to three queries with time and domain scope before sending. The CLI packages the same evidence with IDs, completeness, and SHA-256 for a user-controlled handoff to a selected external model.</span>
+                  <span data-copy="ja">録音中に直前の前面ウインドウを1回だけ保存し、録音時刻と端末内OCRへ結びます。PDFは補修ページを選んでからOCRし、実論文評価も元PDFをコピーせず明示的に実行します。</span>
+                  <span data-copy="en">During recording, save the previously active window once and bind it to the recording time and on-device OCR. PDF OCR remains page-selective, while real-paper evaluation is explicit and never copies source PDFs.</span>
                 </p>
               </article>
             </div>
             <div class="release-feature-links">
-              <a href="./release-notes/v0.4.9.html">
-                <span data-copy="ja">0.4.9の変更点とプライバシー境界</span>
-                <span data-copy="en">0.4.9 changes and privacy boundaries</span>
+              <a href="./release-notes/v0.4.10.html">
+                <span data-copy="ja">0.4.10の変更点とプライバシー境界</span>
+                <span data-copy="en">0.4.10 changes and privacy boundaries</span>
                 <span aria-hidden="true">→</span>
               </a>
               <a href="./agent-skills.html#document-commands">
@@ -475,8 +475,8 @@
             </h2>
           </div>
           <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
-            <span data-copy="ja">kAIgi 0.4.9をダウンロード</span>
-            <span data-copy="en">Download kAIgi 0.4.9</span>
+            <span data-copy="ja">kAIgi 0.4.10をダウンロード</span>
+            <span data-copy="en">Download kAIgi 0.4.10</span>
           </a>
         </div>
       </section>
@@ -557,9 +557,9 @@
           <span data-copy="ja">CLI / Skills</span>
           <span data-copy="en">CLI / Skills</span>
         </a>
-        <a href="./release-notes/v0.4.9.html">
-          <span data-copy="ja">0.4.9 リリースノート</span>
-          <span data-copy="en">0.4.9 Release notes</span>
+        <a href="./release-notes/v0.4.10.html">
+          <span data-copy="ja">0.4.10 リリースノート</span>
+          <span data-copy="en">0.4.10 Release notes</span>
         </a>
         <a href="./privacy.html">Privacy Policy</a>
         <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>

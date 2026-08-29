@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ja" data-language="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>kAIgi 0.4.10 - リリースノート</title>
+    <meta name="description" content="kAIgi 0.4.10のリリースノート。常駐録音、会議検出、プロジェクト固有名詞、ライブ対訳、画面根拠、実PDF評価、Liquid Glass。">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0c0d10">
+    <meta property="og:site_name" content="kAIgi">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="kAIgi 0.4.10 - Resident meeting controls and grounded context">
+    <meta property="og:description" content="Resident recording controls, local meeting assistance, confirmed-only live translation, explicit visual evidence, and bounded Liquid Glass.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.10.html">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="kAIgi 0.4.10">
+    <meta name="twitter:description" content="Start from resident controls, preserve original speech beside live translation, and capture visual evidence explicitly.">
+    <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.10.html">
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+    <link rel="icon" href="../assets/app-icon-180.png">
+    <link rel="apple-touch-icon" href="../assets/app-icon-180.png">
+    <script src="../site-preload.js"></script>
+    <link rel="stylesheet" href="../styles.css?v=0.4.10">
+    <script defer src="../site.js"></script>
+  </head>
+  <body data-language="ja" data-title-ja="kAIgi 0.4.10 - リリースノート" data-title-en="kAIgi 0.4.10 - Release notes">
+    <a class="skip-link" href="#main-content">
+      <span data-copy="ja">本文へ移動</span>
+      <span data-copy="en">Skip to content</span>
+    </a>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="kAIgi home">
+        <img src="../assets/app-icon-180.png" alt="" width="36" height="36">
+        <span>kAIgi</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html"><span data-copy="ja">トップ</span><span data-copy="en">Home</span></a>
+        <a href="../agent-skills.html">CLI / Skills</a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language">
+          <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
+          <button type="button" data-language-option="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="policy-hero" aria-labelledby="release-title">
+        <div class="narrow release-intro">
+          <p class="eyebrow">RELEASE / 0.4.10</p>
+          <h1 id="release-title"><span data-copy="ja">会議を離れず、録音と根拠を手元に。</span><span data-copy="en">Stay in the meeting. Keep recording and evidence at hand.</span></h1>
+          <p class="lead"><span data-copy="ja">kAIgi 0.4.10は、メニューバーと任意のノッチUIからの明示録音、設定可能な会議検出、プロジェクト固有名詞、確定発話だけのライブ対訳、時刻に紐づく画面根拠を追加し、PDF評価とSwiftUI描画境界も強化します。</span><span data-copy="en">kAIgi 0.4.10 adds explicit recording from the menu bar and optional notch UI, configurable meeting detection, project terminology, confirmed-only live translation, and time-linked visual evidence, while strengthening PDF evaluation and SwiftUI rendering boundaries.</span></p>
+          <ul class="release-meta" aria-label="Release requirements">
+            <li>Version 0.4.10</li>
+            <li>Build 44</li>
+            <li>macOS 14+</li>
+            <li>Apple Silicon</li>
+          </ul>
+          <div class="release-actions">
+            <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">kAIgi 0.4.10をダウンロード</span><span data-copy="en">Download kAIgi 0.4.10</span></a>
+            <a class="button secondary" href="../privacy.html"><span data-copy="ja">プライバシー境界を確認</span><span data-copy="en">Review the privacy boundary</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">常駐操作から、表示中の条件ですぐ録音</span><span data-copy="en">Start immediately with the choices shown</span></h2>
+        <p><span data-copy="ja">nativeなメニューバーでスピーカー／マイクとAudioプロジェクトを確認し、赤い「録音を開始」からメインウインドウを開かずに録音できます。停止、画面根拠の保存、kAIgiを開く操作も同じ面にあります。</span><span data-copy="en">Review system audio, microphone, and Audio-project choices in the native menu bar, then use the red Start Recording control without opening the main window. Stop, visual-evidence capture, and Open kAIgi remain on the same surface.</span></p>
+        <p><span data-copy="ja">ノッチ付きMacでは同じ操作を任意のクリック式UIへ表示し、ノッチのない画面では上端カプセルへ戻ります。Reduce Motionを尊重し、nativeなメニューバーは常にfallbackとして残ります。</span><span data-copy="en">On a notched Mac, the same controls can appear in an optional click-only surface; displays without a notch use a top capsule. Motion respects Reduce Motion, and the native menu-bar control always remains available.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">会議検出と固有名詞を、録音の前から準備</span><span data-copy="en">Prepare meeting detection and terminology before recording</span></h2>
+        <p><span data-copy="ja">Zoom、Google Meet、Microsoft Teamsの既知アプリと会議らしい有界なwindow情報を端末内で照合します。全体またはサービスごとに無効化でき、検出が録音、権限要求、スクリーンショットを開始することはありません。</span><span data-copy="en">kAIgi locally checks known Zoom, Google Meet, and Microsoft Teams apps together with bounded meeting-like window information. Detection can be disabled globally or per service and never starts recording, permission requests, or screenshots.</span></p>
+        <p><span data-copy="ja">任意のAudioプロジェクトへ会社名、製品名、人名など最大40語を登録し、その録音のApple Speech文脈へ優先的に渡せます。過去資料から議題候補を作る会議前メモも明示ボタンで準備します。</span><span data-copy="en">An optional Audio project can contribute up to 40 company, product, and person names to that recording's Apple Speech context. A separate explicit action prepares a pre-meeting brief from prior project evidence.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">原文を残すライブ対訳と、時刻に紐づく画面根拠</span><span data-copy="en">Live translation that preserves source speech, plus time-linked visual evidence</span></h2>
+        <p><span data-copy="ja">ライブ対訳は既定でOFFです。有効時も確定済み発話だけを端末内処理し、原文の直下へ表示します。数字や保護された固有名詞を失った訳は表示せず、正本の文字起こしを上書きしません。</span><span data-copy="en">Live translation is off by default. When enabled, it processes only confirmed utterances on device and appears beneath the source. Results that lose numbers or protected terms are withheld, and the canonical transcript is never overwritten.</span></p>
+        <p><span data-copy="ja">録音中の明示クリックで、直前の前面ウインドウを1回だけ撮影し、PNG、有界なwindow情報、録音内時刻、端末内OCRをVisualデータへ保存できます。自動撮影やスライド切替監視は行いません。</span><span data-copy="en">An explicit click during recording captures the previously active window once and stores the PNG, bounded window information, recording-relative time, and on-device OCR as Visual data. There is no automatic capture or slide-change monitoring.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">実論文をコピーせず、PDF品質を評価</span><span data-copy="en">Evaluate real papers without copying their PDFs</span></h2>
+        <p><span data-copy="ja">同意済みの二段組、表、図、脚注、scan PDFを、仮名case IDとhashだけのfrozen manifestで評価できるlocal laneを追加しました。元PDF、title、path、本文、OCR textをrepositoryやreportへコピーしません。</span><span data-copy="en">A local lane can evaluate consented two-column, table, figure, footnote, and scanned PDFs through a frozen manifest containing pseudonymous case IDs and hashes. Source PDFs, titles, paths, prose, and OCR text are not copied into the repository or reports.</span></p>
+        <p><span data-copy="ja">製品のOCRは従来どおり明示操作です。前後previewと対象pageを確認し、不足pageだけをApple Visionで補修します。Harness v3の追加敵対的評価は、実失敗を先にfreezeした別splitを用意するまで延期します。</span><span data-copy="en">Product OCR remains explicit: review before and after previews, select pages, and repair only missing text with Apple Vision. Additional adversarial Harness v3 evaluation remains deferred until real failures are frozen into a separate split first.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">必要な面だけLiquid Glass、必要な値だけ再描画</span><span data-copy="en">Liquid Glass only where it belongs, rendering only when values change</span></h2>
+        <p><span data-copy="ja">常駐UIは録音、会議検出、画面根拠の小さな表示snapshotだけを監視します。表示値が変わらない診断pollやlibrary更新を重複排除し、同値の状態保存と重複animationも削減しました。</span><span data-copy="en">Resident UI observes small recording, meeting, and evidence presentation snapshots. Equal diagnostic polls and library updates are deduplicated, while no-op state writes and duplicate implicit animations are removed.</span></p>
+        <p><span data-copy="ja">macOS 26ではheader、検索、status、常駐操作などの浮遊chromeへnative Liquid Glassを限定適用します。本文cardやwindow全体へ反復せず、macOS 14／15ではmaterialとbordered controlへ安全に戻ります。</span><span data-copy="en">On macOS 26, native Liquid Glass is limited to floating chrome such as headers, search, status, and resident controls. It is not repeated across content cards or the whole window, and macOS 14 and 15 retain material and bordered fallbacks.</span></p>
+      </div></section>
+    </main>
+
+    <footer class="site-footer">
+      <span aria-hidden="true"></span>
+      <p>&copy; 2026 kAIgi</p>
+      <div class="footer-links">
+        <a href="../index.html"><span data-copy="ja">トップ</span><span data-copy="en">Home</span></a>
+        <a href="../agent-skills.html">CLI / Skills</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
+      </div>
+    </footer>
+  </body>
+</html>
