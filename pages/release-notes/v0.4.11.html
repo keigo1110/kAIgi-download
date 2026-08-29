@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ja" data-language="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>kAIgi 0.4.11 - リリースノート</title>
+    <meta name="description" content="kAIgi 0.4.11のリリースノート。hover対応ノッチ、ライブ対訳、スライド根拠、話者修正、PDF品質gate、5.6 Sol連携。">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0c0d10">
+    <meta property="og:site_name" content="kAIgi">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="kAIgi 0.4.11 - Intent-aware meeting controls and measurable quality">
+    <meta property="og:description" content="Hover-ready notch controls, automatic-language live translation, session-scoped slide evidence, durable speaker corrections, and frozen quality gates.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.11.html">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="kAIgi 0.4.11">
+    <meta name="twitter:description" content="Smoother resident controls, source-preserving live translation, session-scoped slide evidence, and review-bound agent postprocessing.">
+    <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.11.html">
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+    <link rel="icon" href="../assets/app-icon-180.png">
+    <link rel="apple-touch-icon" href="../assets/app-icon-180.png">
+    <script src="../site-preload.js"></script>
+    <link rel="stylesheet" href="../styles.css?v=0.4.11">
+    <script defer src="../site.js"></script>
+  </head>
+  <body data-language="ja" data-title-ja="kAIgi 0.4.11 - リリースノート" data-title-en="kAIgi 0.4.11 - Release notes">
+    <a class="skip-link" href="#main-content">
+      <span data-copy="ja">本文へ移動</span>
+      <span data-copy="en">Skip to content</span>
+    </a>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="kAIgi home">
+        <img src="../assets/app-icon-180.png" alt="" width="36" height="36">
+        <span>kAIgi</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html"><span data-copy="ja">トップ</span><span data-copy="en">Home</span></a>
+        <a href="../agent-skills.html">CLI / Skills</a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language">
+          <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
+          <button type="button" data-language-option="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="policy-hero" aria-labelledby="release-title">
+        <div class="narrow release-intro">
+          <p class="eyebrow">RELEASE / 0.4.11</p>
+          <h1 id="release-title"><span data-copy="ja">会議の流れを止めず、根拠の質まで見える。</span><span data-copy="en">Stay in the flow, and see the quality of the evidence.</span></h1>
+          <p class="lead"><span data-copy="ja">kAIgi 0.4.11は、hoverで開く落ち着いたノッチ、入力言語を自動判定するライブ対訳、セッション限定のスライド根拠、維持される話者修正、凍結holdoutによる品質評価、reviewに結び付いた5.6 Sol連携を追加します。</span><span data-copy="en">kAIgi 0.4.11 adds a calmer hover-ready notch, automatic-source live translation, session-scoped slide evidence, durable speaker corrections, frozen-holdout quality evaluation, and review-bound 5.6 Sol handoff.</span></p>
+          <ul class="release-meta" aria-label="Release requirements">
+            <li>Version 0.4.11</li>
+            <li>Build 45</li>
+            <li>macOS 14+</li>
+            <li>Apple Silicon</li>
+          </ul>
+          <div class="release-actions">
+            <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">最新のkAIgiをダウンロード</span><span data-copy="en">Download the latest kAIgi</span></a>
+            <a class="button secondary" href="../privacy.html"><span data-copy="ja">プライバシー境界を確認</span><span data-copy="en">Review the privacy boundary</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">一つの常駐面を、触れる前から使いやすく</span><span data-copy="en">One resident surface, ready before the click</span></h2>
+        <p><span data-copy="ja">ノッチは既定で有効になり、短いhover intent、クリック、または対応会議の新規検出で開きます。会議検出はメインウインドウを開かず、録音も始めません。録音／停止を独立した主操作の行にし、画面根拠とOpenを補助行へ分け、終了は文字付きの中立色で区別しました。hoverや検出で開いた直後から操作色も正しく表示します。</span><span data-copy="en">The notch is enabled by default and opens after brief hover intent, a click, or a newly detected supported meeting. Detection neither opens the main window nor starts recording. Start/Stop owns a dedicated primary row; visual evidence and Open move below it, while a neutral text-labelled Quit stays distinct. Controls retain their intended appearance immediately after hover or detected-meeting expansion.</span></p>
+        <p><span data-copy="ja">ノッチ表示中はメニューバー項目を重複表示しません。設定でOFFにするとnativeなメニューバーへ切り替わり、ノッチのない画面では上端カプセルを使います。Textプロジェクトは閉じた状態から始まり、構造・ノート・対訳・質問は切替時も同じ位置のセグメントを保ちます。プロジェクトを開くクリックでは青いfocus枠をちらつかせません。Audioプロジェクトの設定から、そのプロジェクトだけの固有名詞辞書も編集できます。</span><span data-copy="en">The menu-bar item is hidden while the notch is enabled; turning it off switches to the native menu-bar surface, while non-notched displays use a top capsule. Text projects start closed, and Structure, Notes, Translation, and Questions remain in one fixed-position segmented control. Opening a project no longer flashes the oversized blue focus ring. Each Audio project's settings also exposes its project-only proper-noun dictionary.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">原文を守る対訳と、前回を優先する会議準備</span><span data-copy="en">Source-preserving translation and freshness-aware preparation</span></h2>
+        <p><span data-copy="ja">ライブ対訳は確定発話ごとに入力言語を自動判定し、原文の下へ採用済み翻訳を表示します。数字や登録済み固有名詞を失った結果は拒否し、本文を保存しないcurrent-session metricsで採用、失敗、キャンセル、遅延を確認できます。</span><span data-copy="en">Live translation automatically identifies the source language per finalized utterance and places accepted output beneath the original. Results that lose exact numbers or registered names are rejected, while source-text-free session metrics expose acceptance, failures, cancellation, and latency.</span></p>
+        <p><span data-copy="ja">会議前メモは前回の会議を最も強く、それ以前を日付と順番で徐々に弱く扱います。未解決事項を分離し、同じtopicの異なる決定は新旧の根拠を並べた競合候補として示します。</span><span data-copy="en">Pre-meeting preparation gives the immediately previous meeting the strongest weight, then decays older evidence by date and order. It separates unresolved items and shows differing decisions on the same topic as a source-linked potential conflict.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">スライドと話者修正を、セッションの先まで維持</span><span data-copy="en">Carry slide evidence and speaker corrections forward</span></h2>
+        <p><span data-copy="ja">ライブ録音ごとに明示的にスライド自動撮影を有効化できます。同一画像は重複保存せず、OCR検索と録音内の正確な時刻への移動を維持します。設定は次の録音へ持ち越しません。</span><span data-copy="en">Automatic slide evidence can be enabled explicitly for one live recording. Identical captures are deduplicated, remain searchable through on-device OCR, and retain exact recording-relative navigation. The choice never carries into the next recording.</span></p>
+        <p><span data-copy="ja">話者は発話単位で修正できます。diarization番号から独立した安定IDへ保存し、再読込や通常の再解析後にも維持します。境界が変わって一致が曖昧なら自動で推測しません。</span><span data-copy="en">Speaker labels can be corrected per utterance. Corrections bind to an ID independent of diarization numbering and survive reload and ordinary reanalysis; an ambiguous changed boundary is never guessed.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">品質gateは、実測できた範囲だけを合格に</span><span data-copy="en">Quality gates pass only what was actually measured</span></h2>
+        <p><span data-copy="ja">実論文PDF gateは二段組、表、図、脚注、scanをすべて含むreview済みmanifestを要求し、pageごとの読み順、OCR、引用、grounded gistをsource-redacted reportへ記録します。local library 38件はSHA-256基準で再検証しましたが、library内に実scanがないためfreezeを拒否します。同意済みscan論文を明示指定して補完し、page/tag reviewとfreezeを終えるまで実論文passは主張しません。</span><span data-copy="en">The real-paper gate requires a reviewed manifest covering two-column order, tables, figures, footnotes, and scans, with page-level order, OCR, citation, and grounded-gist results in a source-redacted report. All 38 local-library sources were rechecked by SHA-256, but freezing is refused because the library contains no real scan. No real-paper pass is claimed until an explicitly consented scan is supplied and page/tag review and freezing are complete.</span></p>
+        <p><span data-copy="ja">Gemma Harness v3 labはprompt変更前にholdoutとSHA-256を凍結し、production helperと同じ経路でaccuracy、誤引用、overclaim、拒否、fallback、latency、peak RSSを測ります。synthetic caseはrunnerのtestで、品質証拠ではありません。</span><span data-copy="en">The Gemma Harness v3 lab freezes a holdout and SHA-256 before prompt changes, then measures accuracy, false citations, overclaim, refusals, fallback, latency, and peak RSS through the production helper path. Synthetic cases test the runner; they are not quality evidence.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">5.6 Solを、差分reviewに結び付ける</span><span data-copy="en">Bind 5.6 Sol postprocessing to an exact review</span></h2>
+        <p><span data-copy="ja">CLI contract v7はsource-bound候補のprepare、全差分review、review SHA-256を明示するapplyを追加します。kAIgiはmodelを呼ばず外部送信もしません。candidate、review、現在の録音のどれかが変われば反映前に停止します。</span><span data-copy="en">CLI contract v7 adds source-bound candidate preparation, a complete diff review, and apply with an explicit review SHA-256. kAIgi neither invokes a model nor transmits data, and stops if the candidate, review, or current recording changed.</span></p>
+        <p><span data-copy="ja">app管理のCLIはapp version更新に追従し、unmanaged CLIは上書きしません。Skillsは一つのDownload／Update操作にまとめました。公開前のrelease doctorはversion、remote、署名準備を読み取るだけで、build、commit、tag、uploadを行いません。</span><span data-copy="en">App-managed CLI installs follow app-version updates without overwriting unmanaged tools. Skills use one Download/Update action. The pre-publication release doctor reads version, remote, and signing readiness without building, committing, tagging, or uploading.</span></p>
+      </div></section>
+    </main>
+
+    <footer class="site-footer">
+      <span aria-hidden="true"></span>
+      <p>&copy; 2026 kAIgi</p>
+      <div class="footer-links">
+        <a href="../index.html"><span data-copy="ja">トップ</span><span data-copy="en">Home</span></a>
+        <a href="../agent-skills.html">CLI / Skills</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
+      </div>
+    </footer>
+  </body>
+</html>

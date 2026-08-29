@@ -40,7 +40,7 @@
     <link rel="icon" href="./assets/app-icon-180.png">
     <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
     <script src="./site-preload.js"></script>
-    <link rel="stylesheet" href="./styles.css?v=0.4.10">
+    <link rel="stylesheet" href="./styles.css?v=0.4.11">
     <script defer src="./site.js"></script>
     <script type="application/ld+json">
       {
@@ -72,8 +72,8 @@
   </head>
   <body
     data-language="ja"
-    data-title-ja="CLI / Skills - kAIgi 0.4.10"
-    data-title-en="CLI / Skills - kAIgi 0.4.10"
+    data-title-ja="CLI / Skills - kAIgi 0.4.11"
+    data-title-en="CLI / Skills - kAIgi 0.4.11"
   >
     <a class="skip-link" href="#main-content">
       <span data-copy="ja">本文へ移動</span>
@@ -123,12 +123,12 @@
             <span data-copy="en">Take meetings and papers into the next task.</span>
           </h1>
           <p class="lead">
-            <span data-copy="ja">kAIgi CLIは録音・文字起こし・抽出済みの文献本文をローカルで扱います。0.4.10では会議と論文の正確な根拠を、根拠ID・完全性・SHA-256付きのローカルpackageとしてCodexやClaude Codeへ明示的に引き渡せます。</span>
-            <span data-copy="en">The kAIgi CLI works locally with recordings, transcripts, and extracted paper text. In 0.4.10, it can explicitly package exact meeting and paper evidence for Codex or Claude Code with evidence IDs, completeness, and SHA-256 hashes.</span>
+            <span data-copy="ja">kAIgi CLIは録音・文字起こし・抽出済みの文献本文をローカルで扱います。0.4.11のcontract v7では、追跡可能な根拠packageに加え、外部エージェントが作った文字修正を全差分reviewとSHA-256で確認してから反映できます。</span>
+            <span data-copy="en">The kAIgi CLI works locally with recordings, transcripts, and extracted paper text. Contract v7 in 0.4.11 adds review-bound transcript postprocessing with complete diffs and SHA-256 acknowledgement alongside traceable evidence packages.</span>
           </p>
           <p class="updated">
-            <span data-copy="ja">kAIgi 0.4.10</span>
-            <span data-copy="en">kAIgi 0.4.10</span>
+            <span data-copy="ja">kAIgi 0.4.11</span>
+            <span data-copy="en">kAIgi 0.4.11</span>
           </p>
         </div>
       </section>
@@ -152,12 +152,12 @@
             </article>
             <article class="guide-card">
               <h3>
-                <span data-copy="ja">2. Skillsをインストール</span>
-                <span data-copy="en">2. Install the Skills</span>
+                <span data-copy="ja">2. Skillsをダウンロード／更新</span>
+                <span data-copy="en">2. Download / Update Skills</span>
               </h3>
               <p>
-                <span data-copy="ja">同じ画面からCodexとClaude Code向けのkAIgi Skillをインストールします。保存先はFinderで開けます。</span>
-                <span data-copy="en">Install the Skill for Codex and Claude Code from the same screen. Each destination can be opened in Finder.</span>
+                <span data-copy="ja">同じ画面の一つのボタンで、利用可能なCodex／Claude Code向け保存先をまとめて更新します。保存先ごとの状態は確認できますが、製品ごとのインストール操作は必要ありません。</span>
+                <span data-copy="en">One button updates every available Codex and Claude Code destination. You can inspect each destination's status without managing separate install actions.</span>
               </p>
             </article>
             <article class="guide-card">
@@ -517,6 +517,39 @@
                 <span data-copy="en">Validates text-only corrections and safely applies them to kAIgi. A stale working copy is rejected if another change landed first.</span>
               </p>
             </article>
+            <article class="command-card" id="postprocess-command">
+              <div class="command-heading">
+                <h3><code>kaigi recordings postprocess prepare &lt;recording-id&gt; --out "$candidate"</code></h3>
+                <span data-copy="ja">外部後処理の候補を準備</span>
+                <span data-copy="en">Prepare an external postprocessing candidate</span>
+              </div>
+              <p>
+                <span data-copy="ja">現在の文字起こしに結び付いたtext-only候補を作ります。CLIは5.6 Solを推奨モデルとして示しますが、モデルを起動せず、データも送信しません。外部エージェントへ渡す操作と送信範囲は利用者が別途許可します。</span>
+                <span data-copy="en">Creates a text-only candidate bound to the current transcript. The CLI recommends 5.6 Sol but neither launches a model nor transmits data; the user separately authorizes any handoff and its scope.</span>
+              </p>
+            </article>
+            <article class="command-card">
+              <div class="command-heading">
+                <h3><code>kaigi recordings postprocess review &lt;recording-id&gt; --in "$candidate" --out "$review"</code></h3>
+                <span data-copy="ja">全変更を差分review</span>
+                <span data-copy="en">Review every proposed text change</span>
+              </div>
+              <p>
+                <span data-copy="ja">候補内の全テキスト変更をbefore／afterで列挙し、候補とreviewのSHA-256を返します。省略された差分がないことを確認してから、表示された <code>review_sha256</code> を使います。</span>
+                <span data-copy="en">Lists every text change as before and after values and returns candidate and review SHA-256 hashes. Inspect the complete diff before using the displayed <code>review_sha256</code>.</span>
+              </p>
+            </article>
+            <article class="command-card">
+              <div class="command-heading">
+                <h3><code>kaigi recordings postprocess apply &lt;recording-id&gt; --in "$candidate" --review "$review" --review-sha256 HASH</code></h3>
+                <span data-copy="ja">確認した差分だけを反映</span>
+                <span data-copy="en">Apply only the acknowledged review</span>
+              </div>
+              <p>
+                <span data-copy="ja">指定したreview SHA-256と現在の候補・review・録音を再検証してから原子的に反映します。確認後にいずれかが変わっていれば、安全に停止します。</span>
+                <span data-copy="en">Revalidates the acknowledged review SHA-256, candidate, review bytes, and current recording before atomic publication. Any post-review change stops safely.</span>
+              </p>
+            </article>
             <article class="command-card">
               <div class="command-heading">
                 <h3><code>kaigi recordings discussion-log export &lt;recording-id&gt; --out "$context"</code></h3>
@@ -615,8 +648,8 @@
               <span data-copy="en">Privacy check</span>
             </h2>
             <p>
-              <span data-copy="ja">CLI自体は音声、文字起こし、抽出済みPDF本文をこのMac上で読み取ります。ただしCodexやClaude Codeへ依頼した場合、選択したモデルと設定によってはCLIの出力がモデル提供元へ送られます。kAIgiはCLIの初回インストール時に警告しますが、現行CLIはコマンドごとの確認を行いません。統合 <code>context</code>、録音の <code>inspect</code>・<code>search</code>・<code>export</code>・<code>apply-transcript</code>・<code>discussion-log</code>、文書の <code>search</code>・<code>research-context</code>・<code>context</code>・<code>inspect</code> は文字起こし本文、抽出本文、文書ノート、または指定したコメントを扱います。文書ノートは自分の考察であり、原文の引用根拠ではありません。</span>
-              <span data-copy="en">The CLI itself reads audio, transcripts, and extracted PDF text on this Mac. When you ask Codex or Claude Code to use it, however, CLI output may be sent to the selected model provider under that agent's settings. kAIgi warns when the CLI is installed for the first time, but the current CLI does not confirm every command. Unified <code>context</code>, recording <code>inspect</code>, <code>search</code>, <code>export</code>, <code>apply-transcript</code>, and <code>discussion-log</code>, plus document <code>search</code>, <code>research-context</code>, <code>context</code>, and <code>inspect</code>, handle transcript text, extracted text, document notes, or requested annotations. Document notes are your own thinking, not citable source evidence.</span>
+              <span data-copy="ja">CLI自体は音声、文字起こし、抽出済みPDF本文をこのMac上で読み取ります。ただしCodexやClaude Codeへ依頼した場合、選択したモデルと設定によってはCLIの出力がモデル提供元へ送られます。kAIgiはCLIの初回インストール時に警告しますが、現行CLIはコマンドごとの確認を行いません。統合 <code>context</code>、録音の <code>inspect</code>・<code>search</code>・<code>export</code>・<code>apply-transcript</code>・<code>postprocess</code>・<code>discussion-log</code>、文書の <code>search</code>・<code>research-context</code>・<code>context</code>・<code>inspect</code> は文字起こし本文、抽出本文、文書ノート、または指定したコメントを扱います。文書ノートは自分の考察であり、原文の引用根拠ではありません。</span>
+              <span data-copy="en">The CLI itself reads audio, transcripts, and extracted PDF text on this Mac. When you ask Codex or Claude Code to use it, however, CLI output may be sent to the selected model provider under that agent's settings. kAIgi warns when the CLI is installed for the first time, but the current CLI does not confirm every command. Unified <code>context</code>, recording <code>inspect</code>, <code>search</code>, <code>export</code>, <code>apply-transcript</code>, <code>postprocess</code>, and <code>discussion-log</code>, plus document <code>search</code>, <code>research-context</code>, <code>context</code>, and <code>inspect</code>, handle transcript text, extracted text, document notes, or requested annotations. Document notes are your own thinking, not citable source evidence.</span>
             </p>
             <p>
               <span data-copy="ja">AI Researchの外部Web検索はCLIとは別の通信経路です。詳しくは<a href="./privacy.html">プライバシーポリシー</a>を確認してください。</span>
