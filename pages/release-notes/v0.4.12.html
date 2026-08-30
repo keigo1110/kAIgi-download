@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ja" data-language="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>kAIgi 0.4.12 - リリースノート</title>
+    <meta name="description" content="kAIgi 0.4.12のリリースノート。録音処理の軽量化、ノッチの安定性、根拠の破損検出、有界な検証出力。">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0c0d10">
+    <meta property="og:site_name" content="kAIgi">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="kAIgi 0.4.12 - Leaner recording and fail-closed evidence">
+    <meta property="og:description" content="Lower recording overhead, more reliable notch routing, explicit evidence-corruption handling, and bounded verification output.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.12.html">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="kAIgi 0.4.12">
+    <meta name="twitter:description" content="A reliability and efficiency release for recording, resident controls, evidence integrity, and local verification.">
+    <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.12.html">
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+    <link rel="icon" href="../assets/app-icon-180.png">
+    <link rel="apple-touch-icon" href="../assets/app-icon-180.png">
+    <script src="../site-preload.js"></script>
+    <link rel="stylesheet" href="../styles.css?v=0.4.12">
+    <script defer src="../site.js"></script>
+  </head>
+  <body data-language="ja" data-title-ja="kAIgi 0.4.12 - リリースノート" data-title-en="kAIgi 0.4.12 - Release notes">
+    <a class="skip-link" href="#main-content">
+      <span data-copy="ja">本文へ移動</span>
+      <span data-copy="en">Skip to content</span>
+    </a>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="kAIgi home">
+        <img src="../assets/app-icon-180.png" alt="" width="36" height="36">
+        <span>kAIgi</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html"><span data-copy="ja">トップ</span><span data-copy="en">Home</span></a>
+        <a href="../agent-skills.html">CLI / Skills</a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language">
+          <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
+          <button type="button" data-language-option="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="policy-hero" aria-labelledby="release-title">
+        <div class="narrow release-intro">
+          <p class="eyebrow">RELEASE / 0.4.12</p>
+          <h1 id="release-title"><span data-copy="ja">より軽く、壊れた根拠を見逃さない。</span><span data-copy="en">Leaner in use, stricter with broken evidence.</span></h1>
+          <p class="lead"><span data-copy="ja">kAIgi 0.4.12は、録音中の重複計算と不要な再描画を減らし、ノッチの操作経路、スライド根拠の完全性、ローカル検証の失敗検出を強化する安定化releaseです。</span><span data-copy="en">kAIgi 0.4.12 is a reliability release that removes duplicate recording work and unrelated redraws, then strengthens notch routing, slide-evidence integrity, and local failure detection.</span></p>
+          <ul class="release-meta" aria-label="Release requirements">
+            <li>Version 0.4.12</li>
+            <li>Build 46</li>
+            <li>macOS 14+</li>
+            <li>Apple Silicon</li>
+          </ul>
+          <div class="release-actions">
+            <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">最新のkAIgiをダウンロード</span><span data-copy="en">Download the latest kAIgi</span></a>
+            <a class="button secondary" href="../privacy.html"><span data-copy="ja">プライバシー境界を確認</span><span data-copy="en">Review the privacy boundary</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">録音の1チャンクを1度だけ計算</span><span data-copy="en">Measure each recording chunk once</span></h2>
+        <p><span data-copy="ja">録音レベルは文字起こし用に正規化した同じ音声から再利用し、生のbuffer全体をもう1度走査する処理を除きました。交互配列のステレオは全チャンネルから正しく計測します。</span><span data-copy="en">The input meter now reuses the normalized audio already measured for transcription instead of scanning every raw buffer again. Interleaved stereo and other multichannel input is measured across every channel.</span></p>
+        <p><span data-copy="ja">高頻度のレベル更新は専用の軽量modelだけを更新し、巨大な<code>RecordingViewModel</code>と無関係な画面の再描画を発生させません。</span><span data-copy="en">High-frequency level changes now update a small dedicated model rather than invalidating the large RecordingViewModel and unrelated UI.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">ノッチを安定した常駐コントロールへ</span><span data-copy="en">A more reliable resident notch</span></h2>
+        <p><span data-copy="ja">メインウインドウを開く経路をappの寿命に合わせて保持し、ノッチ表示中にメニューバー項目を隠してもOpen操作を失いません。連打したOpen要求は最大1件へまとめます。</span><span data-copy="en">Main-window routing is retained for the app lifetime, so Open remains available while the duplicate menu-bar item is hidden. Repeated Open requests coalesce to one pending action.</span></p>
+        <p><span data-copy="ja">閉じたノッチはVoiceOverでボタンとして読み上げ、デフォルト操作で開けます。Reduce Motionの変更も再起動なしで反映し、動きを減らしても状態を文字で判別できます。</span><span data-copy="en">The collapsed notch is exposed as a VoiceOver button with a default action. Reduce Motion changes apply without relaunching, while stable labels keep state perceivable without animation.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">根拠の破損は、「空」にしない</span><span data-copy="en">Broken evidence never becomes an empty success</span></h2>
+        <p><span data-copy="ja">スライド根拠の検索indexは再構築できますが、正本のasset manifestが破損している場合は「根拠0件」として続行しません。読めない件数を明示し、不完全なindexを正常な結果として保存しないようにしました。</span><span data-copy="en">The slide-evidence lookup can be rebuilt, but a corrupted authoritative asset manifest no longer becomes a successful result with zero evidence. kAIgi reports the withheld count and refuses to save an incomplete index as healthy.</span></p>
+        <p><span data-copy="ja">Vision用の画像フォールバックは最大寸法を制限します。極端なcropにより巨大な全面rasterが必要になる時は、メモリを使い尽くす前に安全に停止します。</span><span data-copy="en">The Vision raster fallback has a maximum dimension. An extreme crop that would require a huge full-page raster stops safely before exhausting memory.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">出力を減らしても、失敗は減らさない</span><span data-copy="en">Less output, not less failure evidence</span></h2>
+        <p><span data-copy="ja">大量テストの成功時は正確な件数と時間だけを短く表示し、完全な出力は容量上限と権限を持つlocal logへ保存します。失敗時は最初と最後の重要部分を表示し、詳細logへすぐ移れます。</span><span data-copy="en">Large successful suites print only exact counts and duration while retaining complete, size-bounded owner-only logs. Failures show bounded first and last diagnostic context and the full local log path.</span></p>
+        <p><span data-copy="ja">フィルタ誤りのテスト0件、全件skip、log上限超過、中断後の残留プロセス、検証中のsource変更は成功にしません。dirtyなtrial buildもcleanなrelease evidenceと区別します。</span><span data-copy="en">Zero matched tests, all-skipped suites, log overflow, lingering descendants, and source changes during verification all fail closed. A dirty trial build also remains distinct from clean release evidence.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">プライバシー境界は変更なし</span><span data-copy="en">No privacy-boundary change</span></h2>
+        <p><span data-copy="ja">0.4.12で新しい外部送信、保存形式、データ保持方針の変更はありません。Apple Silicon MacとmacOS 14以降が対象です。</span><span data-copy="en">Version 0.4.12 adds no external transmission, storage-format, or retention-policy change. It supports Apple Silicon Macs running macOS 14 or later.</span></p>
+      </div></section>
+    </main>
+
+    <footer class="site-footer">
+      <span aria-hidden="true"></span>
+      <p>&copy; 2026 kAIgi</p>
+      <div class="footer-links">
+        <a href="../index.html"><span data-copy="ja">トップ</span><span data-copy="en">Home</span></a>
+        <a href="../agent-skills.html">CLI / Skills</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
+      </div>
+    </footer>
+  </body>
+</html>
