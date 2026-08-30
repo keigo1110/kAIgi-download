@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ja" data-language="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>kAIgi 0.4.13 - リリースノート</title>
+    <meta name="description" content="kAIgi 0.4.13のリリースノート。正確なResearch根拠ジャンプ、軽量なスライドindex、安定したライブ対訳、検証済み差分更新。">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0c0d10">
+    <meta property="og:site_name" content="kAIgi">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="kAIgi 0.4.13 - Evidence you can return to">
+    <meta property="og:description" content="Exact local Research anchors, lower slide-index write cost, stable live-translation failure handling, and verified smaller updates.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.13.html">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="kAIgi 0.4.13">
+    <meta name="twitter:description" content="A reliability release for exact evidence, long recordings, live translation, and verified updates.">
+    <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.13.html">
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+    <link rel="icon" href="../assets/app-icon-180.png">
+    <link rel="apple-touch-icon" href="../assets/app-icon-180.png">
+    <script src="../site-preload.js"></script>
+    <link rel="stylesheet" href="../styles.css?v=0.4.13">
+    <script defer src="../site.js"></script>
+  </head>
+  <body data-language="ja" data-title-ja="kAIgi 0.4.13 - リリースノート" data-title-en="kAIgi 0.4.13 - Release notes">
+    <a class="skip-link" href="#main-content">
+      <span data-copy="ja">本文へ移動</span>
+      <span data-copy="en">Skip to content</span>
+    </a>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="kAIgi home">
+        <img src="../assets/app-icon-180.png" alt="" width="36" height="36">
+        <span>kAIgi</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html"><span data-copy="ja">トップ</span><span data-copy="en">Home</span></a>
+        <a href="../agent-skills.html">CLI / Skills</a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language">
+          <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
+          <button type="button" data-language-option="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="policy-hero" aria-labelledby="release-title">
+        <div class="narrow release-intro">
+          <p class="eyebrow">RELEASE / 0.4.13</p>
+          <h1 id="release-title"><span data-copy="ja">根拠へ正確に戻り、長い録音を軽く保つ。</span><span data-copy="en">Return to exact evidence. Keep long recordings light.</span></h1>
+          <p class="lead"><span data-copy="ja">kAIgi 0.4.13は、AI Researchの回答から元の発話へ戻る経路を追加し、スライド根拠indexの書き込みとライブ対訳の失敗処理、アプリ更新の検証を強化する信頼性releaseです。</span><span data-copy="en">kAIgi 0.4.13 is a reliability release that adds exact Research-to-utterance navigation, reduces slide-evidence index writes, stabilizes live-translation failures, and strengthens update verification.</span></p>
+          <ul class="release-meta" aria-label="Release requirements">
+            <li>Version 0.4.13</li>
+            <li>Build 47</li>
+            <li>macOS 14+</li>
+            <li>Apple Silicon</li>
+          </ul>
+          <div class="release-actions">
+            <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">最新のkAIgiをダウンロード</span><span data-copy="en">Download the latest kAIgi</span></a>
+            <a class="button secondary" href="../privacy.html"><span data-copy="ja">プライバシー境界を確認</span><span data-copy="en">Review the privacy boundary</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">Researchの回答から、元の発話へ</span><span data-copy="en">From a Research answer to the exact utterance</span></h2>
+        <p><span data-copy="ja">AI Researchカードは、生成文とは独立した端末内の根拠座標を持てるようになりました。Audioの根拠を選ぶと、対応する録音と正確な発話へ移動します。</span><span data-copy="en">AI Research cards can now carry local evidence coordinates independent of generated prose. Selecting an Audio source opens the matching recording and exact utterance.</span></p>
+        <p><span data-copy="ja">再解析後も同一と確認できる根拠だけを維持します。古い、削除済み、一致しない座標から近い場所を推測せず、録音削除時はResearch Memoryと会話履歴の関連座標を消去します。</span><span data-copy="en">Only evidence that remains identically verifiable survives reanalysis. Stale, deleted, or mismatched coordinates never fall back to a nearby guess, and deleting a recording scrubs related anchors from Research Memory and writable chat history.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">長い録音のスライドindexを軽量化</span><span data-copy="en">Lighter slide indexing for long recordings</span></h2>
+        <p><span data-copy="ja">録音中のスライド根拠indexを16個の小さなbucketへ分け、通常の追加では該当bucketだけを書き換えます。asset manifestを正本とする方針、重複排除、OCR検索、録音時刻へのジャンプは維持しています。</span><span data-copy="en">The recording slide-evidence index now uses 16 small buckets, so an ordinary insertion rewrites only one bucket. Asset manifests remain authoritative while deduplication, OCR search, and recording-time navigation stay intact.</span></p>
+        <p><span data-copy="ja">1,000・5,000・10,000件の実測では累積書き込み量を90%以上削減しました。旧形式は読み込み可能で、中断・破損・不完全な世代は正本から再構築します。</span><span data-copy="en">Measurements at 1,000, 5,000, and 10,000 assets reduced cumulative encoded writes by more than 90%. Legacy data remains readable, while interrupted, corrupt, or incomplete generations rebuild from the authoritative manifests.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">同じ翻訳エラーを録音中に繰り返さない</span><span data-copy="en">No repeated translation failure throughout a recording</span></h2>
+        <p><span data-copy="ja">翻訳セッション自体が利用できない終端エラーでは、その設定世代の処理を止めます。文字起こしが更新されるたびに同じパネルを出し直しません。</span><span data-copy="en">A terminal translation-session failure now stops work for that settings generation instead of recreating the same panel after every transcript update.</span></p>
+        <p><span data-copy="ja">一時的に言語を特定できない発話はセッション全体を止めません。対訳設定を明示的に変更すると、新しいセッションとして安全に再試行します。</span><span data-copy="en">An utterance whose language cannot be identified temporarily does not stop the whole session. Explicitly changing translation settings starts a fresh, safe retry.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">小さい更新も、完全版と同じ厳しさで検証</span><span data-copy="en">Smaller updates with full-release verification</span></h2>
+        <p><span data-copy="ja">署名・公証済みの以前の版から安全に再構成でき、完全版DMGの半分未満になる場合だけ、Sparkleの署名付き差分更新を配信できます。適用後の署名とbundle identityまで一致しなければ採用しません。</span><span data-copy="en">kAIgi can publish a signed Sparkle delta only when it reconstructs safely from a previously signed and notarized version and is less than half the full DMG size. The applied result must retain the exact signature and bundle identity.</span></p>
+        <p><span data-copy="ja">完全版DMGは常に残ります。公開前にはGitHub上の資産名・サイズ・SHA-256を照合し、古い未申告の差分が残っていても公開を停止します。</span><span data-copy="en">The full DMG always remains available. Before publication, remote asset names, sizes, and SHA-256 digests must match exactly, including rejection of undeclared stale deltas.</span></p>
+      </div></section>
+
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">プライバシー境界は変更なし</span><span data-copy="en">No privacy-boundary change</span></h2>
+        <p><span data-copy="ja">0.4.13で新しい外部送信、データ保持期間、ユーザー向け保存方針の変更はありません。Researchの根拠座標とスライドindexは端末内に保存されます。Apple Silicon MacとmacOS 14以降が対象です。</span><span data-copy="en">Version 0.4.13 adds no external transmission, retention-period, or user-facing storage-policy change. Research coordinates and slide indexes remain on device. It supports Apple Silicon Macs running macOS 14 or later.</span></p>
+      </div></section>
+    </main>
+
+    <footer class="site-footer">
+      <span aria-hidden="true"></span>
+      <p>&copy; 2026 kAIgi</p>
+      <div class="footer-links">
+        <a href="../index.html"><span data-copy="ja">トップ</span><span data-copy="en">Home</span></a>
+        <a href="../agent-skills.html">CLI / Skills</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,18 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
-  <channel>
-    <title>kAIgi Updates</title>
-    <description>Latest kAIgi macOS releases.</description>
-    <language>ja</language>
-    <link>https://keigo1110.github.io/kAIgi-download/</link>
-    <item>
-      <title>kAIgi 0.4.12</title>
-      <sparkle:version>46</sparkle:version>
-      <sparkle:shortVersionString>0.4.12</sparkle:shortVersionString>
-      <sparkle:releaseNotesLink>https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.12.html</sparkle:releaseNotesLink>
-      <pubDate>Sun, 30 Aug 2026 07:25:31 +0000</pubDate>
-      <enclosure url="https://github.com/keigo1110/kAIgi-download/releases/download/v0.4.12/kAIgi-0.4.12.dmg" length="169461770" type="application/octet-stream" sparkle:edSignature="5cBSf8qgeK5aDQytH5wFr3VRiw7iX9K+xPYZJs3d8wfxVxEER9X2JU3/MrPxscg7y85VCHxjHO4FTgB7FiK3CQ==" />
-      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-    </item>
-  </channel>
-</rss>
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>kAIgi Updates</title>
+        <item>
+            <title>kAIgi 0.4.13</title>
+            <pubDate>Sun, 30 Aug 2026 21:59:18 +0900</pubDate>
+            <sparkle:version>47</sparkle:version>
+            <sparkle:shortVersionString>0.4.13</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <sparkle:releaseNotesLink>https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.13.html</sparkle:releaseNotesLink>
+            <enclosure url="https://github.com/keigo1110/kAIgi-download/releases/download/v0.4.13/kAIgi-0.4.13.dmg" length="172462344" type="application/octet-stream" sparkle:edSignature="k525T7N86wMDTBhFA+qHrfoC0qlylRrBrYnfQBQyNlnA25WqCCcPcUlkHJax8doIGCaHKtILGJymFVAVLk9fAQ==" />
+        </item>
+    <description>Latest kAIgi macOS releases.</description><language>ja</language><link>https://keigo1110.github.io/kAIgi-download/</link></channel>
+</rss><!-- sparkle-signatures:
+edSignature: aUK96hrxh7GsHLa9U5YDN7SDPdLvgyIc1AXyXZylxdWPuRIted7Ovdb9/vhGrgUpm6tivojxCwAKkkbE8xMnBw==
+length: 1166
+-->
