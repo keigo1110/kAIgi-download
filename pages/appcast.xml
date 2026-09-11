@@ -3,17 +3,17 @@
     <channel>
         <title>kAIgi Updates</title>
         <item>
-            <title>kAIgi 0.4.13</title>
-            <pubDate>Sun, 30 Aug 2026 21:59:18 +0900</pubDate>
-            <sparkle:version>47</sparkle:version>
-            <sparkle:shortVersionString>0.4.13</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <title>kAIgi 0.5.1</title>
+            <pubDate>Sat, 12 Sep 2026 01:30:28 +0900</pubDate>
+            <sparkle:version>49</sparkle:version>
+            <sparkle:shortVersionString>0.5.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <sparkle:releaseNotesLink>https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.13.html</sparkle:releaseNotesLink>
-            <enclosure url="https://github.com/keigo1110/kAIgi-download/releases/download/v0.4.13/kAIgi-0.4.13.dmg" length="172462344" type="application/octet-stream" sparkle:edSignature="k525T7N86wMDTBhFA+qHrfoC0qlylRrBrYnfQBQyNlnA25WqCCcPcUlkHJax8doIGCaHKtILGJymFVAVLk9fAQ==" />
+            <sparkle:releaseNotesLink>https://keigo1110.github.io/kAIgi-download/release-notes/v0.5.1.html</sparkle:releaseNotesLink>
+            <enclosure url="https://github.com/keigo1110/kAIgi-download/releases/download/v0.5.1/kAIgi-0.5.1.dmg" length="178006858" type="application/octet-stream" sparkle:edSignature="OXsjTyG//jMSWGgM6O+oZTUfZKG/8Kq0qi5N80CAr5BpVp+mEJNwgzwmcRsi7V4Yv10QsDHMYA/JZUTguyyKAw==" />
         </item>
     <description>Latest kAIgi macOS releases.</description><language>ja</language><link>https://keigo1110.github.io/kAIgi-download/</link></channel>
 </rss><!-- sparkle-signatures:
-edSignature: aUK96hrxh7GsHLa9U5YDN7SDPdLvgyIc1AXyXZylxdWPuRIted7Ovdb9/vhGrgUpm6tivojxCwAKkkbE8xMnBw==
-length: 1166
+edSignature: HuJGktRKArUbNT6hWrh435BEeq8BETTJONREhUaw40QbM7wQIdGROv9KliND0QLIBxBu8W20nKdGXYRAuL2FDQ==
+length: 1161
 -->

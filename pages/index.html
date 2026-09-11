@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>kAIgi 0.4.13 - 根拠へ正確に戻れる会議録</title>
+    <title>kAIgi 0.5.1 - 待たずに使える資料Library</title>
     <meta
       name="description"
-      content="kAIgiは、メニューバーから明示的に録音を開始し、会議検出、プロジェクト固有名詞、ライブ対訳、画面根拠、ページ別PDF補修をMac上で扱うmacOSアプリです。"
+      content="kAIgiは、会議録・論文・接続フォルダの資料をMac内で扱い、録音、ライブ対訳、根拠検索、Document Workbenchを提供するmacOSアプリです。"
     >
     <meta name="robots" content="index,follow">
     <meta name="application-name" content="kAIgi">
@@ -15,10 +15,10 @@
     <meta property="og:site_name" content="kAIgi">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:title" content="kAIgi 0.4.13 - Evidence you can return to">
+    <meta property="og:title" content="kAIgi 0.5.1 - A library ready before indexing">
     <meta
       property="og:description"
-      content="Return from Research answers to exact local evidence, keep long slide-capture sessions light, and install verified smaller updates with a complete-DMG fallback."
+      content="Open connected folders immediately, work with PDF, Markdown, HTML, and text in one place, and search through a lightweight recoverable catalog."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/">
@@ -27,21 +27,21 @@
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="kAIgi 0.4.13 - evidence you can return to">
+    <meta property="og:image:alt" content="kAIgi 0.5.1 - a connected document library ready before indexing">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="kAIgi 0.4.13 - Evidence you can return to">
+    <meta name="twitter:title" content="kAIgi 0.5.1 - A library ready before indexing">
     <meta
       name="twitter:description"
-      content="Exact local Research anchors, lighter slide indexing, stable live translation, and verified smaller updates."
+      content="An immediately usable connected Library, one Document Workbench, and lightweight recoverable search."
     >
     <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
-    <meta name="twitter:image:alt" content="kAIgi 0.4.13 - evidence you can return to">
+    <meta name="twitter:image:alt" content="kAIgi 0.5.1 - a connected document library ready before indexing">
     <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/">
     <link rel="sitemap" type="application/xml" href="./sitemap.xml">
     <link rel="icon" href="./assets/app-icon-180.png">
     <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
     <script src="./site-preload.js"></script>
-    <link rel="stylesheet" href="./styles.css?v=0.4.13">
+    <link rel="stylesheet" href="./styles.css?v=0.5.1">
     <script defer src="./site.js"></script>
     <script type="application/ld+json">
       {
@@ -49,12 +49,12 @@
         "@type": "SoftwareApplication",
         "name": "kAIgi",
         "applicationCategory": "BusinessApplication",
-        "operatingSystem": "macOS 14+",
-        "description": "kAIgiは、メニューバーから明示的に録音を開始し、会議検出、プロジェクト固有名詞、ライブ対訳、画面根拠、ページ別PDF補修をMac上で扱うmacOSアプリです。",
+        "operatingSystem": "macOS 15+",
+        "description": "kAIgiは、会議録・論文・接続フォルダの資料をMac内で扱い、録音、ライブ対訳、根拠検索、Document Workbenchを提供するmacOSアプリです。",
         "url": "https://keigo1110.github.io/kAIgi-download/",
         "downloadUrl": "https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg",
         "image": "https://keigo1110.github.io/kAIgi-download/assets/ogp.png",
-        "softwareVersion": "0.4.13",
+        "softwareVersion": "0.5.1",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -65,8 +65,8 @@
   </head>
   <body
     data-language="ja"
-    data-title-ja="kAIgi 0.4.13 - 根拠へ正確に戻れる会議録"
-    data-title-en="kAIgi 0.4.13 - Evidence you can return to"
+    data-title-ja="kAIgi 0.5.1 - 待たずに使える資料Library"
+    data-title-en="kAIgi 0.5.1 - A library ready before indexing"
   >
     <a class="skip-link" href="#top">
       <span data-copy="ja">本文へ移動</span>
@@ -84,7 +84,7 @@
           <span data-copy="en">Flow</span>
         </a>
         <a href="#recall">Recall</a>
-        <a href="#research">Research</a>
+        <a href="#research">Library</a>
         <a href="#agent-context">CLI</a>
         <a href="#setup">
           <span data-copy="ja">はじめる</span>
@@ -114,18 +114,18 @@
             </p>
             <div class="hero-actions" id="download">
               <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
-                <span data-copy="ja">kAIgi 0.4.13をダウンロード</span>
-                <span data-copy="en">Download kAIgi 0.4.13</span>
+                <span data-copy="ja">kAIgi 0.5.1をダウンロード</span>
+                <span data-copy="en">Download kAIgi 0.5.1</span>
               </a>
-              <a class="hero-release-link" href="./release-notes/v0.4.13.html">
-                <strong>0.4.13</strong>
-                <span data-copy="ja">正確な根拠ジャンプ、軽いスライドindex、安定した対訳</span>
-                <span data-copy="en">Exact evidence, lighter slide indexing, stable live translation</span>
+              <a class="hero-release-link" href="./release-notes/v0.5.1.html">
+                <strong>0.5.1</strong>
+                <span data-copy="ja">待たずに使えるLibrary、共通Document Workbench</span>
+                <span data-copy="en">Immediate Library access and one Document Workbench</span>
                 <span aria-hidden="true">↗</span>
               </a>
             </div>
             <ul class="release-facts" aria-label="Release facts">
-              <li>macOS 14+</li>
+              <li>macOS 15+</li>
               <li>Apple Silicon</li>
               <li>
                 <span data-copy="ja">Ask・質問は端末内処理／実験的</span>
@@ -256,10 +256,10 @@
       <section class="band intro-band release-feature-band" id="research" aria-labelledby="research-title">
         <div class="content-grid">
           <div>
-            <p class="section-kicker">kAIgi 0.4.13 / Evidence &amp; Reliability</p>
+            <p class="section-kicker">kAIgi 0.5.1 / Connected Library</p>
             <h2 id="research-title">
-              <span data-copy="ja">回答から元の発話へ戻り、<br>長い録音を軽く保つ。</span>
-              <span data-copy="en">Return to the exact utterance.<br>Keep long recordings light.</span>
+              <span data-copy="ja">つないだ資料を、待たずに開く。<br>一つの作業場で読む。</span>
+              <span data-copy="en">Open connected sources immediately.<br>Read them in one workspace.</span>
             </h2>
           </div>
           <div class="release-feature-content">
@@ -267,41 +267,41 @@
               <article class="feature">
                 <span class="feature-mark">01</span>
                 <h3>
-                  <span data-copy="ja">Researchから正確な発話へ戻る</span>
-                  <span data-copy="en">Return from Research to the exact utterance</span>
+                  <span data-copy="ja">一覧更新中もすぐに開く</span>
+                  <span data-copy="en">Open files while the catalog refreshes</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">ResearchカードのAudio根拠から、対応する録音と正確な発話を開けます。古い座標を近い場所へ推測せず、削除時は関連する根拠も消去します。</span>
-                  <span data-copy="en">Audio evidence on a Research card opens the matching recording and exact utterance. Stale coordinates never guess a nearby target, and deletion scrubs related anchors.</span>
+                  <span data-copy="ja">大きなフォルダでも、接続直後から階層を展開してファイルを開けます。ファイル名とパスの一覧は録音を優先しながら裏で更新します。</span>
+                  <span data-copy="en">Even with a large folder, you can expand the tree and open a file immediately. The filename and path catalog refreshes in the background while recording keeps priority.</span>
                 </p>
               </article>
               <article class="feature">
                 <span class="feature-mark">02</span>
                 <h3>
-                  <span data-copy="ja">長いスライド撮影でも書き込みを抑える</span>
-                  <span data-copy="en">Reduce writes during long slide-capture sessions</span>
+                  <span data-copy="ja">文書ごとの違いを、一つの作業場へ</span>
+                  <span data-copy="en">Different documents, one workbench</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">スライド根拠indexを小さなbucketへ分割し、通常は変更部分だけを保存します。正本、重複排除、OCR検索、録音時刻へのジャンプは維持します。</span>
-                  <span data-copy="en">The slide-evidence index is split into small buckets so ordinary captures save only the changed part while preserving authoritative manifests, deduplication, OCR search, and time navigation.</span>
+                  <span data-copy="ja">PDF、Markdown、HTML、テキストを共通のDocument Workbenchで扱います。形式ごとのプレビューや編集機能は、その上に専門機能として加わります。</span>
+                  <span data-copy="en">PDF, Markdown, HTML, and text share one Document Workbench, with format-specific preview and editing capabilities layered on top.</span>
                 </p>
               </article>
               <article class="feature">
                 <span class="feature-mark">03</span>
                 <h3>
-                  <span data-copy="ja">対訳とアプリ更新を安全に回復する</span>
-                  <span data-copy="en">Recover safely from translation and update failures</span>
+                  <span data-copy="ja">本文を複製しない軽量な検索基盤</span>
+                  <span data-copy="en">Lightweight search without copying source bodies</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">終端の翻訳エラーを録音中に繰り返し表示しません。差分更新は署名と再構成結果を検証できる時だけ使い、完全版DMGを常に残します。</span>
-                  <span data-copy="en">Terminal translation errors no longer repeat throughout a recording. Delta updates are used only after signature and reconstruction checks, with the full DMG always retained.</span>
+                  <span data-copy="ja">PDF・Markdown・HTML・読めるテキストを名前と保存済み本文から探し、多い結果は「さらに検索」で続けられます。接続一覧は本文を保存せず、候補ごとに原文と接続権限を再確認します。</span>
+                  <span data-copy="en">Find PDF, Markdown, HTML, and readable text by name and saved content, then continue through bounded result batches. The catalog keeps no body copy; every candidate is checked against the current source and connection authority.</span>
                 </p>
               </article>
             </div>
             <div class="release-feature-links">
-              <a href="./release-notes/v0.4.13.html">
-                <span data-copy="ja">0.4.13の変更点とプライバシー境界</span>
-                <span data-copy="en">0.4.13 changes and privacy boundaries</span>
+              <a href="./release-notes/v0.5.1.html">
+                <span data-copy="ja">0.5.1の変更点とプライバシー境界</span>
+                <span data-copy="en">0.5.1 changes and privacy boundaries</span>
                 <span aria-hidden="true">→</span>
               </a>
               <a href="./agent-skills.html#document-commands">
@@ -404,8 +404,8 @@
                   <span data-copy="en">Download the latest DMG</span>
                 </h3>
                 <p>
-                  <span data-copy="ja">macOS 14以降を搭載したApple Silicon Macで、インストールボタンから <code>kAIgi.dmg</code> をダウンロードします。</span>
-                  <span data-copy="en">On an Apple Silicon Mac running macOS 14 or later, use the install button to download <code>kAIgi.dmg</code>.</span>
+                  <span data-copy="ja">macOS 15以降を搭載したApple Silicon Macで、インストールボタンから <code>kAIgi.dmg</code> をダウンロードします。</span>
+                  <span data-copy="en">On an Apple Silicon Mac running macOS 15 or later, use the install button to download <code>kAIgi.dmg</code>.</span>
                 </p>
               </div>
             </li>
@@ -475,8 +475,8 @@
             </h2>
           </div>
           <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
-            <span data-copy="ja">kAIgi 0.4.13をダウンロード</span>
-            <span data-copy="en">Download kAIgi 0.4.13</span>
+            <span data-copy="ja">kAIgi 0.5.1をダウンロード</span>
+            <span data-copy="en">Download kAIgi 0.5.1</span>
           </a>
         </div>
       </section>
@@ -557,9 +557,9 @@
           <span data-copy="ja">CLI / Skills</span>
           <span data-copy="en">CLI / Skills</span>
         </a>
-        <a href="./release-notes/v0.4.13.html">
-          <span data-copy="ja">0.4.13 リリースノート</span>
-          <span data-copy="en">0.4.13 Release notes</span>
+        <a href="./release-notes/v0.5.1.html">
+          <span data-copy="ja">0.5.1 リリースノート</span>
+          <span data-copy="en">0.5.1 Release notes</span>
         </a>
         <a href="./privacy.html">Privacy Policy</a>
         <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>

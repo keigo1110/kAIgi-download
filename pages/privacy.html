@@ -6,7 +6,7 @@
     <title>Privacy Policy - kAIgi</title>
     <meta
       name="description"
-      content="kAIgiの録音、PDF、CLI、Recall、Ask、AI Research、端末内モデル、外部Web検索、保存データに関するプライバシーポリシー。"
+      content="kAIgiの録音、PDF、接続フォルダ、Spotlight、対話型HTML、CLI、端末内モデル、外部Web検索、保存データに関するプライバシーポリシー。"
     >
     <meta name="robots" content="index,follow">
     <meta name="application-name" content="kAIgi">
@@ -17,7 +17,7 @@
     <meta property="og:title" content="Privacy Policy - kAIgi">
     <meta
       property="og:description"
-      content="kAIgiの録音、PDF、CLI、Recall、Ask、AI Research、端末内モデル、外部Web検索、保存データに関するプライバシーポリシー。"
+      content="kAIgiの録音、PDF、接続フォルダ、Spotlight、対話型HTML、CLI、端末内モデル、外部Web検索、保存データに関するプライバシーポリシー。"
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/privacy.html">
@@ -31,7 +31,7 @@
     <meta name="twitter:title" content="Privacy Policy - kAIgi">
     <meta
       name="twitter:description"
-      content="kAIgiの録音、PDF、CLI、Recall、Ask、AI Research、端末内モデル、外部Web検索、保存データに関するプライバシーポリシー。"
+      content="kAIgiの録音、PDF、接続フォルダ、Spotlight、対話型HTML、CLI、端末内モデル、外部Web検索、保存データに関するプライバシーポリシー。"
     >
     <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
     <meta name="twitter:image:alt" content="kAIgi - meetings, papers, grounded Ask, and AI Research">
@@ -77,10 +77,10 @@
             <span data-copy="en">kAIgi Privacy Policy</span>
           </h1>
           <p class="lead">
-            <span data-copy="ja">kAIgiは会議音声、Textで開くPDF、Recall、Ask、AI Researchを扱うアプリです。録音対象、保存場所、端末内処理、任意の外部送信について、ユーザーが判断できるように説明します。</span>
-            <span data-copy="en">kAIgi handles meeting audio, PDFs opened in Text, Recall, Ask, and AI Research. This policy explains what is recorded, where data is stored, what runs on device, and when external services may be used.</span>
+            <span data-copy="ja">kAIgiは会議音声、PDF、接続フォルダの文書、Recall、Ask、AI Researchを扱うアプリです。録音対象、保存場所、端末内処理、任意の外部送信について、ユーザーが判断できるように説明します。</span>
+            <span data-copy="en">kAIgi handles meeting audio, PDFs, documents in folders you connect, Recall, Ask, and AI Research. This policy explains what is recorded, where data is stored, what runs on device, and when external services may be used.</span>
           </p>
-          <p class="updated">Last updated: 2026-08-28</p>
+          <p class="updated">Last updated: 2026-09-03</p>
         </div>
       </section>
 
@@ -122,6 +122,27 @@
           <p>
             <span data-copy="ja">PDF本文の抽出ではページごとのtext layerの状態を端末内で診断し、文字数・行数、抽出元、欠落または要確認の理由をTextデータへ保存します。OCRは自動開始しません。ユーザーが明示的に開始した場合だけ、現在のPDFで不足していると判定したページをApple Visionで端末内処理し、元PDFの同一性を再確認してから抽出本文へ統合します。OCR画像や認識本文を外部へ送信しません。</span>
             <span data-copy="en">During PDF text extraction, kAIgi diagnoses each page's text layer on device and stores its character and line counts, extraction source, and a bounded missing or review reason with the Text data. OCR never starts automatically. Only after an explicit user action does Apple Vision process pages currently identified as missing on device, and kAIgi rechecks source-PDF identity before merging recognized text. OCR images and recognized text are not transmitted externally.</span>
+          </p>
+
+          <h2>
+            <span data-copy="ja">接続フォルダとDocument Workbench</span>
+            <span data-copy="en">Connected folders and Document Workbench</span>
+          </h2>
+          <p>
+            <span data-copy="ja">ユーザーがFinderでフォルダを明示的に選んだ場合だけ、kAIgiはそのフォルダ内の文書へアクセスします。再接続用ブックマーク、接続とファイルの識別情報、相対パス、ファイル名、文書形式、更新確認に必要な有限のメタデータを <code>~/Library/Application Support/kAIgi/ConnectedLibrary</code> に保存します。0.5.1の軽量catalogには文書本文、検索語、Spotlightの抜粋、埋め込みベクトル、AI生成文を保存しません。フォルダを接続しただけでは意味検索モデルを読み込まず、文書を外部のAIサービスへ送信しません。</span>
+            <span data-copy="en">kAIgi accesses documents in a folder only after the user explicitly selects that folder in Finder. It stores a reconnection bookmark, connection and file identities, relative paths, filenames, document formats, and bounded freshness metadata under <code>~/Library/Application Support/kAIgi/ConnectedLibrary</code>. The lightweight 0.5.1 catalog stores no document body, search query, Spotlight snippet, embedding vector, or AI-generated text. Connecting a folder does not load a semantic-search model or send documents to an external AI service.</span>
+          </p>
+          <p>
+            <span data-copy="ja">Markdown、保存済みHTML source、読める一般テキスト、connected PDFのtext layerの本文候補探索には、このMacのSpotlightを使います。kAIgiは文書をCore Spotlightへ登録せず、<code>mdimport</code>の強制実行や除外設定の変更を行いません。候補の本文や位置はそのまま信用せず、現在の接続権限と原文を端末内で再確認してから表示します。続きの検索も有限batchで行い、検索語・本文・continuationをcatalogへ保存しません。Spotlightが無効、索引対象外、遅延中、0件、または候補の終端でも、全文を検索して一致がなかったとは断定しません。未ダウンロードのクラウドファイルを検索のために自動取得しません。Spotlightの索引と保持はmacOSが管理するため、kAIgiのcatalogを削除してもmacOS側の索引は削除されません。</span>
+            <span data-copy="en">Body-candidate discovery for Markdown, saved HTML source, readable text, and connected PDF text layers uses Spotlight on this Mac. kAIgi does not donate documents to Core Spotlight, force <code>mdimport</code>, or change Spotlight exclusions. Current connection authority and source content are revalidated on device before display. Continued searches use bounded batches; queries, source bodies, and continuations are not stored in the catalog. Disabled, excluded, delayed, empty, or exhausted Spotlight results never prove that every document was searched. Cloud placeholders are not downloaded for search. macOS manages Spotlight indexing and retention, so deleting kAIgi's catalog does not remove the system Spotlight index.</span>
+          </p>
+          <p>
+            <span data-copy="ja">HTMLの「プレビュー」は静的な画像ではなく、通常のブラウザに近いWebKitページです。文書に含まれるJavaScript、画像、リンク、フォーム、fetchなどがネットワーク通信やWebKitの保存領域への書き込みを行い、文書内容や入力内容を外部へ送る可能性があります。信頼できるHTMLだけを開き、リンク、フォーム、ファイル選択、共有は内容を確認して実行してください。Markdown、PDF、通常テキストの閲覧と、Libraryの検索自体がこのHTML動作を開始することはありません。</span>
+            <span data-copy="en">HTML Preview is a WebKit page with browser-like behavior, not a static image. JavaScript, images, links, forms, fetches, and other document-authored behavior may make network requests, write to WebKit storage, or transmit document and entered content. Open only trusted HTML, and review links, forms, file choices, and shares before acting. Viewing Markdown, PDF, or ordinary text—and searching the Library—does not start this HTML behavior.</span>
+          </p>
+          <p>
+            <span data-copy="ja">Document WorkbenchのSource編集で保存を選ぶか、Libraryの右クリックメニューから名前変更、移動、貼り付け、削除を明示的に選んだ場合は、現在の接続とファイルを再確認してFinder上の原本を変更します。同名ファイルを自動で上書きせず、削除はmacOSのゴミ箱へ移動します。「アプリケーションを選んで開く」「共有」「ブラウザで開く」では、選択した他のアプリや共有先のプライバシー規則が適用されます。接続解除はkAIgiのブックマーク、catalog、移行状態、当該接続の派生索引を削除しますが、接続元のフォルダや文書は削除しません。まだ新検索方式へ移っていない更新環境では、有効な旧検索索引を利用可否確認に通るまで更新することがあります。一度新方式へ移った後は旧索引へ書き込まず、0.4.13へ戻すためだけに読み取り専用で保持し、接続解除時に削除します。新しく接続したフォルダには旧形式索引を作りません。</span>
+            <span data-copy="en">When the user explicitly chooses Save in Document Workbench source editing, or Rename, Move, Paste, or Delete from the Library context menu, kAIgi revalidates the current connection and file before changing the Finder source. It never overwrites a same-named file automatically, and Delete moves the source to the macOS Trash. Open With, Share, and Open in Browser are governed by the privacy behavior of the selected app or destination. Disconnect removes kAIgi's bookmark, catalog, migration state, and derived indexes for that connection, but does not delete the connected folder or its documents. On an upgraded root that has not yet entered the new search mode, kAIgi may keep a valid legacy index current until the capability probe passes. After the first cutover it stops writing that index and retains it read-only only for binary rollback to 0.4.13; disconnect removes it. Newly connected folders do not receive a legacy-format index.</span>
           </p>
 
           <h2>
