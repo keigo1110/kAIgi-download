@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja" data-language="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>kAIgi 0.5.2 - リリースノート</title>
+    <meta name="description" content="kAIgi 0.5.2のリリースノート。ファイル名検索、論文の段落と文脈、根拠に結び付いたBPT連想（プレビュー）。">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0c0d10">
+    <link rel="icon" href="../assets/app-icon-180.png">
+    <script src="../site-preload.js"></script>
+    <link rel="stylesheet" href="../styles.css?v=0.5.2">
+    <script defer src="../site.js"></script>
+  </head>
+  <body data-language="ja" data-title-ja="kAIgi 0.5.2 - リリースノート" data-title-en="kAIgi 0.5.2 - Release notes">
+    <a class="skip-link" href="#main-content"><span data-copy="ja">本文へ移動</span><span data-copy="en">Skip to content</span></a>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="kAIgi home"><img src="../assets/app-icon-180.png" alt="" width="36" height="36"><span>kAIgi</span></a>
+      <nav class="site-nav" aria-label="Primary"><a href="../index.html">Home</a><a href="../privacy.html">Privacy</a></nav>
+      <div class="header-actions"><div class="language-switch" aria-label="Language">
+        <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
+        <button type="button" data-language-option="en" aria-pressed="false">EN</button>
+      </div></div>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <section class="policy-hero" aria-labelledby="release-title"><div class="narrow release-intro">
+        <p class="eyebrow">RELEASE / 0.5.2</p>
+        <h1 id="release-title"><span data-copy="ja">探す、文脈を読む、連想する。</span><span data-copy="en">Find, read in context, and explore connections.</span></h1>
+        <p class="lead"><span data-copy="ja">kAIgi 0.5.2は、ファイル名と本文の検索、論文を文脈とともに読むための構造化と文脈付き翻訳、Recallで考えを広げるBPT連想（プレビュー）を追加します。</span><span data-copy="en">kAIgi 0.5.2 adds filename and body search, structured paper reading with contextual translation, and BPT exploration in Recall (preview).</span></p>
+        <ul class="release-meta" aria-label="Release requirements"><li>Version 0.5.2</li><li>Build 54</li><li>macOS 15+</li><li>Apple Silicon</li></ul>
+      </div></section>
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">待ち時間と再開</span><span data-copy="en">Responsiveness and resuming work</span></h2>
+        <p><span data-copy="ja">対訳の「翻訳方式」から、既定のApple翻訳と、端末内Local AIによる日英の文脈付き翻訳を選べます。選択だけでは処理を開始せず、保存済みの訳文も消しません。段落単位、または確認後に文書全体を再作成できます。文脈付き翻訳は原文のタイトル・図注・用語定義を有限の補助文脈に使います。文字化けした文では推測で訳さず停止し、修復を案内します。修復で原文が変わると対応しなくなった訳文は再利用しません。文ごとの対応検査は、意味の正しさの保証ではありません。</span><span data-copy="en">The translation method menu offers default Apple Translation and on-device Japanese–English contextual translation using Local AI. Selecting a method neither starts work nor erases saved translations. Regenerate a paragraph, or confirm regeneration of the document. Contextual translation uses bounded original titles, captions and term definitions. It stops on unreadable source characters and directs you to review repairs instead of guessing. Source repair invalidates translations whose source no longer matches. Sentence alignment checks do not guarantee semantic accuracy.</span></p>
+        <p><span data-copy="ja">対訳は文章の長さでも一括処理量を区切り、長文の裏側処理から表示中の箇所へ切り替わるまでの処理量を抑えます。構造化の要点を途中保存し、中断後の再生成を減らします。明示的なOCRでは対応する元PDFの文字サイズを活用し、本文の細切れ化や見出しの誤判定を軽減します。文字化けを読める場合もありますが、短い行の欠落や誤認識が残るため、原本との比較後に適用してください。自動修復や全文処理の速度向上を保証しません。</span><span data-copy="en">Source-byte-aware translation batches limit long backfill work before visible passages can run. Durable structure checkpoints reduce repeated generation after interruption. Explicit OCR reuses uniquely aligned native font sizes to reduce prose fragmentation and false headings. It can recover visible words with broken encoding, but short-line omissions and recognition errors still require source comparison before acceptance. This is neither automatic repair nor a guaranteed full-document speedup.</span></p>
+      </div></section>
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">ファイル名と本文の検索</span><span data-copy="en">Filename and body search</span></h2>
+        <p><span data-copy="ja">PDFの続きの検索では、保存本文が変わっていないことを毎回確認し、同じ本文の解析・検索準備を繰り返さないようにしました。再利用は検索セッション内の1資料に限定します。</span><span data-copy="en">PDF passage continuation reuses one prepared source per search session only after freshly verifying the stored content bytes, avoiding repeated decoding and evidence preparation.</span></p>
+        <p><span data-copy="ja">ファイル名を複数語から順不同で探せます。Libraryの統合結果では、検索語全体の名前・パス・タイトル一致を本文一致より先に表示し、タイトルだけの一致で無関係な本文位置へ移動しません。保存済みPDFの元ファイル名を本文とは分けて扱い、本文検索は「さらに検索」で初期窓を超えて進めます。探索途中や未抽出を「一致なし」と混同しません。</span><span data-copy="en">Find filenames using unordered words. Federated Library results put whole-query name, path, and title matches before content matches; title-only hits no longer point to unrelated passages. Managed PDF filenames stay separate from body text, and body search continues beyond its initial window. Partial exploration and missing extraction remain explicit.</span></p>
+      </div></section>
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">段落と原文の文脈</span><span data-copy="en">Paragraphs and source context</span></h2>
+        <p><span data-copy="ja">本文と同じ行にある番号付き小見出しを、原文範囲と位置を保って本文から分離します。中間の節番号が省略されても、同じ親を持つ小節を同じ階層に並べます。</span><span data-copy="en">Numbered run-in headings are separated from same-line prose using source-bound text ranges and geometry. Consecutive sibling sections retain equal depth when an intermediate numbered section is absent.</span></p>
+        <p><span data-copy="ja">画像の大きな範囲が文字行の結合に混ざり、図注の途中を切り離したり段間をまたいだりする問題を修正しました。画像は保持し、文字の読み順とは分けて扱います。</span><span data-copy="en">Image placeholders no longer absorb caption lines or bridge text columns during line coalescing. Images remain available separately from the text reading order.</span></p>
+        <p><span data-copy="ja">実座標による狭い段間の検出、図注の分離、脚注を先に識別する段落接続を改善しました。ReaderとCLIで章階層を共有し、章への所属と判定根拠をcontextに付けます。見出し由来の分類を、段落の意味の検証と混同しません。旧OCRの読み取りを維持し、自動上書きしません。CLIの文献横断contextには予算内で隣接本文を追加し、原文と位置、省略の情報を保ちます。</span><span data-copy="en">Exact-coordinate gutters, caption separation, and footnote-aware paragraph joining improve paper reading. Reader and CLI share heading hierarchy and expose section membership and its basis, not verified paragraph semantics. Existing OCR remains readable without automatic replacement. CLI research context adds bounded neighboring body passages while preserving exact text, location, and omissions.</span></p>
+        <p><span data-copy="ja">小文字始まりの名称を含む番号付き見出しを認識し、小さい図ラベルや表の列名を章と区別します。文字修復では、PDFKitが図の内部文字を省略する場合も、本文と全修復対象の照合から位置を一意に確認できれば候補を作成します。原文画像との比較と明示的な適用が必要です。曖昧な位置への修復や元PDFの書き換えは行いません。</span><span data-copy="en">Numbered headings with mixed-case identifiers are recognized, while small diagram labels and table column names are kept out of the outline. Font repair can prepare review candidates when PDFKit omits internal figure text, provided complete native text and every repair have unambiguous source alignment. Compare original regions before explicitly applying repairs. Ambiguous positions are refused and the original PDF is not rewritten.</span></p>
+      </div></section>
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">BPT連想を試す</span><span data-copy="en">Try BPT exploration</span></h2>
+        <p><span data-copy="ja">Recallで言葉・ファイルからBase（最大3項目）と一つのTargetを設定します。Profileは途中の概念・見方・資料の枝全体です。開始と続行は最大2段階、選択した枝の展開は1段階で、ピン留めは必須ではありません。枝分かれと一覧を切り替え、Target変更や原文への移動を試せます。提案にはローカルモデルが必要です。Askからの引用は補助操作で、Libraryのファイル検索は独立して使えます。枝とピンは保存されず、出典の実在は連想の正しさを保証しません。</span><span data-copy="en">Set up to three word or file Base items and one Target directly in Recall. Profile is the developing field of concepts, perspectives and source branches, not only pinned evidence. Start and Continue run up to two rounds; expanding a selected branch runs one, without requiring a pin. Switch between branches and an outline, change Target, and open original sources. Proposals require an available local model. Quotes from Ask are optional and Library file search remains independent. Branches and pins are not saved; a valid source does not prove an association.</span></p>
+      </div></section>
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">接続フォルダの安全な保存</span><span data-copy="en">Safer saving in connected folders</span></h2>
+        <p><span data-copy="ja">接続フォルダのファイルを保存する直前に、他のアプリが同じ名前へ書き込んだファイルを上書きしません。元ファイルと新しい内容を同じフォルダ内で確認してから入れ替えるため、保存中の一瞬だけ元の名前が見えなくなることがあります。中断した保存は次回の確認時に元ファイルか保存済みの内容へ復旧し、競合するファイルは自動で消さずに回復が必要な状態として表示します。書き込み権限がない場合やディスク容量不足では、作成途中の一時ファイルだけを削除してエラーを表示し、フォルダは引き続き使えます。</span><span data-copy="en">Saving a connected file never overwrites a file another app wrote to the same name just before the save. kAIgi verifies the original and the new content inside the same folder before swapping them, so the original name can briefly disappear during a save. An interrupted save is restored to the original or the saved content at the next check; a conflicting file is never deleted and is shown as needing recovery. A missing write permission or a full disk removes only the partial temporary file, reports the error, and leaves the folder usable.</span></p>
+      </div></section>
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">既知の制限</span><span data-copy="en">Known limitations</span></h2>
+        <p><span data-copy="ja">BPTのファイル対象は収録と保存済みPDFです。一般的な枝にTargetの説明を後付けする例や、枝と関係の薄い資料を添付する例が残っています。出典が実在しても連想の正しさは保証されません。論文の構造・意味の独立評価、BPTの有用性評価、最低対応Macでの性能とVoiceOverを含む操作性の評価は、今後のリリースで続けます。</span><span data-copy="en">BPT file seeds cover recordings and managed PDFs. Some generic branches still add post-hoc Target explanations or attach weakly related sources, and a valid source does not prove an association. Independent evaluation of paper structure and meaning, BPT usefulness, minimum-Mac performance and VoiceOver usability continues in upcoming releases.</span></p>
+      </div></section>
+    </main>
+    <footer class="site-footer"><span aria-hidden="true"></span><p>&copy; 2026 kAIgi</p><div class="footer-links"><a href="../index.html">Home</a><a href="../privacy.html">Privacy Policy</a></div></footer>
+  </body>
+</html>
