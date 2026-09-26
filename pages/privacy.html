@@ -166,6 +166,10 @@
             <span data-copy="ja">文字起こしにはApple Speechのオンデバイス認識を使用します。選択した認識言語は次の録音開始時に固定され、言語ごとの辞書を使用します。クラウドSTT APIへの自動フォールバックは行いません。認識経路の改善に使うため、完了セッション数、SpeechAnalyzerで認識を実際に試行したセッション数、fallbackが発生したセッション数と理由別件数だけを端末内へ保存します。fallback率はSpeechAnalyzerを試行したセッションだけを分母にします。この集計には音声、文字起こし本文、Appleの詳細エラー文を含めず、外部へ送信しません。</span>
             <span data-copy="en">kAIgi uses Apple Speech on-device recognition for transcription. The selected recognition language is fixed when the next recording starts and uses a language-specific dictionary. kAIgi does not automatically fall back to a cloud speech-to-text API. To improve recognition routing, kAIgi stores only local aggregate counts for completed sessions, sessions that actually attempted recognition with SpeechAnalyzer, sessions that used fallback, and fallback reasons. The fallback rate uses only SpeechAnalyzer-attempted sessions as its denominator. This aggregate does not contain audio, transcript text, or Apple's detailed error text and is not sent externally.</span>
           </p>
+          <p>
+            <span data-copy="ja">Askに音声で話しかける場合も、マイクを使うのは操作を押している間だけで、声はこのMac上で文字起こしします。その音声と文字起こしは保存しません。返答の読み上げにはMac内の音声合成を使い、外部へは送信しません。録音中は音声で話しかけられません。</span>
+            <span data-copy="en">When you talk to Ask, the microphone is used only while you hold the control, and your speech is transcribed on this Mac. Neither the audio nor the transcript is stored. Replies are read aloud with the Mac's on-device speech synthesis and nothing is sent externally. Voice input is unavailable while recording.</span>
+          </p>
 
           <h2 id="local-ai">
             <span data-copy="ja">Recall・Ask・Zoom</span>
