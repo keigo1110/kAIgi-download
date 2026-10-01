@@ -171,6 +171,19 @@
             <span data-copy="en">When you talk to Ask, the microphone is used only while you hold the control, and your speech is transcribed on this Mac. Neither the audio nor the transcript is stored. Replies are read aloud with the Mac's on-device speech synthesis and nothing is sent externally. Voice input is unavailable while recording.</span>
           </p>
 
+          <h2 id="quick-lookup">
+            <span data-copy="ja">選択範囲の翻訳・辞書</span>
+            <span data-copy="en">Selection translation and dictionary lookup</span>
+          </h2>
+          <p>
+            <span data-copy="ja">⌘C二連続は初期状態では無効です。設定で有効にしたときだけ入力監視の許可を求め、コピー操作の組合せを検出します。通常のコピーでは本文を取得せず、二連続の操作が確認できたときにだけクリップボードの文字を短時間で取得します。キー入力の記録やクリップボード履歴は作りません。対象外アプリの指定や入力監視の無効化は通常設定から行えます。明示的なmacOSサービスは入力監視を使わず、サービスに渡された選択範囲を受け取ります。</span>
+            <span data-copy="en">Double Command-C is off by default. Enabling it in Settings requests Input Monitoring permission to recognize the Copy gesture. Ordinary Copy does not read text; a confirmed double Copy permits a short clipboard-read window. No keystroke log or clipboard history is created. Exclude applications or disable monitoring in normal Settings. Explicit macOS Services receives the selection supplied to the service without Input Monitoring.</span>
+          </p>
+          <p>
+            <span data-copy="ja">翻訳にはApple Translation、意味の検索にはMacにインストールされた辞書を使います。原文と結果は小窓の一時状態で、kAIgiの履歴やPDFライブラリには保存せず、kAIgiの外部サービスへ送信しません。必要な言語データはAppleの確認後にダウンロードする場合があります。Appleはフレームワークのポリシーに従い本文ではないサービスメタデータを収集する場合があります。結果のコピーはユーザーがコピーボタンを押したときだけ行います。</span>
+            <span data-copy="en">Translation uses Apple Translation; definitions use installed Mac dictionaries. Source and result remain temporary panel state, not lookup history or PDF-library content, and are not sent to a kAIgi service. Apple may ask to download language data and may collect non-content service metadata under its framework policies. The result is written to the clipboard only when you press Copy.</span>
+          </p>
+
           <h2 id="local-ai">
             <span data-copy="ja">Recall・Ask・Zoom</span>
             <span data-copy="en">Recall, Ask, and Zoom</span>
