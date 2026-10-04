@@ -9,7 +9,7 @@
       content="kAIgi 0.4.5のリリースノート。会議録と論文を探して根拠付きで対話するAsk、1資料への質問、Codex／Claude Code向け統合コンテキスト。"
     >
     <meta name="robots" content="index,follow">
-    <meta name="theme-color" content="#0c0d10">
+    <meta name="theme-color" content="#f6f5f1">
     <meta property="og:site_name" content="kAIgi">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:locale:alternate" content="en_US">
@@ -20,18 +20,18 @@
     >
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.5.html">
-    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp-product.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="kAIgi 0.4.5">
     <meta name="twitter:description" content="Grounded Ask, source Questions, and one bounded context for meetings and papers.">
-    <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp-product.png">
     <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.5.html">
     <link rel="sitemap" type="application/xml" href="../sitemap.xml">
     <link rel="icon" href="../assets/app-icon-180.png">
     <link rel="apple-touch-icon" href="../assets/app-icon-180.png">
     <script src="../site-preload.js"></script>
-    <link rel="stylesheet" href="../styles.css">
-    <script defer src="../site.js"></script>
+    <link rel="stylesheet" href="../styles.css?v=20261004d">
+    <script defer src="../site.js?v=20261004d"></script>
   </head>
   <body
     data-language="ja"
@@ -43,42 +43,16 @@
       <span data-copy="en">Skip to content</span>
     </a>
 
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="kAIgi home">
-        <img src="../assets/app-icon-180.png" alt="" width="36" height="36">
-        <span>kAIgi</span>
-      </a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="../index.html">
-          <span data-copy="ja">トップ</span>
-          <span data-copy="en">Home</span>
-        </a>
-        <a href="../agent-skills.html">
-          <span data-copy="ja">CLI / Skills</span>
-          <span data-copy="en">CLI / Skills</span>
-        </a>
-        <a href="../privacy.html">Privacy</a>
-      </nav>
-      <div class="header-actions">
-        <div class="language-switch" aria-label="Language">
-          <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
-          <button type="button" data-language-option="en" aria-pressed="false">EN</button>
-        </div>
-        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
-          <span data-copy="ja">ダウンロード</span>
-          <span data-copy="en">Download</span>
-        </a>
-      </div>
-    </header>
+    <header class="site-header"><a class="brand" href="../index.html" aria-label="kAIgi home"><img src="../assets/app-icon-180.png" alt="" width="32" height="32"><span>kAIgi</span></a><nav class="site-nav" aria-label="Primary"><a href="../agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="../privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a></nav><div class="header-actions"><div class="language-switch" aria-label="Language"><button type="button" data-language-option="ja" aria-pressed="true">JA</button><button type="button" data-language-option="en" aria-pressed="false">EN</button></div><a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a></div></header>
 
-    <main id="main-content" tabindex="-1">
+    <main id="main-content" class="document-page" tabindex="-1"><section class="page-hero compact-hero"><h1><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></h1></section><div class="reading-layout release-layout"><nav class="topic-rail" aria-label="Release navigation"><a href="v0.5.5.html"><span data-copy="ja">最新版</span><span data-copy="en">Latest</span></a><a href="index.html"><span data-copy="ja">過去のリリース</span><span data-copy="en">All releases</span></a></nav><article class="reading-copy release-body"><h2 class="release-version">kAIgi 0.4.5</h2>
       <section class="policy-hero" aria-labelledby="release-title">
         <div class="narrow release-intro">
-          <p class="eyebrow">RELEASE / 0.4.5</p>
-          <h1 id="release-title">
+          <p class="release-meta">RELEASE / 0.4.5</p>
+          <h3 id="release-title">
             <span data-copy="ja">探して、根拠から尋ねる。</span>
             <span data-copy="en">Find it, then ask from the evidence.</span>
-          </h1>
+          </h3>
           <p class="lead">
             <span data-copy="ja">kAIgi 0.4.5は、保存済みの会議録と論文をAskで探し、そのまま根拠付きで内容を尋ねられます。CodexやClaude Codeへは、会議と論文の正確な根拠を一つの有界なコンテキストとして渡せます。</span>
             <span data-copy="en">kAIgi 0.4.5 finds saved meetings and papers through Ask, then answers content questions with traceable evidence. Codex and Claude Code can receive exact meeting and paper evidence in one bounded context.</span>
@@ -106,10 +80,10 @@
         <div class="narrow policy-copy">
           <section class="release-section" aria-labelledby="ask-release-title">
             <p class="section-kicker">Grounded Ask</p>
-            <h2 id="ask-release-title">
+            <h3 id="ask-release-title">
               <span data-copy="ja">候補探しから、内容の質問まで</span>
               <span data-copy="en">From finding candidates to questioning their content</span>
-            </h2>
+            </h3>
             <ul class="release-list">
               <li>
                 <strong><span data-copy="ja">Recall・Ask・Zoomを役割で分ける</span><span data-copy="en">Recall, Ask, and Zoom have distinct roles</span></strong>
@@ -131,10 +105,10 @@
 
           <section class="release-section" aria-labelledby="context-release-title">
             <p class="section-kicker">Agent context</p>
-            <h2 id="context-release-title">
+            <h3 id="context-release-title">
               <span data-copy="ja">会議と論文を、一つの問いでCodexへ</span>
               <span data-copy="en">Bring meetings and papers into Codex under one question</span>
-            </h2>
+            </h3>
             <ul class="release-list">
               <li>
                 <strong><code>kaigi context "テーマ"</code></strong>
@@ -156,10 +130,10 @@
 
           <section class="release-section" aria-labelledby="surface-title">
             <p class="section-kicker">Work surfaces</p>
-            <h2 id="surface-title">
+            <h3 id="surface-title">
               <span data-copy="ja">読む・聞く・眺める場所を広く</span>
               <span data-copy="en">More room to read, listen, and explore</span>
-            </h2>
+            </h3>
             <ul class="release-list">
               <li>
                 <strong><span data-copy="ja">ZoomとPDFを端まで使う</span><span data-copy="en">Use the full Zoom and PDF surfaces</span></strong>
@@ -175,10 +149,10 @@
           </section>
 
           <section class="release-section release-safety" aria-labelledby="safety-title">
-            <h2 id="safety-title">
+            <h3 id="safety-title">
               <span data-copy="ja">Askと「質問」は実験的です</span>
               <span data-copy="en">Ask and Questions are experimental</span>
-            </h2>
+            </h3>
             <p>
               <span data-copy="ja">検索と回答はこのMac内で処理し、会話は保存しません。Appleのオンデバイス回答にはmacOS 26以降、Apple Intelligence対応Mac、利用可能なモデルと言語が必要です。利用できない場合は、準備済みLocal LLMへ切り替え、どちらも使えなければ根拠候補だけを表示します。</span>
               <span data-copy="en">Search and answering run on this Mac and conversations are not saved. Apple's on-device answers require macOS 26 or later, an Apple Intelligence-capable Mac, and an available model and language. kAIgi falls back to a prepared Local LLM, then to evidence candidates when neither model is available.</span>
@@ -190,20 +164,8 @@
           </section>
         </div>
       </section>
-    </main>
+    </article></div></main>
 
-    <footer class="site-footer">
-      <span aria-hidden="true"></span>
-      <p>&copy; 2026 kAIgi</p>
-      <div class="footer-links">
-        <a href="../index.html">
-          <span data-copy="ja">トップ</span>
-          <span data-copy="en">Home</span>
-        </a>
-        <a href="../agent-skills.html">CLI / Skills</a>
-        <a href="../privacy.html">Privacy Policy</a>
-        <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
-      </div>
-    </footer>
+    <footer class="site-footer"><a class="brand" href="../index.html">kAIgi</a><nav class="footer-links" aria-label="Footer"><a href="../agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="../privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a><a href="../release-notes/index.html"><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></a><a href="https://github.com/keigo1110/kAIgi-download">GitHub</a></nav><p>© 2026 kAIgi</p></footer>
   </body>
 </html>

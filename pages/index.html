@@ -3,46 +3,48 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>kAIgi 0.5.5 - 会議と論文を読み進める</title>
+    <title>kAIgi 0.5.5 - 会議を記録。論文を読み解く。</title>
     <meta
       name="description"
-      content="kAIgiは、会議録・論文・接続フォルダの資料をMac内で扱い、録音、ライブ対訳、根拠検索、Document Workbenchを提供するmacOSアプリです。"
+      content="会議を録音して文字で振り返る。論文を原文と対訳で読み、ノートを残す。kAIgiは、調べる仕事をひとつにまとめるMacアプリです。"
     >
     <meta name="robots" content="index,follow">
     <meta name="application-name" content="kAIgi">
     <meta name="apple-mobile-web-app-title" content="kAIgi">
-    <meta name="theme-color" content="#0c0d10">
+    <meta name="theme-color" content="#f6f5f1">
     <meta property="og:site_name" content="kAIgi">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:title" content="kAIgi 0.5.5 - Read your meetings and papers">
+    <meta property="og:title" content="kAIgi 0.5.5 - Record meetings. Read with understanding.">
     <meta
       property="og:description"
-      content="Open connected folders immediately, work with PDF, Markdown, HTML, and text in one place, and search through a lightweight recoverable catalog."
+      content="Record, transcribe, translate and keep reading notes in one workspace on your Mac."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/">
-    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
-    <meta property="og:image:secure_url" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp-product.png">
+    <meta property="og:image:secure_url" content="https://keigo1110.github.io/kAIgi-download/assets/ogp-product.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:height" content="675">
     <meta property="og:image:alt" content="kAIgi - an on-device research workspace">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="kAIgi 0.5.5 - Read your meetings and papers">
+    <meta name="twitter:title" content="kAIgi 0.5.5 - Record meetings. Read with understanding.">
     <meta
       name="twitter:description"
-      content="An immediately usable connected Library, one Document Workbench, and lightweight recoverable search."
+      content="Record, transcribe, translate and keep reading notes on your Mac."
     >
-    <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp-product.png">
     <meta name="twitter:image:alt" content="kAIgi - an on-device research workspace">
     <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/">
     <link rel="sitemap" type="application/xml" href="./sitemap.xml">
     <link rel="icon" href="./assets/app-icon-180.png">
     <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
     <script src="./site-preload.js"></script>
-    <link rel="stylesheet" href="./styles.css?v=0.5.4">
-    <script defer src="./site.js"></script>
+    <link rel="stylesheet" href="./styles.css?v=20261004d">
+    <link rel="stylesheet" href="./home.styles.css?v=20261004d">
+    <script defer src="./site.js?v=20261004d"></script>
+    <script defer src="./home.js?v=20261004d"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -50,10 +52,10 @@
         "name": "kAIgi",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "macOS 15+",
-        "description": "kAIgiは、会議録・論文・接続フォルダの資料をMac内で扱い、録音、ライブ対訳、根拠検索、Document Workbenchを提供するmacOSアプリです。",
+        "description": "会議を録音して文字で振り返る。論文を原文と対訳で読み、ノートを残す。kAIgiは、調べる仕事をひとつにまとめるMacアプリです。",
         "url": "https://keigo1110.github.io/kAIgi-download/",
         "downloadUrl": "https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg",
-        "image": "https://keigo1110.github.io/kAIgi-download/assets/ogp.png",
+        "image": "https://keigo1110.github.io/kAIgi-download/assets/ogp-product.png",
         "softwareVersion": "0.5.5",
         "offers": {
           "@type": "Offer",
@@ -63,741 +65,53 @@
       }
     </script>
   </head>
-  <body
-    data-language="ja"
-    data-title-ja="kAIgi 0.5.5 - 会議と論文を読み進める"
-    data-title-en="kAIgi 0.5.5 - Read your meetings and papers"
-  >
-    <a class="skip-link" href="#top">
-      <span data-copy="ja">本文へ移動</span>
-      <span data-copy="en">Skip to content</span>
-    </a>
-    <div class="scroll-progress" aria-hidden="true"><span></span></div>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="kAIgi home">
-        <img src="./assets/app-icon-180.png" alt="" width="36" height="36">
-        <span>kAIgi</span>
-      </a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="#demo">
-          <span data-copy="ja">流れ</span>
-          <span data-copy="en">Flow</span>
-        </a>
-        <a href="#recall">Recall</a>
-        <a href="#research">Library</a>
-        <a href="#agent-context">CLI</a>
-        <a href="#setup">
-          <span data-copy="ja">はじめる</span>
-          <span data-copy="en">Get started</span>
-        </a>
-      </nav>
-      <div class="header-actions">
-        <div class="language-switch" aria-label="Language">
-          <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
-          <button type="button" data-language-option="en" aria-pressed="false">EN</button>
-        </div>
-        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
-          <span data-copy="ja">ダウンロード</span>
-          <span data-copy="en">Download</span>
-        </a>
-      </div>
-    </header>
-
+  <body data-language="ja" data-title-ja="kAIgi 0.5.5 - 会議を記録。論文を読み解く。" data-title-en="kAIgi 0.5.5 - Record meetings. Read with understanding.">
+    <a class="skip-link" href="#top"><span data-copy="ja">本文へ移動</span><span data-copy="en">Skip to content</span></a>
+    <div class="reading-progress" aria-hidden="true"></div>
+    <header class="site-header"><a class="brand" href="./index.html" aria-label="kAIgi home"><img src="./assets/app-icon-180.png" alt="" width="32" height="32"><span>kAIgi</span></a><nav class="site-nav" aria-label="Primary"><a href="./agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="./privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a></nav><div class="header-actions"><div class="language-switch" aria-label="Language"><button type="button" data-language-option="ja" aria-pressed="true">JA</button><button type="button" data-language-option="en" aria-pressed="false">EN</button></div><a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a></div></header>
     <main id="top" tabindex="-1">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-inner">
-          <div class="hero-copy">
-            <h1 id="hero-title">kAIgi</h1>
-            <p class="hero-manifesto">
-              <span data-copy="ja">会議と論文に、<br>根拠から尋ねる。</span>
-              <span data-copy="en">Ask your meetings and papers.<br>Follow every answer to evidence.</span>
-            </p>
-            <div class="hero-actions" id="download">
-              <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
-                <span data-copy="ja">kAIgi 0.5.5をダウンロード</span>
-                <span data-copy="en">Download kAIgi 0.5.5</span>
-              </a>
-              <a class="hero-release-link" href="./release-notes/v0.5.5.html">
-                <strong>0.5.5</strong>
-                <span data-copy="ja">論文・対訳・長い会議の重複計算を削減</span>
-                <span data-copy="en">Less repeated work for papers and meetings</span>
-                <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-            <ul class="release-facts" aria-label="Release facts">
-              <li>macOS 15+</li>
-              <li>Apple Silicon</li>
-              <li>
-                <span data-copy="ja">Ask・質問は端末内処理／実験的</span>
-                <span data-copy="en">On-device Ask and Questions / Experimental</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="hero-stage" aria-hidden="true">
-            <div class="hero-art-frame">
-              <img
-                src="./assets/hero-magic-v1.webp"
-                alt=""
-                width="1672"
-                height="941"
-                fetchpriority="high"
-                decoding="async"
-              >
-            </div>
-          </div>
+      <section class="home-hero" aria-labelledby="hero-title">
+        <div class="hero-intro">
+          <h1 id="hero-title"><span data-copy="ja">会議を記録。<br>論文を読み解く。</span><span data-copy="en">Record meetings.<br>Read with understanding.</span></h1>
+          <div class="hero-copy"><p class="hero-subtitle"><span data-copy="ja">録音・文字起こし・対訳・ノート。<br>調べる仕事を、ひとつのMacアプリで。</span><span data-copy="en">Recording, transcripts, translation, and notes.<br>Your research work. One Mac app.</span></p><div id="download"><a class="download-button" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">Mac版をダウンロード</span><span data-copy="en">Download for Mac</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><a class="film-link" href="#film"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z" fill="currentColor"/></svg><span data-copy="ja">使い方を見る</span><span data-copy="en">See how it works</span></a><p class="system-note">macOS 15+ <span>·</span> Apple Silicon <span>·</span> <span data-copy="ja">無料</span><span data-copy="en">Free</span></p></div>
+        </div>
+        <div class="product-gallery" id="demo">
+          <div class="gallery-nav"><div class="gallery-tabs" role="tablist" aria-label="Product workflows">
+            <button type="button" role="tab" id="tab-capture" aria-controls="capture" aria-selected="false" tabindex="-1"><span data-copy="ja">録音</span><span data-copy="en">Recording</span></button>
+            <button type="button" role="tab" id="tab-research" aria-controls="research" aria-selected="true" tabindex="0"><span data-copy="ja">対訳</span><span data-copy="en">Translation</span></button>
+            <button type="button" role="tab" id="tab-recall" aria-controls="recall" aria-selected="false" tabindex="-1"><span data-copy="ja">ノート</span><span data-copy="en">Notes</span></button>
+          </div></div>
+          <article class="gallery-panel" id="capture" role="tabpanel" aria-labelledby="tab-capture" tabindex="0">
+            <figure class="product-screen"><a class="screen-link" href="./assets/product-capture.webp" data-image-open aria-haspopup="dialog"><picture><img src="./assets/product-capture.webp" alt="Actual kAIgi Capture layout with a fictional timestamped transcript." width="1723" height="913" decoding="async" loading="lazy"></picture></a><figcaption><a href="./assets/product-capture.webp" data-image-open data-image-alt="Actual kAIgi Capture layout with a fictional timestamped transcript."><span data-copy="ja">拡大する</span><span data-copy="en">Enlarge</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></figcaption></figure>
+            <div class="product-explanation"><h2><span data-copy="ja">会議中は、<br>聞くことに集中。</span><span data-copy="en">Be in the<br>conversation.</span></h2><p class="product-description"><span data-copy="ja">マイクとMacの音声を録音。話した内容を、時刻つきの文字で振り返れます。</span><span data-copy="en">Record your microphone and Mac audio. Revisit what was said in a timestamped transcript.</span></p><div class="example transcript-example"><span class="example-time">00:04</span><p>会議で生まれた問いを、論文の根拠につなげたいですね。</p></div></div>
+          </article>
+          <article class="gallery-panel" id="research" role="tabpanel" aria-labelledby="tab-research" tabindex="0">
+            <figure class="product-screen"><a class="screen-link" href="./assets/product-library.webp" data-image-open aria-haspopup="dialog"><picture><source media="(max-width: 680px)" srcset="./assets/product-translation-detail.webp"><img src="./assets/product-library.webp" alt="Actual kAIgi Document Workbench showing a fictional source and its translation." width="1723" height="913" decoding="async" fetchpriority="high"></picture></a><figcaption><a href="./assets/product-library.webp" data-image-open data-image-alt="Actual kAIgi Document Workbench showing a fictional source and its translation."><span data-copy="ja">拡大する</span><span data-copy="en">Enlarge</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></figcaption></figure>
+            <div class="product-explanation"><h2><span data-copy="ja">原文と対訳を、<br>並べて読む。</span><span data-copy="en">The original.<br>The translation.<br>Side by side.</span></h2><p class="product-description"><span data-copy="ja">英語の資料も、翻訳を隣に。気になる言葉は、原文で確かめられます。</span><span data-copy="en">Read an English source with its translation beside it. Check the words against the original.</span></p><div class="example translation-example"><p lang="en">A meeting starts as a question.</p><span class="translation-connector" aria-hidden="true"></span><p lang="ja">会議は質問から始まります。</p></div></div>
+          </article>
+          <article class="gallery-panel" id="recall" role="tabpanel" aria-labelledby="tab-recall" tabindex="0">
+            <figure class="product-screen"><a class="screen-link" href="./assets/product-notes.webp" data-image-open aria-haspopup="dialog"><picture><source media="(max-width: 680px)" srcset="./assets/product-notes-detail.webp"><img src="./assets/product-notes.webp" alt="Actual kAIgi Notes pane with a saved fictional note beside its source." width="1723" height="913" decoding="async" loading="lazy"></picture></a><figcaption><a href="./assets/product-notes.webp" data-image-open data-image-alt="Actual kAIgi Notes pane with a saved fictional note beside its source."><span data-copy="ja">拡大する</span><span data-copy="en">Enlarge</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></figcaption></figure>
+            <div class="product-explanation"><h2><span data-copy="ja">考えを、<br>資料のそばに。</span><span data-copy="en">Keep a thought<br>close to its source.</span></h2><p class="product-description"><span data-copy="ja">読みながら浮かんだ問いを、原文の隣のノートへ。</span><span data-copy="en">Keep a question that comes to mind in a note beside the original.</span></p><div class="example note-example" lang="ja"><p>問いを残す</p><p>会議で生まれた問いを、読書の手がかりに。<br>原文を確かめながら、自分の言葉で考える。</p></div></div>
+          </article>
         </div>
       </section>
-
-      <section class="demo-section" id="demo" aria-labelledby="demo-title" data-scroll-demo data-frame="0">
-        <div class="demo-sticky">
-          <div class="demo-copy">
-            <p class="section-kicker">
-              <span data-copy="ja">Demo</span>
-              <span data-copy="en">Demo</span>
-            </p>
-            <h2 id="demo-title">
-              <span data-copy="ja">探す。確かめる。書く。</span>
-              <span data-copy="en">Find it. Verify it. Write with it.</span>
-            </h2>
-            <div class="demo-steps">
-              <article data-demo-step="0">
-                <span>01</span>
-                <p>
-                  <span data-copy="ja">曖昧な記憶から、保存済みの会議録や論文を探します。</span>
-                  <span data-copy="en">Start with a vague memory and find the saved meeting or paper behind it.</span>
-                </p>
-              </article>
-              <article data-demo-step="1">
-                <span>02</span>
-                <p>
-                  <span data-copy="ja">要約や人数を尋ね、答えを元の発話・PDF段落へ結びます。</span>
-                  <span data-copy="en">Ask for a summary or participant count and trace the answer to the exact utterance or PDF passage.</span>
-                </p>
-              </article>
-              <article data-demo-step="2">
-                <span>03</span>
-                <p>
-                  <span data-copy="ja">同じ根拠をCLIでCodexやClaude Codeへ渡し、論文執筆の議論を続けます。</span>
-                  <span data-copy="en">Carry the same evidence through the CLI into Codex or Claude Code and continue the writing discussion.</span>
-                </p>
-              </article>
-            </div>
-          </div>
-
-          <div class="cinematic-scene" aria-hidden="true">
-            <img
-              src="./assets/observatory-magic-v1.webp"
-              alt=""
-              width="1672"
-              height="941"
-              loading="lazy"
-              decoding="async"
-            >
-            <span class="scene-ring scene-ring-one"></span>
-            <span class="scene-ring scene-ring-two"></span>
-            <span class="scene-pulse"></span>
-            <div class="scene-caption">
-              <span>kAIgi / 01—03</span>
-              <strong>Search → evidence → writing</strong>
-            </div>
-          </div>
-
+      <section class="film-section" id="film" aria-labelledby="film-title" data-reveal>
+        <div class="film-heading"><h2 id="film-title"><span data-copy="ja">kAIgiの使い方</span><span data-copy="en">How kAIgi works</span></h2></div>
+        <div class="film-player"><video controls playsinline preload="none" poster="./assets/promo-poster.webp?v=20261004d" width="1920" height="1080" aria-label="kAIgi product introduction with Japanese narration and original music"><source src="./assets/kaigi-introduction.mp4?v=20261004d" type="video/mp4"><track kind="captions" src="./assets/kaigi-introduction-ja.vtt?v=20261004d" srclang="ja" label="日本語" default><track kind="captions" src="./assets/kaigi-introduction-en.vtt?v=20261004d" srclang="en" label="English"><p><a href="./assets/kaigi-introduction.mp4"><span data-copy="ja">動画をダウンロード</span><span data-copy="en">Download the film</span></a></p></video>
+          <button class="film-start" type="button" aria-label="再生する"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z" fill="currentColor"/></svg><span data-copy="ja">再生する</span><span data-copy="en">Play</span></button>
         </div>
+        <div class="caption-strip"><p class="caption-output" aria-label="Captions"></p><button class="caption-toggle" type="button" aria-pressed="true"><span data-copy="ja">字幕を隠す</span><span data-copy="en">Hide captions</span></button></div>
+        
       </section>
-
-      <section class="band intro-band recall-band" id="recall" aria-labelledby="recall-title">
-        <div class="content-grid">
-          <div>
-            <p class="section-kicker">Recall</p>
-            <h2 id="recall-title">
-              <span data-copy="ja">同じ資料を、三つの距離から。</span>
-              <span data-copy="en">Three ways to approach the same source library.</span>
-            </h2>
-          </div>
-          <div class="feature-grid">
-            <article class="feature">
-              <span class="feature-mark">RECALL</span>
-              <h3>
-                <span data-copy="ja">結果を直接、速く読む</span>
-                <span data-copy="en">Scan direct results quickly</span>
-              </h3>
-              <p>
-                <span data-copy="ja">保存済みの文字起こしと抽出済みPDFを横断し、一致箇所を一覧で比較します。候補を自分で読みたい時の最短経路です。</span>
-                <span data-copy="en">Search saved transcripts and extracted PDFs together, then compare matching passages directly. This is the shortest path when you want to inspect candidates yourself.</span>
-              </p>
-            </article>
-            <article class="feature">
-              <span class="feature-mark">ASK</span>
-              <h3>
-                <span data-copy="ja">会話しながら絞り込む</span>
-                <span data-copy="en">Narrow the library through conversation</span>
-              </h3>
-              <p>
-                <span data-copy="ja">「論文だけ」「一つ目を要約して」と続けて尋ね、候補探しから内容確認まで進めます。回答の出典から元の箇所を開けます。</span>
-                <span data-copy="en">Continue with prompts such as “papers only” or “summarize the first one,” moving from discovery to content questions while keeping source links.</span>
-              </p>
-            </article>
-            <article class="feature">
-              <span class="feature-mark">ZOOM</span>
-              <h3>
-                <span data-copy="ja">全体を意味の地図で眺める</span>
-                <span data-copy="en">See the whole library as a meaning map</span>
-              </h3>
-              <p>
-                <span data-copy="ja">カテゴリ、キーワード、資料へ連続的に近づき、会議と文献の近さを見渡します。検索しても地図を消さず、目的地だけを示します。</span>
-                <span data-copy="en">Move continuously from categories to keywords to sources and survey how meetings and papers relate. Search marks a destination without erasing the map.</span>
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="band intro-band release-feature-band" id="research" aria-labelledby="research-title">
-        <div class="content-grid">
-          <div>
-            <p class="section-kicker">kAIgi 0.5.5 / Connected Library</p>
-            <h2 id="research-title">
-              <span data-copy="ja">つないだ資料を、待たずに開く。<br>一つの作業場で読む。</span>
-              <span data-copy="en">Open connected sources immediately.<br>Read them in one workspace.</span>
-            </h2>
-          </div>
-          <div class="release-feature-content">
-            <div class="feature-grid">
-              <article class="feature">
-                <span class="feature-mark">01</span>
-                <h3>
-                  <span data-copy="ja">一覧更新中もすぐに開く</span>
-                  <span data-copy="en">Open files while the catalog refreshes</span>
-                </h3>
-                <p>
-                  <span data-copy="ja">大きなフォルダでも、接続直後から階層を展開してファイルを開けます。ファイル名とパスの一覧は録音を優先しながら裏で更新します。</span>
-                  <span data-copy="en">Even with a large folder, you can expand the tree and open a file immediately. The filename and path catalog refreshes in the background while recording keeps priority.</span>
-                </p>
-              </article>
-              <article class="feature">
-                <span class="feature-mark">02</span>
-                <h3>
-                  <span data-copy="ja">文書ごとの違いを、一つの作業場へ</span>
-                  <span data-copy="en">Different documents, one workbench</span>
-                </h3>
-                <p>
-                  <span data-copy="ja">PDF、Markdown、HTML、テキストを共通のDocument Workbenchで扱います。形式ごとのプレビューや編集機能は、その上に専門機能として加わります。</span>
-                  <span data-copy="en">PDF, Markdown, HTML, and text share one Document Workbench, with format-specific preview and editing capabilities layered on top.</span>
-                </p>
-              </article>
-              <article class="feature">
-                <span class="feature-mark">03</span>
-                <h3>
-                  <span data-copy="ja">本文を複製しない軽量な検索基盤</span>
-                  <span data-copy="en">Lightweight search without copying source bodies</span>
-                </h3>
-                <p>
-                  <span data-copy="ja">PDF・Markdown・HTML・読めるテキストを名前と保存済み本文から探し、多い結果は「さらに検索」で続けられます。接続一覧は本文を保存せず、候補ごとに原文と接続権限を再確認します。</span>
-                  <span data-copy="en">Find PDF, Markdown, HTML, and readable text by name and saved content, then continue through bounded result batches. The catalog keeps no body copy; every candidate is checked against the current source and connection authority.</span>
-                </p>
-              </article>
-            </div>
-            <div class="release-feature-links">
-              <a href="./release-notes/v0.5.5.html">
-                <span data-copy="ja">0.5.5の変更点とプライバシー境界</span>
-                <span data-copy="en">0.5.5 changes and privacy boundaries</span>
-                <span aria-hidden="true">→</span>
-              </a>
-              <a href="./agent-skills.html#document-commands">
-                <span data-copy="ja">ノートと根拠をCodex／Claudeで使う</span>
-                <span data-copy="en">Use notes and evidence with Codex or Claude</span>
-                <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="band evidence-band" id="agent-context" aria-labelledby="cards-title">
-        <div class="evidence-art" aria-hidden="true">
-          <img
-            src="./assets/research-archive-magic-v1.webp"
-            alt=""
-            width="1536"
-            height="1024"
-            loading="lazy"
-            decoding="async"
-          >
-        </div>
-        <div class="content-grid">
-          <div>
-            <p class="section-kicker">
-              <span data-copy="ja">Codex / Claude Code</span>
-              <span data-copy="en">Codex / Claude Code</span>
-            </p>
-            <h2 id="cards-title">
-              <span data-copy="ja">同じ問いで、<br>会議と論文を。</span>
-              <span data-copy="en">One research question.<br>Meetings and papers together.</span>
-            </h2>
-          </div>
-          <div class="agent-context-content">
-            <div class="card-strip">
-              <article class="insight-card">
-                <p class="tag">ONE COMMAND</p>
-                <h3>
-                  <span data-copy="ja">資料の種類をまたいで探す</span>
-                  <span data-copy="en">Search both kinds of source together</span>
-                </h3>
-                <p>
-                  <span data-copy="ja"><code>kaigi context</code> は、保存済みの会議録と論文を1回で検索し、テーマに近い箇所をまとめます。</span>
-                  <span data-copy="en"><code>kaigi context</code> searches saved meetings and papers in one call and gathers passages relevant to the topic.</span>
-                </p>
-              </article>
-              <article class="insight-card">
-                <p class="tag">TRACEABLE</p>
-                <h3>
-                  <span data-copy="ja">要約ではなく、正確な根拠を渡す</span>
-                  <span data-copy="en">Pass exact evidence, not a generated summary</span>
-                </h3>
-                <p>
-                  <span data-copy="ja">発話時刻、PDFページ、段落ID、本文ハッシュを保ち、CodexやClaudeが原文へ戻れる形で返します。</span>
-                  <span data-copy="en">Utterance timing, PDF pages, block IDs, and source hashes stay attached so Codex or Claude can return to the original text.</span>
-                </p>
-              </article>
-              <article class="insight-card">
-                <p class="tag">BOUNDED</p>
-                <h3>
-                  <span data-copy="ja">確認できた範囲を隠さない</span>
-                  <span data-copy="en">Make retrieval completeness explicit</span>
-                </h3>
-                <p>
-                  <span data-copy="ja">走査件数、上限、省略、読めなかった候補を種類別に返します。未確認を「該当なし」と取り違えません。</span>
-                  <span data-copy="en">Scan counts, limits, omissions, and unreadable candidates are reported per source kind, preventing “not checked” from becoming “not found.”</span>
-                </p>
-              </article>
-            </div>
-            <div class="release-feature-links agent-context-links">
-              <a href="./agent-skills.html#context-command">
-                <span data-copy="ja">Codex／Claudeで使う手順</span>
-                <span data-copy="en">Use it with Codex or Claude</span>
-                <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="band" id="setup" aria-labelledby="setup-title">
-        <div class="content-grid">
-          <div>
-            <p class="section-kicker">
-              <span data-copy="ja">Install</span>
-              <span data-copy="en">Install</span>
-            </p>
-            <h2 id="setup-title">
-              <span data-copy="ja">Macに入れて、すぐ会議で使う。</span>
-              <span data-copy="en">Install on your Mac and use it in the next meeting.</span>
-            </h2>
-          </div>
-          <ol class="steps">
-            <li>
-              <span class="step-number">1</span>
-              <div>
-                <h3>
-                  <span data-copy="ja">最新版DMGをダウンロード</span>
-                  <span data-copy="en">Download the latest DMG</span>
-                </h3>
-                <p>
-                  <span data-copy="ja">macOS 15以降を搭載したApple Silicon Macで、インストールボタンから <code>kAIgi.dmg</code> をダウンロードします。</span>
-                  <span data-copy="en">On an Apple Silicon Mac running macOS 15 or later, use the install button to download <code>kAIgi.dmg</code>.</span>
-                </p>
-              </div>
-            </li>
-            <li>
-              <span class="step-number">2</span>
-              <div>
-                <h3>
-                  <span data-copy="ja">kAIgiを開く</span>
-                  <span data-copy="en">Open kAIgi</span>
-                </h3>
-                <p>
-                  <span data-copy="ja"><code>kAIgi.dmg</code> を開き、Finderに表示された <code>kAIgi.app</code> を起動します。</span>
-                  <span data-copy="en">Open <code>kAIgi.dmg</code>, then launch <code>kAIgi.app</code> from the Finder window.</span>
-                </p>
-              </div>
-            </li>
-            <li>
-              <span class="step-number">3</span>
-              <div>
-                <h3>
-                  <span data-copy="ja">Applicationsへ移動して開く</span>
-                  <span data-copy="en">Move to Applications</span>
-                </h3>
-                <p>
-                  <span data-copy="ja">確認画面で「移動して開く」を選ぶと、コピー先のアプリが自動で開き直されます。</span>
-                  <span data-copy="en">Choose “Move and Open” when prompted. kAIgi copies itself to Applications and reopens from there.</span>
-                </p>
-              </div>
-            </li>
-            <li>
-              <span class="step-number">4</span>
-              <div>
-                <h3>
-                  <span data-copy="ja">初回設定を済ませる</span>
-                  <span data-copy="en">Finish first-run setup</span>
-                </h3>
-                <p>
-                  <span data-copy="ja">会議音声を扱うためのmacOS確認を済ませます。AI Researchは設定で有効にするだけで使え、APIキーやLocal LLMの準備は不要です。</span>
-                  <span data-copy="en">Complete the macOS prompts for meeting audio. AI Research works after you enable it in Settings, with no API key or Local LLM setup required.</span>
-                </p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="download-cta" aria-labelledby="download-cta-title">
-        <div class="download-art" aria-hidden="true">
-          <img
-            src="./assets/download-magic-v1.webp"
-            alt=""
-            width="1672"
-            height="941"
-            loading="lazy"
-            decoding="async"
-          >
-        </div>
-        <div class="download-cta-inner">
-          <div class="download-cta-copy">
-            <p class="section-kicker">
-              <span data-copy="ja">Download</span>
-              <span data-copy="en">Download</span>
-            </p>
-            <h2 id="download-cta-title">
-              <span data-copy="ja">会議の中に、次の発見を。</span>
-              <span data-copy="en">Bring the next discovery into the room.</span>
-            </h2>
-          </div>
-          <a class="button primary" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
-            <span data-copy="ja">kAIgi 0.5.5をダウンロード</span>
-            <span data-copy="en">Download kAIgi 0.5.5</span>
-          </a>
-        </div>
-      </section>
-
-      <section class="band help-band" id="help" aria-labelledby="help-title">
-        <div class="content-grid">
-          <div>
-            <p class="section-kicker">
-              <span data-copy="ja">Help when needed</span>
-              <span data-copy="en">Help when needed</span>
-            </p>
-            <h2 id="help-title">
-              <span data-copy="ja">Q&amp;A</span>
-              <span data-copy="en">Q&amp;A</span>
-            </h2>
-          </div>
-          <div class="accordion-list">
-            <details>
-              <summary>
-                <span data-copy="ja">Micの許可がうまくいかない</span>
-                <span data-copy="en">Microphone access is not working</span>
-              </summary>
-              <p>
-                <span data-copy="ja">kAIgiを終了し、Applications内の <code>kAIgi.app</code> から起動し直してください。一度拒否している場合は、システム設定のマイクでkAIgiをオンにします。</span>
-                <span data-copy="en">Quit kAIgi and reopen <code>kAIgi.app</code> from Applications. If access was denied once, enable kAIgi in macOS Microphone settings.</span>
-              </p>
-            </details>
-            <details>
-              <summary>
-                <span data-copy="ja">内部音声が入らない</span>
-                <span data-copy="en">System audio is missing</span>
-              </summary>
-              <p>
-                <span data-copy="ja">システム設定の画面収録または画面とシステムオーディオ収録でkAIgiがオンになっているか確認し、変更後にアプリを再起動します。</span>
-                <span data-copy="en">Enable kAIgi in Screen Recording or Screen & System Audio Recording settings, then restart the app after changing the permission.</span>
-              </p>
-            </details>
-            <details>
-              <summary>
-                <span data-copy="ja">AI Researchが動かない</span>
-                <span data-copy="en">AI Research is not producing cards</span>
-              </summary>
-              <p>
-                <span data-copy="ja">設定でAI Researchを有効にし、インターネット接続を確認してください。APIキーやLocal LLMは不要です。議論内容が少ない時は、検索する論点が見つかるまで少し発話が必要です。</span>
-                <span data-copy="en">Enable AI Research in Settings and check your internet connection. No API key or Local LLM is required. If the discussion is still short, kAIgi may wait until it finds a useful research question.</span>
-              </p>
-            </details>
-            <details>
-              <summary>
-                <span data-copy="ja">Askが文章で回答しない</span>
-                <span data-copy="en">Ask shows evidence but no generated answer</span>
-              </summary>
-              <p>
-                <span data-copy="ja">回答はこのMac内で処理し、会話は保存しません。設定で検証済みGemma QAT Local LLMを準備するとAskと資料内質問で優先して使います。未準備なら、macOS 26以降の対応環境ではAppleのオンデバイスモデルへ戻ります。どちらも使えない時や根拠が不足する時は、推測せず確認できる根拠候補だけを表示します。</span>
-                <span data-copy="en">Answers are processed on this Mac and conversations are not saved. Prepare the verified Gemma QAT Local LLM in Settings to make it the preferred model for Ask and source Questions. When it is unavailable, supported macOS 26 systems fall back to Apple's on-device model. If neither can answer or evidence is insufficient, kAIgi avoids guessing and shows inspectable evidence candidates.</span>
-              </p>
-            </details>
-            <details>
-              <summary>
-                <span data-copy="ja">相手の声が二重に入る</span>
-                <span data-copy="en">The other speaker is captured twice</span>
-              </summary>
-              <p>
-                <span data-copy="ja">スピーカー再生音がマイクにも入っている可能性があります。会議ではヘッドホンまたはイヤホンの使用を推奨します。</span>
-                <span data-copy="en">Your microphone may be picking up speaker output. Use headphones or earbuds during meetings.</span>
-              </p>
-            </details>
-          </div>
-        </div>
+      <section class="trust-section" aria-labelledby="trust-title" data-reveal><div class="trust-inner"><div><h2 id="trust-title"><span data-copy="ja">大切な記録は、<br>Macの中に。</span><span data-copy="en">Your records.<br>On your Mac.</span></h2><p><span data-copy="ja">録音・文字起こし・翻訳は、端末内で処理。</span><span data-copy="en">Recording, transcription, and translation happen on your Mac.</span></p><a href="./privacy.html"><span data-copy="ja">データの扱いを読む</span><span data-copy="en">How data is handled</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="trust-item" id="agent-context"><h3><span data-copy="ja">外部エージェントと使う</span><span data-copy="en">Continue with your agents</span></h3><p><span data-copy="ja">CodexやClaude Codeへ、必要な根拠を。</span><span data-copy="en">Bring the source evidence to Codex or Claude Code.</span><br><code>kaigi context</code></p><a href="./agent-skills.html#context-command">CLI / Skills<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></section>
+      <section class="final-download" id="setup" aria-labelledby="setup-title" data-reveal><div><h2 id="setup-title"><span data-copy="ja">次の会議から、使ってみる。</span><span data-copy="en">Try it at your next meeting.</span></h2><a class="release-link" href="./release-notes/v0.5.5.html"><span data-copy="ja">0.5.5 リリースノート</span><span data-copy="en">0.5.5 release notes</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div><a class="download-button" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">Mac版をダウンロード</span><span data-copy="en">Download for Mac</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><p class="system-note">macOS 15+ <span>·</span> Apple Silicon <span>·</span> <span data-copy="ja">無料</span><span data-copy="en">Free</span></p></div></section>
+      <section class="home-faq" id="help" aria-label="Questions and setup">
+        <details><summary><span data-copy="ja">動作環境</span><span data-copy="en">System requirements</span></summary><div><p><span data-copy="ja">macOS 15以降を搭載したApple Silicon Macに対応しています。</span><span data-copy="en">Requires an Apple Silicon Mac running macOS 15 or later.</span></p><p><span data-copy="ja">Ask・資料内質問は実験的機能です。設定で検証済みLocal LLMを準備できます。未準備の場合、対応するmacOS 26以降の環境ではAppleのオンデバイスモデルを利用します。モデルが使えない場合や根拠が不足する場合は、根拠候補を表示します。</span><span data-copy="en">Ask and source Questions are experimental. Prepare a verified Local LLM in Settings, or use Apple’s on-device model on supported macOS 26 systems. When a model or sufficient evidence is unavailable, inspectable source candidates are shown.</span></p></div></details>
+        <details><summary><span data-copy="ja">データの扱い</span><span data-copy="en">How data is handled</span></summary><div><p><span data-copy="ja">録音・文字起こし・翻訳・Askの回答処理はMac内で行います。Askの会話は保存しません。AI Researchを有効にすると、簡易マスキングした検索語をDuckDuckGoとWikipediaへ送ります。</span><span data-copy="en">Recording, transcription, translation, and Ask answers are processed on your Mac. Ask conversations are not saved. If enabled, AI Research sends lightly masked search queries to DuckDuckGo and Wikipedia.</span></p><p><span data-copy="ja">接続フォルダの一覧は本文を保存せず、検索時に原文と接続権限を確認します。CLIで取得した内容を外部エージェントへ渡す場合、送信先は利用するツールの設定に従います。</span><span data-copy="en">The connected-folder catalog keeps no body copy; search checks each original source and its access authority. Content passed through the CLI to an external agent follows that tool’s transmission settings.</span></p><a href="./privacy.html"><span data-copy="ja">詳しいプライバシーポリシー</span><span data-copy="en">Read the full privacy policy</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></details>
+        <details><summary><span data-copy="ja">はじめかた</span><span data-copy="en">Getting started</span></summary><div><ol><li><span data-copy="ja">DMGをダウンロードして、kAIgi.appを開く。</span><span data-copy="en">Download the DMG and open kAIgi.app.</span></li><li><span data-copy="ja">「移動して開く」を選び、Applicationsから起動する。</span><span data-copy="en">Choose “Move and Open” to launch from Applications.</span></li><li><span data-copy="ja">録音に必要なmacOSの許可を確認する。</span><span data-copy="en">Review the macOS permissions required for recording.</span></li></ol><p><span data-copy="ja">資料はLibraryから開きます。PDF・Markdown・HTML・テキストをDocument Workbenchで扱い、接続フォルダの一覧更新中もすぐに開くことができます。</span><span data-copy="en">Open sources from Library. PDF, Markdown, HTML, and text share the Document Workbench; connected files can be opened while the catalog refreshes.</span></p></div></details>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <span aria-hidden="true"></span>
-      <p>&copy; 2026 kAIgi</p>
-      <div class="footer-links">
-        <a href="./agent-skills.html">
-          <span data-copy="ja">CLI / Skills</span>
-          <span data-copy="en">CLI / Skills</span>
-        </a>
-        <a href="./release-notes/v0.5.5.html">
-          <span data-copy="ja">0.5.5 リリースノート</span>
-          <span data-copy="en">0.5.5 Release notes</span>
-        </a>
-        <a href="./privacy.html">Privacy Policy</a>
-        <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
-        <a href="https://github.com/keigo1110/kAIgi-download">GitHub</a>
-      </div>
-    </footer>
-
-    <script>
-      (() => {
-        const hero = document.querySelector(".hero");
-        const heroStage = document.querySelector(".hero-stage");
-        const pointerMotion = window.matchMedia("(hover: hover) and (pointer: fine)");
-        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-        let pointerFrame = 0;
-
-        function setHeroPointer(event) {
-          if (!hero || !heroStage || !pointerMotion.matches || reduceMotion.matches) {
-            return;
-          }
-
-          const rect = hero.getBoundingClientRect();
-          const x = ((event.clientX - rect.left) / rect.width - 0.5).toFixed(3);
-          const y = ((event.clientY - rect.top) / rect.height - 0.5).toFixed(3);
-          window.cancelAnimationFrame(pointerFrame);
-          pointerFrame = window.requestAnimationFrame(() => {
-            heroStage.style.setProperty("--pointer-x", x);
-            heroStage.style.setProperty("--pointer-y", y);
-          });
-        }
-
-        function resetHeroPointer() {
-          if (!heroStage) {
-            return;
-          }
-
-          window.cancelAnimationFrame(pointerFrame);
-          heroStage.style.setProperty("--pointer-x", "0");
-          heroStage.style.setProperty("--pointer-y", "0");
-        }
-
-        const demoSections = document.querySelectorAll("[data-scroll-demo]");
-        let scrollTicking = false;
-
-        function clamp(value, min, max) {
-          return Math.min(Math.max(value, min), max);
-        }
-
-        function updateScrollDemos() {
-          demoSections.forEach((section) => {
-            const rect = section.getBoundingClientRect();
-            const scrollable = Math.max(section.offsetHeight - window.innerHeight, 1);
-            const progress = clamp(-rect.top / scrollable, 0, 1);
-            const frame = progress < 0.34 ? 0 : progress < 0.68 ? 1 : 2;
-
-            section.dataset.frame = String(frame);
-            section.style.setProperty("--demo-lift", `${Math.round(progress * -28)}px`);
-            section.style.setProperty("--demo-scale", String(0.96 + progress * 0.04));
-          });
-        }
-
-        function requestDemoUpdate() {
-          if (scrollTicking) {
-            return;
-          }
-
-          scrollTicking = true;
-          window.requestAnimationFrame(() => {
-            updateScrollDemos();
-            scrollTicking = false;
-          });
-        }
-
-        if (reduceMotion.matches) {
-          demoSections.forEach((section) => {
-            section.dataset.frame = "2";
-            section.style.setProperty("--demo-lift", "0px");
-            section.style.setProperty("--demo-scale", "1");
-          });
-        } else {
-          hero?.addEventListener("pointermove", setHeroPointer, { passive: true });
-          hero?.addEventListener("pointerleave", resetHeroPointer, { passive: true });
-          window.addEventListener("scroll", requestDemoUpdate, { passive: true });
-          window.addEventListener("resize", requestDemoUpdate);
-          updateScrollDemos();
-        }
-      })();
-    </script>
-
-    <script>
-      /* Cinematic motion layer: staggered reveal-on-scroll + scroll-linked
-         parallax + hero entrance. Fully self-contained and defensive — if
-         anything throws, the reveal styles never engage (content stays
-         visible) because .js-motion is only added on the happy path. */
-      (() => {
-        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-        if (reduce.matches || !("IntersectionObserver" in window)) {
-          return;
-        }
-
-        const root = document.documentElement;
-
-        try {
-          root.classList.add("js-motion");
-
-          const io = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  entry.target.classList.add("is-in");
-                  io.unobserve(entry.target);
-                }
-              });
-            },
-            { rootMargin: "0px 0px -12% 0px", threshold: 0.08 }
-          );
-
-          function reveal(selector, stagger) {
-            const nodes = document.querySelectorAll(selector);
-            nodes.forEach((node, index) => {
-              node.classList.add("reveal");
-              if (stagger) {
-                node.style.setProperty("--reveal-delay", `${index * stagger}ms`);
-              }
-              io.observe(node);
-            });
-          }
-
-          // Hero entrance — reveal on load, not on scroll.
-          const heroEls = [
-            document.querySelector(".hero-copy h1"),
-            document.querySelector(".hero-manifesto"),
-            document.querySelector(".hero-actions"),
-          ].filter(Boolean);
-          heroEls.forEach((el, index) => {
-            el.classList.add("reveal");
-            el.style.setProperty("--reveal-delay", `${120 + index * 130}ms`);
-          });
-          requestAnimationFrame(() =>
-            requestAnimationFrame(() =>
-              heroEls.forEach((el) => el.classList.add("is-in"))
-            )
-          );
-
-          // Scroll-revealed content, staggered within each group.
-          reveal(".demo-copy .section-kicker");
-          reveal(".demo-copy h2");
-          reveal(".demo-steps");
-          reveal(".intro-band .section-kicker");
-          reveal(".intro-band .content-grid h2");
-          reveal(".intro-band .feature", 90);
-          reveal(".evidence-band .section-kicker");
-          reveal(".evidence-band .content-grid h2");
-          reveal(".evidence-band .insight-card", 90);
-          reveal("#setup .section-kicker");
-          reveal("#setup h2");
-          reveal("#setup .steps li", 80);
-          reveal(".download-cta .section-kicker");
-          reveal(".download-cta h2");
-          reveal(".download-cta .button");
-          reveal(".help-band .section-kicker");
-          reveal(".help-band h2");
-          reveal(".accordion-list");
-
-          // Safety net: force-reveal anything already in view after a beat,
-          // in case an observer notification is missed.
-          window.setTimeout(() => {
-            document.querySelectorAll(".reveal:not(.is-in)").forEach((el) => {
-              if (el.getBoundingClientRect().top < window.innerHeight) {
-                el.classList.add("is-in");
-              }
-            });
-          }, 1400);
-
-          // Parallax (desktop widths only).
-          const desktop = window.matchMedia("(min-width: 981px)");
-          const heroFrame = document.querySelector(".hero-art-frame");
-          const evidenceImg = document.querySelector(".evidence-art img");
-          const evidenceBand = document.querySelector(".evidence-band");
-          const downloadImg = document.querySelector(".download-art img");
-          const downloadCta = document.querySelector(".download-cta");
-          const progressBar = document.querySelector(".scroll-progress span");
-          let parallaxTicking = false;
-
-          function driftThrough(el, band, range) {
-            if (!el || !band) {
-              return;
-            }
-            const rect = band.getBoundingClientRect();
-            const progress =
-              (window.innerHeight - rect.top) /
-              (window.innerHeight + rect.height);
-            const clamped = Math.min(Math.max(progress, 0), 1);
-            el.style.setProperty(
-              "--scroll-y",
-              `${((clamped - 0.5) * range).toFixed(1)}px`
-            );
-          }
-
-          function updateParallax() {
-            if (progressBar) {
-              const doc = document.documentElement;
-              const max = doc.scrollHeight - window.innerHeight;
-              const p = max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0;
-              progressBar.style.setProperty("--progress", p.toFixed(4));
-            }
-            if (!desktop.matches) {
-              return;
-            }
-            const y = window.scrollY || 0;
-            if (heroFrame) {
-              heroFrame.style.setProperty(
-                "--scroll-y",
-                `${Math.min(y * 0.12, 90).toFixed(1)}px`
-              );
-            }
-            driftThrough(evidenceImg, evidenceBand, 120);
-            driftThrough(downloadImg, downloadCta, 110);
-          }
-
-          function requestParallax() {
-            if (parallaxTicking) {
-              return;
-            }
-            parallaxTicking = true;
-            window.requestAnimationFrame(() => {
-              updateParallax();
-              parallaxTicking = false;
-            });
-          }
-
-          window.addEventListener("scroll", requestParallax, { passive: true });
-          window.addEventListener("resize", requestParallax);
-          updateParallax();
-        } catch (error) {
-          // Fail open: never leave content hidden behind the reveal styles.
-          root.classList.remove("js-motion");
-        }
-      })();
-    </script>
+    <dialog class="screen-dialog" id="screen-dialog" aria-labelledby="screen-dialog-title"><div class="dialog-toolbar"><p id="screen-dialog-title"><span data-copy="ja">kAIgi</span><span data-copy="en">kAIgi</span></p><form method="dialog"><button class="dialog-close" aria-label="Close">×</button></form></div><div class="dialog-image-area"><img src="./assets/product-library.webp" alt=""></div></dialog>
+    <footer class="site-footer"><a class="brand" href="./index.html">kAIgi</a><nav class="footer-links" aria-label="Footer"><a href="./agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="./privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a><a href="./release-notes/index.html"><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></a><a href="https://github.com/keigo1110/kAIgi-download">GitHub</a></nav><p>© 2026 kAIgi</p></footer>
   </body>
 </html>

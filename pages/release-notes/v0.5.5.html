@@ -6,44 +6,37 @@
     <title>kAIgi 0.5.5 - リリースノート</title>
     <meta name="description" content="kAIgi 0.5.5の変更点。論文の構造・対訳、長い会議、検索の重複計算を削減。">
     <meta name="robots" content="index,follow">
-    <meta name="theme-color" content="#0c0d10">
+    <meta name="theme-color" content="#f6f5f1">
     <link rel="icon" href="../assets/app-icon-180.png">
     <script src="../site-preload.js"></script>
-    <link rel="stylesheet" href="../styles.css?v=0.5.4">
-    <script defer src="../site.js"></script>
+    <link rel="stylesheet" href="../styles.css?v=20261004d">
+    <script defer src="../site.js?v=20261004d"></script>
   </head>
   <body data-language="ja" data-title-ja="kAIgi 0.5.5 - リリースノート" data-title-en="kAIgi 0.5.5 - Release notes">
     <a class="skip-link" href="#main-content"><span data-copy="ja">本文へ移動</span><span data-copy="en">Skip to content</span></a>
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="kAIgi home"><img src="../assets/app-icon-180.png" alt="" width="36" height="36"><span>kAIgi</span></a>
-      <nav class="site-nav" aria-label="Primary"><a href="../index.html">Home</a><a href="../privacy.html">Privacy</a></nav>
-      <div class="header-actions"><div class="language-switch" aria-label="Language">
-        <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
-        <button type="button" data-language-option="en" aria-pressed="false">EN</button>
-      </div></div>
-    </header>
-    <main id="main-content" tabindex="-1">
+    <header class="site-header"><a class="brand" href="../index.html" aria-label="kAIgi home"><img src="../assets/app-icon-180.png" alt="" width="32" height="32"><span>kAIgi</span></a><nav class="site-nav" aria-label="Primary"><a href="../agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="../privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a></nav><div class="header-actions"><div class="language-switch" aria-label="Language"><button type="button" data-language-option="ja" aria-pressed="true">JA</button><button type="button" data-language-option="en" aria-pressed="false">EN</button></div><a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a></div></header>
+    <main id="main-content" class="document-page" tabindex="-1"><section class="page-hero compact-hero"><h1><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></h1></section><div class="reading-layout release-layout"><nav class="topic-rail" aria-label="Release navigation"><a href="v0.5.5.html"><span data-copy="ja">最新版</span><span data-copy="en">Latest</span></a><a href="index.html"><span data-copy="ja">過去のリリース</span><span data-copy="en">All releases</span></a></nav><article class="reading-copy release-body"><h2 class="release-version">kAIgi 0.5.5</h2>
       <section class="policy-hero"><div class="narrow">
-        <p class="eyebrow">Version 0.5.5 / Build 57</p>
-        <h1><span data-copy="ja">読むための処理を、軽く。</span><span data-copy="en">Less repeated work behind your reading.</span></h1>
+        <p class="release-meta">Version 0.5.5 / Build 57</p>
+        <h3><span data-copy="ja">読むための処理を、軽く。</span><span data-copy="en">Less repeated work behind your reading.</span></h3>
         <p><span data-copy="ja">論文の構造・対訳、長い会議、検索の処理準備を効率化しました。</span><span data-copy="en">More efficient preparation for paper structure, parallel translation, long transcripts and retrieval.</span></p>
       </div></section>
       <section class="policy-section"><div class="narrow policy-copy">
-        <h2><span data-copy="ja">論文の構造・対訳</span><span data-copy="en">Paper structure and parallel translation</span></h2>
+        <h3><span data-copy="ja">論文の構造・対訳</span><span data-copy="en">Paper structure and parallel translation</span></h3>
         <p><span data-copy="ja">章立て・段落要旨・対訳の表示に必要な計算を共有し、同じ本文を繰り返し処理する無駄を減らしました。構造化の準備は、その回に実行できる範囲へ絞ります。PDFの文字修復とページ位置の照合も効率化しました。</span><span data-copy="en">Outline, gist and translation views reuse preparation instead of repeatedly processing the same text. Structure planning stops at the current run's work budget. PDF font-repair lookup and page geometry queries also do less repeated work.</span></p>
         <p><span data-copy="ja">文書や翻訳言語を変更した場合は現在の原文との対応を確認します。原文・注釈・保存形式・翻訳モデルは変更しません。</span><span data-copy="en">Changing a document or translation language still checks correspondence with the current source. Originals, annotations, stored formats and translation models are unchanged.</span></p>
       </div></section>
       <section class="policy-section"><div class="narrow policy-copy">
-        <h2><span data-copy="ja">会議・検索・辞書</span><span data-copy="en">Meetings, retrieval and lookup</span></h2>
+        <h3><span data-copy="ja">会議・検索・辞書</span><span data-copy="en">Meetings, retrieval and lookup</span></h3>
         <p><span data-copy="ja">コピー用の文字起こし本文はコピー操作時に組み立てます。文章結合、話者名の照合、Askの直近発話、Recallの代表資料選択と旧マップの準備も効率化しました。選択順と根拠は維持します。</span><span data-copy="en">Transcript copy text is assembled when you copy, not while showing the button. Grouping, speaker lookup, recent Ask context, Recall representative selection and legacy map preparation also avoid repeated work. Selection order and evidence are preserved.</span></p>
         <p><span data-copy="ja">⌘C二連続の対象外アプリ設定をキー入力ごとに解析し直さなくなりました。翻訳・辞書の操作や履歴を保存しない方針は変わりません。</span><span data-copy="en">Double-Copy no longer reparses excluded-app settings on every key event. Translation and dictionary behavior, including no lookup history, is unchanged.</span></p>
       </div></section>
       <section class="policy-section"><div class="narrow policy-copy">
-        <h2><span data-copy="ja">既知の制限</span><span data-copy="en">Known limitations</span></h2>
+        <h3><span data-copy="ja">既知の制限</span><span data-copy="en">Known limitations</span></h3>
         <p><span data-copy="ja">今回は重複計算と処理準備の改善です。モデル精度の向上やすべての操作の待ち時間短縮を保証しません。翻訳・要旨は専門語・条件・留保を誤ることがあります。原文も確認してください。複雑な雑誌レイアウトや図・表内部の完全復元は対象外です。</span><span data-copy="en">These changes improve preparation, not model accuracy or every interaction's latency. Translations and gists can misread terminology, conditions and qualifications; check the original. Full reconstruction of complex magazine layouts and diagram/table internals is outside this release's scope.</span></p>
         <p><span data-copy="ja">Sparkle自動更新の実操作は未検証で、今後の公開の必須確認には含めません。署名・公証・更新フィードと配布ファイルの検証は維持します。</span><span data-copy="en">Real Sparkle updates are unverified and are no longer a release prerequisite. Signing, notarization, appcast and downloaded-artifact verification remain required.</span></p>
       </div></section>
-    </main>
-    <footer class="site-footer"><span aria-hidden="true"></span><p>&copy; 2026 kAIgi</p><div class="footer-links"><a href="../index.html">Home</a><a href="../privacy.html">Privacy Policy</a></div></footer>
+    </article></div></main>
+    <footer class="site-footer"><a class="brand" href="../index.html">kAIgi</a><nav class="footer-links" aria-label="Footer"><a href="../agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="../privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a><a href="../release-notes/index.html"><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></a><a href="https://github.com/keigo1110/kAIgi-download">GitHub</a></nav><p>© 2026 kAIgi</p></footer>
   </body>
 </html>

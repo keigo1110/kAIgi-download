@@ -66,4 +66,54 @@
   });
 
   setLanguage(initialLanguage, false);
+
+  // A direct reference link opens its containing disclosure before scrolling.
+  let pendingScroll = null;
+  function openLinkedReference() {
+    if (pendingScroll !== null) cancelAnimationFrame(pendingScroll);
+    pendingScroll = null;
+    let id;
+    try {
+      id = decodeURIComponent(location.hash.slice(1));
+    } catch {
+      return;
+    }
+    const target = document.getElementById(id);
+    const disclosure = target?.closest('details');
+    if (!disclosure) return;
+    disclosure.open = true;
+    pendingScroll = requestAnimationFrame(() => {
+      pendingScroll = null;
+      target.scrollIntoView({ block: 'start' });
+    });
+  }
+  window.addEventListener('hashchange', openLinkedReference);
+  window.addEventListener('pagehide', () => {
+    if (pendingScroll !== null) cancelAnimationFrame(pendingScroll);
+    pendingScroll = null;
+  });
+  openLinkedReference();
+
+  // Only the two invocation examples have copy actions. No command executes.
+  document.querySelectorAll('#invoke pre').forEach((example) => {
+    const button = document.createElement('button');
+    button.className = 'copy-example';
+    button.type = 'button';
+    button.innerHTML = '<span data-copy="ja">コピー</span><span data-copy="en">Copy</span>';
+    const region = document.createElement('div');
+    region.className = 'copy-region';
+    example.before(region);
+    region.append(example, button);
+    button.addEventListener('click', async () => {
+      button.disabled = true;
+      try {
+        await navigator.clipboard.writeText(example.querySelector('code').textContent);
+        button.innerHTML = '<span data-copy="ja">コピー済み</span><span data-copy="en">Copied</span>';
+      } catch {
+        button.innerHTML = '<span data-copy="ja">コピーできませんでした</span><span data-copy="en">Could not copy</span>';
+      } finally {
+        button.disabled = false;
+      }
+    });
+  });
 })();

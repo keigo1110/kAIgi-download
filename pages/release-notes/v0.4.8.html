@@ -9,7 +9,7 @@
       content="kAIgi 0.4.8のリリースノート。回答経路の表示、検索条件の編集、会議検出、Gemmaによる検証済みPDF要約。"
     >
     <meta name="robots" content="index,follow">
-    <meta name="theme-color" content="#0c0d10">
+    <meta name="theme-color" content="#f6f5f1">
     <meta property="og:site_name" content="kAIgi">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:locale:alternate" content="en_US">
@@ -20,18 +20,18 @@
     >
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.8.html">
-    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp-product.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="kAIgi 0.4.8">
     <meta name="twitter:description" content="Traceable Gemma answers, controlled web research, meeting detection, and validated PDF summaries.">
-    <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp.png">
+    <meta name="twitter:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp-product.png">
     <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/release-notes/v0.4.8.html">
     <link rel="sitemap" type="application/xml" href="../sitemap.xml">
     <link rel="icon" href="../assets/app-icon-180.png">
     <link rel="apple-touch-icon" href="../assets/app-icon-180.png">
     <script src="../site-preload.js"></script>
-    <link rel="stylesheet" href="../styles.css?v=0.4.8">
-    <script defer src="../site.js"></script>
+    <link rel="stylesheet" href="../styles.css?v=20261004d">
+    <script defer src="../site.js?v=20261004d"></script>
   </head>
   <body
     data-language="ja"
@@ -43,42 +43,16 @@
       <span data-copy="en">Skip to content</span>
     </a>
 
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="kAIgi home">
-        <img src="../assets/app-icon-180.png" alt="" width="36" height="36">
-        <span>kAIgi</span>
-      </a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="../index.html">
-          <span data-copy="ja">トップ</span>
-          <span data-copy="en">Home</span>
-        </a>
-        <a href="../agent-skills.html">
-          <span data-copy="ja">CLI / Skills</span>
-          <span data-copy="en">CLI / Skills</span>
-        </a>
-        <a href="../privacy.html">Privacy</a>
-      </nav>
-      <div class="header-actions">
-        <div class="language-switch" aria-label="Language">
-          <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
-          <button type="button" data-language-option="en" aria-pressed="false">EN</button>
-        </div>
-        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg">
-          <span data-copy="ja">ダウンロード</span>
-          <span data-copy="en">Download</span>
-        </a>
-      </div>
-    </header>
+    <header class="site-header"><a class="brand" href="../index.html" aria-label="kAIgi home"><img src="../assets/app-icon-180.png" alt="" width="32" height="32"><span>kAIgi</span></a><nav class="site-nav" aria-label="Primary"><a href="../agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="../privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a></nav><div class="header-actions"><div class="language-switch" aria-label="Language"><button type="button" data-language-option="ja" aria-pressed="true">JA</button><button type="button" data-language-option="en" aria-pressed="false">EN</button></div><a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a></div></header>
 
-    <main id="main-content" tabindex="-1">
+    <main id="main-content" class="document-page" tabindex="-1"><section class="page-hero compact-hero"><h1><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></h1></section><div class="reading-layout release-layout"><nav class="topic-rail" aria-label="Release navigation"><a href="v0.5.5.html"><span data-copy="ja">最新版</span><span data-copy="en">Latest</span></a><a href="index.html"><span data-copy="ja">過去のリリース</span><span data-copy="en">All releases</span></a></nav><article class="reading-copy release-body"><h2 class="release-version">kAIgi 0.4.8</h2>
       <section class="policy-hero" aria-labelledby="release-title">
         <div class="narrow release-intro">
-          <p class="eyebrow">RELEASE / 0.4.8</p>
-          <h1 id="release-title">
+          <p class="release-meta">RELEASE / 0.4.8</p>
+          <h3 id="release-title">
             <span data-copy="ja">答えの経路を見せ、検索とPDFを磨く。</span>
             <span data-copy="en">Trace the answer. Control the search. Read the PDF.</span>
-          </h1>
+          </h3>
           <p class="lead">
             <span data-copy="ja">kAIgi 0.4.8は、Gemmaの回答経路と検証結果を控えめに表示し、Deep Researchの検索条件を送信前に編集できるようにしました。PDFの構造と要約も、引用・数値・言語を検証するGemmaハーネスへ統合しています。</span>
             <span data-copy="en">kAIgi 0.4.8 quietly exposes the route and validation behind Gemma answers, lets you edit Deep Research scope before sending, and brings PDF structure and summaries into a citation-, number-, and language-validated Gemma harness.</span>
@@ -104,10 +78,10 @@
 
       <section class="policy-section">
         <div class="narrow policy-copy">
-          <h2>
+          <h3>
             <span data-copy="ja">回答本文を邪魔せず、経路と根拠を示す</span>
             <span data-copy="en">Show route and evidence without crowding the answer</span>
-          </h2>
+          </h3>
           <p>
             <span data-copy="ja">AskとText／Audioの「質問」は、回答の下にGemma QAT、Apple fallback、決定的回答、根拠候補へのfallbackのどれを使ったか表示します。詳細には引用件数、要確認の根拠、競合値、再検証の実施、完成回答を出さなかった理由をまとめ、通常はpopoverへ畳みます。</span>
             <span data-copy="en">Ask and source Questions now label whether they used Gemma QAT, Apple fallback, a deterministic answer, or an evidence-candidate fallback. Citation counts, evidence requiring review, conflicting values, verification passes, and refusal reasons stay folded into a popover by default.</span>
@@ -121,10 +95,10 @@
 
       <section class="policy-section">
         <div class="narrow policy-copy">
-          <h2>
+          <h3>
             <span data-copy="ja">送信する検索条件を、先に確認する</span>
             <span data-copy="en">Review the exact search scope before sending</span>
-          </h2>
+          </h3>
           <p>
             <span data-copy="ja">Deep Researchの開始前に、検索語、期間、最大4件のドメインを編集できます。簡易マスキングやドメイン正規化で値が変わる場合は、実際に送る条件も画面へ表示します。</span>
             <span data-copy="en">Before Deep Research starts, you can edit the query, time range, and up to four domains. If lightweight masking or domain normalization changes a value, kAIgi also shows the exact scope it will send.</span>
@@ -138,10 +112,10 @@
 
       <section class="policy-section">
         <div class="narrow policy-copy">
-          <h2>
+          <h3>
             <span data-copy="ja">PDFの構造と要約を、検証してから保存する</span>
             <span data-copy="en">Validate PDF structure and summaries before saving</span>
-          </h2>
+          </h3>
           <p>
             <span data-copy="ja">「構造を生成」は検証済みGemma 4 E4B QATを優先します。段落ID、見出し、根拠ID、exact JSON schema、引用、数値、要求言語、要約密度をアプリが検証し、通らない項目だけ対応環境のAppleオンデバイスモデルへ戻します。</span>
             <span data-copy="en">Generate Structure now prefers the verified Gemma 4 E4B QAT model. kAIgi validates paragraph and evidence IDs, headings, the exact JSON schema, citations, numbers, requested language, and summary density, then falls back to Apple's on-device model only for rejected work on supported systems.</span>
@@ -155,10 +129,10 @@
 
       <section class="policy-section">
         <div class="narrow policy-copy">
-          <h2>
+          <h3>
             <span data-copy="ja">会議を見つけても、録音は勝手に始めない</span>
             <span data-copy="en">Detect a meeting without ever auto-recording it</span>
-          </h2>
+          </h3>
           <p>
             <span data-copy="ja">kAIgiが前面にある間、Zoom、Google Meet、Teams等の既知アプリと会議らしいwindow titleを端末内で確認し、録音可能な場合だけ小さな開始操作を表示します。汎用titleだけでは会議とみなさず、誤検出を避けます。</span>
             <span data-copy="en">While kAIgi is in front, it locally checks known apps such as Zoom, Google Meet, and Teams together with meeting-like window titles, then offers a small recording action only when recording is available. Generic titles alone do not count as a meeting.</span>
@@ -172,10 +146,10 @@
 
       <section class="policy-section">
         <div class="narrow policy-copy">
-          <h2>
+          <h3>
             <span data-copy="ja">Local AIの配布量を、用途を変えずに減らす</span>
             <span data-copy="en">Reduce Local AI downloads without changing their purpose</span>
-          </h2>
+          </h3>
           <p>
             <span data-copy="ja">Gemma QATから回答に使わないvision tensorを除き、新規ダウンロードを約956MB削減しました。固定revision、全SHA-256、tensor一覧、ファイル世代、process間lockの検証は維持し、既存モデルをbackgroundで削除・書き換えません。</span>
             <span data-copy="en">The Gemma QAT download omits a vision tensor unused by grounded answers, reducing new downloads by about 956 MB. Pinned revision, complete SHA-256 checks, tensor inventory, file generations, and cross-process locks remain enforced, and existing models are never rewritten or deleted in the background.</span>
@@ -186,20 +160,8 @@
           </p>
         </div>
       </section>
-    </main>
+    </article></div></main>
 
-    <footer class="site-footer">
-      <span aria-hidden="true"></span>
-      <p>&copy; 2026 kAIgi</p>
-      <div class="footer-links">
-        <a href="../index.html">
-          <span data-copy="ja">トップ</span>
-          <span data-copy="en">Home</span>
-        </a>
-        <a href="../agent-skills.html">CLI / Skills</a>
-        <a href="../privacy.html">Privacy Policy</a>
-        <a href="https://github.com/keigo1110/kAIgi-download/issues">Issues</a>
-      </div>
-    </footer>
+    <footer class="site-footer"><a class="brand" href="../index.html">kAIgi</a><nav class="footer-links" aria-label="Footer"><a href="../agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="../privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a><a href="../release-notes/index.html"><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></a><a href="https://github.com/keigo1110/kAIgi-download">GitHub</a></nav><p>© 2026 kAIgi</p></footer>
   </body>
 </html>

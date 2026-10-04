@@ -6,45 +6,38 @@
     <title>kAIgi 0.5.4 - リリースノート</title>
     <meta name="description" content="kAIgi 0.5.4の変更点。選択範囲の翻訳・辞書と、論文PDFの読み順・段落の改善。">
     <meta name="robots" content="index,follow">
-    <meta name="theme-color" content="#0c0d10">
+    <meta name="theme-color" content="#f6f5f1">
     <link rel="icon" href="../assets/app-icon-180.png">
     <script src="../site-preload.js"></script>
-    <link rel="stylesheet" href="../styles.css?v=0.5.4">
-    <script defer src="../site.js"></script>
+    <link rel="stylesheet" href="../styles.css?v=20261004d">
+    <script defer src="../site.js?v=20261004d"></script>
   </head>
   <body data-language="ja" data-title-ja="kAIgi 0.5.4 - リリースノート" data-title-en="kAIgi 0.5.4 - Release notes">
     <a class="skip-link" href="#main-content"><span data-copy="ja">本文へ移動</span><span data-copy="en">Skip to content</span></a>
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="kAIgi home"><img src="../assets/app-icon-180.png" alt="" width="36" height="36"><span>kAIgi</span></a>
-      <nav class="site-nav" aria-label="Primary"><a href="../index.html">Home</a><a href="../privacy.html">Privacy</a></nav>
-      <div class="header-actions"><div class="language-switch" aria-label="Language">
-        <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
-        <button type="button" data-language-option="en" aria-pressed="false">EN</button>
-      </div></div>
-    </header>
-    <main id="main-content" tabindex="-1">
+    <header class="site-header"><a class="brand" href="../index.html" aria-label="kAIgi home"><img src="../assets/app-icon-180.png" alt="" width="32" height="32"><span>kAIgi</span></a><nav class="site-nav" aria-label="Primary"><a href="../agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="../privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a></nav><div class="header-actions"><div class="language-switch" aria-label="Language"><button type="button" data-language-option="ja" aria-pressed="true">JA</button><button type="button" data-language-option="en" aria-pressed="false">EN</button></div><a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a></div></header>
+    <main id="main-content" class="document-page" tabindex="-1"><section class="page-hero compact-hero"><h1><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></h1></section><div class="reading-layout release-layout"><nav class="topic-rail" aria-label="Release navigation"><a href="v0.5.5.html"><span data-copy="ja">最新版</span><span data-copy="en">Latest</span></a><a href="index.html"><span data-copy="ja">過去のリリース</span><span data-copy="en">All releases</span></a></nav><article class="reading-copy release-body"><h2 class="release-version">kAIgi 0.5.4</h2>
       <section class="policy-hero"><div class="narrow">
-        <p class="eyebrow">Version 0.5.4 / Build 56</p>
-        <h1><span data-copy="ja">選んだ言葉を調べ、論文を読み進める。</span><span data-copy="en">Look up a selection. Keep reading your paper.</span></h1>
+        <p class="release-meta">Version 0.5.4 / Build 56</p>
+        <h3><span data-copy="ja">選んだ言葉を調べ、論文を読み進める。</span><span data-copy="en">Look up a selection. Keep reading your paper.</span></h3>
         <p><span data-copy="ja">選択範囲の翻訳・辞書と、論文PDFの読み順・段落を改善しました。</span><span data-copy="en">Translation and dictionary lookup for selected text, with improved paper reading order and paragraphs.</span></p>
       </div></section>
       <section class="policy-section"><div class="narrow policy-copy">
-        <h2><span data-copy="ja">選択範囲の翻訳・辞書</span><span data-copy="en">Translation and dictionary lookup</span></h2>
+        <h3><span data-copy="ja">選択範囲の翻訳・辞書</span><span data-copy="en">Translation and dictionary lookup</span></h3>
         <p><span data-copy="ja">通常設定の「翻訳・辞書」で⌘C二連続を有効にすると、コピーした選択範囲を小窓で調べられます。入力監視の許可が必要です。通常のコピーは変えません。macOSのサービスからも実行できます。</span><span data-copy="en">Enable double Command-C in Translation &amp; Dictionary settings to look up copied text in a small panel. Input Monitoring permission is required. Ordinary Copy is unchanged. macOS Services provides another entry point.</span></p>
         <p><span data-copy="ja">自動モードは、kAIgiの表示言語と同じ言葉なら辞書、それ以外なら表示言語への翻訳を選びます。言語と操作は手動でも切り替えられます。小窓と原文・結果の区切りはサイズ変更でき、結果はコピーアイコンでコピーできます。辞書は見出し語・語義・節を読みやすく表示します。</span><span data-copy="en">Auto chooses Dictionary for text matching kAIgi's display language and Translation otherwise. Language and action can be changed manually. Resize the panel and its source/result split; use the copy icon for the result. Dictionary headwords, senses and sections are easier to read.</span></p>
         <p><span data-copy="ja">Apple TranslationとMacの辞書を使い、履歴は保存しません。対象外アプリを設定でき、入力監視も無効にできます。翻訳の開始時に待ち続ける問題を修正しました。</span><span data-copy="en">Uses Apple Translation and installed Mac dictionaries without saving lookup history. Exclude applications or disable monitoring in Settings. Fixed translation waiting indefinitely at session startup.</span></p>
       </div></section>
       <section class="policy-section"><div class="narrow policy-copy">
-        <h2><span data-copy="ja">論文PDFの読み順と段落</span><span data-copy="en">Paper reading order and paragraphs</span></h2>
+        <h3><span data-copy="ja">論文PDFの読み順と段落</span><span data-copy="en">Paper reading order and paragraphs</span></h3>
         <p><span data-copy="ja">二段組の横断見出し前後の読み順と、中央で折り返すタイトルを修正しました。日本語の「抄録」を要旨として読み、確認できる行・段の続きは段落につなげます。IEEEの価格・著作権表記が本文を巻き込む問題と、Sec. VI.等で対訳の文が分裂する問題を修正しました。</span><span data-copy="en">Fixed reading order around spanning headings in two-column pages and wrapped centered titles. Recognizes Japanese abstract labels and joins witnessed paragraph continuations across lines and columns. Fixed publisher-price footers swallowing body text and sentence splitting at Roman section references.</span></p>
         <p><span data-copy="ja">旧native抽出は安全な既存経路で更新します。確認済みOCR・文字修復、原本、注釈は自動上書きしません。</span><span data-copy="en">Older native extraction refreshes through the existing safe path. Reviewed OCR and font repairs, originals and annotations are not automatically overwritten.</span></p>
       </div></section>
       <section class="policy-section"><div class="narrow policy-copy">
-        <h2><span data-copy="ja">既知の制限</span><span data-copy="en">Known limitations</span></h2>
+        <h3><span data-copy="ja">既知の制限</span><span data-copy="en">Known limitations</span></h3>
         <p><span data-copy="ja">機械翻訳と生成要旨は、専門語・比喩・条件・留保を誤ることがあります。原文も確認してください。不足する要旨は「不足分を補完」で再開できます。複雑な雑誌レイアウトや図・表の内部構造の完全復元は今回の対象外です。</span><span data-copy="en">Translations and gists can misread terminology, idioms, conditions and qualifications. Check the original. Complete remaining gists resumes missing work. Full reconstruction of complex magazine layouts and diagram/table internals is outside this release's scope.</span></p>
         <p><span data-copy="ja">⌘C二連続はkAIgiの起動と入力監視が必要です。サービス対応は元アプリに依存します。未導入の言語データはAppleの確認後にダウンロードする場合があります。0.5.3からのSparkle自動更新の実操作は未検証で、今回に限り公開条件から外しています。署名・公証・更新フィードと配布ファイルの検証は維持します。</span><span data-copy="en">Double Copy needs kAIgi running and Input Monitoring. Service availability depends on the source app. Apple may ask to download missing language data. A real Sparkle update from 0.5.3 is unverified and is not required for this release only. Signing, notarization, appcast and downloaded-artifact verification remain required.</span></p>
       </div></section>
-    </main>
-    <footer class="site-footer"><span aria-hidden="true"></span><p>&copy; 2026 kAIgi</p><div class="footer-links"><a href="../index.html">Home</a><a href="../privacy.html">Privacy Policy</a></div></footer>
+    </article></div></main>
+    <footer class="site-footer"><a class="brand" href="../index.html">kAIgi</a><nav class="footer-links" aria-label="Footer"><a href="../agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="../privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a><a href="../release-notes/index.html"><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></a><a href="https://github.com/keigo1110/kAIgi-download">GitHub</a></nav><p>© 2026 kAIgi</p></footer>
   </body>
 </html>

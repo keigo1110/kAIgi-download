@@ -6,69 +6,62 @@
     <title>kAIgi 0.5.3 - リリースノート</title>
     <meta name="description" content="kAIgi 0.5.3のリリースノート。論文PDFの構造・対訳の改善、Askへの音声での質問と読み上げ、接続フォルダのkAIgiデータ削除。">
     <meta name="robots" content="index,follow">
-    <meta name="theme-color" content="#0c0d10">
+    <meta name="theme-color" content="#f6f5f1">
     <link rel="icon" href="../assets/app-icon-180.png">
     <script src="../site-preload.js"></script>
-    <link rel="stylesheet" href="../styles.css?v=0.5.3">
-    <script defer src="../site.js"></script>
+    <link rel="stylesheet" href="../styles.css?v=20261004d">
+    <script defer src="../site.js?v=20261004d"></script>
   </head>
   <body data-language="ja" data-title-ja="kAIgi 0.5.3 - リリースノート" data-title-en="kAIgi 0.5.3 - Release notes">
     <a class="skip-link" href="#main-content"><span data-copy="ja">本文へ移動</span><span data-copy="en">Skip to content</span></a>
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="kAIgi home"><img src="../assets/app-icon-180.png" alt="" width="36" height="36"><span>kAIgi</span></a>
-      <nav class="site-nav" aria-label="Primary"><a href="../index.html">Home</a><a href="../privacy.html">Privacy</a></nav>
-      <div class="header-actions"><div class="language-switch" aria-label="Language">
-        <button type="button" data-language-option="ja" aria-pressed="true">JA</button>
-        <button type="button" data-language-option="en" aria-pressed="false">EN</button>
-      </div></div>
-    </header>
-    <main id="main-content" tabindex="-1">
+    <header class="site-header"><a class="brand" href="../index.html" aria-label="kAIgi home"><img src="../assets/app-icon-180.png" alt="" width="32" height="32"><span>kAIgi</span></a><nav class="site-nav" aria-label="Primary"><a href="../agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="../privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a></nav><div class="header-actions"><div class="language-switch" aria-label="Language"><button type="button" data-language-option="ja" aria-pressed="true">JA</button><button type="button" data-language-option="en" aria-pressed="false">EN</button></div><a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a></div></header>
+    <main id="main-content" class="document-page" tabindex="-1"><section class="page-hero compact-hero"><h1><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></h1></section><div class="reading-layout release-layout"><nav class="topic-rail" aria-label="Release navigation"><a href="v0.5.5.html"><span data-copy="ja">最新版</span><span data-copy="en">Latest</span></a><a href="index.html"><span data-copy="ja">過去のリリース</span><span data-copy="en">All releases</span></a></nav><article class="reading-copy release-body"><h2 class="release-version">kAIgi 0.5.3</h2>
       <section class="policy-hero" aria-labelledby="release-title"><div class="narrow release-intro">
-        <p class="eyebrow">RELEASE / 0.5.3</p>
-        <h1 id="release-title"><span data-copy="ja">声で探して、声で聞く。</span><span data-copy="en">Find and ask by voice.</span></h1>
+        <p class="release-meta">RELEASE / 0.5.3</p>
+        <h3 id="release-title"><span data-copy="ja">声で探して、声で聞く。</span><span data-copy="en">Find and ask by voice.</span></h3>
         <p class="lead"><span data-copy="ja">kAIgi 0.5.3は、Askに声で話しかけて資料を探し、根拠付きの答えを短く読み上げる機能と、接続フォルダのkAIgiデータをいつでも削除できる設定を追加します。Askは資料探しと質問を1つの会話にまとめました。</span><span data-copy="en">kAIgi 0.5.3 lets you talk to Ask to find sources and hear short grounded answers, and lets you remove a connected folder's kAIgi data at any time. Ask now finds sources and answers questions in one conversation.</span></p>
         <ul class="release-meta" aria-label="Release requirements"><li>Version 0.5.3</li><li>Build 55</li><li>macOS 15+</li><li>Apple Silicon</li></ul>
       </div></section>
       <section class="policy-section"><div class="narrow policy-copy">
-        <h2><span data-copy="ja">論文PDFの構造と対訳</span><span data-copy="en">Paper structure and translation</span></h2>
+        <h3><span data-copy="ja">論文PDFの構造と対訳</span><span data-copy="en">Paper structure and translation</span></h3>
         <p><span data-copy="ja">2段組や小さな参考文献、細い字形のある論文で本文が分断されたり別の段と混ざったりする問題を修正し、条件を確認できるページまたぎの統計表現を前の段落につなげます。章立ての境界を保ち、繰り返しのヘッダーなど本文以外の部分が構造に混ざるのを減らしました。</span><span data-copy="en">Fixed fragmented or interleaved text in papers with two columns, small references or thin glyphs. Cross-page statistical continuations join the preceding paragraph when the required checks pass. Section boundaries are preserved and repeated headers and other ancillary text are less likely to enter the structure.</span></p>
         <p><span data-copy="ja">長い段落より先に通常の段落要旨を表示し、完了済みの要旨を残して不足分を補えます。数値範囲のマイナス、小数、単位の照合を修正して正しい要旨の誤拒否を減らし、対訳の実験条件や留保の検証を強化しました。概要には入力上限内で原文の根拠も使い、引用表記で概要が空になる問題を修正しました。処理は引き続きMac内で行います。</span><span data-copy="en">Ordinary paragraph gists appear before long-paragraph work, and missing gists can be filled without discarding completed ones. Corrected checks for negative ranges, decimals and units reduce false rejections, and translation checks better protect conditions and qualifications. Overviews can also use original evidence within the existing input limit, and citation formatting no longer causes blank overviews. Processing remains on-device.</span></p>
       </div></section>
       <section class="policy-section"><div class="narrow policy-copy">
-        <h2><span data-copy="ja">Askを1つの会話に</span><span data-copy="en">One Ask conversation</span></h2>
+        <h3><span data-copy="ja">Askを1つの会話に</span><span data-copy="en">One Ask conversation</span></h3>
         <p><span data-copy="ja">「資料を探す」と「質問する」の切り替えをなくしました。覚えている語句を入れると資料の一覧を、質問を入れると根拠付きの答えと資料の一覧を、同じ会話に表示します。録音・PDF・接続フォルダのファイルを1つの番号付き一覧に並べ、種類はアイコンで見分けられます。同じ録音やPDFは1行にまとめ、最も一致した箇所を1行で示します。</span><span data-copy="en">Ask no longer switches between finding sources and asking a question. Remembered words list sources, and a question gets a grounded answer with its sources, in the same conversation. Recordings, PDFs and connected-folder files share one numbered list told apart by icons, and each recording or PDF takes one row showing its best matching line.</span></p>
         <p><span data-copy="ja">接続フォルダのファイルは、本文との一致を確かめたものだけを一覧の最後に最大5件表示し、選ぶとTextで開きます。録音・PDFの行の「Baseにする」で、そのままRecallの起点にできます。共有の検索欄はZoomだけに表示します。</span><span data-copy="en">Up to five connected-folder files whose text was checked against the match close the list and open in Text. Use as Base on a recording or PDF row starts Recall from it. The shared search field now appears only in Zoom.</span></p>
       </div></section>
       <section class="policy-section"><div class="narrow policy-copy">
-        <h2><span data-copy="ja">Askに声で話しかける</span><span data-copy="en">Talk to Ask</span></h2>
+        <h3><span data-copy="ja">Askに声で話しかける</span><span data-copy="en">Talk to Ask</span></h3>
         <p><span data-copy="ja">Askのマイクを押している間に話すと、検索や質問として受け付けます（⇧⌘Jで開始・終了）。「〇〇を探して」で件数と上位2件の題名を、質問には根拠付きの答えを2文以内で読み上げ、全文と引用元は画面に表示します。「2件目を開いて」「ほかには」「もう一度」「止めて」で続けて操作でき、「〇〇を開いて」は探して最初の1件を開きます。「えーと」などの言いよどみや「〜してもらえる？」のような言い方が入っても命令を聞き分け、録音や資料の題名を優先して聞き取ります。</span><span data-copy="en">Hold Ask's microphone to speak a search or a question (⇧⌘J starts and stops). "Find …" reads the result count and the first two titles; a question gets a grounded answer of at most two sentences, with the full answer and its sources on screen. Continue with "open the second", "next", "say that again" or "stop"; "open …" finds and opens the first match. Fillers such as "um" and polite phrasing are understood, and recording and document titles are recognized more reliably.</span></p>
         <p><span data-copy="ja">音声認識はこのMac上でのみ行い、音声と文字起こしは保存しません。聞き取りの手がかりにする題名も、このMacの音声認識にだけ渡します。返答の読み上げもMac内の音声合成で行います。録音中は音声で話しかけられません。読み上げはスピーカーのボタンでオフにできます。声での操作は探す・答える・開くだけで、ファイルの変更や送信は行いません。</span><span data-copy="en">Speech is recognized only on this Mac, and neither the audio nor the transcript is stored. The titles used as recognition hints also stay with the Mac's recognizer. Replies use the Mac's on-device speech synthesis. Voice input is unavailable while recording, and spoken replies can be turned off with the speaker button. Voice only finds, answers and opens; it never changes or sends files.</span></p>
       </div></section>
       <section class="policy-section"><div class="narrow policy-copy">
-        <h2><span data-copy="ja">接続フォルダのkAIgiデータ</span><span data-copy="en">Connected folder data</span></h2>
+        <h3><span data-copy="ja">接続フォルダのkAIgiデータ</span><span data-copy="en">Connected folder data</span></h3>
         <p><span data-copy="ja">設定の「PDF・データ」に接続フォルダの一覧を追加しました。オフライン、再接続が必要、ファイル操作の復旧が必要などの状態でも、kAIgiが保持する一覧・検索用データを削除して接続を解除できます。フォルダ内のファイルは変更しません。中断した保存の元ファイルは、フォルダ内の隠しフォルダ（.kaigi-save-staging-…）に残っている場合があります。接続フォルダの本文検索はSpotlightに一本化し、以前の版が作った検索用の索引ファイルは各フォルダを初めて使うときに削除します。フォルダ内のファイルは変更しません。</span><span data-copy="en">Settings &gt; PDF &amp; Data now lists connected folders. Even when a folder is offline, needs reconnecting or needs file-operation recovery, you can remove the list and search data kAIgi keeps and disconnect it. Files in the folder stay unchanged; the original of an interrupted save may remain in a hidden .kaigi-save-staging-… folder inside it. Connected-folder body search now uses Spotlight only, and the search index files earlier versions created are removed the first time each folder is used. Files in the folder are not changed.</span></p>
         <p><span data-copy="ja">外付けドライブやクラウドのフォルダが接続されていないときに「接続を解除」が失敗する問題を修正しました。接続されていないドライブやネットワーク上の接続フォルダ・PDFの元ファイルを、kAIgiが自動でマウントすることはありません。</span><span data-copy="en">Fixed disconnecting a folder on an unplugged drive or unavailable cloud location. kAIgi no longer mounts an unconnected drive or network share to reach a connected folder or a PDF's source file.</span></p>
       </div></section>
       <section class="policy-section"><div class="narrow policy-copy">
-        <h2><span data-copy="ja">録音と文字起こし</span><span data-copy="en">Recording and transcription</span></h2>
+        <h3><span data-copy="ja">録音と文字起こし</span><span data-copy="en">Recording and transcription</span></h3>
         <p><span data-copy="ja">録音中にマイク（AirPodsなど）が切断されても、既定のマイクに切り替えて録音を続け、切り替えたことを画面に表示します。外部ディスプレイを外しても、システム音声の取り込みを再開して録音を続けます。システムの操作で画面の取り込みを止めたときは、これまでどおり録音を終了して保存します。録音中に長めの区間で作る高精度な文字起こしが、マイクの相づちや息の音だけの区間があると使われなくなっていた問題を修正しました。停止時に音声ファイル全体を認識し直す処理は、実際の会議録音で精度が上がらなかったため廃止し、停止がそのぶん早く終わります。</span><span data-copy="en">If the microphone disconnects during a recording, for example when AirPods drop, kAIgi switches to the default microphone, keeps recording and tells you on screen. Unplugging an external display no longer ends the recording: system-audio capture resumes. Stopping screen capture from the system controls still ends and saves the recording. Fixed the recording-time high-accuracy transcript being discarded when a microphone window held only a breath or a short reply. Stop no longer re-recognizes the whole audio file, which a measurement on a real meeting showed did not improve accuracy, so Stop finishes sooner.</span></p>
       </div></section>
       <section class="policy-section"><div class="narrow policy-copy">
-        <h2><span data-copy="ja">Research</span><span data-copy="en">Research</span></h2>
+        <h3><span data-copy="ja">Research</span><span data-copy="en">Research</span></h3>
         <p><span data-copy="ja">Deep Researchの結果をResearchライブラリに保存するようにしました。同じ範囲でもう一度調べると同じ項目を更新し、ピン留めと評価は引き継ぎます。</span><span data-copy="en">Deep Research results are now saved to the Research Library. Running the same research again updates the same entry and keeps its pin and feedback.</span></p>
       </div></section>
       <section class="policy-section"><div class="narrow policy-copy">
-        <h2><span data-copy="ja">その他の修正</span><span data-copy="en">Other fixes</span></h2>
+        <h3><span data-copy="ja">その他の修正</span><span data-copy="en">Other fixes</span></h3>
         <p><span data-copy="ja">メインウインドウを閉じても、接続ファイルの未保存の編集とPDFの文書ノートが失われないようにしました。未保存の変更で終了できないときは確認画面を表示します。「スライド自動撮影」は1回の有効化につき120枚で止まります。「コピーを別名で保存」で既存のファイルを選んだときは上書きできない理由を表示し、OCRのページ選択はVoiceOverがページ番号で読み上げます。録音履歴の読み込みエラーが再読み込み後も残る問題と、kaigi CLIが句読点だけの区間を含む文字起こしの編集を拒否する問題を修正しました。大きなPDFのページを並べ替えたり削除したりしたときに画面が止まる時間を短くし、Local LLMへの依頼が順番待ちの間に制限時間を使い切って途中で打ち切られる問題を修正しました。kaigi CLIは音声の文字起こしで初回に音声認識の許可を求めます。接続フォルダ全体の初期化では、HTMLプレビューのWebデータ（Cookieなど）も削除します。</span><span data-copy="en">Closing the main window no longer loses unsaved connected-file edits or a PDF's document note, and Quit shows the pending decision instead of failing silently. Slide auto-capture stops at 120 images per run. Save Copy As explains why an existing file can't be replaced, and VoiceOver reads the OCR page checkboxes by page number. Fixed a history loading error that stayed after a successful reload, and the kaigi CLI rejecting transcript edits that contain a punctuation-only segment. Reordering or deleting pages of a large PDF freezes the window for less time, and Local LLM requests no longer run out of time while waiting in the queue. The kaigi CLI asks for Speech Recognition permission on first use. Resetting the Connected Library also removes HTML preview website data such as cookies.</span></p>
       </div></section>
       <section class="policy-section"><div class="narrow policy-copy">
-        <h2><span data-copy="ja">既知の制限</span><span data-copy="en">Known limitations</span></h2>
+        <h3><span data-copy="ja">既知の制限</span><span data-copy="en">Known limitations</span></h3>
         <p><span data-copy="ja">0.5.2からSparkle経由で0.5.3へ更新する実操作は、公開前には確認していません。署名・公証・配布物の検証とは別の未検証事項です。</span><span data-copy="en">An actual Sparkle update from 0.5.2 to 0.5.3 has not been tested before publication. This remains unverified separately from signing, notarization and artifact verification.</span></p>
         <p><span data-copy="ja">Bluetoothヘッドホン切断・外部ディスプレイ取り外し後の録音継続は、自動テストでは確認していますが、この版では該当機器での実機確認を行えていません。機器変更時に録音が途切れる可能性を除外できないため、変更後は録音状態を確認してください。</span><span data-copy="en">Recovery after Bluetooth-headphone disconnection or external-display removal is covered by automated tests but has not been verified on physical devices for this release. Recording may still be interrupted; check its state after changing devices.</span></p>
         <p><span data-copy="ja">論文概要は「予備研究」であること、対象人数、実験条件の一部を省略する場合があります。研究結果を利用するときは引用元の段落や原文も確認してください。段落要旨も初回ですべて揃うとは限らず、不足分の補完が必要な場合があります。</span><span data-copy="en">Paper overviews may omit preliminary status, participant counts or some experimental conditions. Check the cited paragraphs or original paper before relying on its findings. Some paragraph gists may need a follow-up attempt to fill missing results.</span></p>
         <p><span data-copy="ja">聞き取りの精度はMacの端末内音声認識に依存します。接続フォルダのファイルは一覧に表示するだけで、質問への答えの根拠には使いません。BPT連想は引き続きプレビュー機能です。Retinaディスプレイの画面録画は、約1.5時間を超えると再生はできますが解析できません。0.5.3で接続フォルダを使った後に0.5.2へ戻すと、0.5.2では接続フォルダの検索が使えません。フォルダを接続し直すと使えるようになります。</span><span data-copy="en">Recognition quality depends on the Mac's on-device speech recognition. Connected-folder files are listed but never used as evidence for an answer. BPT exploration remains a preview. Retina screen recordings longer than about 1.5 hours can be played but not analyzed. After 0.5.3 has used a connected folder, going back to 0.5.2 leaves that folder without search in 0.5.2 until you reconnect it.</span></p>
       </div></section>
-    </main>
-    <footer class="site-footer"><span aria-hidden="true"></span><p>&copy; 2026 kAIgi</p><div class="footer-links"><a href="../index.html">Home</a><a href="../privacy.html">Privacy Policy</a></div></footer>
+    </article></div></main>
+    <footer class="site-footer"><a class="brand" href="../index.html">kAIgi</a><nav class="footer-links" aria-label="Footer"><a href="../agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="../privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a><a href="../release-notes/index.html"><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></a><a href="https://github.com/keigo1110/kAIgi-download">GitHub</a></nav><p>© 2026 kAIgi</p></footer>
   </body>
 </html>
