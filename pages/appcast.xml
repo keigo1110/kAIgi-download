@@ -3,17 +3,17 @@
     <channel>
         <title>kAIgi Updates</title>
         <item>
-            <title>kAIgi 0.5.5</title>
-            <pubDate>Fri, 02 Oct 2026 17:44:27 +0900</pubDate>
-            <sparkle:version>57</sparkle:version>
-            <sparkle:shortVersionString>0.5.5</sparkle:shortVersionString>
+            <title>kAIgi 0.5.6</title>
+            <pubDate>Thu, 08 Oct 2026 20:29:32 +0900</pubDate>
+            <sparkle:version>58</sparkle:version>
+            <sparkle:shortVersionString>0.5.6</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <sparkle:releaseNotesLink>https://keigo1110.github.io/kAIgi-download/release-notes/v0.5.5.html</sparkle:releaseNotesLink>
-            <enclosure url="https://github.com/keigo1110/kAIgi-download/releases/download/v0.5.5/kAIgi-0.5.5.dmg" length="185022739" type="application/octet-stream" sparkle:edSignature="3xkZwKhmrN2Mzn+lcm8WT+rXRHIfAENFp0GwzC5VJY2QA7az0cbu/hTTZBRHUZjQqQvoM0k6e1wVFexFDB0TDQ==" />
+            <sparkle:releaseNotesLink>https://keigo1110.github.io/kAIgi-download/release-notes/v0.5.6.html</sparkle:releaseNotesLink>
+            <enclosure url="https://github.com/keigo1110/kAIgi-download/releases/download/v0.5.6/kAIgi-0.5.6.dmg" length="336017134" type="application/octet-stream" sparkle:edSignature="dx/Es8lnWEe1+6Sgm8+lwlxekvNmdnJ+9vekUNB17Hg9dUkhpnNDcqRaSW56Q5+GXNjMXtNSMHGvWn0HDIE8Bg==" />
         </item>
     <description>Latest kAIgi macOS releases.</description><language>ja</language><link>https://keigo1110.github.io/kAIgi-download/</link></channel>
 </rss><!-- sparkle-signatures:
-edSignature: 9sNFZNRfALT+8BzmsSJ2+0VvzErl1+ZrrIQnEY1bREfFkVca8gxC2OOr+EcZtyxOegnkwjZju6SFuRSeDfZTCQ==
+edSignature: pv+EGdSQ8fvzoJWZQIrdjL5BFi/RGAd4litsduPV2ZSSTHX7kdzfJr5C25liJna3iheugm1kU71fXNj9kgwfBw==
 length: 1161
 -->
