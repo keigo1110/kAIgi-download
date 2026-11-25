@@ -87,6 +87,14 @@
           <p>
             <span data-copy="ja">PDF本文の抽出ではページごとのtext layerの状態を端末内で診断し、文字数・行数、抽出元、欠落または要確認の理由をTextデータへ保存します。OCRは自動開始しません。ユーザーが明示的に開始した場合だけ、現在のPDFで不足していると判定したページをApple Visionで端末内処理し、元PDFの同一性を再確認してから抽出本文へ統合します。OCR画像や認識本文を外部へ送信しません。</span>
             <span data-copy="en">During PDF text extraction, kAIgi diagnoses each page's text layer on device and stores its character and line counts, extraction source, and a bounded missing or review reason with the Text data. OCR never starts automatically. Only after an explicit user action does Apple Vision process pages currently identified as missing on device, and kAIgi rechecks source-PDF identity before merging recognized text. OCR images and recognized text are not transmitted externally.</span>
+          </p>
+          <p>
+            <span data-copy="ja">論文を開くと、kAIgiがその論文のDOIやarXiv IDなどを使って公開ページや関連リンクを自動で調べることがあります。参考文献のタイトルを使う検索は、ユーザーが検索先を選んだときに実行します。Crossrefを選ぶと入力欄のタイトルをCrossrefに送ります。J-STAGEを選ぶと、そのタイトルを検索語にしてブラウザでJ-STAGEを開きます。</span>
+            <span data-copy="en">When you open a paper, kAIgi may automatically look up its public pages and related links using identifiers such as a DOI or arXiv ID. A bibliography title search runs when you choose a service. Choosing Crossref sends the title in the search field to Crossref. Choosing J-STAGE opens its search page in your browser with that title as the query.</span>
+          </p>
+          <p>
+            <span data-copy="ja">「引用グラフ」を開くか、CLIで <code>documents citation-graph</code> を実行すると、kAIgiはDOIやarXiv ID、OpenAlexの論文IDを使ってOpenAlexに引用関係を問い合わせます。PDF本文、参考文献の一覧、ノートはこの問い合わせに含めません。「参考文献」の一覧表示とCLIの <code>documents references</code> は、Macに保存した情報を読み取ります。</span>
+            <span data-copy="en">Opening Citation graph or running <code>documents citation-graph</code> in the CLI queries OpenAlex using public identifiers such as DOIs, arXiv IDs, and OpenAlex work IDs. The query excludes PDF text, bibliographies, and notes. The References list and the CLI’s <code>documents references</code> command read information stored on your Mac.</span>
           </p></section><section class="reading-section" id="connected-folders"><h2>
             <span data-copy="ja">接続フォルダとDocument Workbench</span>
             <span data-copy="en">Connected folders and Document Workbench</span>
@@ -249,7 +257,7 @@
             <span data-copy="ja">問題や質問はGitHub Issuesで受け付けます。</span>
             <span data-copy="en">Questions and issues are handled through GitHub Issues.</span>
             <a href="https://github.com/keigo1110/kAIgi-download/issues">https://github.com/keigo1110/kAIgi-download/issues</a>
-          </p></section><p class="policy-date"><span data-copy="ja">方針更新：2026-11-15</span><span data-copy="en">Policy updated: 2026-11-15</span></p></article></div></main>
+          </p></section><p class="policy-date"><span data-copy="ja">方針更新：2026-11-25</span><span data-copy="en">Policy updated: 2026-11-25</span></p></article></div></main>
 
     <footer class="site-footer"><a class="brand" href="./index.html">kAIgi</a><nav class="footer-links" aria-label="Footer"><a href="./agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="./privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a><a href="./release-notes/index.html"><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></a><a href="https://github.com/keigo1110/kAIgi-download">GitHub</a></nav><p>© 2026 kAIgi</p></footer>
 

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja" data-language="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>kAIgi 0.7.5 - リリースノート</title>
+    <meta name="description" content="論文の参考文献から引用先を開き、OpenAlexの引用グラフをたどれます。録音の復旧とAskの引用から発話へ移動する操作も改善しました。">
+    <meta name="robots" content="noindex,follow">
+    <meta name="theme-color" content="#f6f5f1">
+    <link rel="icon" href="../assets/app-icon-180.png">
+    <script src="../site-preload.js"></script>
+    <link rel="stylesheet" href="../styles.css?v=20261004d">
+    <script defer src="../site.js?v=20261004d"></script>
+  </head>
+  <body data-language="ja" data-title-ja="kAIgi 0.7.5 - リリースノート" data-title-en="kAIgi 0.7.5 - Release notes">
+    <a class="skip-link" href="#main-content"><span data-copy="ja">本文へ移動</span><span data-copy="en">Skip to content</span></a>
+    <header class="site-header"><a class="brand" href="../index.html" aria-label="kAIgi home"><img src="../assets/app-icon-180.png" alt="" width="32" height="32"><span>kAIgi</span></a><nav class="site-nav" aria-label="Primary"><a href="../agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="../privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a></nav><div class="header-actions"><div class="language-switch" aria-label="Language"><button type="button" data-language-option="ja" aria-pressed="true">JA</button><button type="button" data-language-option="en" aria-pressed="false">EN</button></div><a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a></div></header>
+    <main id="main-content" tabindex="-1">
+      <section class="policy-hero"><div class="narrow">
+        <p class="eyebrow">Version 0.7.5 · Build 65</p>
+        <h1><span data-copy="ja">リリースノート</span><span data-copy="en">Release notes</span></h1>
+      </div></section>
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">参考文献から論文を開く</span><span data-copy="en">Open papers from the bibliography</span></h2>
+        <p><span data-copy="ja">Textの「参考文献」から、原文にあるDOIやarXivのリンクで論文を開けます。リンクがないときは、タイトルを確認してCrossrefやJ-STAGEで検索できます。選んだ論文のDOIを保存しておくと、次回は同じ論文を直接開けます。</span><span data-copy="en">In Text, open References to follow a DOI or arXiv link printed in the paper. For entries without a link, review the title and search Crossref or J-STAGE. Save the DOI you choose to reopen the same paper next time.</span></p>
+      </div></section>
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">引用関係をたどる</span><span data-copy="en">Explore citations</span></h2>
+        <p><span data-copy="ja">「引用グラフ」を開くと、OpenAlexに登録された引用先の論文と、この論文を引用した論文を発表年と被引用数で表示します。グラフで別の論文を選び、そこから引用関係をたどれます。CLIでは <code>kaigi documents references</code> で保存済みの参考文献をこのMac上で読み取れます。<code>kaigi documents citation-graph</code> を実行すると、論文の公開識別子をOpenAlexに送って引用関係を取得します。</span><span data-copy="en">Open Citation graph to see the works that a paper cites and the works that cite it, as indexed by OpenAlex. The graph shows publication year and citation count. Select another paper to explore its citations. In the CLI, <code>kaigi documents references</code> reads the stored bibliography on your Mac. Running <code>kaigi documents citation-graph</code> sends public paper identifiers to OpenAlex to retrieve citation data.</span></p>
+      </div></section>
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">論文PDFの取り込みと読み取り</span><span data-copy="en">Import and read scholarly PDFs</span></h2>
+        <p><span data-copy="ja">対応する出版社や研究プロジェクトのページから、掲載されている論文PDFを取り込めます。日本語・英語の論文で、段組みの著者名やページをまたぐ参考文献の読み取りを改善しました。日本語の図表番号から、該当する図や表に移動しやすくなりました。論文の「構造」では、スクロールや行の選択のたびに端末内モデルの利用可否を調べ直す処理を省きました。</span><span data-copy="en">Import a paper’s PDF from supported publisher or research project pages. kAIgi now handles more author lists arranged in columns and references that continue across pages in Japanese and English papers. It also recognizes more Japanese figure and table labels when navigating from the text. The Structure panel reuses the local model’s readiness status as you scroll and select rows.</span></p>
+        <p><span data-copy="ja">接続フォルダのファイルは、メニューから「名前を変更」を選ぶと、そのファイルのすぐ下で新しい名前を入力できます。</span><span data-copy="en">Choose Rename from a connected file’s context menu to edit its name directly below the file.</span></p>
+      </div></section>
+      <section class="policy-section"><div class="narrow policy-copy">
+        <h2><span data-copy="ja">録音の復旧とAskの引用</span><span data-copy="en">Recording recovery and Ask citations</span></h2>
+        <p><span data-copy="ja">録音終了後の処理が中断しても、次回起動時に音声の保存設定に従って圧縮や削除を再開し、文字起こしを残します。音声を保存しなかった会議でも、Askの引用から該当する発話を読めます。設定の入力テストは「マイクをテスト」を押したときだけマイクを使い、テストを停止するか入力テスト画面を離れるとマイクを解放します。</span><span data-copy="en">If processing stops after a recording ends, kAIgi resumes audio compression or deletion on the next launch according to your storage choice and keeps the transcript. An Ask citation takes you to the matching utterance even if you chose to discard the audio. In Settings, the microphone input test uses the microphone only after you choose Test Microphone and releases it when you stop the test or leave the input test screen.</span></p>
+      </div></section>
+      <section class="policy-section"><div class="narrow">
+        <h2><span data-copy="ja">アップデートの確認範囲</span><span data-copy="en">Update verification</span></h2>
+        <p><span data-copy="ja">この版では、Sparkleを使った旧版からの実機更新は未検証です。</span><span data-copy="en">Updating an earlier installation through Sparkle has not been tested on a Mac for this release.</span></p>
+      </div></section>
+    </main>
+    <footer class="site-footer"><a class="brand" href="../index.html">kAIgi</a><nav class="footer-links" aria-label="Footer"><a href="../agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="../privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a><a href="../release-notes/index.html"><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></a><a href="https://github.com/keigo1110/kAIgi-download">GitHub</a></nav><p>© 2026 kAIgi</p></footer>
+  </body>
+</html>
