@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ja" data-language="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>論文の対訳と資料の読み方 | kAIgi</title>
+    <meta name="description" content="PDFを開いて段落ごとに原文と日本語訳を読み比べ、章立て、図表、参考文献をたどれます。実際の論文を例に紹介します。">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:site_name" content="kAIgi">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="論文の対訳と資料の読み方 | kAIgi">
+    <meta property="og:description" content="PDFを開いて段落ごとに原文と日本語訳を読み比べ、章立て、図表、参考文献をたどれます。実際の論文を例に紹介します。">
+    <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/reading.html">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/product-library.webp">
+    <meta property="og:image:alt" content="Warping the Workspace beside its paragraph-by-paragraph Japanese translation">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/reading.html">
+    <link rel="icon" href="./assets/app-icon-180.png">
+    <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
+    <script src="./site-preload.js"></script>
+    <link rel="stylesheet" href="./styles.css?v=20261126f">
+    <link rel="stylesheet" href="./feature.styles.css?v=20261126f">
+    <script defer src="./site.js?v=20261126f"></script>
+  </head>
+  <body class="feature-page reading-page" data-language="ja" data-title-ja="論文の対訳と資料の読み方 | kAIgi" data-title-en="Read papers in translation | kAIgi">
+    <a class="skip-link" href="#top"><span data-copy="ja">本文へ移動</span><span data-copy="en">Skip to content</span></a>
+    <header class="site-header product-header">
+      <a class="brand" href="./index.html" aria-label="kAIgi"><img src="./assets/app-icon-180.png" alt="" width="32" height="32"><span>kAIgi</span></a>
+      <nav class="site-nav" aria-label="機能紹介" data-label-ja="機能紹介" data-label-en="Navigation">
+        <a href="./recording.html"><span data-copy="ja">収録</span><span data-copy="en">Recording</span></a>
+        <a href="./reading.html" aria-current="page"><span data-copy="ja">論文・資料</span><span data-copy="en">Reading</span></a>
+        <a href="./ask.html">Ask</a>
+        <a href="./ai.html"><span data-copy="ja">AI連携</span><span data-copy="en">AI integrations</span></a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" role="group" aria-label="表示言語" data-label-ja="表示言語" data-label-en="Language">
+          <button type="button" data-language-option="ja" lang="ja" aria-label="JA · 日本語" aria-pressed="true">JA</button>
+          <button type="button" data-language-option="en" lang="en" aria-label="EN · English" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a>
+      </div>
+    </header>
+    <main id="top" tabindex="-1">
+      <section class="feature-hero" aria-labelledby="feature-title">
+        <p class="feature-kicker"><span data-copy="ja">論文・資料</span><span data-copy="en">Reading</span></p>
+        <h1 id="feature-title"><span data-copy="ja">論文を原文と<br>日本語訳で読む。</span><span data-copy="en">Read a paper in two languages.</span></h1>
+        <div class="feature-lead">
+          <p class="feature-intro"><span data-copy="ja">kAIgiでPDFを開き、「対訳を作成」を選びます。原文の段落をダブルクリックすると、隣の欄にその訳が表示されます。</span><span data-copy="en">Open a PDF in kAIgi and choose Translate. Double-click a paragraph to bring its translation into view beside the original.</span></p>
+          <a href="#results-title"><span data-copy="ja">論文の表を読む例を見る</span><span data-copy="en">Explore a table from the paper</span></a>
+        </div>
+      </section>
+      <figure class="feature-visual">
+        <a href="./assets/product-library.webp" aria-labelledby="library-zoom">
+          <picture>
+            <source media="(max-width: 640px)" srcset="./assets/product-translation-detail.webp" width="900" height="640">
+            <img src="./assets/product-library.webp" width="1724" height="882" fetchpriority="high" alt="遠隔操作の論文を左に、実験結果の対訳を右に表示したkAIgi" data-alt-ja="遠隔操作の論文を左に、実験結果の対訳を右に表示したkAIgi" data-alt-en="kAIgi displaying the teleoperation paper alongside its translated results">
+          </picture>
+          <span class="zoom-label" id="library-zoom"><span data-copy="ja">読書画面を拡大</span><span data-copy="en">View full reader</span></span>
+        </a>
+        <figcaption id="library-caption"><span data-copy="ja">『Warping the Workspace』の原文と、kAIgiで生成した日本語訳。</span><span data-copy="en">Warping the Workspace with its Japanese translation in kAIgi.</span></figcaption>
+      </figure>
+      <section class="feature-section" aria-labelledby="open-title">
+        <h2 id="open-title"><span data-copy="ja">PDFや論文のリンクを開く。</span><span data-copy="en">Start with a PDF or a paper link.</span></h2>
+        <div>
+          <p><span data-copy="ja">ライブラリでMacにあるPDFを選べます。論文のDOIやURLをアドレス欄に貼り付けると、リンク先からPDFを取得できる場合は、そのまま開けます。</span><span data-copy="en">Choose a PDF from your Mac in the Library, or paste a paper’s DOI or URL into the address field. kAIgi can open the paper directly when it can retrieve a PDF from that link.</span></p>
+          <p><span data-copy="ja">同じライブラリで、接続したフォルダにあるMarkdownのメモやテキストファイルも読めます。研究会の資料と一緒に、自分の読書メモを見返せます。</span><span data-copy="en">The Library also opens Markdown notes and plain text files from connected folders, so you can revisit your own reading notes alongside the papers from a meeting.</span></p>
+        </div>
+      </section>
+      <div class="feature-band">
+        <section class="feature-section" aria-labelledby="results-title">
+          <h2 id="results-title"><span data-copy="ja">結果を原文の表で確かめる。</span><span data-copy="en">Check the result against the table.</span></h2>
+          <div>
+            <p><span data-copy="ja">『Warping the Workspace』では、ロボットを遠隔操作する際の視野の見せ方を3通り比べました。課題を最も多く完了できたのはGlobal Zoom。最も多くの参加者が好んだのはFocus+Contextです。</span><span data-copy="en">Warping the Workspace compares three views for a robot operator. Participants completed the most trials with Global Zoom, while most preferred Focus+Context.</span></p>
+            <table id="table-1">
+              <caption><span data-copy="ja">第3節・表1より。参加者8人による実験。</span><span data-copy="en">From Section 3, Table 1. Eight participants took part.</span></caption>
+              <thead>
+                <tr><th scope="col"><span data-copy="ja">表示条件</span><span data-copy="en">View</span></th><th scope="col"><span data-copy="ja">完了した試行</span><span data-copy="en">Trials completed</span></th><th scope="col"><span data-copy="ja">その表示を選んだ人</span><span data-copy="en">Preference votes</span></th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Fixed</th><td>20 / 24</td><td>1 / 8</td></tr>
+                <tr><th scope="row">Global Zoom</th><td><strong>23 / 24</strong></td><td>1 / 8</td></tr>
+                <tr><th scope="row">Focus+Context</th><td>21 / 24</td><td><strong>6 / 8</strong></td></tr>
+              </tbody>
+            </table>
+            <p class="paper-credit"><cite><a href="https://arxiv.org/html/2610.28712v1#S3" lang="en">Warping the Workspace</a></cite><span data-copy="ja">。Keigo Minamida・Koya Dendo（共同筆頭著者）、Yuto Nakamura、Jun Rekimoto。UIST Adjunct ’26。</span><span data-copy="en">. Keigo Minamida and Koya Dendo (co-first authors), Yuto Nakamura and Jun Rekimoto. UIST Adjunct ’26. </span><a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a></p>
+          </div>
+        </section>
+      </div>
+      <section class="feature-section" aria-labelledby="reference-title">
+        <h2 id="reference-title"><span data-copy="ja">読みたい節へ。<br>次の論文へ。</span><span data-copy="en">Jump to a section.<br>Follow a reference.</span></h2>
+        <div>
+          <h3><span data-copy="ja">章立てから本文に戻る</span><span data-copy="en">Navigate the outline</span></h3>
+          <p><span data-copy="ja">「構造」には、PDFから読み取った章立てが並びます。要点も読みたいときは「構造を生成」を選びます。準備済みのGemmaかApple Intelligenceがあれば、このMacで段落ごとの要点を作れます。</span><span data-copy="en">Structure shows the section headings kAIgi finds in the PDF. Choose Generate structure to add paragraph summaries on your Mac with a prepared Gemma model or Apple Intelligence.</span></p>
+          <h3><span data-copy="ja">参考文献から原著を開く</span><span data-copy="en">Open a cited paper</span></h3>
+          <p><span data-copy="ja">参考文献にDOIがあれば、そのリンクをたどれます。リンクのない文献は、タイトルでCrossrefやJ-STAGEを検索できます。</span><span data-copy="en">Follow a DOI in the references to the cited work. When a reference has no link, you can search Crossref or J-STAGE by title.</span></p>
+        </div>
+      </section>
+      <nav class="feature-next" aria-label="関連する機能" data-label-ja="関連する機能" data-label-en="Related features">
+        <a href="./ask.html"><span data-copy="ja">Askで論文と会議を横断して探す</span><span data-copy="en">Search papers and meetings with Ask</span></a>
+        <a href="./ai.html"><span data-copy="ja">論文の一節をAIに渡す</span><span data-copy="en">Bring a passage to your AI agent</span></a>
+      </nav>
+    </main>
+    <footer class="site-footer product-footer">
+      <a class="brand" href="./index.html">kAIgi</a>
+      <nav class="footer-links" aria-label="サイト情報" data-label-ja="サイト情報" data-label-en="Footer">
+        <a href="./agent-skills.html">CLI / Skills</a>
+        <a href="./privacy.html"><span data-copy="ja">プライバシー</span><span data-copy="en">Privacy</span></a>
+        <a href="./release-notes/index.html"><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></a>
+        <a href="https://github.com/keigo1110/kAIgi-download">GitHub</a>
+      </nav>
+      <p>© 2026 kAIgi</p>
+    </footer>
+  </body>
+</html>

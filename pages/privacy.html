@@ -11,7 +11,7 @@
     <meta name="robots" content="index,follow">
     <meta name="application-name" content="kAIgi">
     <meta name="apple-mobile-web-app-title" content="kAIgi">
-    <meta name="theme-color" content="#f6f5f1">
+    <meta name="theme-color" content="#ffffff">
     <meta property="og:site_name" content="kAIgi">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:title" content="Privacy Policy - kAIgi">
@@ -39,10 +39,11 @@
     <link rel="icon" href="./assets/app-icon-180.png">
     <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
     <script src="./site-preload.js"></script>
-    <link rel="stylesheet" href="./styles.css?v=20261004d">
-    <script defer src="./site.js?v=20261004d"></script>
+    <link rel="stylesheet" href="./styles.css?v=20261126f">
+    <link rel="stylesheet" href="./feature.styles.css?v=20261126f">
+    <script defer src="./site.js?v=20261126f"></script>
   </head>
-  <body
+  <body class="reference-page"
     data-language="ja"
     data-title-ja="データの扱い - kAIgi"
     data-title-en="Data & privacy - kAIgi"
@@ -51,9 +52,24 @@
       <span data-copy="ja">本文へ移動</span>
       <span data-copy="en">Skip to content</span>
     </a>
-    <header class="site-header"><a class="brand" href="./index.html" aria-label="kAIgi home"><img src="./assets/app-icon-180.png" alt="" width="32" height="32"><span>kAIgi</span></a><nav class="site-nav" aria-label="Primary"><a href="./agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="./privacy.html" aria-current="page"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a></nav><div class="header-actions"><div class="language-switch" aria-label="Language"><button type="button" data-language-option="ja" aria-pressed="true">JA</button><button type="button" data-language-option="en" aria-pressed="false">EN</button></div><a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a></div></header>
+    <header class="site-header product-header">
+      <a class="brand" href="./index.html" aria-label="kAIgi"><img src="./assets/app-icon-180.png" alt="" width="32" height="32"><span>kAIgi</span></a>
+      <nav class="site-nav" aria-label="機能紹介" data-label-ja="機能紹介" data-label-en="Navigation">
+        <a href="./recording.html"><span data-copy="ja">収録</span><span data-copy="en">Recording</span></a>
+        <a href="./reading.html"><span data-copy="ja">論文・資料</span><span data-copy="en">Reading</span></a>
+        <a href="./ask.html">Ask</a>
+        <a href="./ai.html"><span data-copy="ja">AI連携</span><span data-copy="en">AI integrations</span></a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" role="group" aria-label="表示言語" data-label-ja="表示言語" data-label-en="Language">
+          <button type="button" data-language-option="ja" lang="ja" aria-label="JA · 日本語" aria-pressed="true">JA</button>
+          <button type="button" data-language-option="en" lang="en" aria-label="EN · English" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a>
+      </div>
+    </header>
 
-    <main id="main-content" class="document-page" tabindex="-1"><section class="page-hero"><h1><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></h1><p class="page-lead"><span data-copy="ja">何を保存し、<span class="phrase">いつ外部へ送るか。</span></span><span data-copy="en">What stays on your Mac. What may leave it.</span></p></section><div class="overview-list"><a href="#local-ai"><h2><span data-copy="ja">Mac内で処理</span><span data-copy="en">On your Mac</span></h2><p><span data-copy="ja">録音・文字起こし・翻訳・Ask</span><span data-copy="en">Recording, transcription, translation, and Ask</span></p></a><a href="#external-agents"><h2><span data-copy="ja">外部接続を確認</span><span data-copy="en">External connections</span></h2><p><span data-copy="ja">Web検索・モデル取得・外部エージェント・HTMLプレビュー・更新確認</span><span data-copy="en">Web search, models, agents, HTML previews, and update checks</span></p></a><a href="#deletion"><h2><span data-copy="ja">保存と削除</span><span data-copy="en">Storage & deletion</span></h2><p><span data-copy="ja">保存先と、削除できる範囲を確認</span><span data-copy="en">Where data is stored and what deletion removes</span></p></a></div><div class="reading-layout" id="policy-details"><nav class="topic-rail" aria-label="Policy topics"><a href="#stored-data"><span data-copy="ja">保存データ</span><span data-copy="en">Stored data</span></a><a href="#text-data"><span data-copy="ja">PDFとText</span><span data-copy="en">PDFs & Text</span></a><a href="#connected-folders"><span data-copy="ja">接続フォルダ</span><span data-copy="en">Connected folders</span></a><a href="#external-agents"><span data-copy="ja">外部エージェント</span><span data-copy="en">External agents</span></a><a href="#transcription"><span data-copy="ja">文字起こし</span><span data-copy="en">Transcription</span></a><a href="#quick-lookup"><span data-copy="ja">翻訳と辞書</span><span data-copy="en">Translation & lookup</span></a><a href="#local-ai"><span data-copy="ja">Recall・Ask</span><span data-copy="en">Recall & Ask</span></a><a href="#speaker-analysis"><span data-copy="ja">話者分離</span><span data-copy="en">Speaker analysis</span></a><a href="#web-search"><span data-copy="ja">Web検索</span><span data-copy="en">Web search</span></a><a href="#recording-consent"><span data-copy="ja">録音と撮影</span><span data-copy="en">Recording & capture</span></a><a href="#updates"><span data-copy="ja">更新の確認</span><span data-copy="en">Update checks</span></a><a href="#deletion"><span data-copy="ja">削除</span><span data-copy="en">Deletion</span></a><a href="#contact"><span data-copy="ja">問い合わせ</span><span data-copy="en">Contact</span></a></nav><article class="reading-copy"><section class="reading-section" id="stored-data"><h2>
+    <main id="main-content" class="document-page" tabindex="-1"><section class="page-hero"><h1><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></h1><p class="page-lead"><span data-copy="ja">録音と文字起こしはMacの中で処理します。Web検索や外部のAIを使うときは、機能ごとに送る情報が変わります。</span><span data-copy="en">Recording and transcription run on your Mac. The information shared when you use web search or an external AI agent depends on the feature.</span></p><div class="hero-links"><a href="#web-search"><span data-copy="ja">Web検索で送る情報</span><span data-copy="en">Web search</span></a><a href="#external-agents"><span data-copy="ja">AIに渡す資料</span><span data-copy="en">External AI agents</span></a><a href="#deletion"><span data-copy="ja">データの削除</span><span data-copy="en">Deleting data</span></a></div></section><div class="reading-layout" id="policy-details"><details class="topic-index" open><summary><span data-copy="ja">このページの目次</span><span data-copy="en">On this page</span></summary><nav class="topic-rail" aria-label="プライバシーポリシーの目次" data-label-ja="プライバシーポリシーの目次" data-label-en="Policy topics"><a href="#stored-data"><span data-copy="ja">保存データ</span><span data-copy="en">Stored data</span></a><a href="#text-data"><span data-copy="ja">PDFとText</span><span data-copy="en">PDFs & Text</span></a><a href="#connected-folders"><span data-copy="ja">接続フォルダ</span><span data-copy="en">Connected folders</span></a><a href="#external-agents"><span data-copy="ja">外部エージェント</span><span data-copy="en">External agents</span></a><a href="#transcription"><span data-copy="ja">文字起こし</span><span data-copy="en">Transcription</span></a><a href="#quick-lookup"><span data-copy="ja">翻訳と辞書</span><span data-copy="en">Translation & lookup</span></a><a href="#local-ai"><span data-copy="ja">Recall・Ask</span><span data-copy="en">Recall & Ask</span></a><a href="#speaker-analysis"><span data-copy="ja">話者分離</span><span data-copy="en">Speaker analysis</span></a><a href="#web-search"><span data-copy="ja">Web検索</span><span data-copy="en">Web search</span></a><a href="#recording-consent"><span data-copy="ja">録音と撮影</span><span data-copy="en">Recording & capture</span></a><a href="#updates"><span data-copy="ja">更新の確認</span><span data-copy="en">Update checks</span></a><a href="#deletion"><span data-copy="ja">削除</span><span data-copy="en">Deletion</span></a><a href="#contact"><span data-copy="ja">問い合わせ</span><span data-copy="en">Contact</span></a></nav></details><article class="reading-copy"><section class="reading-section" id="stored-data"><h2>
             <span data-copy="ja">保存するデータ</span>
             <span data-copy="en">Data stored by kAIgi</span>
           </h2>
@@ -194,8 +210,8 @@
             <span data-copy="en">AI Research and web search</span>
           </h2>
           <p>
-            <span data-copy="ja">0.7.3の開発版では、設定の「議論を使う」で話題の整理と自動検索を一緒に切り替えます。初期設定はオフです。録音中にオンにすると、その時点からの発言が対象になります。以前の版で片方だけを使っていた場合、更新後はオフになります。</span>
-            <span data-copy="en">In the 0.7.3 development build, Enable Discussion controls both topic organization and automatic search. Discussion is off by default. Enabling it during a recording applies to subsequent speech. An upgrade from a version with only one of the two features enabled starts with Discussion off.</span>
+            <span data-copy="ja">0.7.3以降は、設定の「議論を使う」で話題の整理と自動検索を一緒に切り替えます。初期設定はオフです。録音中にオンにすると、その時点からの発言が対象になります。以前の版で片方だけを使っていた場合、更新後はオフになります。</span>
+            <span data-copy="en">Since version 0.7.3, Enable Discussion controls both topic organization and automatic search. Discussion is off by default. Enabling it during a recording applies to subsequent speech. An upgrade from a version with only one of the two features enabled starts with Discussion off.</span>
           </p>
           <p>
             <span data-copy="ja">0.4.9以降のAI ResearchはOpenAI APIやAPI keyを使いません。「議論を使う」をオンにすると、アプリに同梱したSearXNGを通してDuckDuckGoとWikipediaへ、1件あたり最大256文字の検索語を送信します。Deep Researchでは、主検索語と補助検索語最大2件、期間、最大4件のドメイン指定をユーザーが送信前に確認・編集します。検索語には常に簡易マスキングを適用しますが、これは完全な匿名化ではなく、敬称のない人名、社名、住所、文脈依存の固有名詞を検出できない場合があります。新規インストールでは「議論を使う」はオフです。</span>
@@ -259,7 +275,16 @@
             <a href="https://github.com/keigo1110/kAIgi-download/issues">https://github.com/keigo1110/kAIgi-download/issues</a>
           </p></section><p class="policy-date"><span data-copy="ja">方針更新：2026-11-25</span><span data-copy="en">Policy updated: 2026-11-25</span></p></article></div></main>
 
-    <footer class="site-footer"><a class="brand" href="./index.html">kAIgi</a><nav class="footer-links" aria-label="Footer"><a href="./agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="./privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a><a href="./release-notes/index.html"><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></a><a href="https://github.com/keigo1110/kAIgi-download">GitHub</a></nav><p>© 2026 kAIgi</p></footer>
+    <footer class="site-footer product-footer">
+      <a class="brand" href="./index.html">kAIgi</a>
+      <nav class="footer-links" aria-label="サイト情報" data-label-ja="サイト情報" data-label-en="Footer">
+        <a href="./agent-skills.html">CLI / Skills</a>
+        <a href="./privacy.html"><span data-copy="ja">プライバシー</span><span data-copy="en">Privacy</span></a>
+        <a href="./release-notes/index.html"><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></a>
+        <a href="https://github.com/keigo1110/kAIgi-download">GitHub</a>
+      </nav>
+      <p>© 2026 kAIgi</p>
+    </footer>
 
   </body>
 </html>

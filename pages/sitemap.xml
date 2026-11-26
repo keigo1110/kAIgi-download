@@ -2,19 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://keigo1110.github.io/kAIgi-download/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://keigo1110.github.io/kAIgi-download/recording.html</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://keigo1110.github.io/kAIgi-download/reading.html</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://keigo1110.github.io/kAIgi-download/ask.html</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://keigo1110.github.io/kAIgi-download/ai.html</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
     <loc>https://keigo1110.github.io/kAIgi-download/privacy.html</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://keigo1110.github.io/kAIgi-download/agent-skills.html</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

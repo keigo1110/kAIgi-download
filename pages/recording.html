@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja" data-language="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>会議の録音とリアルタイム文字起こし | kAIgi</title>
+    <meta name="description" content="マイクとMacの音を録音しながら文字に起こし、聞き返したい発言を時刻から探せます。議論の論点や質問の使い方も紹介します。">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:site_name" content="kAIgi">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="会議の録音とリアルタイム文字起こし | kAIgi">
+    <meta property="og:description" content="マイクとMacの音を録音しながら文字に起こし、聞き返したい発言を時刻から探せます。議論の論点や質問の使い方も紹介します。">
+    <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/recording.html">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/recording-conversation.webp">
+    <meta property="og:image:alt" content="A meeting transcript in the kAIgi recording window">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/recording.html">
+    <link rel="icon" href="./assets/app-icon-180.png">
+    <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
+    <script src="./site-preload.js"></script>
+    <link rel="stylesheet" href="./styles.css?v=20261126f">
+    <link rel="stylesheet" href="./feature.styles.css?v=20261126f">
+    <script defer src="./site.js?v=20261126f"></script>
+  </head>
+  <body class="feature-page recording-page" data-language="ja" data-title-ja="会議の録音とリアルタイム文字起こし | kAIgi" data-title-en="Meeting recording and live transcription | kAIgi">
+    <a class="skip-link" href="#top"><span data-copy="ja">本文へ移動</span><span data-copy="en">Skip to content</span></a>
+    <header class="site-header product-header">
+      <a class="brand" href="./index.html" aria-label="kAIgi"><img src="./assets/app-icon-180.png" alt="" width="32" height="32"><span>kAIgi</span></a>
+      <nav class="site-nav" aria-label="機能紹介" data-label-ja="機能紹介" data-label-en="Navigation">
+        <a href="./recording.html" aria-current="page"><span data-copy="ja">収録</span><span data-copy="en">Recording</span></a>
+        <a href="./reading.html"><span data-copy="ja">論文・資料</span><span data-copy="en">Reading</span></a>
+        <a href="./ask.html">Ask</a>
+        <a href="./ai.html"><span data-copy="ja">AI連携</span><span data-copy="en">AI integrations</span></a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" role="group" aria-label="表示言語" data-label-ja="表示言語" data-label-en="Language">
+          <button type="button" data-language-option="ja" lang="ja" aria-label="JA · 日本語" aria-pressed="true">JA</button>
+          <button type="button" data-language-option="en" lang="en" aria-label="EN · English" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a>
+      </div>
+    </header>
+    <main id="top" tabindex="-1">
+      <section class="feature-hero" aria-labelledby="feature-title">
+        <p class="feature-kicker"><span data-copy="ja">収録</span><span data-copy="en">Recording</span></p>
+        <h1 id="feature-title"><span data-copy="ja">会議を録りながら<br>発言を文字で追う。</span><span data-copy="en">Read along as you record.</span></h1>
+        <div class="feature-lead">
+          <p class="feature-intro"><span data-copy="ja">kAIgiはマイクとMacの音をその場で文字に起こします。発言には時刻が付き、録音を開いて前後のやりとりを読み返せます。</span><span data-copy="en">kAIgi records your microphone and Mac audio and transcribes both on your Mac. Each remark has a timestamp so you can revisit the conversation later.</span></p>
+          <a href="#sources-title"><span data-copy="ja">録音する音源を選ぶ</span><span data-copy="en">Choose your audio sources</span></a>
+        </div>
+      </section>
+      <figure class="feature-visual recording-visual">
+        <a href="./assets/product-capture.webp" aria-labelledby="capture-zoom">
+          <picture>
+            <source media="(max-width: 640px)" srcset="./assets/recording-controls.webp" width="660" height="148">
+            <img src="./assets/recording-conversation.webp" width="1440" height="810" fetchpriority="high" alt="マイクとスピーカーで録った二つの発言と、その時刻" data-alt-ja="マイクとスピーカーで録った二つの発言と、その時刻" data-alt-en="Two timestamped remarks captured from the microphone and Mac audio">
+          </picture>
+          <span class="zoom-label" id="capture-zoom"><span data-copy="ja">収録画面を拡大</span><span data-copy="en">View full recording window</span></span>
+        </a>
+        <blockquote id="transcript" class="transcript-text">
+            <p><time datetime="PT4S">00:04</time> <strong><span data-copy="ja">マイク</span><span data-copy="en">Mic</span></strong><br><span data-copy="ja">次の実験、何を記録しようか。</span><span data-copy="en">What should we record in the next experiment?</span></p>
+            <p><time datetime="PT9S">00:09</time> <strong><span data-copy="ja">スピーカー</span><span data-copy="en">System audio</span></strong><br><span data-copy="ja">課題を終えた回数と、どの表示が好みか。別々に記録しよう。</span><span data-copy="en">How many tasks they finish, and which display they prefer. Let’s record those separately.</span></p>
+          </blockquote>
+        <figcaption id="capture-caption"><span data-copy="ja">デモ会議「次の遠隔操作実験」。マイクで拾った質問に、通話相手が00:09で答えています。</span><span data-copy="en">In the demo meeting, the microphone picks up the question. The caller replies at 00:09.</span></figcaption>
+      </figure>
+      <section class="feature-section" aria-labelledby="sources-title">
+        <h2 id="sources-title"><span data-copy="ja">どの声を録るか選ぶ。</span><span data-copy="en">Choose what to record.</span></h2>
+        <div>
+          <dl class="audio-options">
+            <dt><span data-copy="ja">オンライン会議</span><span data-copy="en">On a call</span></dt>
+            <dd><span data-copy="ja">「マイク」と「スピーカー」を選びます。文字起こしを2列にすると、自分の声とMacから聞こえる相手の声を音源ごとに追えます。</span><span data-copy="en">Select Microphone and System Audio. The two-column transcript separates the voices in the room from those coming through your Mac.</span></dd>
+            <dt><span data-copy="ja">対面の打ち合わせ</span><span data-copy="en">In the same room</span></dt>
+            <dd><span data-copy="ja">「マイク」だけを選んで録音できます。</span><span data-copy="en">Select just the microphone to record the people in the room.</span></dd>
+          </dl>
+        </div>
+      </section>
+      <div class="feature-band">
+        <section class="feature-section" aria-labelledby="discussion-title">
+          <h2 id="discussion-title"><span data-copy="ja">会議中に論点を追う。</span><span data-copy="en">Keep track of open questions.</span></h2>
+          <div>
+            <p><span data-copy="ja">設定で「議論を使う」をオンにすると、話題と未解決の問いが録音中にまとまります。議論の項目を選ぶと、もとになった発言を文字起こしで確かめられます。</span><span data-copy="en">Turn on Discussion in Settings to see topics and open questions as the meeting unfolds. Select a discussion entry to find the remark behind it in the transcript.</span></p>
+            <p><span data-copy="ja">初期設定ではオフです。オンにすると、資料を探すために短い検索語をDuckDuckGoとWikipediaへ送ることがあります。録音音声と文字起こし全文はMacに残ります。</span><span data-copy="en">Discussion is off by default. When it’s on, kAIgi may send short queries to DuckDuckGo and Wikipedia to find supporting material. The recorded audio and full transcript stay on your Mac.</span></p>
+            <a href="./privacy.html#web-search"><span data-copy="ja">外部検索で送る情報</span><span data-copy="en">What kAIgi sends in a web search</span></a>
+          </div>
+        </section>
+      </div>
+      <section class="feature-section" aria-labelledby="questions-title">
+        <h2 id="questions-title"><span data-copy="ja">録音を開いて質問する。</span><span data-copy="en">Ask about this recording.</span></h2>
+        <div>
+          <p><span data-copy="ja">あとで決定事項を確かめるときは、録音を開いて「質問」に「次の実験では何を記録する？」と入力します。引用を開くと、発言の時刻と前後のやりとりを確認できます。</span><span data-copy="en">Open the recording and use Questions to ask, “What did we decide to record in the next study?” Open a citation to check the timestamp and read what was said around it.</span></p>
+          <p><span data-copy="ja">録音や文字起こしの最中は、質問に関係する発言の候補を表示します。処理が終わると、準備済みのGemmaか対応するAppleのモデルを使って、このMac上で回答を生成できます。</span><span data-copy="en">While recording or transcription is in progress, Questions shows matching passages. Once both finish, a prepared Gemma model or a supported Apple on-device model can generate an answer on your Mac.</span></p>
+        </div>
+      </section>
+      <nav class="feature-next" aria-label="関連する機能" data-label-ja="関連する機能" data-label-en="Related features">
+        <a href="./ask.html"><span data-copy="ja">Askで過去の会議を探す</span><span data-copy="en">Find past meetings with Ask</span></a>
+        <a href="./reading.html"><span data-copy="ja">会議で話題になった論文を読む</span><span data-copy="en">Read a paper from the meeting</span></a>
+      </nav>
+    </main>
+    <footer class="site-footer product-footer">
+      <a class="brand" href="./index.html">kAIgi</a>
+      <nav class="footer-links" aria-label="サイト情報" data-label-ja="サイト情報" data-label-en="Footer">
+        <a href="./agent-skills.html">CLI / Skills</a>
+        <a href="./privacy.html"><span data-copy="ja">プライバシー</span><span data-copy="en">Privacy</span></a>
+        <a href="./release-notes/index.html"><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></a>
+        <a href="https://github.com/keigo1110/kAIgi-download">GitHub</a>
+      </nav>
+      <p>© 2026 kAIgi</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ja" data-language="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#ffffff">
+    <title>Ask — Macの書類を内容で探す | kAIgi</title>
+    <meta name="description" content="kAIgiのAskで、Mac上の接続フォルダの書類、会議の文字起こし、論文を横断検索。Word文書を使って、元の表の数値を確かめる例を試せます。">
+    <meta property="og:site_name" content="kAIgi">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="Ask — Macの書類を内容で探す | kAIgi">
+    <meta property="og:description" content="kAIgiのAskで、Mac上の接続フォルダの書類、会議の文字起こし、論文を横断検索。Word文書を使って、元の表の数値を確かめる例を試せます。">
+    <meta property="og:url" content="https://keigo1110.github.io/kAIgi-download/ask.html">
+    <meta property="og:image" content="https://keigo1110.github.io/kAIgi-download/assets/ogp-product.png?v=20261126e">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://keigo1110.github.io/kAIgi-download/ask.html">
+    <link rel="icon" href="./assets/app-icon-180.png">
+    <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
+    <link rel="sitemap" type="application/xml" href="./sitemap.xml">
+    <script src="./site-preload.js"></script>
+    <link rel="stylesheet" href="./styles.css?v=20261126f">
+    <link rel="stylesheet" href="./feature.styles.css?v=20261126f">
+    <script defer src="./site.js?v=20261126f"></script>
+  </head>
+  <body class="feature-page ask-page" data-language="ja" data-title-ja="Ask — Macの書類を内容で探す | kAIgi" data-title-en="Ask — Search the files on your Mac | kAIgi">
+    <a class="skip-link" href="#top"><span data-copy="ja">本文へ移動</span><span data-copy="en">Skip to content</span></a>
+    <header class="site-header product-header">
+      <a class="brand" href="./index.html" aria-label="kAIgi"><img src="./assets/app-icon-180.png" alt="" width="32" height="32"><span>kAIgi</span></a>
+      <nav class="site-nav" aria-label="機能紹介" data-label-ja="機能紹介" data-label-en="Navigation">
+        <a href="./recording.html"><span data-copy="ja">収録</span><span data-copy="en">Recording</span></a>
+        <a href="./reading.html"><span data-copy="ja">論文・資料</span><span data-copy="en">Reading</span></a>
+        <a href="./ask.html" aria-current="page">Ask</a>
+        <a href="./ai.html"><span data-copy="ja">AI連携</span><span data-copy="en">AI integrations</span></a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" role="group" aria-label="表示言語" data-label-ja="表示言語" data-label-en="Language">
+          <button type="button" data-language-option="ja" lang="ja" aria-label="JA · 日本語" aria-pressed="true">JA</button>
+          <button type="button" data-language-option="en" lang="en" aria-label="EN · English" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a>
+      </div>
+    </header>
+    <main id="top" tabindex="-1">
+      <section class="feature-hero" aria-labelledby="ask-title">
+        <p class="feature-kicker">Ask</p>
+        <h1 id="ask-title"><span data-copy="ja">Macの書類を<br>内容で探す。</span><span data-copy="en">Find files by what’s inside.</span></h1>
+        <div class="feature-lead">
+          <p class="feature-intro"><span data-copy="ja">ファイル名を忘れても、覚えている言葉でAskに質問できます。Macで選んだフォルダの書類と、kAIgiに保存した会議や論文をまとめて探せます。</span><span data-copy="en">Forgotten the filename? Ask searches folders you choose on your Mac alongside meetings and papers saved in kAIgi. Describe the part you remember.</span></p>
+          <a href="#ask-folder"><span data-copy="ja">サンプルの書類で試す</span><span data-copy="en">Try the sample document</span></a>
+        </div>
+      </section>
+
+      <figure class="feature-visual">
+        <div class="ask-example">
+          <div class="ask-query">
+            <p class="example-label"><span data-copy="ja">Askへの質問例</span><span data-copy="en">Example question</span></p>
+            <blockquote><span data-copy="ja">「試料Betaの温度は何度だった？」</span><span data-copy="en">“What temperature did we record for sample Beta?”</span></blockquote>
+          </div>
+          <div class="ask-file">
+            <p class="example-label"><span data-copy="ja">Word文書の表</span><span data-copy="en">Table from the Word document</span></p>
+            <p class="example-filename">measurements.docx</p>
+            <table>
+              <caption class="visually-hidden"><span data-copy="ja">試料ごとの電圧と温度</span><span data-copy="en">Voltage and temperature for each sample</span></caption>
+              <thead><tr><th scope="col"><span data-copy="ja">試料</span><span data-copy="en">Sample</span></th><th scope="col"><span data-copy="ja">電圧 (mV)</span><span data-copy="en">Voltage (mV)</span></th><th scope="col"><span data-copy="ja">温度 (°C)</span><span data-copy="en">Temperature (°C)</span></th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Alpha</th><td>25</td><td>10</td></tr>
+                <tr><th scope="row">Beta</th><td>10</td><td><mark>25</mark></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <figcaption><span data-copy="ja">同じ「25」でも、Alphaの行では電圧、Betaの行では温度です。Wordの表の引用を開くと、元の文書で該当するセルの段落を確認できます。</span><span data-copy="en">The two 25s have different meanings. One is Alpha’s voltage, the other is Beta’s temperature. Open a Word table citation to see the matching cell in the original document.</span></figcaption>
+      </figure>
+
+      <section class="feature-section" aria-labelledby="ask-folder">
+        <h2 id="ask-folder"><span data-copy="ja">自分のフォルダで試す。</span><span data-copy="en">Try it with a folder of your own.</span></h2>
+        <div>
+          <ol class="feature-steps">
+            <li><span data-copy="ja"><a href="./assets/ask-measurements.docx" download="measurements.docx">サンプルのWord文書</a>をMacのフォルダに保存します。</span><span data-copy="en">Save the <a href="./assets/ask-measurements.docx" download="measurements.docx">sample Word document</a> in a folder on your Mac.</span></li>
+            <li><span data-copy="ja">kAIgiのライブラリで「フォルダを接続」を選び、そのフォルダを指定します。</span><span data-copy="en">In kAIgi’s Library, choose Connect Folder and select that folder.</span></li>
+            <li><span data-copy="ja">Askで「測定手順の資料を探して」と聞き、見つかった文書について「Betaの温度は？」と続けて質問します。</span><span data-copy="en">Ask “Find the measurement procedure.” Once you find the document, follow up with “What was Beta’s temperature?”</span></li>
+          </ol>
+          <p><span data-copy="ja">PDF、Word（DOCX）、Markdown、HTML、テキスト、CSVなどの資料に対応しています。Askの入力欄の下で、検索するフォルダや資料の形式を絞れます。</span><span data-copy="en">Search PDFs, Word documents (.docx), Markdown, HTML, plain text, and CSV files. Use the controls below the Ask input to narrow your search by folder or file type.</span></p>
+        </div>
+      </section>
+
+      <section class="feature-section" aria-labelledby="ask-recording">
+        <h2 id="ask-recording"><span data-copy="ja">会議なら発言へ。論文ならページへ。</span><span data-copy="en">Find the remark. Open the page.</span></h2>
+        <div>
+          <p><span data-copy="ja">「次の実験、何を記録するんだっけ？」と聞くと、デモ会議の00:04の発言が候補に出ました。候補から録音を開けば、00:09の返事まで読めます。論文の引用からは、該当するページを開けます。</span><span data-copy="en">Asking “What did we want to record in the next experiment?” finds a remark at 00:04 in the demo meeting. Open the recording to read the reply at 00:09. A paper citation opens the relevant page.</span></p>
+        </div>
+      </section>
+      <figure class="feature-visual">
+        <a href="./assets/product-ask.webp" aria-labelledby="ask-zoom">
+          <img src="./assets/product-ask.webp?v=20261126e" width="1320" height="740" alt="「次の遠隔操作実験」の録音と4秒目の発言がAskの検索候補に並ぶ画面" data-alt-ja="「次の遠隔操作実験」の録音と4秒目の発言がAskの検索候補に並ぶ画面" data-alt-en="An Ask result with the matching question four seconds into the meeting" loading="lazy" decoding="async">
+          <span class="zoom-label" id="ask-zoom"><span data-copy="ja">Askの画面を拡大</span><span data-copy="en">View full Ask result</span></span>
+        </a>
+        <figcaption><a href="./recording.html#transcript"><span data-copy="ja">デモ会議の発言を読む</span><span data-copy="en">Read the two remarks from the demo meeting</span></a></figcaption>
+      </figure>
+
+      <section class="feature-section" aria-labelledby="ask-local">
+        <h2 id="ask-local"><span data-copy="ja">資料は元の場所に。検索はMacの中で。</span><span data-copy="en">Your files stay in place. The search stays on your Mac.</span></h2>
+        <div>
+          <p><span data-copy="ja">Askは言葉の一致と意味の近さを手がかりに資料を探します。検索用のデータはMacに保存します。初回は資料の量に応じて時間がかかりますが、準備が済んだ資料から検索できます。</span><span data-copy="en">Ask looks for matching words and related meanings. Its search index stays on your Mac. Initial preparation takes longer with a larger collection, and you can search material as it becomes ready.</span></p>
+          <p><span data-copy="ja">Askの回答にはMac上で動くAIを使います。モデルを使えないときや根拠が足りないときは、確認できる資料の候補を表示します。</span><span data-copy="en">Ask uses an on-device model to write answers. If the model is unavailable or there isn’t enough evidence, Ask shows sources you can check yourself.</span></p>
+          <p><a href="./privacy.html#local-ai"><span data-copy="ja">検索データの保存先と削除について</span><span data-copy="en">How search data is stored and deleted</span></a></p>
+        </div>
+      </section>
+      <nav class="feature-next" aria-label="関連する機能" data-label-ja="関連する機能" data-label-en="Related feature">
+        <a href="./ai.html"><span data-copy="ja">見つけた会議や論文をAIと使う</span><span data-copy="en">Use your meetings and papers with an AI agent</span></a>
+      </nav>
+    </main>
+    <footer class="site-footer product-footer">
+      <a class="brand" href="./index.html">kAIgi</a>
+      <nav class="footer-links" aria-label="サイト情報" data-label-ja="サイト情報" data-label-en="Footer">
+        <a href="./agent-skills.html">CLI / Skills</a>
+        <a href="./privacy.html"><span data-copy="ja">プライバシー</span><span data-copy="en">Privacy</span></a>
+        <a href="./release-notes/index.html"><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></a>
+        <a href="https://github.com/keigo1110/kAIgi-download">GitHub</a>
+      </nav>
+      <p>© 2026 kAIgi</p>
+    </footer>
+  </body>
+</html>

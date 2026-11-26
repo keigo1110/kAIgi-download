@@ -176,8 +176,89 @@ pre code { padding:0; border-radius:0; font-size:inherit; background:none; overf
 .copy-example { background:var(--ink); color:var(--paper); border:1px solid #587066; border-radius:3px; padding:7px 9px; font-size:11px; }
 .copy-example:hover { border-color:var(--paper); }
 .copy-region { display:flex; align-items:center; background:var(--ink); border-radius:3px; margin:16px 0 20px; }
-.copy-region pre { min-width:0; flex:1; margin:0; padding-right:24px; background:none; }
+.copy-region pre { min-width:0; flex:1; margin:0; background:none; }
+#invoke pre, #invoke pre code { white-space:pre-wrap; overflow-wrap:anywhere; }
 .copy-example { position:static; flex-shrink:0; margin:10px; }
 .phrase { display:inline-block; }
 .topic-rail { scrollbar-width:none; }
 .topic-rail::-webkit-scrollbar { display:none; }
+
+/* Reference articles use the same type and page edges as the product pages. */
+.reference-page {
+  --paper: #fff;
+  --ink: #1d1d1f;
+  --muted: #555961;
+  --jade: #005bbd;
+  --line: #d7d9dd;
+  --display: var(--sans);
+  --gutter: clamp(18px, 6.25vw, 96px);
+}
+.reference-page .document-page {
+  width: min(1140px, calc(100% - 2 * var(--gutter)));
+  margin-inline: auto;
+}
+.reference-page .page-hero { padding-block: clamp(36px, 6vw, 80px) clamp(28px, 4vw, 52px); }
+.reference-page .page-hero h1 { font-weight: 660; letter-spacing: -.055em; line-height: 1.13; }
+.reference-page .page-lead {
+  max-width: 38em;
+  font-size: clamp(17px, 1.55vw, 23px);
+  line-height: 1.65;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+.reference-page .hero-links { flex-wrap: wrap; gap: 3px 25px; margin-top: 20px; color: var(--jade); }
+.reference-page .reading-layout { margin-top: 24px; }
+.reference-page .reading-copy h2, .reference-page .guide-body h2,
+.reference-page .reading-copy h3, .reference-page .guide-body h3 {
+  font-weight: 630;
+  letter-spacing: -.035em;
+  line-height: 1.45;
+}
+.reference-page code { background: #f0f1f3; }
+.reference-page pre code { background: none; }
+.topic-index { position: sticky; top: 24px; }
+.topic-index > summary { display: none; }
+.topic-index .topic-rail { position: static; }
+
+.current-note, .archive-section { max-width: 760px; }
+.current-note { padding-block: clamp(24px, 3vw, 44px); border-block: 1px solid var(--line); }
+.current-note > p:first-child { font-size: 14px; color: var(--muted); }
+.current-note h2 { margin: 6px 0 12px; font-size: clamp(32px, 4vw, 50px); line-height: 1.2; letter-spacing: -.05em; }
+.current-note > p { max-width: 37em; line-height: 1.75; }
+.current-note > a { display: inline-block; margin-top: 16px; padding-block: 4px; color: var(--jade); }
+.current-note a:hover, .archive-links a:hover { text-decoration: underline; }
+.archive-section { padding-top: 48px; }
+.archive-section h2 { margin-bottom: 18px; font-size: 25px; letter-spacing: -.04em; }
+.release-series { border-bottom: 1px solid var(--line); }
+.release-series summary, .topic-index summary { cursor: pointer; padding: 14px 0; font-weight: 580; }
+.archive-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 0 16px; padding: 0 0 14px 1.1em; }
+.archive-links a { color: var(--jade); font-size: 15px; padding-block: 10px; }
+
+/* Some release notes use the standalone article markup, including in Sparkle. */
+main > .policy-hero, main > .policy-section {
+  width: min(720px, calc(100% - 2 * var(--gutter)));
+  margin-inline: auto;
+}
+main > .policy-hero { padding-block: clamp(36px, 5vw, 66px) 28px; }
+main > .policy-hero .eyebrow { color: var(--muted); font-size: 14px; margin-bottom: 10px; }
+main > .policy-hero h1 { font-size: clamp(34px, 4.3vw, 58px); line-height: 1.18; letter-spacing: -.055em; }
+main > .policy-section { padding-block: clamp(22px, 2.2vw, 34px); border-top: 1px solid var(--line); }
+main > .policy-section h2 { margin-bottom: 12px; font-size: clamp(21px, 2vw, 28px); letter-spacing: -.03em; line-height: 1.4; }
+main > .policy-section p, main > .policy-section li { line-height: 1.8; overflow-wrap: anywhere; }
+main > .policy-section p + p { margin-top: 12px; }
+main > .policy-section:last-child { padding-bottom: 64px; }
+
+@media (max-width: 760px) {
+  .topic-index { position: static; border-block: 1px solid var(--line); }
+  .topic-index > summary { display: list-item; font-size: 15px; }
+  .topic-index .topic-rail {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+    gap: 0 12px;
+    border: 0;
+    padding: 0 0 12px;
+    overflow: visible;
+    font-size: 14px;
+  }
+  .topic-index .topic-rail a { padding: 8px 0; white-space: normal; }
+}

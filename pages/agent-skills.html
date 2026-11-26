@@ -11,7 +11,7 @@
     >
     <meta name="robots" content="index,follow">
     <meta name="application-name" content="kAIgi">
-    <meta name="theme-color" content="#f6f5f1">
+    <meta name="theme-color" content="#ffffff">
     <meta property="og:site_name" content="kAIgi">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:title" content="CLI / Skills - kAIgi">
@@ -40,8 +40,9 @@
     <link rel="icon" href="./assets/app-icon-180.png">
     <link rel="apple-touch-icon" href="./assets/app-icon-180.png">
     <script src="./site-preload.js"></script>
-    <link rel="stylesheet" href="./styles.css?v=20261004d">
-    <script defer src="./site.js?v=20261004d"></script>
+    <link rel="stylesheet" href="./styles.css?v=20261126f">
+    <link rel="stylesheet" href="./feature.styles.css?v=20261126f">
+    <script defer src="./site.js?v=20261126f"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -70,7 +71,7 @@
       }
     </script>
   </head>
-  <body
+  <body class="reference-page"
     data-language="ja"
     data-title-ja="CLI / Skills - kAIgi"
     data-title-en="CLI / Skills - kAIgi"
@@ -79,15 +80,40 @@
       <span data-copy="ja">本文へ移動</span>
       <span data-copy="en">Skip to content</span>
     </a>
-    <header class="site-header"><a class="brand" href="./index.html" aria-label="kAIgi home"><img src="./assets/app-icon-180.png" alt="" width="32" height="32"><span>kAIgi</span></a><nav class="site-nav" aria-label="Primary"><a href="./agent-skills.html" aria-current="page"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="./privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a></nav><div class="header-actions"><div class="language-switch" aria-label="Language"><button type="button" data-language-option="ja" aria-pressed="true">JA</button><button type="button" data-language-option="en" aria-pressed="false">EN</button></div><a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a></div></header>
+    <header class="site-header product-header">
+      <a class="brand" href="./index.html" aria-label="kAIgi"><img src="./assets/app-icon-180.png" alt="" width="32" height="32"><span>kAIgi</span></a>
+      <nav class="site-nav" aria-label="機能紹介" data-label-ja="機能紹介" data-label-en="Navigation">
+        <a href="./recording.html"><span data-copy="ja">収録</span><span data-copy="en">Recording</span></a>
+        <a href="./reading.html"><span data-copy="ja">論文・資料</span><span data-copy="en">Reading</span></a>
+        <a href="./ask.html">Ask</a>
+        <a href="./ai.html"><span data-copy="ja">AI連携</span><span data-copy="en">AI integrations</span></a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" role="group" aria-label="表示言語" data-label-ja="表示言語" data-label-en="Language">
+          <button type="button" data-language-option="ja" lang="ja" aria-label="JA · 日本語" aria-pressed="true">JA</button>
+          <button type="button" data-language-option="en" lang="en" aria-label="EN · English" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-download" href="https://github.com/keigo1110/kAIgi-download/releases/latest/download/kAIgi.dmg"><span data-copy="ja">ダウンロード</span><span data-copy="en">Download</span></a>
+      </div>
+    </header>
 
-    <main id="main-content" class="document-page" tabindex="-1"><section class="page-hero"><h1 id="guide-title">CLI / Skills</h1><p class="page-lead"><span data-copy="ja">会議と文献を、<span class="phrase">エージェントへ。</span></span><span data-copy="en">Bring meetings and papers to your agent.</span></p><p class="page-description"><span data-copy="ja">Codex / Claude Codeから、手元の記録を検索・整理。</span><span data-copy="en">Search and organize your local records with Codex or Claude Code.</span></p><div class="hero-links"><a href="#setup"><span data-copy="ja">はじめる</span><span data-copy="en">Get started</span></a><a href="#commands"><span data-copy="ja">コマンドを見る</span><span data-copy="en">View commands</span></a></div></section><section class="setup-section" id="setup"><h2 class="visually-hidden"><span data-copy="ja">はじめる</span><span data-copy="en">Get started</span></h2><ol class="setup-steps"><li><span class="step-number">01</span>
+    <main id="main-content" class="document-page" tabindex="-1">
+      <section class="page-hero">
+        <h1 id="guide-title">CLI / Skills</h1>
+        <p class="page-lead"><span data-copy="ja">CodexやClaude Codeから、kAIgiの会議や資料を参照するための設定です。</span><span data-copy="en">Connect Codex or Claude Code to the meetings and documents in kAIgi.</span></p>
+        <div class="hero-links">
+          <a href="./ai.html"><span data-copy="ja">AIへの頼み方を見る</span><span data-copy="en">See an example request</span></a>
+          <a href="#setup"><span data-copy="ja">設定する</span><span data-copy="en">Set up the integration</span></a>
+          <a href="#commands"><span data-copy="ja">コマンドを見る</span><span data-copy="en">View commands</span></a>
+        </div>
+      </section>
+      <section class="setup-section" id="setup"><h2 class="visually-hidden"><span data-copy="ja">はじめる</span><span data-copy="en">Get started</span></h2><ol class="setup-steps"><li><span class="step-number">01</span>
               <h3>
                 <span data-copy="ja">CLIをインストール</span>
                 <span data-copy="en">Install the CLI</span>
               </h3>
               <p>
-                <span data-copy="ja">設定の「Codex / Claude Code連携」でインストール。</span>
+                <span data-copy="ja">kAIgiの設定で「Codex / Claude Code連携」を開きます。</span>
                 <span data-copy="en">Install from “Codex / Claude Code Integration” in Settings.</span>
               </p>
             </li><li><span class="step-number">02</span>
@@ -96,7 +122,7 @@
                 <span data-copy="en">Download / Update Skills</span>
               </h3>
               <p>
-                <span data-copy="ja">利用できるCodex / Claude Code向けSkillsを、同じ画面からまとめて更新。</span>
+                <span data-copy="ja">同じ画面で、CodexとClaude Codeに使うスキルをまとめて更新できます。</span>
                 <span data-copy="en">Update all available Codex and Claude Code Skills with one button.</span>
               </p>
             </li><li><span class="step-number">03</span>
@@ -105,10 +131,10 @@
                 <span data-copy="en">Invoke from your agent</span>
               </h3>
               <p>
-                <span data-copy="ja">CodexではSkill名を指定し、Claude Codeでは <code>/kaigi</code> を入力します。</span>
-                <span data-copy="en">Name the Skill in Codex; type <code>/kaigi</code> in Claude Code.</span>
+                <span data-copy="ja">CodexやClaude Codeの入力欄で「kAIgiを使って」と頼めます。</span>
+                <span data-copy="en">In Codex or Claude Code, start your request with “Use kAIgi to…”.</span>
               </p>
-            </li></ol></section><div class="reading-layout"><nav class="topic-rail" aria-label="Guide topics"><a href="#invoke"><span data-copy="ja">呼び出し方</span><span data-copy="en">Invoke</span></a><a href="#capabilities"><span data-copy="ja">できること</span><span data-copy="en">Workflows</span></a><a href="#commands"><span data-copy="ja">コマンド一覧</span><span data-copy="en">Commands</span></a><a href="#workflow"><span data-copy="ja">文字の修正</span><span data-copy="en">Refine text</span></a><a href="#agent-privacy"><span data-copy="ja">送信の確認</span><span data-copy="en">Transmission</span></a></nav><div class="guide-body"><section class="reading-section" id="invoke">
+            </li></ol></section><div class="reading-layout"><details class="topic-index" open><summary><span data-copy="ja">このページの目次</span><span data-copy="en">On this page</span></summary><nav class="topic-rail" aria-label="設定ガイドの目次" data-label-ja="設定ガイドの目次" data-label-en="Guide topics"><a href="#invoke"><span data-copy="ja">呼び出し方</span><span data-copy="en">Invoke</span></a><a href="#capabilities"><span data-copy="ja">できること</span><span data-copy="en">Workflows</span></a><a href="#commands"><span data-copy="ja">コマンド一覧</span><span data-copy="en">Commands</span></a><a href="#workflow"><span data-copy="ja">文字の修正</span><span data-copy="en">Refine text</span></a><a href="#agent-privacy"><span data-copy="ja">送信の確認</span><span data-copy="en">Transmission</span></a></nav></details><div class="guide-body"><section class="reading-section" id="invoke">
         <div class="reading-copy">
           
           <h2 id="invoke-title">
@@ -122,7 +148,8 @@
                 <span data-copy="ja">自然文で指定</span>
                 <span data-copy="en">Name it in your request</span>
               </div>
-              <pre><code>kAIgi skillを使って、「遠隔操作」をテーマに会議と論文の根拠を集めて議論して</code></pre>
+              <div data-copy="ja"><pre><code>kAIgi skillを使って、「遠隔操作」をテーマに会議と論文の根拠を集めて議論して</code></pre></div>
+              <div data-copy="en"><pre><code>Use the kAIgi skill to find and discuss evidence about teleoperation in my meetings and papers.</code></pre></div>
               <p>
                 <span data-copy="ja">CodexのSkills一覧から <code>kaigi</code> を選べる場合は、そこから指定しても構いません。環境によっては <code>$kaigi</code> と表示されます。</span>
                 <span data-copy="en">If your Codex surface has a Skills picker, select <code>kaigi</code>. Some surfaces show the explicit mention as <code>$kaigi</code>.</span>
@@ -134,7 +161,8 @@
                 <span data-copy="ja">スラッシュコマンド</span>
                 <span data-copy="en">Slash command</span>
               </div>
-              <pre><code>/kaigi 「遠隔操作」をテーマに会議と論文の根拠を集めて議論して</code></pre>
+              <div data-copy="ja"><pre><code>/kaigi 「遠隔操作」をテーマに会議と論文の根拠を集めて議論して</code></pre></div>
+              <div data-copy="en"><pre><code>/kaigi Find and discuss evidence about teleoperation in my meetings and papers.</code></pre></div>
               <p>
                 <span data-copy="ja">入力欄で <code>/</code> を入力すると、利用できるSkillsを一覧できます。名前を指定しなくても、依頼内容に応じて自動で読み込まれることがあります。</span>
                 <span data-copy="en">Type <code>/</code> to see available Skills. Claude Code may also load the Skill automatically when the request matches its description.</span>
@@ -354,7 +382,16 @@
         </div>
       </section></div></div></main>
 
-    <footer class="site-footer"><a class="brand" href="./index.html">kAIgi</a><nav class="footer-links" aria-label="Footer"><a href="./agent-skills.html"><span data-copy="ja">CLI / Skills</span><span data-copy="en">CLI / Skills</span></a><a href="./privacy.html"><span data-copy="ja">データの扱い</span><span data-copy="en">Data & privacy</span></a><a href="./release-notes/index.html"><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></a><a href="https://github.com/keigo1110/kAIgi-download">GitHub</a></nav><p>© 2026 kAIgi</p></footer>
+    <footer class="site-footer product-footer">
+      <a class="brand" href="./index.html">kAIgi</a>
+      <nav class="footer-links" aria-label="サイト情報" data-label-ja="サイト情報" data-label-en="Footer">
+        <a href="./agent-skills.html">CLI / Skills</a>
+        <a href="./privacy.html"><span data-copy="ja">プライバシー</span><span data-copy="en">Privacy</span></a>
+        <a href="./release-notes/index.html"><span data-copy="ja">更新履歴</span><span data-copy="en">Release notes</span></a>
+        <a href="https://github.com/keigo1110/kAIgi-download">GitHub</a>
+      </nav>
+      <p>© 2026 kAIgi</p>
+    </footer>
 
   </body>
 </html>

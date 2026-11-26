@@ -40,10 +40,25 @@
         String(button.dataset.languageOption === language)
       );
     });
+    for (const control of document.querySelectorAll("[aria-label][data-label-ja][data-label-en]")) {
+      control.setAttribute("aria-label", language === "ja" ? control.dataset.labelJa : control.dataset.labelEn);
+    }
+    for (const image of document.querySelectorAll("img[data-alt-ja][data-alt-en]")) {
+      image.alt = language === "ja" ? image.dataset.altJa : image.dataset.altEn;
+    }
+    for (const message of document.querySelectorAll(".copy-status")) message.textContent = "";
 
     if (persist) {
       storeLanguage(language);
     }
+  }
+
+  const topicIndex = document.querySelector(".topic-index");
+  if (topicIndex) {
+    const narrowLayout = window.matchMedia("(max-width: 760px)");
+    const fitIndex = () => { topicIndex.open = !narrowLayout.matches; };
+    fitIndex();
+    narrowLayout.addEventListener("change", fitIndex);
   }
 
   const preloadedLanguage = document.documentElement.dataset.language;
@@ -93,6 +108,22 @@
     pendingScroll = null;
   });
   openLinkedReference();
+
+  const copyRequest = document.querySelector("[data-copy-request]");
+  if (copyRequest && navigator.clipboard?.writeText) {
+    copyRequest.hidden = false;
+    copyRequest.addEventListener("click", async () => {
+      const language = document.documentElement.lang;
+      const request = copyRequest.parentElement.querySelector(`blockquote [data-copy="${language}"]`);
+      const status = copyRequest.parentElement.querySelector(".copy-status");
+      try {
+        await navigator.clipboard.writeText(request.textContent.trim());
+        status.textContent = language === "ja" ? "コピーしました" : "Copied";
+      } catch {
+        status.textContent = language === "ja" ? "依頼文を選んでコピーしてください" : "Select the prompt to copy it.";
+      }
+    });
+  }
 
   // Only the two invocation examples have copy actions. No command executes.
   document.querySelectorAll('#invoke pre').forEach((example) => {
